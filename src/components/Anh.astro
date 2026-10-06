@@ -1,0 +1,27 @@
+---
+// Một tấm ảnh lấy từ nội dung. Ảnh nằm trong src/assets/anh -> Astro tự nén, xuất nhiều cỡ.
+// Không tìm thấy (đường dẫn ngoài, gõ sai) -> hiện <img> thường để không làm hỏng trang.
+import { Image } from 'astro:assets';
+import { timAnh } from '../lib/anh';
+
+interface Props {
+  src?: string | null;
+  alt?: string;
+  sizes?: string;
+  widths?: number[];
+  class?: string;
+  style?: string;
+  loading?: 'lazy' | 'eager';
+  fetchpriority?: 'high' | 'low' | 'auto';
+}
+const { src, alt = '', sizes = '100vw', widths, class: lop, style, loading = 'lazy', fetchpriority } = Astro.props;
+const anh = timAnh(src);
+const coRong = anh ? [480, 768, 1100, 1600, 2200].filter((w) => w < anh.width).concat(anh.width) : [];
+const rong = widths ? widths.filter((w) => !anh || w <= anh.width) : coRong;
+---
+{anh ? (
+  <Image src={anh} alt={alt} widths={rong.length ? rong : [anh.width]} sizes={sizes} class={lop} style={style}
+    loading={loading} fetchpriority={fetchpriority} decoding="async" />
+) : src ? (
+  <img src={src} alt={alt} class={lop} style={style} loading={loading} decoding="async" />
+) : null}

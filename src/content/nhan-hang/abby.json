@@ -1,0 +1,30 @@
+{
+  "thu_tu": 3,
+  "ten": "Abby",
+  "nganh": "Chăm sóc mẹ và bé",
+  "cau_ngan": "Dịu dàng như\nvòng tay mẹ",
+  "cau_dinh_vi": "Dịu dàng như vòng tay mẹ",
+  "mo_ta": "Dòng sản phẩm chăm sóc quần áo dành riêng cho em bé, với công thức 5 in 1 tiện lợi. Abby là lựa chọn hướng đến sự dịu nhẹ trong từng lần giặt giũ của gia đình.",
+  "cau_chuyen": "Với đồ của em bé, sạch thôi chưa đủ — phải an toàn. Abby là dòng sản phẩm Komlife đặt tiêu chuẩn kiểm soát cao nhất: thành phần chọn lọc, hương liệu nhẹ, hạn chế tối đa chất gây kích ứng.",
+  "danh_cho": "Mẹ có con nhỏ dưới 3 tuổi.",
+  "anh_the_doc": "../../assets/anh/nhan-hang/abby-the-doc.jpg",
+  "anh_bia": "../../assets/anh/nhan-hang/abby-bia.jpg",
+  "tiktok": "",
+  "san_pham": [
+    {
+      "ten": "Abby Nước giặt xả Mẹ & Bé 5 in 1",
+      "anh": "../../assets/anh/san-pham/abby-1.jpg",
+      "tinh_trang": "Đang bán",
+      "dung_tich": "",
+      "cong_dung": "Đạt chứng nhận công nghiệp JIS",
+      "mo_ta": "Gộp năm việc trong một lần giặt cho đồ của bé. Thành phần thiên nhiên lành tính, công thức làm sạch nhưng không làm sờn vải.",
+      "mui_huong": [
+        { "ten": "Goodnight", "mo_ta": "Êm ái, cho giấc ngủ sâu" },
+        { "ten": "Merry Day", "mo_ta": "Dịu nhẹ, cho ngày dài năng động" },
+        { "ten": "Relax Day", "mo_ta": "Bay bổng, thư thái" }
+      ]
+    }
+  ],
+  "tinh_huong": { "tieu_de": "", "mo_ta": "", "danh_sach": [] },
+  "hoi_dap": []
+}

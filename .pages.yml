@@ -1,0 +1,590 @@
+# CẤU HÌNH TRANG QUẢN TRỊ (Pages CMS — https://app.pagescms.org)
+# Nhân viên đăng nhập, sửa chữ / thay ảnh / đăng tin, bấm Lưu -> web tự dựng lại sau 1–2 phút.
+# Quy ước chung cho ô TIÊU ĐỀ: phần đặt giữa hai dấu * sẽ hiện màu tím; bấm Enter = xuống dòng trên web.
+
+media:
+  input: src/assets/anh
+  output: ../../assets/anh
+  categories: [image]
+  rename: safe
+
+content:
+  # ─────────────────────────────────────────────────────────────
+  - name: cai-dat
+    label: "⚙️ Cài đặt chung"
+    type: file
+    path: src/content/trang/cai-dat.json
+    format: json
+    fields:
+      - { name: ten_cong_ty, label: Tên công ty đầy đủ, type: string, required: true }
+      - { name: ten_ngan, label: Tên ngắn, type: string }
+      - { name: gioi_thieu_chan_trang, label: Giới thiệu ngắn ở chân trang, type: text }
+      - { name: hotline, label: Hotline, type: string, required: true }
+      - { name: email, label: Email chăm sóc khách hàng, type: string }
+      - { name: email_nhan_dang_ky, label: Email nhận đăng ký đại lý / liên hệ, type: string, description: "Khi chưa có Mã nhận form, khách bấm Gửi sẽ mở sẵn thư gửi về địa chỉ này." }
+      - { name: tru_so, label: Địa chỉ trụ sở chính, type: string }
+      - { name: nha_may, label: Địa chỉ nhà máy, type: string }
+      - { name: gio_lam_viec, label: Giờ làm việc, type: string }
+      - { name: shopee, label: Đường dẫn gian hàng Shopee chính hãng, type: string }
+      - { name: nut_day_trang, label: Chữ trên thanh đăng ký đại lý dính đáy màn hình, type: string }
+      - { name: ma_nhan_form, label: "Mã nhận form (Web3Forms)", type: string, description: "Lấy miễn phí tại web3forms.com bằng email nhận đăng ký. Có mã thì mẫu đăng ký gửi thẳng về hòm thư, khách không phải tự mở thư." }
+      - { name: cho_google_tim_thay, label: Cho Google tìm thấy web, type: boolean, description: "TẮT khi đang chạy thử. BẬT khi web đã gắn tên miền komlife.com.vn chính thức." }
+      - { name: seo_mo_ta_mac_dinh, label: Mô tả mặc định cho Google, type: text }
+      - { name: anh_chia_se, label: Ảnh hiện khi chia sẻ link lên Facebook/Zalo, type: image }
+
+  # ─────────────────────────────────────────────────────────────
+  - name: trang-chu
+    label: "🏠 Trang chủ"
+    type: file
+    path: src/content/trang/trang-chu.json
+    format: json
+    fields:
+      - { name: seo_tieu_de, label: Tiêu đề trên Google, type: string }
+      - { name: seo_mo_ta, label: Mô tả trên Google, type: text }
+      - name: dau_trang
+        label: Phần đầu trang (ảnh lớn + khẩu hiệu)
+        type: object
+        fields:
+          - { name: nhan, label: Nhãn nhỏ, type: string }
+          - { name: tieu_de, label: Khẩu hiệu, type: text, description: "Giữa hai dấu * = màu tím. Enter = xuống dòng." }
+          - { name: mo_ta, label: Đoạn giới thiệu, type: text }
+          - { name: anh, label: Ảnh nền, type: image }
+          - { name: ghi_chu_tren_anh, label: Dòng chữ nghiêng góc phải ảnh, type: text }
+          - { name: nut_1, label: Chữ nút 1 (sang Nhãn hàng), type: string }
+          - { name: nut_2, label: Chữ nút 2 (sang Về Komlife), type: string }
+      - name: vi_sao
+        label: Khối "Vì sao chọn Komlife"
+        type: object
+        fields:
+          - { name: nhan, label: Nhãn nhỏ, type: string }
+          - { name: tieu_de, label: Tiêu đề, type: text, description: "Giữa hai dấu * = màu tím. Enter = xuống dòng." }
+          - { name: doan_1, label: Đoạn mô tả, type: text }
+          - { name: cam_ket, label: "Cam kết chất lượng (sau chữ đậm 'Cam kết chất lượng:')", type: text }
+          - { name: nut, label: Chữ nút, type: string }
+      - name: he_sinh_thai
+        label: Khối "Hệ sinh thái nhãn hàng" (5 thẻ nhãn lấy từ mục Nhãn hàng)
+        type: object
+        fields:
+          - { name: nhan, label: Nhãn nhỏ, type: string }
+          - { name: tieu_de, label: Tiêu đề, type: text, description: "Phần giữa hai dấu * hiện ở dòng dưới, màu tím." }
+          - { name: mo_ta, label: Đoạn mô tả, type: text }
+          - { name: nut, label: Chữ nút, type: string }
+      - name: ban_le
+        label: Khối "Hệ thống bán lẻ" (logo lấy từ Khối dùng chung)
+        type: object
+        fields:
+          - { name: nhan, label: Nhãn nhỏ, type: string }
+          - { name: tieu_de, label: Tiêu đề, type: text }
+      - name: quy_trinh
+        label: Khối "Quy trình sản xuất" (4 khâu lấy từ Khối dùng chung)
+        type: object
+        fields:
+          - { name: nhan, label: Nhãn nhỏ, type: string }
+          - { name: tieu_de, label: Tiêu đề, type: text, description: "Phần giữa hai dấu * hiện ở dòng dưới." }
+          - name: bieu_tuong_nho
+            label: 4 biểu tượng nhỏ
+            type: object
+            list: { min: 0, max: 4 }
+            fields:
+              - name: bieu_tuong
+                label: Biểu tượng
+                type: select
+                options: { values: [ { name: binh, label: Bình thí nghiệm }, { name: banhrang, label: Bánh răng }, { name: kiemtra, label: Bảng kiểm }, { name: chungnhan, label: Huy chương }, { name: khien, label: Khiên }, { name: nhamay, label: Nhà máy }, { name: sanpham, label: Hộp hàng }, { name: ghim, label: Ghim bản đồ }, { name: hop, label: Hộp }, { name: the, label: Thẻ giá }, { name: hotro, label: Tai nghe hỗ trợ }, { name: dongh, label: Trái tim } ] }
+              - { name: chu, label: Chữ, type: text }
+          - { name: nut, label: Chữ nút, type: string }
+      - name: tap_the
+        label: Khối "Tập thể & hạ tầng" (ảnh + video nhà máy)
+        type: object
+        fields:
+          - { name: nhan, label: Nhãn nhỏ, type: string }
+          - { name: tieu_de, label: Tiêu đề, type: text }
+          - { name: mo_ta, label: Đoạn mô tả, type: text }
+          - name: anh
+            label: Ảnh nhà máy (nên đủ 3 hoặc 6 ảnh)
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{fields.chu_thich}" } }
+            fields:
+              - { name: anh, label: Ảnh, type: image }
+              - { name: chu_thich, label: Chú thích, type: string, description: "Ghi đúng thứ nhìn thấy trong ảnh." }
+          - name: video
+            label: Video YouTube
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{fields.chu_thich}" } }
+            fields:
+              - { name: ma_youtube, label: Mã video YouTube, type: string, description: "Phần sau 'v=' hoặc sau 'shorts/' trong đường dẫn video. Ví dụ k2u_1_EhKYo" }
+              - { name: chu_thich, label: Chú thích, type: string }
+          - { name: ghi_chu, label: Ghi chú nhỏ cuối khối, type: string }
+      - name: sinh_ke
+        label: Khối ảnh tràn "2.000 sinh kế"
+        type: object
+        fields:
+          - { name: tieu_de, label: Tiêu đề, type: text }
+          - { name: mo_ta, label: Đoạn mô tả, type: text }
+          - { name: anh, label: Ảnh nền, type: image }
+      - name: nguyen_lieu
+        label: Khối "Tiêu chuẩn nguyên liệu" (4 đối tác lấy từ Khối dùng chung)
+        type: object
+        fields:
+          - { name: nhan, label: Nhãn nhỏ, type: string }
+          - { name: tieu_de, label: Tiêu đề, type: text }
+          - { name: mo_ta, label: Đoạn mô tả, type: text }
+          - { name: anh, label: Ảnh, type: image }
+          - { name: chu_thich_anh, label: Chú thích ảnh, type: string }
+      - name: dau_moc
+        label: Khối "Dấu mốc" (các mốc lấy từ Khối dùng chung)
+        type: object
+        fields:
+          - { name: nhan, label: Nhãn nhỏ, type: string }
+          - { name: tieu_de, label: Tiêu đề, type: text }
+          - { name: anh, label: Ảnh, type: image }
+          - { name: chu_thich_anh, label: Chú thích ảnh, type: string }
+      - name: nguoi_dung_dau
+        label: Khối "Người đứng đầu"
+        type: object
+        fields:
+          - { name: hien_thi, label: Hiện khối này, type: boolean }
+          - { name: nhan, label: Nhãn nhỏ, type: string }
+          - { name: trich_dan, label: Câu trích, type: text }
+          - { name: ten, label: Họ tên, type: string }
+          - { name: chuc_vu, label: Chức vụ, type: string }
+          - { name: anh, label: Ảnh chân dung, type: image }
+      - name: ban_tin
+        label: "Khối 'Bản tin' — 3 bài, bài Nổi bật trước, thiếu thì lấy bài mới nhất"
+        type: object
+        fields:
+          - { name: nhan, label: Nhãn nhỏ, type: string }
+          - { name: tieu_de, label: Tiêu đề, type: text }
+          - { name: mo_ta, label: Đoạn mô tả, type: text }
+      - name: nha_phan_phoi
+        label: Khối "Thông tin dành cho nhà phân phối"
+        type: object
+        fields:
+          - { name: nhan, label: Nhãn nhỏ, type: string }
+          - { name: tieu_de, label: Tiêu đề, type: text }
+          - { name: mo_ta, label: Đoạn mô tả, type: text }
+          - { name: anh, label: Ảnh, type: image }
+          - { name: chu_thich_anh, label: Mô tả ảnh (cho người khiếm thị và Google), type: string }
+          - name: cac_o
+            label: Các ô
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{fields.tieu_de}" } }
+            fields:
+              - { name: tieu_de, label: Tiêu đề ô, type: string }
+              - { name: mo_ta, label: Mô tả, type: text }
+
+  # ─────────────────────────────────────────────────────────────
+  - name: khoi-chung
+    label: "🧩 Khối dùng chung (hiện ở nhiều trang)"
+    type: file
+    path: src/content/trang/khoi-chung.json
+    format: json
+    fields:
+      - name: so_lieu
+        label: Dải 4 con số
+        type: object
+        list: { min: 1, max: 4, collapsible: { collapsed: true, summary: "{fields.so} {fields.ten}" } }
+        fields:
+          - { name: so, label: Con số, type: string, description: "Viết như muốn hiện, ví dụ 6.000.000" }
+          - { name: don_vi, label: Đơn vị nhỏ phía sau (+, m²...), type: string }
+          - { name: ten, label: Tên con số, type: string }
+          - { name: mo_ta, label: Dòng nhỏ bên dưới, type: string }
+          - name: bieu_tuong
+            label: Biểu tượng
+            type: select
+            options: { values: [ { name: khien, label: Khiên }, { name: nhamay, label: Nhà máy }, { name: sanpham, label: Hộp hàng }, { name: ghim, label: Ghim bản đồ }, { name: chungnhan, label: Huy chương }, { name: hotro, label: Tai nghe hỗ trợ } ] }
+      - { name: anh_dai_so_lieu, label: Ảnh nền dải số liệu, type: image }
+      - { name: cau_trich, label: Câu trích cạnh dải số liệu, type: text }
+      - name: dong_hanh
+        label: Khối "Đồng hành bền vững" cuối trang (dẫn sang trang đại lý)
+        type: object
+        fields:
+          - { name: nhan, label: Nhãn nhỏ, type: string }
+          - { name: tieu_de, label: Tiêu đề, type: text }
+          - { name: mo_ta, label: Đoạn mô tả, type: text }
+          - { name: anh, label: Ảnh nền, type: image }
+          - { name: nut, label: Chữ nút, type: string }
+          - name: diem_manh
+            label: 4 điểm mạnh có biểu tượng
+            type: object
+            list: { max: 4 }
+            fields:
+              - name: bieu_tuong
+                label: Biểu tượng
+                type: select
+                options: { values: [ { name: hop, label: Hộp }, { name: the, label: Thẻ giá }, { name: hotro, label: Tai nghe hỗ trợ }, { name: dongh, label: Trái tim }, { name: khien, label: Khiên }, { name: chungnhan, label: Huy chương } ] }
+              - { name: chu, label: Chữ, type: text }
+      - name: quy_trinh
+        label: Quy trình sản xuất (trang chủ + trang Chất lượng)
+        type: object
+        fields:
+          - { name: mo_ta, label: Đoạn mô tả quy trình, type: text }
+          - name: cac_khau
+            label: 4 khâu
+            type: object
+            list: { max: 4, collapsible: { collapsed: true, summary: "{fields.tieu_de}" } }
+            fields:
+              - { name: anh, label: Ảnh, type: image }
+              - { name: tieu_de, label: Tên khâu, type: string }
+              - { name: mo_ta, label: Mô tả ngắn, type: text }
+      - name: dau_moc
+        label: Các dấu mốc (trang chủ + trang Về Komlife)
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.nam} — {fields.tieu_de}" } }
+        fields:
+          - { name: nam, label: Năm, type: string }
+          - { name: tieu_de, label: Tiêu đề, type: string }
+          - { name: mo_ta, label: Mô tả, type: text }
+      - name: doi_tac_nguyen_lieu
+        label: Đối tác nguyên liệu (trang chủ + trang Chất lượng)
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.ten}" } }
+        fields:
+          - { name: ten, label: Tên, type: string }
+          - { name: quoc_gia, label: Quốc gia, type: string }
+          - { name: nhom, label: Nhóm nguyên liệu, type: string }
+          - { name: mo_ta, label: Mô tả, type: text }
+      - name: phap_ly
+        label: Khối "Thông tin pháp lý" — giấy chứng nhận (trang chủ + trang Chất lượng)
+        type: object
+        fields:
+          - { name: nhan, label: Nhãn nhỏ, type: string }
+          - { name: tieu_de, label: Tiêu đề, type: text }
+          - { name: mo_ta, label: Đoạn mô tả, type: text }
+          - name: giay
+            label: Giấy chứng nhận
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{fields.ten}" } }
+            fields:
+              - { name: hien_thi, label: Hiện trên web, type: boolean, description: "Tắt nếu giấy đã hết hạn." }
+              - { name: ten, label: Tên chứng nhận, type: string }
+              - { name: pham_vi, label: Phạm vi, type: string }
+              - { name: ma_so, label: Mã số, type: string }
+              - { name: ngay_cap, label: Ngày cấp, type: string }
+              - { name: noi_cap, label: Nơi cấp, type: string }
+              - { name: anh, label: Ảnh giấy, type: image }
+      - name: he_thong_ban_le
+        label: Logo hệ thống bán lẻ (dải chạy ngang trang chủ)
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.ten}" } }
+        fields:
+          - { name: ten, label: Tên hệ thống, type: string }
+          - { name: logo, label: Logo (ảnh vuông), type: image }
+
+  # ─────────────────────────────────────────────────────────────
+  - name: nhan-hang
+    label: "🧴 Nhãn hàng (5 nhãn)"
+    type: collection
+    path: src/content/nhan-hang
+    format: json
+    operations: { create: false, delete: false, rename: false }
+    view: { fields: [ten, nganh, thu_tu], primary: ten, sort: [thu_tu], default: { sort: thu_tu, order: asc } }
+    fields:
+      - { name: thu_tu, label: Thứ tự hiển thị, type: number }
+      - { name: ten, label: Tên nhãn, type: string, required: true }
+      - { name: nganh, label: Ngành hàng, type: string }
+      - { name: cau_ngan, label: Câu ngắn trên thẻ trang chủ, type: text, description: "Thẻ hẹp — nên 2 dòng, mỗi dòng dưới 20 chữ cái. Enter = xuống dòng." }
+      - { name: cau_dinh_vi, label: Câu định vị, type: string }
+      - { name: mo_ta, label: Mô tả nhãn, type: text }
+      - { name: cau_chuyen, label: "Câu chuyện nhãn (khối 'Vì sao có nhãn này')", type: text }
+      - { name: danh_cho, label: Dành cho ai, type: string }
+      - { name: anh_the_doc, label: Ảnh thẻ dọc ở trang chủ (ảnh đứng), type: image }
+      - { name: anh_bia, label: Ảnh bìa (ảnh ngang), type: image }
+      - { name: tiktok, label: Đường dẫn kênh TikTok riêng của nhãn (nếu có), type: string }
+      - name: san_pham
+        label: Sản phẩm
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.ten}" } }
+        fields:
+          - { name: ten, label: Tên sản phẩm, type: string }
+          - { name: anh, label: Ảnh sản phẩm, type: image }
+          - name: tinh_trang
+            label: Tình trạng
+            type: select
+            options: { values: [ "Đang bán", "Sắp ra mắt", "Ngừng bán" ] }
+          - { name: dung_tich, label: Dung tích, type: string }
+          - { name: cong_dung, label: Công dụng chính (hiện thành nhãn nhỏ), type: string }
+          - { name: mo_ta, label: Mô tả, type: text }
+          - name: mui_huong
+            label: Mùi hương
+            type: object
+            list: true
+            fields:
+              - { name: ten, label: Tên mùi, type: string }
+              - { name: mo_ta, label: Mô tả mùi, type: string }
+      - name: tinh_huong
+        label: "Khối 'Dùng lúc nào' (để trống danh sách = ẩn khối)"
+        type: object
+        fields:
+          - { name: tieu_de, label: Tiêu đề, type: text }
+          - { name: mo_ta, label: Đoạn mô tả, type: text }
+          - name: danh_sach
+            label: Các tình huống
+            type: object
+            list: true
+            fields:
+              - { name: ten, label: Tình huống, type: string }
+              - { name: mo_ta, label: Mô tả, type: text }
+      - name: hoi_dap
+        label: Hỏi & đáp (để trống = ẩn khối)
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.hoi}" } }
+        fields:
+          - { name: hoi, label: Câu hỏi, type: string }
+          - { name: dap, label: Trả lời, type: text }
+
+  # ─────────────────────────────────────────────────────────────
+  - name: tin-tuc
+    label: "📰 Tin tức"
+    type: collection
+    path: src/content/tin-tuc
+    format: yaml-frontmatter
+    filename:
+      template: "{primary}.md"
+      field: create
+    view: { fields: [tieu_de, chuyen_muc, ngay, nhap], primary: tieu_de, sort: [ngay, tieu_de], default: { sort: ngay, order: desc } }
+    fields:
+      - { name: tieu_de, label: Tiêu đề bài, type: string, required: true }
+      - name: chuyen_muc
+        label: Chuyên mục
+        type: select
+        options: { values: [ { name: tin-doanh-nghiep, label: Tin doanh nghiệp }, { name: tin-thi-truong, label: Tin thị trường } ] }
+      - { name: ngay, label: Ngày đăng, type: date }
+      - { name: anh_dai_dien, label: Ảnh đại diện, type: image }
+      - { name: tom_tat, label: Tóm tắt (hiện trên thẻ tin và Google), type: text }
+      - { name: noi_bat, label: Nổi bật — đưa lên trang chủ, type: boolean }
+      - { name: nhap, label: "Nháp — CHƯA hiện lên web", type: boolean, description: "Bật khi bài chưa duyệt xong. Tắt đi là bài lên web." }
+      - { name: body, label: Nội dung bài, type: rich-text, options: { format: markdown } }
+
+  # ─────────────────────────────────────────────────────────────
+  - name: cac-trang
+    label: "📄 Các trang khác"
+    type: group
+    items:
+      - name: ve-komlife
+        label: Về Komlife
+        type: file
+        path: src/content/trang/ve-komlife.json
+        format: json
+        fields:
+          - { name: seo_tieu_de, label: Tiêu đề trên Google, type: string }
+          - { name: seo_mo_ta, label: Mô tả trên Google, type: text }
+          - name: dau_trang
+            label: Phần đầu trang
+            type: object
+            fields:
+              - { name: nhan, label: Nhãn nhỏ, type: string }
+              - { name: tieu_de, label: Tiêu đề, type: text }
+              - { name: mo_ta, label: Đoạn mô tả, type: text }
+          - name: lich_su
+            label: Khối lịch sử (các mốc ở Khối dùng chung)
+            type: object
+            fields:
+              - { name: nhan, label: Nhãn nhỏ, type: string }
+              - { name: tieu_de, label: Tiêu đề, type: text }
+          - { name: su_menh, label: Sứ mệnh, type: text }
+          - { name: tam_nhin, label: Tầm nhìn, type: text }
+          - name: gia_tri
+            label: Giá trị cốt lõi
+            type: object
+            fields:
+              - { name: nhan, label: Nhãn nhỏ, type: string }
+              - { name: tieu_de, label: Tiêu đề, type: text }
+              - name: cac_gia_tri
+                label: Các giá trị
+                type: object
+                list: true
+                fields:
+                  - { name: ten, label: Giá trị, type: string }
+                  - { name: mo_ta, label: Mô tả, type: text }
+
+      - name: trang-nhan-hang
+        label: Trang Nhãn hàng (phần đầu + khối Mua ở đâu)
+        type: file
+        path: src/content/trang/nhan-hang.json
+        format: json
+        fields:
+          - { name: seo_tieu_de, label: Tiêu đề trên Google, type: string }
+          - { name: seo_mo_ta, label: Mô tả trên Google, type: text }
+          - name: dau_trang
+            label: Phần đầu trang
+            type: object
+            fields:
+              - { name: nhan, label: Nhãn nhỏ, type: string }
+              - { name: tieu_de, label: Tiêu đề, type: text }
+              - { name: mo_ta, label: Đoạn mô tả, type: text }
+          - name: mua_o_dau
+            label: Khối "Mua ở đâu" (cuối trang từng nhãn)
+            type: object
+            fields:
+              - { name: nhan, label: Nhãn nhỏ, type: string }
+              - { name: tieu_de, label: Tiêu đề, type: text }
+              - { name: mo_ta, label: Đoạn mô tả, type: text }
+              - { name: nut_shopee, label: Chữ nút Shopee, type: string }
+              - { name: nut_hang_that, label: Chữ nút nhận biết hàng thật, type: string }
+
+      - name: chat-luong
+        label: Chất lượng & Tiêu chuẩn
+        type: file
+        path: src/content/trang/chat-luong.json
+        format: json
+        fields:
+          - { name: seo_tieu_de, label: Tiêu đề trên Google, type: string }
+          - { name: seo_mo_ta, label: Mô tả trên Google, type: text }
+          - name: dau_trang
+            label: Phần đầu trang
+            type: object
+            fields:
+              - { name: nhan, label: Nhãn nhỏ, type: string }
+              - { name: tieu_de, label: Tiêu đề, type: text }
+              - { name: mo_ta, label: Đoạn mô tả, type: text }
+          - name: ba_the
+            label: 3 thẻ đầu trang
+            type: object
+            list: { max: 3 }
+            fields:
+              - { name: nhan, label: Nhãn nhỏ, type: string }
+              - { name: tieu_de, label: Tiêu đề, type: string }
+              - { name: mo_ta, label: Mô tả, type: text }
+          - name: quy_trinh
+            label: Khối quy trình (4 khâu ở Khối dùng chung)
+            type: object
+            fields:
+              - { name: nhan, label: Nhãn nhỏ, type: string }
+              - { name: tieu_de, label: Tiêu đề, type: text }
+          - name: doi_tac
+            label: Khối đối tác nguyên liệu (danh sách ở Khối dùng chung)
+            type: object
+            fields:
+              - { name: nhan, label: Nhãn nhỏ, type: string }
+              - { name: tieu_de, label: Tiêu đề, type: text }
+              - { name: mo_ta, label: Đoạn mô tả, type: text }
+          - name: hang_that
+            label: Khối chống hàng giả
+            type: object
+            fields:
+              - { name: nhan, label: Nhãn nhỏ, type: string }
+              - { name: tieu_de, label: Tiêu đề, type: text }
+              - { name: mo_ta, label: Đoạn mô tả, type: text }
+              - name: tieu_chi
+                label: Các tiêu chí
+                type: object
+                list: true
+                fields:
+                  - { name: ten, label: Tiêu chí, type: string }
+                  - { name: mo_ta, label: Mô tả, type: text }
+              - { name: nut, label: "Chữ nút gọi (số hotline tự thêm phía sau)", type: string }
+
+      - name: hop-tac-dai-ly
+        label: Hợp tác đại lý
+        type: file
+        path: src/content/trang/hop-tac-dai-ly.json
+        format: json
+        fields:
+          - { name: seo_tieu_de, label: Tiêu đề trên Google, type: string }
+          - { name: seo_mo_ta, label: Mô tả trên Google, type: text }
+          - name: dau_trang
+            label: Phần đầu trang
+            type: object
+            fields:
+              - { name: nhan, label: Nhãn nhỏ, type: string }
+              - { name: tieu_de, label: Tiêu đề, type: text }
+              - { name: mo_ta, label: Đoạn mô tả, type: text }
+          - name: bon_the
+            label: 4 thẻ quyền lợi
+            type: object
+            list: { max: 4 }
+            fields:
+              - { name: tieu_de, label: Tiêu đề, type: string }
+              - { name: mo_ta, label: Mô tả, type: string }
+          - name: chinh_sach
+            label: Khối chính sách
+            type: object
+            fields:
+              - { name: nhan, label: Nhãn nhỏ, type: string }
+              - { name: tieu_de, label: Tiêu đề, type: text }
+              - name: muc
+                label: Các mục
+                type: object
+                list: true
+                fields:
+                  - { name: ten, label: Tên mục, type: string }
+                  - { name: mo_ta, label: Mô tả, type: text }
+          - name: cac_buoc
+            label: Các bước từ đăng ký đến nhận hàng
+            type: object
+            fields:
+              - { name: nhan, label: Nhãn nhỏ, type: string }
+              - { name: tieu_de, label: Tiêu đề, type: text }
+              - name: buoc
+                label: Các bước (tự đánh số 01, 02...)
+                type: object
+                list: true
+                fields:
+                  - { name: tieu_de, label: Tên bước, type: string }
+                  - { name: mo_ta, label: Mô tả, type: text }
+          - name: dang_ky
+            label: Khối mẫu đăng ký
+            type: object
+            fields:
+              - { name: nhan, label: Nhãn nhỏ, type: string }
+              - { name: tieu_de, label: Tiêu đề, type: text }
+              - { name: mo_ta, label: "Câu mời gọi điện (số hotline tự thêm phía sau)", type: text }
+              - { name: loai_hinh, label: Các lựa chọn Loại hình kinh doanh, type: string, list: true }
+
+      - name: trang-tin-tuc
+        label: Trang Tin tức (phần đầu + tên chuyên mục)
+        type: file
+        path: src/content/trang/tin-tuc.json
+        format: json
+        fields:
+          - { name: seo_tieu_de, label: Tiêu đề trên Google, type: string }
+          - { name: seo_mo_ta, label: Mô tả trên Google, type: text }
+          - name: dau_trang
+            label: Phần đầu trang
+            type: object
+            fields:
+              - { name: nhan, label: Nhãn nhỏ, type: string }
+              - { name: tieu_de, label: Tiêu đề, type: text }
+              - { name: mo_ta, label: Đoạn mô tả, type: text }
+          - name: ten_chuyen_muc
+            label: Tên hiển thị của 2 chuyên mục
+            type: object
+            fields:
+              - { name: tin-doanh-nghiep, label: Chuyên mục 1, type: string }
+              - { name: tin-thi-truong, label: Chuyên mục 2, type: string }
+
+      - name: lien-he
+        label: Liên hệ (địa chỉ, hotline sửa ở Cài đặt chung)
+        type: file
+        path: src/content/trang/lien-he.json
+        format: json
+        fields:
+          - { name: seo_tieu_de, label: Tiêu đề trên Google, type: string }
+          - { name: seo_mo_ta, label: Mô tả trên Google, type: text }
+          - name: dau_trang
+            label: Phần đầu trang
+            type: object
+            fields:
+              - { name: nhan, label: Nhãn nhỏ, type: string }
+              - { name: tieu_de, label: Tiêu đề, type: text }
+              - { name: mo_ta, label: Đoạn mô tả, type: text }
+          - name: dai_ly
+            label: Dòng đăng ký đại lý
+            type: object
+            fields:
+              - { name: ten, label: Tên dòng, type: string }
+              - { name: mo_ta, label: Mô tả, type: text }
+              - { name: nut, label: Chữ đường dẫn, type: string }
+
+      - name: phap-ly
+        label: Trang chính sách (bảo mật, đổi trả, điều khoản)
+        type: collection
+        path: src/content/phap-ly
+        format: yaml-frontmatter
+        operations: { create: false, delete: false, rename: false }
+        view: { fields: [tieu_de, cap_nhat], primary: tieu_de }
+        fields:
+          - { name: tieu_de, label: Tên trang, type: string, required: true }
+          - { name: mo_ta, label: Mô tả ngắn, type: text }
+          - { name: cap_nhat, label: "Cập nhật (ví dụ: Tháng 10/2026)", type: string }
+          - { name: body, label: Nội dung, type: rich-text, options: { format: markdown } }

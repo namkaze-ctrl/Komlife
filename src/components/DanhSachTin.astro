@@ -1,0 +1,22 @@
+---
+// Lưới thẻ tin tức (ảnh + chuyên mục + ngày + tiêu đề + tóm tắt).
+import Anh from './Anh.astro';
+import tt from '../content/trang/tin-tuc.json';
+import { duongDanTin } from '../lib/noi-dung';
+import { ngayThang } from '../lib/chu';
+interface Props { ds: any[] }
+const { ds } = Astro.props;
+const tenMuc = tt.ten_chuyen_muc as Record<string, string>;
+---
+<div class="cards cards--3 spot">
+  {ds.map((t) => (
+    <a class="tin rv" href={duongDanTin(t)}>
+      {t.data.anh_dai_dien
+        ? <Anh src={t.data.anh_dai_dien} alt={t.data.tieu_de} sizes="(max-width:640px) 92vw, (max-width:1000px) 46vw, (max-width:1240px) 30vw, 367px" widths={[400, 800]} />
+        : <div class="tin__trong" aria-hidden="true"></div>}
+      <div class="tin__b"><div class="eb">{tenMuc[t.data.chuyen_muc]} · {ngayThang(t.data.ngay)}</div>
+        <h3 style="font-size:1.1rem">{t.data.tieu_de}</h3><p class="card__b" style="font-size:.92rem">{t.data.tom_tat}</p>
+        <span class="tin__doc">Đọc bài →</span></div>
+    </a>
+  ))}
+</div>

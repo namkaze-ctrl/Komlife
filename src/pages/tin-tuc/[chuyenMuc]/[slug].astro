@@ -1,0 +1,47 @@
+---
+// MỘT BÀI TIN — /tin-tuc/<chuyên mục>/<tên file bài>. Bài để "Nháp" thì không tạo trang.
+import { render } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import Anh from '../../../components/Anh.astro';
+import DanhSachTin from '../../../components/DanhSachTin.astro';
+import DongHanh from '../../../components/DongHanh.astro';
+import tt from '../../../content/trang/tin-tuc.json';
+import { layTinDaDang } from '../../../lib/noi-dung';
+import { ngayDayDu } from '../../../lib/chu';
+
+export async function getStaticPaths() {
+  const ds = await layTinDaDang();
+  return ds.map((t) => ({ params: { chuyenMuc: t.data.chuyen_muc, slug: t.id }, props: { t, ds } }));
+}
+const { t, ds } = Astro.props;
+const { Content } = await render(t);
+const tenMuc = (tt.ten_chuyen_muc as Record<string, string>)[t.data.chuyen_muc];
+const lienQuan = ds.filter((x: any) => x.id !== t.id && x.data.chuyen_muc === t.data.chuyen_muc).slice(0, 3);
+const baiViet = {
+  '@context': 'https://schema.org', '@type': 'NewsArticle',
+  headline: t.data.tieu_de, datePublished: t.data.ngay.toISOString(),
+  publisher: { '@type': 'Organization', name: 'Công ty TNHH Komlife Việt Nam' },
+};
+---
+<Base tieuDe={`${t.data.tieu_de} | Komlife Việt Nam`} moTa={t.data.tom_tat} anhChiaSe={t.data.anh_dai_dien} loai="article">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(baiViet)} />
+  <article class="sec bai-wrap">
+    <div class="wrap bai-hep stack g20">
+      <nav class="bai-duong" aria-label="Đường dẫn"><a href="/tin-tuc">Tin tức</a> / <a href={`/tin-tuc/${t.data.chuyen_muc}`}>{tenMuc}</a></nav>
+      <div class="eb">{tenMuc} · {ngayDayDu(t.data.ngay)}</div>
+      <h1 class="bai-td">{t.data.tieu_de}</h1>
+      {t.data.anh_dai_dien && <Anh class="bai-anh" src={t.data.anh_dai_dien} alt={t.data.tieu_de} sizes="(max-width:820px) 92vw, 760px" loading="eager" />}
+      <div class="bai"><Content /></div>
+      <a class="btn btn--ghost" href={`/tin-tuc/${t.data.chuyen_muc}`} style="align-self:flex-start">← Các bài {tenMuc.toLowerCase()}</a>
+    </div>
+  </article>
+  {lienQuan.length > 0 && (
+    <section class="sec sec--panel">
+      <div class="wrap stack g28">
+        <h2 style="font-size:clamp(1.5rem,2.4vw,2rem)">Bài cùng chuyên mục</h2>
+        <DanhSachTin ds={lienQuan} />
+      </div>
+    </section>
+  )}
+  <DongHanh />
+</Base>

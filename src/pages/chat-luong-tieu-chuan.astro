@@ -1,0 +1,67 @@
+---
+// CHẤT LƯỢNG & TIÊU CHUẨN — nội dung: src/content/trang/chat-luong.json (+ Khối dùng chung)
+import Base from '../layouts/Base.astro';
+import Anh from '../components/Anh.astro';
+import DauTrangCon from '../components/DauTrangCon.astro';
+import ChungNhan from '../components/ChungNhan.astro';
+import DaiSoLieu from '../components/DaiSoLieu.astro';
+import cl from '../content/trang/chat-luong.json';
+import { caiDat, khoiChung } from '../lib/noi-dung';
+import { tieuDe, dong, soGoi } from '../lib/chu';
+---
+<Base tieuDe={cl.seo_tieu_de} moTa={cl.seo_mo_ta}>
+  <DauTrangCon nhan={cl.dau_trang.nhan} tieuDe={cl.dau_trang.tieu_de} moTa={cl.dau_trang.mo_ta} />
+
+  <section class="sec sec--tight">
+    <div class="wrap cards cards--3">
+      {cl.ba_the.map((c) => <div class="card rv"><div class="eb">{c.nhan}</div><h3>{c.tieu_de}</h3><p class="card__b" set:html={dong(c.mo_ta)} /></div>)}
+    </div>
+  </section>
+
+  <ChungNhan />
+
+  <section class="sec sec--panel">
+    <div class="wrap stack g40">
+      <div class="split">
+        <div class="stack g16"><div class="eb">{cl.quy_trinh.nhan}</div><h2 set:html={tieuDe(cl.quy_trinh.tieu_de)} /></div>
+        <p class="lead" set:html={dong(khoiChung.quy_trinh.mo_ta)} />
+      </div>
+      <div class="cards cards--4 spot">
+        {khoiChung.quy_trinh.cac_khau.map((q) => (
+          <div class="pcard rv fx-glow">
+            <Anh src={q.anh} alt={q.tieu_de} sizes="(max-width:640px) 92vw, (max-width:1529px) 46vw, 270px" widths={[490, 1100]} />
+            <div class="pcard__t"><h4>{q.tieu_de}</h4><p class="card__b">{q.mo_ta}</p></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <DaiSoLieu />
+
+  <section class="sec">
+    <div class="wrap split">
+      <div class="stack g16"><div class="eb">{cl.doi_tac.nhan}</div><h2 set:html={tieuDe(cl.doi_tac.tieu_de)} />
+        <p class="lead" set:html={dong(cl.doi_tac.mo_ta)} /></div>
+      <div class="rows">
+        {khoiChung.doi_tac_nguyen_lieu.map((n) => (
+          <div class="row rv"><div class="row__k">{n.ten}<br><span class="muted" style="font-family:var(--fb);font-size:.82rem;font-weight:400">{n.quoc_gia} · {n.nhom}</span></div>
+            <div>{n.mo_ta}</div></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--warm" id="hang-that">
+    <div class="wrap split" style="align-items:start">
+      <div class="stack g16"><div class="eb">{cl.hang_that.nhan}</div><h2 set:html={tieuDe(cl.hang_that.tieu_de)} />
+        <p class="lead" set:html={dong(cl.hang_that.mo_ta)} /></div>
+      <div class="stack g20">
+        <div class="rows">
+          {cl.hang_that.tieu_chi.map((t) => <div class="row"><div class="row__k">{t.ten}</div><div>{t.mo_ta}</div></div>)}
+        </div>
+        <a class="btn" href={`tel:${soGoi(caiDat.hotline)}`} style="align-self:flex-start">{cl.hang_that.nut}: {caiDat.hotline}</a>
+      </div>
+    </div>
+  </section>
+</Base>

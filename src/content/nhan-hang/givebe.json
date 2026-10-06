@@ -1,0 +1,39 @@
+{
+  "thu_tu": 4,
+  "ten": "Givebe",
+  "nganh": "Mỹ phẩm thiên nhiên",
+  "cau_ngan": "Chạm vào làn da\nbằng sự dịu lành",
+  "cau_dinh_vi": "Chạm vào làn da bằng sự dịu lành",
+  "mo_ta": "Givebe mang tinh thần chăm sóc từ thiên nhiên với hai dòng sữa tắm: Thiên Nhiên cấp ẩm với AHA và Luxury với chiết xuất yến mạch lên men AVENOFERM HF.",
+  "cau_chuyen": "Givebe đi theo hướng tối giản: ít thành phần, mỗi thành phần đều có lý do có mặt. Sản xuất tại nhà máy đạt ISO 14001:2015 — sạch từ quy trình chứ không chỉ ở nhãn chai.",
+  "danh_cho": "Người dùng quan tâm đến thành phần và nguồn gốc tự nhiên.",
+  "anh_the_doc": "../../assets/anh/nhan-hang/givebe-the-doc.jpg",
+  "anh_bia": "../../assets/anh/nhan-hang/givebe-bia.jpg",
+  "tiktok": "",
+  "san_pham": [
+    {
+      "ten": "Sữa tắm Givebe Thiên Nhiên",
+      "anh": "../../assets/anh/san-pham/givebe-1.jpg",
+      "tinh_trang": "Đang bán",
+      "dung_tich": "",
+      "cong_dung": "Cấp ẩm bằng AHA",
+      "mo_ta": "Dưỡng chất AHA giúp phục hồi lớp giữ ẩm tự nhiên, cho da mềm mịn ngay sau khi tắm.",
+      "mui_huong": [
+        { "ten": "Red Poppy", "mo_ta": "Hoa và quả mọng, ngọt ngào" },
+        { "ten": "Sansuzu", "mo_ta": "Nốt hương hoa, thanh lịch" },
+        { "ten": "Sweet Comos", "mo_ta": "Độc đáo, khác biệt" }
+      ]
+    },
+    {
+      "ten": "Sữa tắm Givebe Luxury",
+      "anh": "../../assets/anh/san-pham/givebe-2.jpg",
+      "tinh_trang": "Đang bán",
+      "dung_tich": "",
+      "cong_dung": "Chiết xuất yến mạch lên men",
+      "mo_ta": "Chiết xuất yến mạch lên men đa tầng AVENOFERM HF — làm sạch đồng thời nuôi dưỡng cân bằng hệ vi sinh trên da.",
+      "mui_huong": []
+    }
+  ],
+  "tinh_huong": { "tieu_de": "", "mo_ta": "", "danh_sach": [] },
+  "hoi_dap": []
+}

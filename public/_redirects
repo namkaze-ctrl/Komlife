@@ -1,0 +1,47 @@
+# CHUYỂN HƯỚNG ĐƯỜNG DẪN CŨ (web Haravan) -> WEB MỚI. Mã 301 = chuyển vĩnh viễn.
+# Lấy từ "Bảng chuyển hướng website Komlife" kiểm tay từng đường dẫn ngày 13/8/2026.
+# Cloudflare Pages tự đọc file này. Dòng bắt đầu bằng # là ghi chú.
+#
+# ⚠️ CHƯA XỬ LÝ: /pages/nuoc-xit-vai-spy — trang bán SPY xịt thơm vải có form đặt hàng COD.
+#    Phải hỏi bộ phận đang nhận đơn trước khi đổi tên miền (đơn về đâu, có đang chạy quảng cáo không).
+#    Ba trang rác /pages/gg, /pages/trang-dich-vu, /pages/frontpage CỐ Ý để báo lỗi 404.
+
+# 1. Trang nhãn hàng — map theo NỘI DUNG THẬT, không theo chữ trong đường dẫn cũ
+/products/thuong-hieu-nuoc-giat-xa-cao-cap-spy   /nhan-hang/spy     301
+/products/thuong-hieu-chat-tay-rua-eddy          /nhan-hang/abby    301
+/products/thuong-hieu-cham-soc-me-va-be-abby     /nhan-hang/givebe  301
+/products/thuong-hieu-my-pham-thien-nhien-givebe /nhan-hang/eddy    301
+/products/ura                                    /nhan-hang/ura     301
+/products/spy                                    /nhan-hang/ura     301
+
+# 2. Danh mục nhãn
+/collections/all          /nhan-hang         301
+/collections/spy          /nhan-hang/spy     301
+/collections/ura          /nhan-hang/ura     301
+/collections/abby         /nhan-hang/abby    301
+/collections/givebe       /nhan-hang/givebe  301
+/collections/eddy         /nhan-hang/eddy    301
+/collections/frontpage    /nhan-hang         301
+/collections/onsale       /nhan-hang         301
+/collections/hot-products /nhan-hang         301
+
+# 3. Trang thông tin
+/pages/gioi-thieu                 /ve-komlife          301
+/pages/about-us                   /ve-komlife          301
+/pages/loi-cam-ket-menu-trang-chu /ve-komlife          301
+/pages/trang-lien-he              /lien-he             301
+/pages/lien-he                    /lien-he             301
+/pages/chinh-sach-bao-mat         /chinh-sach-bao-mat  301
+/pages/chinh-sach-doi-tra         /chinh-sach-doi-tra  301
+/pages/dieu-khoan-dich-vu         /dieu-khoan-dich-vu  301
+/pages/bai-viet-spy               /nhan-hang/spy       301
+
+# 4. Tin tức — giữ nguyên tên bài, chỉ đổi nhánh
+/blogs/all                    /tin-tuc                        301
+/blogs/dong-gop-xa-hoi        /tin-tuc                        301
+/blogs/tin-tt                 /tin-tuc/tin-doanh-nghiep       301
+/blogs/news                   /tin-tuc/tin-doanh-nghiep       301
+/blogs/tin-tuc-thi-truong     /tin-tuc/tin-thi-truong         301
+/blogs/tin-tt/*               /tin-tuc/tin-doanh-nghiep/:splat 301
+/blogs/news/*                 /tin-tuc/tin-doanh-nghiep/:splat 301
+/blogs/tin-tuc-thi-truong/*   /tin-tuc/tin-thi-truong/:splat   301

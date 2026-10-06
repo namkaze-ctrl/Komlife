@@ -1,0 +1,43 @@
+---
+// Khối "Thông tin pháp lý": giấy chứng nhận, bấm vào phóng to. Nội dung: Khối dùng chung.
+import { getImage } from 'astro:assets';
+import Anh from './Anh.astro';
+import { khoiChung } from '../lib/noi-dung';
+import { timAnh } from '../lib/anh';
+import { tieuDe, dong } from '../lib/chu';
+const p = khoiChung.phap_ly;
+const giay = await Promise.all(p.giay.filter((g) => g.hien_thi !== false).map(async (g) => {
+  const a = timAnh(g.anh);
+  const lon = a ? (await getImage({ src: a, width: Math.min(a.width, 1800), format: 'jpg' })).src : g.anh;
+  return { ...g, lon };
+}));
+---
+{giay.length > 0 && (
+<section class="sec">
+  <div class="wrap stack g40">
+    <div class="stack g16" style="max-width:58ch">
+      <div class="eb">{p.nhan}</div>
+      <h2 set:html={tieuDe(p.tieu_de)} />
+      <p class="lead" set:html={dong(p.mo_ta)} />
+    </div>
+    <div class="giay">
+      {giay.map((g) => (
+        <div class="giay__i rv">
+          <button type="button" data-lb={g.lon} aria-label={`Phóng to ${g.ten}`}>
+            <Anh src={g.anh} alt={`Giấy chứng nhận ${g.ten} của Komlife`} sizes="(max-width:720px) 92vw, (max-width:1240px) 45vw, 557px" />
+          </button>
+          <div class="giay__c">
+            <h3 style="font-size:1.06rem">{g.ten}</h3>
+            <p class="card__b" style="font-size:.92rem">{g.pham_vi}</p>
+            <div class="giay__m">
+              {g.ma_so && <>Mã số <b>{g.ma_so}</b></>}
+              {g.ngay_cap && <> · Cấp <b>{g.ngay_cap}</b></>}
+              {g.noi_cap && <> · Nơi cấp {g.noi_cap}</>}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+)}

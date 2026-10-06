@@ -1,0 +1,13 @@
+---
+// Phần đầu của các trang con (nhãn nhỏ + tiêu đề lớn + một đoạn dẫn).
+import { tieuDe, dong } from '../lib/chu';
+interface Props { nhan: string; tieuDe: string; moTa?: string }
+const { nhan, tieuDe: td, moTa } = Astro.props;
+---
+<section class="phead">
+  <div class="wrap stack g16">
+    <div class="eb">{nhan}</div>
+    <h1 style="font-size:clamp(2.1rem,4.4vw,3.5rem)" set:html={tieuDe(td)} />
+    {moTa && <p class="lead prose" set:html={dong(moTa)} />}
+  </div>
+</section>

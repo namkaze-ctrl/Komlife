@@ -1,0 +1,30 @@
+---
+// DANH SÁCH NHÃN HÀNG — nội dung: src/content/trang/nhan-hang.json + 5 file trong src/content/nhan-hang/
+import Base from '../../layouts/Base.astro';
+import Anh from '../../components/Anh.astro';
+import DauTrangCon from '../../components/DauTrangCon.astro';
+import DongHanh from '../../components/DongHanh.astro';
+import nh from '../../content/trang/nhan-hang.json';
+import { layNhanHang } from '../../lib/noi-dung';
+const ds = await layNhanHang();
+---
+<Base tieuDe={nh.seo_tieu_de} moTa={nh.seo_mo_ta}>
+  <DauTrangCon nhan={nh.dau_trang.nhan} tieuDe={nh.dau_trang.tieu_de} moTa={nh.dau_trang.mo_ta} />
+  <section class="sec sec--tight">
+    <div class="wrap cards cards--3 spot">
+      {ds.map((b) => (
+        <a class="card rv fx-glow" href={`/nhan-hang/${b.ma}`} style="padding:0;overflow:hidden">
+          <Anh src={b.anh_bia} alt={b.ten} style="aspect-ratio:16/10;object-fit:cover;width:100%" sizes="(max-width:640px) 92vw, (max-width:1000px) 46vw, (max-width:1240px) 30vw, 367px" widths={[740, 1340]} />
+          <div style="padding:20px 22px 24px;display:flex;flex-direction:column;gap:8px">
+            <div class="eb">{b.nganh}</div>
+            <h3>{b.ten}</h3>
+            <p class="it" style="color:var(--gold);font-family:var(--fd);font-size:1.02rem">{b.cau_dinh_vi}</p>
+            <p class="card__b">{b.mo_ta}</p>
+            <span style="color:var(--gold);font-weight:600;font-size:.85rem;margin-top:4px">Xem nhãn →</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+  <DongHanh />
+</Base>

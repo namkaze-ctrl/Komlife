@@ -1,0 +1,34 @@
+{
+  "seo_tieu_de": "Chất lượng & Tiêu chuẩn — Komlife Việt Nam",
+  "seo_mo_ta": "Hệ thống sản xuất khép kín tại nhà máy Hưng Yên, chứng nhận ISO 9001:2015, ISO 14001:2015, nguyên liệu từ Mane, Givaudan, BASF, Kao và cách nhận biết hàng chính hãng.",
+  "dau_trang": {
+    "nhan": "Chất lượng & Tiêu chuẩn",
+    "tieu_de": "Bằng chứng,\nkhông phải *lời hứa*",
+    "mo_ta": "Trang này gom về một chỗ tất cả những gì có thể kiểm chứng được: chứng chỉ nào, nguyên liệu mua của ai, sản xuất ra sao, và làm thế nào để biết chai bạn cầm là hàng thật."
+  },
+  "ba_the": [
+    { "nhan": "ISO 9001:2015 · ISO 14001:2015 · JIS", "tieu_de": "Hệ thống sản xuất", "mo_ta": "Quy trình khép kín tại nhà máy Hưng Yên, tuân thủ nghiêm ngặt các tiêu chuẩn chất lượng. Chứng nhận Hệ thống Quản lý Chất lượng ISO 9001:2015, Hệ thống Quản lý Môi trường ISO 14001:2015, Tiêu chuẩn Công nghiệp Nhật Bản (JIS)." },
+    { "nhan": "Mane · Givaudan · BASF · Kao", "tieu_de": "Nguyên liệu & Công nghệ", "mo_ta": "Ứng dụng công nghệ xanh, nguyên liệu an toàn, kết hợp hợp tác chiến lược với các tập đoàn hương liệu lớn trên thế giới (như Tập đoàn Mane, KAO, BASF, Givaudan)." },
+    { "nhan": "100% sản phẩm", "tieu_de": "Kiểm định", "mo_ta": "100% sản phẩm trước khi đưa ra thị trường đều phải trải qua quy trình kiểm tra chất lượng tại phòng Lab hiện đại." }
+  ],
+  "quy_trinh": {
+    "nhan": "Quy trình",
+    "tieu_de": "Khép kín từ bồn pha\nđến *thùng hàng*"
+  },
+  "doi_tac": {
+    "nhan": "Tiêu chuẩn nguyên liệu",
+    "tieu_de": "Vì sao Komlife chọn *những đối tác này?*",
+    "mo_ta": "Không chỉ là nguồn cung nguyên liệu, đây là những đối tác có năng lực chuyên môn và tiêu chuẩn được kiểm chứng trong ngành."
+  },
+  "hang_that": {
+    "nhan": "Chống hàng giả",
+    "tieu_de": "Ba tiêu chí cốt lõi *nhận biết sản phẩm chuẩn*",
+    "mo_ta": "Để bảo vệ quyền lợi người tiêu dùng, Komlife hướng dẫn ba dấu hiệu đơn giản để xác thực hàng thật ngay từ cái nhìn đầu tiên.",
+    "tieu_chi": [
+      { "ten": "Pháp nhân minh bạch", "mo_ta": "Bao gồm đầy đủ tên công ty, địa chỉ nhà máy Hưng Yên, văn phòng Hà Nội kèm hotline và email chuẩn xác; trong khi hàng nhái thường ghi lập lờ hoặc bỏ trống." },
+      { "ten": "Ký hiệu dập nổi trực tiếp", "mo_ta": "Ngày sản xuất và số lô được in trực tiếp trên thân chai, kiên cố chứ không dùng tem dán rời dễ tháo gỡ." },
+      { "ten": "Hệ thống phân phối uy tín", "mo_ta": "Giao dịch qua các kênh chính hãng hoặc đại lý độc quyền; hỗ trợ kiểm tra chéo số lô qua hotline khi có nghi ngờ." }
+    ],
+    "nut": "Gọi kiểm tra"
+  }
+}

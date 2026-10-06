@@ -1,0 +1,29 @@
+---
+// Dải 4 con số trên nền ảnh nhà máy + thẻ câu trích. Nội dung: Khối dùng chung.
+import Anh from './Anh.astro';
+import { khoiChung } from '../lib/noi-dung';
+import { bieuTuong, BIEU_TUONG } from '../lib/bieu-tuong';
+import { dong, thoat } from '../lib/chu';
+const k = khoiChung;
+---
+<section class="pp pp-band">
+  <Anh src={k.anh_dai_so_lieu} alt="Nhà máy Komlife tại Hưng Yên" sizes="(max-width:1099px) 173vw, 100vw" />
+  <div class="pp-band__in">
+    <div class="pp-stats">
+      {k.so_lieu.map((s) => (
+        <div class="pp-stat rv">
+          <Fragment set:html={bieuTuong(s.bieu_tuong)} />
+          <div>
+            <div class="pp-stat__n"><span class="count" data-n={s.so}>{s.so}</span>{s.don_vi && <sup>{s.don_vi}</sup>}</div>
+            <div class="pp-stat__k">{s.ten}</div>
+            <div class="pp-stat__d">{s.mo_ta}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="pp-quote">
+      <p set:html={`“${dong(k.cau_trich)}”`} />
+      <Fragment set:html={BIEU_TUONG.swash} />
+    </div>
+  </div>
+</section>

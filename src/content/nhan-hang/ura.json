@@ -1,0 +1,43 @@
+{
+  "thu_tu": 2,
+  "ten": "URA",
+  "nganh": "Nước giặt xả cao cấp",
+  "cau_ngan": "Sạch sâu, mềm mượt,\nhương hoa tinh tế",
+  "cau_dinh_vi": "Sạch sâu, mềm mượt, hương hoa tinh tế",
+  "mo_ta": "Lấy cảm hứng từ phong cách chăm sóc Nhật Bản, URA mang đến dòng giặt xả cao cấp với công thức 6 in 1, cùng những tầng hương hoa thanh lịch và lưu hương bền lâu.",
+  "cau_chuyen": "URA được xây dựng cho những gia đình giặt nhiều, giặt thường xuyên và cần một sản phẩm vừa sạch vừa giữ được form vải. Sản xuất trên cùng dây chuyền đạt ISO của Komlife, dùng hoạt chất từ BASF và hương liệu từ Givaudan.",
+  "danh_cho": "Gia đình có con nhỏ, người giặt máy hằng ngày.",
+  "anh_the_doc": "../../assets/anh/nhan-hang/ura-the-doc.jpg",
+  "anh_bia": "../../assets/anh/nhan-hang/ura-bia.jpg",
+  "tiktok": "",
+  "san_pham": [
+    {
+      "ten": "URA Nước giặt xả 6 in 1",
+      "anh": "../../assets/anh/san-pham/ura-1.jpg",
+      "tinh_trang": "Đang bán",
+      "dung_tich": "",
+      "cong_dung": "Sạch sâu đa tầng",
+      "mo_ta": "Lấy cảm hứng từ phong cách Floral Nhật Bản. Công nghệ sạch sâu đa tầng khử mùi hôi, giữ sợi vải tinh tươm.",
+      "mui_huong": [
+        { "ten": "Mẫu đơn & Lê mọng", "mo_ta": "Sang trọng, quyến rũ" },
+        { "ten": "Hoa hồng & Đào tươi", "mo_ta": "Ngọt ngào, tươi mới" },
+        { "ten": "Lily & Hoa cotton", "mo_ta": "Tinh khôi, thanh khiết" },
+        { "ten": "Hoa trà & Lan tiên", "mo_ta": "Thanh nhã" }
+      ]
+    },
+    {
+      "ten": "Nước rửa chén URA thiên nhiên",
+      "anh": "../../assets/anh/san-pham/ura-2.jpg",
+      "tinh_trang": "Đang bán",
+      "dung_tich": "",
+      "cong_dung": "Dịu nhẹ với da tay",
+      "mo_ta": "Làm sạch nhanh, khử mùi tanh và dịu với da tay — theo tinh thần Kirei: sạch đến từ sự tỉ mỉ.",
+      "mui_huong": [
+        { "ten": "Chanh sả", "mo_ta": "Thanh khiết, xua mùi tanh" },
+        { "ten": "Quế Java", "mo_ta": "Ấm áp, thư thái" }
+      ]
+    }
+  ],
+  "tinh_huong": { "tieu_de": "", "mo_ta": "", "danh_sach": [] },
+  "hoi_dap": []
+}

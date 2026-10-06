@@ -1,0 +1,158 @@
+---
+// Khung chung của mọi trang: thẻ cho Google, menu, chân trang, thanh đăng ký đại lý, hiệu ứng.
+import '../styles/global.css';
+import { getImage } from 'astro:assets';
+import Anh from '../components/Anh.astro';
+import { caiDat, layNhanHang } from '../lib/noi-dung';
+import { timAnh } from '../lib/anh';
+import { chuTron, soGoi } from '../lib/chu';
+
+interface Props {
+  tieuDe: string;
+  moTa?: string;
+  anhChiaSe?: string;
+  coHero?: boolean;
+  loai?: 'website' | 'article';
+}
+const { tieuDe, moTa, anhChiaSe, coHero = false, loai = 'website' } = Astro.props;
+
+const site = Astro.site ?? new URL('https://komlife.com.vn');
+const duong = Astro.url.pathname.replace(/\/$/, '') || '/';
+const canonical = new URL(duong, site).href;
+const moTaTrang = chuTron(moTa || caiDat.seo_mo_ta_mac_dinh);
+const tieuDeTrang = chuTron(tieuDe);
+
+const anhOg = timAnh(anhChiaSe || caiDat.anh_chia_se);
+const og = anhOg ? await getImage({ src: anhOg, width: 1200, format: 'jpg' }) : null;
+const ogUrl = og ? new URL(og.src, site).href : null;
+
+const nhan = await layNhanHang();
+const tel = soGoi(caiDat.hotline);
+const choGoogle = !!caiDat.cho_google_tim_thay;
+
+const MENU = [
+  ['/ve-komlife', 'Về Komlife'],
+  ['/nhan-hang', 'Nhãn hàng'],
+  ['/chat-luong-tieu-chuan', 'Chất lượng & Tiêu chuẩn'],
+  ['/tin-tuc', 'Tin tức'],
+  ['/lien-he', 'Liên hệ'],
+];
+const dangO = (h: string) => duong === h || duong.startsWith(h + '/');
+const oTrangDaiLy = duong === '/hop-tac-dai-ly';
+
+const logoUrl = timAnh('../../assets/anh/chung/logo-xanh.png');
+const logoAbs = logoUrl ? new URL((await getImage({ src: logoUrl, width: 646, format: 'png' })).src, site).href : undefined;
+const toChuc = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: caiDat.ten_cong_ty,
+  alternateName: caiDat.ten_ngan,
+  url: site.href,
+  logo: logoAbs,
+  telephone: caiDat.hotline,
+  email: caiDat.email,
+  address: { '@type': 'PostalAddress', streetAddress: caiDat.tru_so, addressCountry: 'VN' },
+};
+---
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script is:inline>document.documentElement.classList.add('has-js');
+    // Đường dẫn kiểu cũ của bản dựng thử (…/#/nhan-hang/spy) -> địa chỉ mới
+    (function(){var h=location.hash;if(h.indexOf('#/')!==0)return;
+      var p=h.slice(2).split('/').filter(Boolean),m={'chat-luong':'chat-luong-tieu-chuan','dai-ly':'hop-tac-dai-ly'};
+      if(p.length){p[0]=m[p[0]]||p[0];location.replace('/'+p.join('/'));}})();</script>
+  <title>{tieuDeTrang}</title>
+  <meta name="description" content={moTaTrang}>
+  <link rel="canonical" href={canonical}>
+  {!choGoogle && <meta name="robots" content="noindex,nofollow">}
+  <meta property="og:type" content={loai}>
+  <meta property="og:title" content={tieuDeTrang}>
+  <meta property="og:description" content={moTaTrang}>
+  <meta property="og:url" content={canonical}>
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content={caiDat.ten_ngan}>
+  {ogUrl && <meta property="og:image" content={ogUrl}>}
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="sitemap" href="/sitemap-index.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap">
+  <script type="application/ld+json" set:html={JSON.stringify(toChuc)} />
+  <slot name="head" />
+</head>
+<body data-hero={coHero ? '1' : '0'} data-dai-ly={oTrangDaiLy ? '1' : '0'}>
+  <div class="page-bg" aria-hidden="true"></div>
+  <div class="sprog" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <div class="wrap nav__in">
+      <a class="mark" href="/" aria-label={`${caiDat.ten_ngan} — về trang chủ`}>
+        <Anh class="mark__s" src="../../assets/anh/chung/logo-xanh.png" alt="Komlife" widths={[323, 646]} sizes="160px" loading="eager" />
+        <Anh class="mark__t" src="../../assets/anh/chung/logo-trang.png" alt="" widths={[323, 646]} sizes="160px" loading="eager" />
+      </a>
+      <button class="nav__btn" id="navbtn" aria-expanded="false" aria-controls="navlinks">Menu</button>
+      <nav class="nav__links" id="navlinks">
+        {MENU.map(([h, t]) => <a href={h} aria-current={dangO(h) ? 'page' : undefined}>{t}</a>)}
+        <a href="/hop-tac-dai-ly" class="nav__cta" aria-current={oTrangDaiLy ? 'page' : undefined}>Đăng ký làm đại lý</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="app"><slot /></main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__cols">
+        <div>
+          <div class="mark mark--foot"><Anh src="../../assets/anh/chung/logo-trang.png" alt={caiDat.ten_ngan} widths={[323, 646]} sizes="160px" /></div>
+          <p class="foot__l" style="margin-top:16px;max-width:34ch">{caiDat.gioi_thieu_chan_trang}</p>
+        </div>
+        <div>
+          <div class="foot__h">Nhãn hàng</div>
+          <div class="foot__l">{nhan.map((b) => <a href={`/nhan-hang/${b.ma}`}>{b.ten}</a>)}</div>
+        </div>
+        <div>
+          <div class="foot__h">Công ty</div>
+          <div class="foot__l">
+            <a href="/ve-komlife">Về Komlife</a><a href="/chat-luong-tieu-chuan">Chất lượng &amp; Tiêu chuẩn</a>
+            <a href="/hop-tac-dai-ly">Hợp tác đại lý</a><a href="/tin-tuc">Tin tức</a><a href="/lien-he">Liên hệ</a>
+          </div>
+        </div>
+        <div>
+          <div class="foot__h">Liên hệ</div>
+          <div class="foot__l">
+            <a href={`tel:${tel}`}>{caiDat.hotline}</a>
+            <a href={`mailto:${caiDat.email}`}>{caiDat.email}</a>
+            <span>Trụ sở chính: {caiDat.tru_so}</span>
+            <span>Nhà máy: {caiDat.nha_may}</span>
+          </div>
+        </div>
+      </div>
+      <div class="foot__bar">
+        <span>© {new Date().getFullYear()} {caiDat.ten_cong_ty}</span>
+        <span class="foot__pl"><a href="/chinh-sach-bao-mat">Chính sách bảo mật</a> · <a href="/chinh-sach-doi-tra">Chính sách đổi trả</a> · <a href="/dieu-khoan-dich-vu">Điều khoản sử dụng</a></span>
+      </div>
+    </div>
+  </footer>
+
+  {!oTrangDaiLy && (
+    <div id="dlbar" aria-hidden="true">
+      <a class="b1" href="/hop-tac-dai-ly">{caiDat.nut_day_trang}</a>
+      <a class="b2" href={`tel:${tel}`} aria-label={`Gọi ${caiDat.hotline}`}>
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.3-.3.75-.4 1.14-.27 1.25.41 2.6.63 3.95.63.62 0 1.12.5 1.12 1.12v3.49c0 .62-.5 1.12-1.12 1.12C10.83 21.77 2.23 13.17 2.23 2.5c0-.62.5-1.12 1.12-1.12h3.5c.62 0 1.12.5 1.12 1.12 0 1.36.22 2.7.63 3.95.12.39.03.83-.28 1.14l-2.2 2.2z"/></svg>
+      </a>
+    </div>
+  )}
+
+  <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Xem ảnh lớn"><img id="lbimg" alt=""></div>
+
+  <script>
+    import { khoiDong } from '../lib/hieu-ung';
+    khoiDong();
+  </script>
+</body>
+</html>

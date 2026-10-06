@@ -1,0 +1,62 @@
+{
+  "so_lieu": [
+    { "so": "15", "don_vi": "+", "ten": "Năm đồng hành", "mo_ta": "với hàng triệu gia đình Việt", "bieu_tuong": "khien" },
+    { "so": "20.000", "don_vi": "m²", "ten": "Nhà máy hiện đại", "mo_ta": "đạt chuẩn quốc tế", "bieu_tuong": "nhamay" },
+    { "so": "6.000.000", "don_vi": "", "ten": "Sản phẩm / năm", "mo_ta": "Năng lực sản xuất", "bieu_tuong": "sanpham" },
+    { "so": "63", "don_vi": "", "ten": "Tỉnh thành", "mo_ta": "Mạng lưới phân phối", "bieu_tuong": "ghim" }
+  ],
+  "anh_dai_so_lieu": "../../assets/anh/trang-chu/dai-so-lieu-nha-may.jpg",
+  "cau_trich": "Cùng Komlife Việt Nam,\nnâng tầm cuộc sống\ncho mỗi gia đình Việt.",
+  "dong_hanh": {
+    "nhan": "Đồng hành bền vững",
+    "tieu_de": "Kết nối trực tiếp nhà máy,\ntối ưu quyền lợi đối tác",
+    "mo_ta": "Chính sách giá minh bạch thống nhất toàn quốc, chủ động hoàn toàn nguồn hàng từ nhà máy lớn để đảm bảo tiến độ kinh doanh. Kèm theo đó là đội ngũ phụ trách chuyên biệt theo từng khu vực, luôn túc trực hỗ trợ nhanh chóng.",
+    "anh": "../../assets/anh/chung/dong-hanh-vinh-danh-doi-tac.jpg",
+    "nut": "Đăng ký làm đại lý →",
+    "diem_manh": [
+      { "bieu_tuong": "hop", "chu": "Sản phẩm\nchất lượng" },
+      { "bieu_tuong": "the", "chu": "Chính sách\nhấp dẫn" },
+      { "bieu_tuong": "hotro", "chu": "Hỗ trợ\ntoàn diện" },
+      { "bieu_tuong": "dongh", "chu": "Đồng hành\nlâu dài" }
+    ]
+  },
+  "quy_trinh": {
+    "mo_ta": "Từ sản xuất, kiểm định đến đóng gói đều được thực hiện khép kín tại nhà máy Komlife Việt Nam mà không qua bên thứ ba. Quy trình này đều nằm trong tầm kiểm soát của chúng tôi, đảm bảo khả năng truy xuất nguồn gốc nhanh chóng và minh bạch tuyệt đối.",
+    "cac_khau": [
+      { "anh": "../../assets/anh/quy-trinh/khau-1-nguyen-lieu.jpg", "tieu_de": "Nguyên liệu chọn lọc", "mo_ta": "Hương liệu từ Mane và Givaudan, hoạt chất từ BASF và Kao." },
+      { "anh": "../../assets/anh/quy-trinh/khau-2-san-xuat.jpg", "tieu_de": "Sản xuất hiện đại", "mo_ta": "Pha chế và chiết rót ngay tại nhà máy Hưng Yên, không thuê ngoài." },
+      { "anh": "../../assets/anh/quy-trinh/khau-3-kiem-soat.jpg", "tieu_de": "Kiểm soát chất lượng", "mo_ta": "Mỗi mẻ có hồ sơ riêng và mẫu lưu để đối chứng về sau." },
+      { "anh": "../../assets/anh/quy-trinh/khau-4-dong-goi.jpg", "tieu_de": "Đóng gói & phân phối", "mo_ta": "In số lô dập nổi lên vỏ chai, rồi đi 63 tỉnh thành." }
+    ]
+  },
+  "dau_moc": [
+    { "nam": "2010", "tieu_de": "Thành lập Komlife Việt Nam", "mo_ta": "Khởi đầu từ ngày 19/05/2010 với sứ mệnh phân phối các sản phẩm hóa mỹ phẩm chất lượng." },
+    { "nam": "2018", "tieu_de": "Khánh thành nhà máy Hưng Yên", "mo_ta": "Xây dựng và khánh thành nhà máy 20.000m² tại Yên Mỹ, Hưng Yên, chính thức bước vào giai đoạn tự chủ toàn diện chuỗi sản xuất." },
+    { "nam": "2020", "tieu_de": "Đạt chứng nhận ISO 9001 và ISO 14001", "mo_ta": "Nhận chứng nhận tiêu chuẩn quốc tế ISO 9001 và ISO 14001 từ TNV Certification Vietnam." },
+    { "nam": "2025", "tieu_de": "Kỷ niệm 15 năm thành lập", "mo_ta": "Cột mốc 15 năm phát triển với 5 nhãn hàng chủ lực và mạng lưới phủ rộng khắp 63 tỉnh thành." }
+  ],
+  "doi_tac_nguyen_lieu": [
+    { "ten": "Mane", "quoc_gia": "Pháp", "nhom": "Hương liệu", "mo_ta": "Kinh nghiệm lâu năm trong lĩnh vực hương liệu, phát triển nguyên liệu cho nhiều ngành hàng tiêu dùng trên thế giới." },
+    { "ten": "Givaudan", "quoc_gia": "Thụy Sĩ", "nhom": "Hương liệu", "mo_ta": "Năng lực chuyên sâu về hương liệu, hỗ trợ Komlife phát triển những trải nghiệm mùi hương phù hợp với từng dòng sản phẩm." },
+    { "ten": "BASF", "quoc_gia": "Đức", "nhom": "Hoạt chất", "mo_ta": "Nguồn nguyên liệu từ tập đoàn hóa chất hàng đầu thế giới, đáp ứng các yêu cầu về chất lượng và tính ổn định trong sản xuất." },
+    { "ten": "Kao", "quoc_gia": "Nhật Bản", "nhom": "Hoạt chất", "mo_ta": "Kinh nghiệm lâu năm trong lĩnh vực chăm sóc gia đình và hóa chất tiêu dùng, cung cấp nguyên liệu cho các công thức của Komlife." }
+  ],
+  "phap_ly": {
+    "nhan": "Thông tin pháp lý",
+    "tieu_de": "Chứng nhận *minh bạch*",
+    "mo_ta": "Komlife Việt Nam cung cấp đầy đủ các giấy tờ, chứng nhận với thông tin kiểm chứng cụ thể, mang lại sự an tâm và minh bạch tuyệt đối trong hợp tác.",
+    "giay": [
+      { "hien_thi": true, "ten": "ISO 9001:2015 / TCVN ISO 9001:2015", "pham_vi": "Sản xuất và kinh doanh các sản phẩm hoá mỹ phẩm", "ma_so": "TNV.201173", "ngay_cap": "05/05/2020", "noi_cap": "TNV Certification Vietnam (UAF · IAF)", "anh": "../../assets/anh/chung-nhan/iso-9001.jpg" },
+      { "hien_thi": true, "ten": "ISO 14001:2015 / TCVN ISO 14001:2015", "pham_vi": "Hệ thống quản lý môi trường", "ma_so": "TNV.201181", "ngay_cap": "05/05/2020", "noi_cap": "TNV Certification Vietnam (UAF · IAF)", "anh": "../../assets/anh/chung-nhan/iso-14001.jpg" }
+    ]
+  },
+  "he_thong_ban_le": [
+    { "ten": "Hệ thống siêu thị Thành Đô", "logo": "../../assets/anh/doi-tac-ban-le/logo-1.jpg" },
+    { "ten": "Dongtien", "logo": "../../assets/anh/doi-tac-ban-le/logo-2.jpg" },
+    { "ten": "Siêu thị Thành Công (TC Mart)", "logo": "../../assets/anh/doi-tac-ban-le/logo-3.jpg" },
+    { "ten": "Khoáng sản Tuyên Quang", "logo": "../../assets/anh/doi-tac-ban-le/logo-4.jpg" },
+    { "ten": "Hoàng Sơn", "logo": "../../assets/anh/doi-tac-ban-le/logo-5.jpg" },
+    { "ten": "M10 Mart", "logo": "../../assets/anh/doi-tac-ban-le/logo-6.jpg" },
+    { "ten": "B11 Kim Liên Mart", "logo": "../../assets/anh/doi-tac-ban-le/logo-7.jpg" }
+  ]
+}

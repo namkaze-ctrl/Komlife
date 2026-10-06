@@ -1,0 +1,24 @@
+---
+// Dải logo các hệ thống bán lẻ đang bày hàng Komlife (chạy ngang). Nội dung: Khối dùng chung + Trang chủ.
+import Anh from './Anh.astro';
+import { khoiChung } from '../lib/noi-dung';
+import { tieuDe } from '../lib/chu';
+interface Props { nhan: string; tieuDe: string }
+const { nhan, tieuDe: td } = Astro.props;
+const ds = khoiChung.he_thong_ban_le;
+---
+<section class="sec sec--tight sec--panel">
+  <div class="wrap stack g28">
+    <div class="stack g12" style="max-width:60ch">
+      <div class="eb">{nhan}</div>
+      <h2 style="font-size:clamp(1.6rem,2.6vw,2.2rem)" set:html={tieuDe(td)} />
+    </div>
+    <div class="dtrun rv"><div class="dtrun__t">
+      {[0, 1].map((lan) => ds.map((d) => (
+        <div class="dt" title={d.ten} aria-hidden={lan === 1 ? 'true' : undefined}>
+          <Anh src={d.logo} alt={lan === 1 ? '' : d.ten} widths={[240]} sizes="120px" />
+        </div>
+      )))}
+    </div></div>
+  </div>
+</section>

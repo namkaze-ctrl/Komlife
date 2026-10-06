@@ -1,0 +1,41 @@
+{
+  "seo_tieu_de": "Hợp tác đại lý — Nhập hàng trực tiếp từ nhà máy Komlife",
+  "seo_mo_ta": "Đăng ký làm đại lý, nhà phân phối Komlife Việt Nam: giá thống nhất toàn quốc, nguồn hàng từ nhà máy 20.000m², nhân viên phụ trách từng khu vực.",
+  "dau_trang": {
+    "nhan": "Hợp tác đại lý",
+    "tieu_de": "Nguồn hàng có\n*nhà máy đứng sau*",
+    "mo_ta": "Bạn không nhập hàng từ một công ty thương mại đi gom hàng. Bạn nhập thẳng từ nơi sản xuất — nên giá ổn định, hàng luôn có, và có người chịu trách nhiệm khi phát sinh."
+  },
+  "bon_the": [
+    { "tieu_de": "Sản phẩm chất lượng", "mo_ta": "Năm nhãn, cùng ra từ nhà máy Hưng Yên." },
+    { "tieu_de": "Chính sách hấp dẫn", "mo_ta": "Chiết khấu tăng dần theo doanh số tháng." },
+    { "tieu_de": "Hỗ trợ toàn diện", "mo_ta": "Kệ, standee, bảng giá, bộ ảnh sản phẩm." },
+    { "tieu_de": "Đồng hành lâu dài", "mo_ta": "Hàng lỗi do sản xuất thì được đổi." }
+  ],
+  "chinh_sach": {
+    "nhan": "Chính sách",
+    "tieu_de": "Chúng tôi *hỗ trợ gì*",
+    "muc": [
+      { "ten": "Chiết khấu theo sản lượng", "mo_ta": "Mức chiết khấu tăng theo doanh số tháng. Bảng chiết khấu cụ thể do bộ phận kinh doanh gửi khi tư vấn." },
+      { "ten": "Vật phẩm trưng bày", "mo_ta": "Kệ, standee, bảng giá và hàng mẫu cho cửa hàng mới mở quầy." },
+      { "ten": "Hỗ trợ truyền thông", "mo_ta": "Bộ ảnh sản phẩm, nội dung đăng bán và chương trình khuyến mãi theo mùa dùng chung với nhãn." },
+      { "ten": "Chính sách đổi trả", "mo_ta": "Hàng lỗi do sản xuất được đổi. Điều kiện và thời hạn xem tại trang Chính sách đổi trả." }
+    ]
+  },
+  "cac_buoc": {
+    "nhan": "Quy trình",
+    "tieu_de": "Từ đăng ký *đến nhận hàng*",
+    "buoc": [
+      { "tieu_de": "Điền mẫu đăng ký", "mo_ta": "Để lại tên, số điện thoại, tỉnh thành và loại hình kinh doanh." },
+      { "tieu_de": "Nhân viên gọi lại", "mo_ta": "Trong 24 giờ làm việc, để hiểu quy mô và tư vấn danh mục phù hợp." },
+      { "tieu_de": "Chốt chính sách", "mo_ta": "Thống nhất chiết khấu, công nợ và danh mục hàng nhập lần đầu." },
+      { "tieu_de": "Giao hàng, mở quầy", "mo_ta": "Hàng giao tận nơi kèm vật phẩm trưng bày." }
+    ]
+  },
+  "dang_ky": {
+    "nhan": "Đăng ký",
+    "tieu_de": "Để lại thông tin,\nchúng tôi gọi lại *trong 24 giờ*",
+    "mo_ta": "Hoặc gọi thẳng hotline nếu bạn ngại điền mẫu.",
+    "loai_hinh": ["Tạp hoá / cửa hàng", "Siêu thị mini", "Bán online", "Nhà phân phối tỉnh", "Khác"]
+  }
+}

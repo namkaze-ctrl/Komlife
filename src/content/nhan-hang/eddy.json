@@ -1,0 +1,37 @@
+{
+  "thu_tu": 5,
+  "ten": "Eddy",
+  "nganh": "Chất tẩy rửa",
+  "cau_ngan": "Giải pháp cho những\nviệc nhà khó xử lý",
+  "cau_dinh_vi": "Giải pháp cho những việc nhà khó xử lý",
+  "mo_ta": "Eddy tập trung vào những sản phẩm tẩy rửa chuyên dụng, giúp xử lý các vấn đề làm sạch thường gặp trong gia đình.",
+  "cau_chuyen": "Eddy làm phần việc mà không ai muốn làm: dầu mỡ bám bếp, cặn xà phòng trong nhà tắm, vết ố lâu ngày. Công thức mạnh nhưng vẫn kiểm soát độ an toàn khi tiếp xúc tay.",
+  "danh_cho": "Hộ gia đình, quán ăn, cửa hàng nhỏ.",
+  "anh_the_doc": "../../assets/anh/nhan-hang/eddy-the-doc.jpg",
+  "anh_bia": "../../assets/anh/nhan-hang/eddy-bia.jpg",
+  "tiktok": "",
+  "san_pham": [
+    {
+      "ten": "Nước lau kính Eddy Lavender",
+      "anh": "../../assets/anh/san-pham/eddy-1.jpg",
+      "tinh_trang": "Đang bán",
+      "dung_tich": "",
+      "cong_dung": "Sạch bóng, chống bám bụi",
+      "mo_ta": "Làm sạch trong suốt mọi bề mặt kính chỉ sau một lần lau, chống bụi bám trở lại. Dùng được cho kính trong, kính mờ, gương, pha lê, ly tách và đồ thuỷ tinh.",
+      "mui_huong": [
+        { "ten": "Lavender", "mo_ta": "Hương oải hương tươi mát" }
+      ]
+    },
+    {
+      "ten": "Bột tẩy cặn máy giặt Eddy",
+      "anh": "../../assets/anh/san-pham/eddy-1.jpg",
+      "tinh_trang": "Đang bán",
+      "dung_tich": "",
+      "cong_dung": "Làm sạch lồng giặt",
+      "mo_ta": "Làm sạch lồng giặt và đường thoát nước, loại bỏ mảng bám, rêu mốc và cặn bẩn lâu ngày — thứ khiến quần áo giặt xong vẫn có mùi.",
+      "mui_huong": []
+    }
+  ],
+  "tinh_huong": { "tieu_de": "", "mo_ta": "", "danh_sach": [] },
+  "hoi_dap": []
+}

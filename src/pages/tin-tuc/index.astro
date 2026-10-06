@@ -1,0 +1,24 @@
+---
+// TIN TỨC — tất cả bài đã đăng. Nội dung trang: src/content/trang/tin-tuc.json; bài: src/content/tin-tuc/*.md
+import Base from '../../layouts/Base.astro';
+import DauTrangCon from '../../components/DauTrangCon.astro';
+import DanhSachTin from '../../components/DanhSachTin.astro';
+import DongHanh from '../../components/DongHanh.astro';
+import tt from '../../content/trang/tin-tuc.json';
+import { layTinDaDang } from '../../lib/noi-dung';
+const ds = await layTinDaDang();
+const muc = Object.entries(tt.ten_chuyen_muc);
+---
+<Base tieuDe={tt.seo_tieu_de} moTa={tt.seo_mo_ta}>
+  <DauTrangCon nhan={tt.dau_trang.nhan} tieuDe={tt.dau_trang.tieu_de} moTa={tt.dau_trang.mo_ta} />
+  <section class="sec sec--tight">
+    <div class="wrap stack g28">
+      <nav class="tab-tin" aria-label="Chuyên mục tin">
+        <a href="/tin-tuc" aria-current="page">Tất cả</a>
+        {muc.map(([ma, ten]) => <a href={`/tin-tuc/${ma}`}>{ten}</a>)}
+      </nav>
+      <DanhSachTin ds={ds} />
+    </div>
+  </section>
+  <DongHanh />
+</Base>

@@ -1,0 +1,74 @@
+{
+  "thu_tu": 1,
+  "ten": "SPY",
+  "nganh": "Chăm sóc gia đình",
+  "cau_ngan": "Giữ trọn cảm giác\nsạch thơm mỗi ngày",
+  "cau_dinh_vi": "Giữ trọn cảm giác sạch thơm mỗi ngày",
+  "mo_ta": "Từ nước giặt, nước xả đến xịt thơm vải, SPY mang đến giải pháp chăm sóc quần áo trọn vẹn – sạch sâu, thơm lâu và sẵn sàng cho mọi nhịp sống hiện đại.",
+  "cau_chuyen": "SPY sinh ra cho áp lực thầm lặng của người nội trợ: giặt giũ phải sạch, phải nhanh, mà quần áo vẫn thơm được lâu. Trục chính của SPY là nước giặt xả và nước xả vải sản xuất tại nhà máy Komlife. Dòng xịt thơm vải ra sau, để xử lý mùi phát sinh trong ngày mà không phải giặt lại.",
+  "danh_cho": "Gia đình trẻ và người đi làm tại thành thị, quan tâm đến mùi hương và sự chỉn chu.",
+  "anh_the_doc": "../../assets/anh/nhan-hang/spy-the-doc.jpg",
+  "anh_bia": "../../assets/anh/nhan-hang/spy-bia.jpg",
+  "tiktok": "https://www.tiktok.com/@spy.viet.nam",
+  "san_pham": [
+    {
+      "ten": "SPY Ultra Clean Plus — Nước giặt xả 6 in 1",
+      "anh": "../../assets/anh/san-pham/spy-2.jpg",
+      "tinh_trang": "Đang bán",
+      "dung_tich": "",
+      "cong_dung": "Giặt và xả trong một lần",
+      "mo_ta": "Sản phẩm chủ lực của SPY. Công thức đậm đặc gộp giặt và xả: làm sạch sâu, khử mùi hôi, giữ hương trên sợi vải. Dùng được cho cả giặt tay và giặt máy.",
+      "mui_huong": [
+        { "ten": "Blossom", "mo_ta": "Hương nồng nàn" },
+        { "ten": "Golden Blossom", "mo_ta": "Hương hiện đại, trẻ trung" }
+      ]
+    },
+    {
+      "ten": "SPY Nước xả vải 6 in 1",
+      "anh": "../../assets/anh/san-pham/spy-1.jpg",
+      "tinh_trang": "Đang bán",
+      "dung_tich": "",
+      "cong_dung": "Khử mùi và chống mốc",
+      "mo_ta": "Làm mềm sợi vải và giữ hương, kèm khả năng chống mốc cho quần áo phơi trong nhà những ngày ẩm.",
+      "mui_huong": []
+    },
+    {
+      "ten": "SPY Xịt thơm vải",
+      "anh": "../../assets/anh/san-pham/spy-3.jpg",
+      "tinh_trang": "Đang bán",
+      "dung_tich": "100ml",
+      "cong_dung": "Khử mùi suốt 24h",
+      "mo_ta": "Dòng dùng nhanh: chai xịt bỏ túi, xịt trực tiếp lên quần áo, chăn ga, rèm, ghế sofa để xử lý mùi phát sinh trong ngày mà không phải giặt lại.",
+      "mui_huong": [
+        { "ten": "Dream Violet", "mo_ta": "Hương hoa violet" },
+        { "ten": "Pink Whisper", "mo_ta": "Hương hoa anh đào" },
+        { "ten": "Pure White", "mo_ta": "Hương hoa trắng" }
+      ]
+    },
+    {
+      "ten": "SPY Xịt khử mùi nhà vệ sinh",
+      "anh": "",
+      "tinh_trang": "Sắp ra mắt",
+      "dung_tich": "",
+      "cong_dung": "Khử mùi trước khi mùi kịp lan",
+      "mo_ta": "Xịt lên mặt nước bồn cầu trước khi dùng, tạo lớp màng giữ mùi lại — không phải xịt phủ thơm lên mùi cũ.",
+      "mui_huong": []
+    }
+  ],
+  "tinh_huong": {
+    "tieu_de": "Bốn lúc cần *xịt thơm vải*",
+    "mo_ta": "Bốn tình huống dưới đây là của riêng dòng xịt thơm vải — thứ dùng xen giữa hai lần giặt.",
+    "danh_sach": [
+      { "ten": "Trước khi ra khỏi nhà", "mo_ta": "Xịt lên áo khoác, áo sơ mi để cả ngày không lo mùi tủ, mùi ẩm." },
+      { "ten": "Sau bữa cơm", "mo_ta": "Mùi dầu mỡ bám vào áo — xịt một lần là bay, không cần thay đồ." },
+      { "ten": "Ngày mưa nồm", "mo_ta": "Quần áo phơi trong nhà lâu khô, có mùi ẩm. Xịt trước khi mặc là dùng được ngay." },
+      { "ten": "Trước khi đi ngủ", "mo_ta": "Xịt lên chăn ga, gối để giường luôn thơm như vừa thay đồ mới." }
+    ]
+  },
+  "hoi_dap": [
+    { "hoi": "Xịt lên quần áo có để lại vết ố không?", "dap": "Không. Sản phẩm dạng sương mịn, bay hơi nhanh, không để lại vết trên vải sáng màu. Với vải lụa hoặc đồ da, nên xịt thử ở mặt trong trước." },
+    { "hoi": "Nhà có máy giặt cửa trên và cửa ngang, dùng chung một loại được không?", "dap": "Được. Công thức đậm đặc dùng cho cả hai loại máy và cả giặt tay; chỉ khác liều lượng, ghi trên vỏ chai." },
+    { "hoi": "Khử mùi 24h nghĩa là gì?", "dap": "Sau một lần xịt, mùi khó chịu được trung hoà và hương lưu lại trên vải trong khoảng 24 giờ ở điều kiện sử dụng thông thường." },
+    { "hoi": "Sản phẩm được sản xuất ở đâu?", "dap": "Tại nhà máy Komlife 20.000m² ở Hưng Yên, đạt ISO 9001:2015 và ISO 14001:2015 (mã TNV.201173 và TNV.201181)." }
+  ]
+}

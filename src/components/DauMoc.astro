@@ -1,0 +1,30 @@
+---
+// Bốn dấu mốc 15 năm + ảnh lễ kỷ niệm. Các mốc: Khối dùng chung. Tiêu đề, ảnh: Trang chủ.
+import Anh from './Anh.astro';
+import { khoiChung } from '../lib/noi-dung';
+import { tieuDe } from '../lib/chu';
+interface Props { nhan: string; tieuDe: string; anh?: string; chuThich?: string }
+const { nhan, tieuDe: td, anh, chuThich } = Astro.props;
+---
+<section class="sec sec--warm">
+  <div class="wrap stack g40">
+    <div class="stack g16" style="max-width:52ch">
+      <div class="eb">{nhan}</div>
+      <h2 set:html={tieuDe(td)} />
+    </div>
+    <div class="mocs">
+      <div class="rv">
+        {khoiChung.dau_moc.map((m) => (
+          <div class="moc"><div class="moc__y">{m.nam}</div>
+            <div><div class="moc__t">{m.tieu_de}</div><div class="moc__d">{m.mo_ta}</div></div></div>
+        ))}
+      </div>
+      {anh && (
+        <figure class="mocs__img rv" style="margin:0">
+          <Anh src={anh} alt={chuThich || 'Lễ kỷ niệm 15 năm thành lập Công ty TNHH Komlife Việt Nam'} sizes="(max-width:940px) 92vw, (max-width:1240px) 42vw, 511px" />
+          {chuThich && <figcaption>{chuThich}</figcaption>}
+        </figure>
+      )}
+    </div>
+  </div>
+</section>

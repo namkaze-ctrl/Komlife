@@ -1,0 +1,45 @@
+---
+// VỀ KOMLIFE — nội dung: src/content/trang/ve-komlife.json (+ các mốc ở Khối dùng chung)
+import Base from '../layouts/Base.astro';
+import DauTrangCon from '../components/DauTrangCon.astro';
+import DaiSoLieu from '../components/DaiSoLieu.astro';
+import DongHanh from '../components/DongHanh.astro';
+import vk from '../content/trang/ve-komlife.json';
+import { khoiChung } from '../lib/noi-dung';
+import { tieuDe, dong } from '../lib/chu';
+---
+<Base tieuDe={vk.seo_tieu_de} moTa={vk.seo_mo_ta}>
+  <DauTrangCon nhan={vk.dau_trang.nhan} tieuDe={vk.dau_trang.tieu_de} moTa={vk.dau_trang.mo_ta} />
+
+  <section class="sec">
+    <div class="wrap split">
+      <div class="stack g16"><div class="eb">{vk.lich_su.nhan}</div><h2 set:html={tieuDe(vk.lich_su.tieu_de)} /></div>
+      <div class="tl">
+        {khoiChung.dau_moc.map((m) => (
+          <div class="tl__i rv"><div class="tl__y">{m.nam}</div><div><h4>{m.tieu_de}</h4>
+            <p class="card__b">{m.mo_ta}</p></div></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <DaiSoLieu />
+
+  <section class="sec sec--panel">
+    <div class="wrap cards cards--2">
+      <div class="card"><div class="eb">Sứ mệnh</div><p class="lead" set:html={dong(vk.su_menh)} /></div>
+      <div class="card"><div class="eb">Tầm nhìn</div><p class="lead" set:html={dong(vk.tam_nhin)} /></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap split">
+      <div class="stack g16"><div class="eb">{vk.gia_tri.nhan}</div><h2 set:html={tieuDe(vk.gia_tri.tieu_de)} /></div>
+      <div class="rows">
+        {vk.gia_tri.cac_gia_tri.map((g) => <div class="row rv"><div class="row__k">{g.ten}</div><div>{g.mo_ta}</div></div>)}
+      </div>
+    </div>
+  </section>
+
+  <DongHanh />
+</Base>

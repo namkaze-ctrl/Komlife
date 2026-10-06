@@ -1,0 +1,20 @@
+---
+// TRANG CHÍNH SÁCH — /chinh-sach-bao-mat, /chinh-sach-doi-tra, /dieu-khoan-dich-vu
+// Nội dung: src/content/phap-ly/<tên>.md (tên file = đường dẫn).
+import { getCollection, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import DauTrangCon from '../components/DauTrangCon.astro';
+
+export async function getStaticPaths() {
+  const ds = await getCollection('phapLy');
+  return ds.map((p) => ({ params: { phapLy: p.id }, props: { p } }));
+}
+const { p } = Astro.props;
+const { Content } = await render(p);
+---
+<Base tieuDe={`${p.data.tieu_de} | Komlife Việt Nam`} moTa={p.data.mo_ta}>
+  <DauTrangCon nhan={p.data.cap_nhat ? `Cập nhật ${p.data.cap_nhat.toLowerCase()}` : 'Chính sách'} tieuDe={p.data.tieu_de} moTa={p.data.mo_ta} />
+  <section class="sec sec--tight">
+    <div class="wrap bai-hep"><div class="bai"><Content /></div></div>
+  </section>
+</Base>

@@ -1,0 +1,30 @@
+---
+// TIN THEO CHUYÊN MỤC — /tin-tuc/tin-doanh-nghiep và /tin-tuc/tin-thi-truong
+import Base from '../../../layouts/Base.astro';
+import DauTrangCon from '../../../components/DauTrangCon.astro';
+import DanhSachTin from '../../../components/DanhSachTin.astro';
+import DongHanh from '../../../components/DongHanh.astro';
+import tt from '../../../content/trang/tin-tuc.json';
+import { layTinDaDang } from '../../../lib/noi-dung';
+
+export function getStaticPaths() {
+  return Object.entries(tt.ten_chuyen_muc).map(([chuyenMuc, ten]) => ({ params: { chuyenMuc }, props: { ten } }));
+}
+const { chuyenMuc } = Astro.params;
+const { ten } = Astro.props;
+const ds = (await layTinDaDang()).filter((t) => t.data.chuyen_muc === chuyenMuc);
+const muc = Object.entries(tt.ten_chuyen_muc);
+---
+<Base tieuDe={`${ten} — Bản tin Komlife`} moTa={tt.seo_mo_ta}>
+  <DauTrangCon nhan={tt.dau_trang.nhan} tieuDe={ten} moTa={tt.dau_trang.mo_ta} />
+  <section class="sec sec--tight">
+    <div class="wrap stack g28">
+      <nav class="tab-tin" aria-label="Chuyên mục tin">
+        <a href="/tin-tuc">Tất cả</a>
+        {muc.map(([ma, t]) => <a href={`/tin-tuc/${ma}`} aria-current={ma === chuyenMuc ? 'page' : undefined}>{t}</a>)}
+      </nav>
+      {ds.length ? <DanhSachTin ds={ds} /> : <p class="lead muted">Chưa có bài viết trong chuyên mục này.</p>}
+    </div>
+  </section>
+  <DongHanh />
+</Base>

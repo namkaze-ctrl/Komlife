@@ -1,0 +1,61 @@
+---
+// HỢP TÁC ĐẠI LÝ — nội dung: src/content/trang/hop-tac-dai-ly.json. Thư đăng ký gửi về "Email nhận đăng ký" (Cài đặt chung).
+import Base from '../layouts/Base.astro';
+import DauTrangCon from '../components/DauTrangCon.astro';
+import dl from '../content/trang/hop-tac-dai-ly.json';
+import { caiDat } from '../lib/noi-dung';
+import { tieuDe, dong, soGoi } from '../lib/chu';
+const tel = soGoi(caiDat.hotline);
+---
+<Base tieuDe={dl.seo_tieu_de} moTa={dl.seo_mo_ta}>
+  <DauTrangCon nhan={dl.dau_trang.nhan} tieuDe={dl.dau_trang.tieu_de} moTa={dl.dau_trang.mo_ta} />
+
+  <section class="sec sec--tight">
+    <div class="wrap cards cards--4c">
+      {dl.bon_the.map((c) => <div class="card rv"><h4>{c.tieu_de}</h4><p class="card__b">{c.mo_ta}</p></div>)}
+    </div>
+  </section>
+
+  <section class="sec sec--panel">
+    <div class="wrap split" style="align-items:start">
+      <div class="stack g16"><div class="eb">{dl.chinh_sach.nhan}</div><h2 set:html={tieuDe(dl.chinh_sach.tieu_de)} /></div>
+      <div class="rows">
+        {dl.chinh_sach.muc.map((m) => <div class="row"><div class="row__k">{m.ten}</div><div set:html={dong(m.mo_ta)} /></div>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap stack g40">
+      <div class="stack g16" style="max-width:52ch"><div class="eb">{dl.cac_buoc.nhan}</div><h2 set:html={tieuDe(dl.cac_buoc.tieu_de)} /></div>
+      <div class="steps">
+        {dl.cac_buoc.buoc.map((s, i) => (
+          <div class="step rv"><div class="step__n">{String(i + 1).padStart(2, '0')}</div><div class="step__r"></div><h4>{s.tieu_de}</h4>
+            <p class="card__b">{s.mo_ta}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--deep" id="dang-ky">
+    <div class="wrap split" style="align-items:start">
+      <div class="stack g16"><div class="eb">{dl.dang_ky.nhan}</div><h2 set:html={tieuDe(dl.dang_ky.tieu_de)} />
+        <p class="lead"><Fragment set:html={dong(dl.dang_ky.mo_ta)} /> <a href={`tel:${tel}`} style="color:var(--gold-2)">{caiDat.hotline}</a></p></div>
+      <form class="form" data-form data-tieude="Đăng ký làm đại lý Komlife" data-email={caiDat.email_nhan_dang_ky} data-ma={caiDat.ma_nhan_form}>
+        <div class="field"><label for="d-ten">Họ và tên</label><input id="d-ten" name="ten" autocomplete="name" required></div>
+        <div class="field"><label for="d-sdt">Số điện thoại</label><input id="d-sdt" name="sdt" type="tel" autocomplete="tel" required></div>
+        <div class="field"><label for="d-tinh">Tỉnh / thành phố</label><input id="d-tinh" name="tinh" required></div>
+        <div class="field"><label for="d-loai">Loại hình kinh doanh</label>
+          <select id="d-loai" name="loai">{dl.dang_ky.loai_hinh.map((o) => <option>{o}</option>)}</select></div>
+        <div class="field field--full"><label for="d-note">Ghi chú</label><textarea id="d-note" name="ghichu" rows="3"></textarea></div>
+        <input type="checkbox" name="botcheck" class="an-bot" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="field field--full">
+          <button class="btn btn--gold" type="submit" style="align-self:flex-start">Gửi đăng ký</button>
+          <div class="formok" data-ok>{caiDat.ma_nhan_form ? 'Đã gửi đăng ký. Bộ phận kinh doanh sẽ gọi lại cho bạn trong 24 giờ làm việc.' : 'Thư đăng ký đã được soạn sẵn — bạn bấm Gửi trong hộp thư là xong. Nếu máy không tự mở hộp thư, gửi tay về ' + caiDat.email_nhan_dang_ky + ' hoặc gọi hotline.'}</div>
+          <div class="formok formloi" data-loi>Chưa gửi được. Bạn vui lòng gọi hotline {caiDat.hotline} hoặc thử lại sau ít phút.</div>
+          <p class="formnote">Thông tin của bạn chỉ dùng để liên hệ về việc hợp tác — xem <a href="/chinh-sach-bao-mat">Chính sách bảo mật</a>.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+</Base>

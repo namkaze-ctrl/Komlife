@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+import DauTrangCon from '../components/DauTrangCon.astro';
+---
+<Base tieuDe="Không tìm thấy trang | Komlife Việt Nam" moTa="Trang bạn tìm không còn hoặc đã chuyển chỗ.">
+  <DauTrangCon nhan="Lỗi 404" tieuDe="Không tìm thấy *trang này*" moTa="Trang bạn tìm không còn hoặc đã chuyển chỗ. Bạn có thể quay về trang chủ hoặc xem các nhãn hàng của Komlife." />
+  <section class="sec sec--tight">
+    <div class="wrap btnrow">
+      <a class="btn" href="/">Về trang chủ</a>
+      <a class="btn btn--ghost" href="/nhan-hang">Xem nhãn hàng</a>
+      <a class="btn btn--ghost" href="/tin-tuc">Tin tức</a>
+    </div>
+  </section>
+</Base>

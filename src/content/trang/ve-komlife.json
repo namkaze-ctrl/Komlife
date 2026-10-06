@@ -1,0 +1,25 @@
+{
+  "seo_tieu_de": "Về Komlife Việt Nam — 15 năm, nhà máy 20.000m² tại Hưng Yên",
+  "seo_mo_ta": "Thành lập năm 2010, Komlife Việt Nam sở hữu nhà máy 20.000m² tại Yên Mỹ, Hưng Yên. Sứ mệnh, tầm nhìn, giá trị cốt lõi và các dấu mốc 15 năm.",
+  "dau_trang": {
+    "nhan": "Về Komlife",
+    "tieu_de": "Một giấc mơ Việt,\nxây bằng *bê tông và thép*",
+    "mo_ta": "Thành lập năm 2010 — kỷ niệm 15 năm hành trình phát triển và khẳng định vị thế. Komlife Việt Nam sở hữu nhà máy sản xuất tự động hóa tiên tiến rộng 20.000m² tại Thôn Từ Hồ, xã Yên Phú, huyện Yên Mỹ, tỉnh Hưng Yên."
+  },
+  "lich_su": {
+    "nhan": "Lịch sử & quy mô",
+    "tieu_de": "Chặng đường 15 năm *bền bỉ kiến tạo*"
+  },
+  "su_menh": "Mang đến những sản phẩm chất lượng, an toàn, hiệu quả và thân thiện với môi trường, góp phần nâng cao chất lượng sống của hàng triệu gia đình Việt.",
+  "tam_nhin": "Trở thành Top 5 nhà sản xuất chất tẩy rửa dạng lỏng hàng đầu tại Việt Nam.",
+  "gia_tri": {
+    "nhan": "Giá trị cốt lõi",
+    "tieu_de": "Bốn điều *công ty tự đặt ra*",
+    "cac_gia_tri": [
+      { "ten": "Chất lượng là ưu tiên hàng đầu", "mo_ta": "Từng chi tiết nhỏ trong sản phẩm đều được kiểm soát theo quy trình ISO 9001:2015." },
+      { "ten": "Cam kết giá thành hợp lý", "mo_ta": "Quy mô sản xuất lớn giúp giữ giá tốt mà không phải hạ chất lượng." },
+      { "ten": "Khách hàng là trọng tâm", "mo_ta": "Sản phẩm sinh ra từ thói quen thật của gia đình Việt." },
+      { "ten": "Phát triển bền vững", "mo_ta": "Quy trình sản xuất khép kín, đạt ISO 14001:2015 về quản lý môi trường." }
+    ]
+  }
+}

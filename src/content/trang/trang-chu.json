@@ -1,0 +1,104 @@
+{
+  "seo_tieu_de": "Komlife Việt Nam — Vì một cuộc sống tốt đẹp hơn",
+  "seo_mo_ta": "Công ty TNHH Komlife Việt Nam — nhà sản xuất hóa mỹ phẩm chăm sóc gia đình và cá nhân, nhà máy 20.000m² tại Hưng Yên, năm nhãn hàng SPY, URA, Abby, Givebe, Eddy.",
+  "dau_trang": {
+    "nhan": "Komlife Việt Nam",
+    "tieu_de": "Vì một\ncuộc sống\n*tốt đẹp hơn*",
+    "mo_ta": "Công ty TNHH Komlife Việt Nam là nhà sản xuất hóa mỹ phẩm chăm sóc gia đình và cá nhân hàng đầu, sở hữu nhà máy hiện đại rộng 20.000m² tại Hưng Yên.",
+    "anh": "../../assets/anh/trang-chu/hero-nha-may.jpg",
+    "ghi_chu_tren_anh": "Tự làm từ bồn pha\nđến thùng hàng —\nkhông thuê gia công",
+    "nut_1": "Khám phá nhãn hàng",
+    "nut_2": "Về Komlife"
+  },
+  "vi_sao": {
+    "nhan": "Vì sao chọn Komlife",
+    "tieu_de": "Chủ động cơ sở vật chất,\nvững vàng công nghệ,\n*cam kết chất lượng*",
+    "doan_1": "Không phụ thuộc gia công bên ngoài, Komlife Việt Nam sở hữu nhà máy lớn cùng công nghệ sản xuất tiên tiến để kiểm soát trọn vẹn chất lượng từng sản phẩm — mang lại sự an tâm tuyệt đối cho người tiêu dùng.",
+    "cam_ket": "tiêu chuẩn sản xuất nghiêm ngặt, an toàn cho sức khỏe gia đình và thân thiện với môi trường.",
+    "nut": "Câu chuyện Komlife"
+  },
+  "he_sinh_thai": {
+    "nhan": "Hệ sinh thái nhãn hàng nổi bật",
+    "tieu_de": "Hệ sinh thái*05 nhãn hàng*",
+    "mo_ta": "Được sản xuất dưới cùng một nhà máy và tuân thủ nghiêm ngặt một bộ quy trình kiểm định chất lượng, năm nhãn hàng của Komlife Việt Nam mang đến những giải pháp chăm sóc chuyên biệt, đáp ứng trọn vẹn nhu cầu đa dạng của mọi gia đình Việt.",
+    "nut": "Khám phá các nhãn hàng"
+  },
+  "ban_le": {
+    "nhan": "Đang bán ở đâu",
+    "tieu_de": "Sản phẩm Komlife hiện diện trên kệ *của các hệ thống bán lẻ uy tín*"
+  },
+  "quy_trinh": {
+    "nhan": "Quy trình sản xuất khép kín",
+    "tieu_de": "Bốn khâu chủ lực,*kiểm soát trọn vẹn\ntừ nhà máy.*",
+    "bieu_tuong_nho": [
+      { "bieu_tuong": "binh", "chu": "Nguyên liệu\nchọn lọc" },
+      { "bieu_tuong": "banhrang", "chu": "Quy trình\nhiện đại" },
+      { "bieu_tuong": "kiemtra", "chu": "Kiểm soát\nnghiêm ngặt" },
+      { "bieu_tuong": "chungnhan", "chu": "Đạt chuẩn\nISO 9001" }
+    ],
+    "nut": "Tìm hiểu về chất lượng"
+  },
+  "tap_the": {
+    "nhan": "Tập thể & hạ tầng",
+    "tieu_de": "Không gian sản xuất thật *tại nhà máy Hưng Yên*",
+    "mo_ta": "Toàn bộ hình ảnh và thước phim thực tế được ghi nhận trực tiếp tại nhà máy, thể hiện sự cam kết rõ ràng về năng lực và cơ sở vật chất của Komlife Việt Nam.",
+    "anh": [
+      { "anh": "../../assets/anh/nha-may/nha-dieu-hanh.jpg", "chu_thich": "Nhà điều hành tại Yên Mỹ, Hưng Yên" },
+      { "anh": "../../assets/anh/nha-may/khu-pha-che.jpg", "chu_thich": "Khu pha chế — bồn khuấy inox 6m³ mỗi bồn" },
+      { "anh": "../../assets/anh/nha-may/kho-thanh-pham.jpg", "chu_thich": "Kho thành phẩm trước khi xuất xưởng" },
+      { "anh": "../../assets/anh/nha-may/tram-loc-nuoc.jpg", "chu_thich": "Trạm lọc nước RO cấp cho sản xuất" },
+      { "anh": "../../assets/anh/nha-may/xu-ly-nuoc-thai.jpg", "chu_thich": "Hệ thống xử lý nước thải 25m³ mỗi ngày đêm" },
+      { "anh": "../../assets/anh/nha-may/hoan-thien-nhan.jpg", "chu_thich": "Hoàn thiện nhãn trên từng chai" }
+    ],
+    "video": [
+      { "ma_youtube": "k2u_1_EhKYo", "chu_thich": "Vận hành máy tại xưởng" },
+      { "ma_youtube": "wEbHAaBmj4M", "chu_thich": "Xe nâng trong kho thành phẩm" },
+      { "ma_youtube": "4OLB2fOXyF8", "chu_thich": "Xếp hàng lên pallet chờ xuất" }
+    ],
+    "ghi_chu": "Ảnh và video quay tại nhà máy Hưng Yên, tháng 9/2026."
+  },
+  "sinh_ke": {
+    "tieu_de": "Kiến tạo 2.000 sinh kế,\n*phủ sóng khắp 63 tỉnh thành*",
+    "mo_ta": "Sức mạnh của Komlife không chỉ nằm ở nhà máy 20.000m² hay những dây chuyền hiện đại, mà hiện hữu trong tâm huyết của hơn 2.000 con người - từ người công nhân sản xuất đến đội ngũ sale thị trường trên mọi miền Tổ quốc. Đó cũng là nền tảng giúp chúng tôi tối ưu trọn vẹn giá thành sản phẩm.",
+    "anh": "../../assets/anh/trang-chu/tap-the-truoc-tru-so.jpg"
+  },
+  "nguyen_lieu": {
+    "nhan": "Tiêu chuẩn nguyên liệu",
+    "tieu_de": "Nguồn nguyên liệu chuẩn quốc tế *từ các tập đoàn hàng đầu thế giới*",
+    "mo_ta": "Sự an toàn và chất lượng của sản phẩm không đến từ sự ngẫu nhiên. Komlife Việt Nam trực tiếp tuyển chọn nguyên liệu chuẩn từ các tập đoàn lớn nước ngoài, đặt nền móng vững chắc cho chất lượng vượt trội trong từng sản phẩm.",
+    "anh": "../../assets/anh/chung/mane-bat-tay.jpg",
+    "chu_thich_anh": "Komlife nhận chứng nhận hợp tác từ MANE — tập đoàn hương liệu Pháp thành lập năm 1871."
+  },
+  "dau_moc": {
+    "nhan": "Dấu mốc tự hào",
+    "tieu_de": "Chặng đường 15 năm *bền bỉ kiến tạo*",
+    "anh": "../../assets/anh/chung/le-15-nam-vinh-danh-npp.jpg",
+    "chu_thich_anh": "Lễ kỷ niệm 15 năm thành lập — vinh danh các nhà phân phối đồng hành và phát triển."
+  },
+  "nguoi_dung_dau": {
+    "hien_thi": true,
+    "nhan": "Người đứng đầu",
+    "trich_dan": "Chúng tôi không chỉ sản xuất — chúng tôi kiến tạo niềm tin và chất lượng sống cho hàng triệu gia đình Việt.",
+    "ten": "Ông Nguyễn Mạnh Cường",
+    "chuc_vu": "Chủ tịch Hội đồng quản trị · Công ty TNHH Komlife Việt Nam",
+    "anh": "../../assets/anh/chung/chu-tich.jpg"
+  },
+  "ban_tin": {
+    "nhan": "Bản tin Komlife",
+    "tieu_de": "Câu chuyện đang diễn ra *tại Komlife*",
+    "mo_ta": "Những dấu mốc doanh nghiệp, bước tiến thị trường và tâm huyết kiến tạo giá trị bền vững."
+  },
+  "nha_phan_phoi": {
+    "nhan": "Hợp tác kinh doanh",
+    "tieu_de": "Thông tin dành cho *nhà phân phối*",
+    "mo_ta": "Gỡ bỏ mọi rào cản và lo lắng của người bán hàng, Komlife Việt Nam cam kết minh bạch chính sách hướng đến sự hợp tác bền vững.",
+    "anh": "../../assets/anh/chung/ban-do-nha-phan-phoi.jpg",
+    "chu_thich_anh": "Bản đồ hệ thống phân phối Komlife: hơn 100 nhà phân phối, hơn 30.000 cửa hàng",
+    "cac_o": [
+      { "tieu_de": "Chính sách giá minh bạch", "mo_ta": "Bảng giá chuẩn hóa theo sản lượng, áp dụng đồng bộ toàn hệ thống, đảm bảo sự công bằng tuyệt đối cho mọi nhà phân phối." },
+      { "tieu_de": "Nguồn cung vững vàng", "mo_ta": "Chủ động hoàn toàn nguồn hàng từ nhà máy 20.000m² đảm bảo công suất cho các nhà phân phối, cam kết duy trì chuỗi cung ứng bền vững." },
+      { "tieu_de": "Truy xuất nguồn gốc rõ ràng", "mo_ta": "Sản phẩm chính hãng 100% từ nhà máy, đi kèm hóa đơn và số lô xác thực minh bạch, loại bỏ hoàn toàn nỗi lo hàng giả." },
+      { "tieu_de": "Đồng hành hậu mãi tận tâm", "mo_ta": "Hệ thống nhân sự phụ trách khu vực phân phối, giải quyết nhanh gọn các vấn đề phát sinh và đổi trả lỗi sản xuất." }
+    ]
+  }
+}

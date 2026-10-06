@@ -1,0 +1,35 @@
+---
+// LIÊN HỆ — nội dung: src/content/trang/lien-he.json + thông tin liên hệ ở Cài đặt chung.
+import Base from '../layouts/Base.astro';
+import DauTrangCon from '../components/DauTrangCon.astro';
+import lh from '../content/trang/lien-he.json';
+import { caiDat } from '../lib/noi-dung';
+import { soGoi } from '../lib/chu';
+---
+<Base tieuDe={lh.seo_tieu_de} moTa={lh.seo_mo_ta}>
+  <DauTrangCon nhan={lh.dau_trang.nhan} tieuDe={lh.dau_trang.tieu_de} moTa={lh.dau_trang.mo_ta} />
+  <section class="sec sec--tight">
+    <div class="wrap split" style="align-items:start">
+      <div class="rows">
+        <div class="row"><div class="row__k">Hotline</div><div><a href={`tel:${soGoi(caiDat.hotline)}`} style="color:var(--gold);font-weight:600">{caiDat.hotline}</a></div></div>
+        <div class="row"><div class="row__k">Email</div><div><a href={`mailto:${caiDat.email}`} style="color:var(--gold);font-weight:600">{caiDat.email}</a></div></div>
+        <div class="row"><div class="row__k">Trụ sở chính</div><div>{caiDat.tru_so}</div></div>
+        <div class="row"><div class="row__k">Nhà máy sản xuất</div><div>{caiDat.nha_may}</div></div>
+        {caiDat.gio_lam_viec && <div class="row"><div class="row__k">Giờ làm việc</div><div>{caiDat.gio_lam_viec}</div></div>}
+        <div class="row"><div class="row__k">{lh.dai_ly.ten}</div><div>{lh.dai_ly.mo_ta} <a href="/hop-tac-dai-ly" style="color:var(--gold);font-weight:600">{lh.dai_ly.nut}</a></div></div>
+      </div>
+      <form class="form" data-form data-tieude="Liên hệ từ website Komlife" data-email={caiDat.email_nhan_dang_ky} data-ma={caiDat.ma_nhan_form}>
+        <div class="field"><label for="l-ten">Họ và tên</label><input id="l-ten" name="ten" autocomplete="name" required></div>
+        <div class="field"><label for="l-sdt">Số điện thoại</label><input id="l-sdt" name="sdt" type="tel" autocomplete="tel" required></div>
+        <div class="field field--full"><label for="l-nd">Nội dung</label><textarea id="l-nd" name="noidung" rows="4"></textarea></div>
+        <input type="checkbox" name="botcheck" class="an-bot" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="field field--full">
+          <button class="btn btn--gold" type="submit" style="align-self:flex-start">Gửi liên hệ</button>
+          <div class="formok" data-ok>{caiDat.ma_nhan_form ? 'Đã gửi. Chúng tôi sẽ liên hệ lại sớm.' : 'Thư đã được soạn sẵn — bạn bấm Gửi trong hộp thư là xong. Nếu máy không tự mở hộp thư, gửi tay về ' + caiDat.email_nhan_dang_ky + '.'}</div>
+          <div class="formok formloi" data-loi>Chưa gửi được. Bạn vui lòng gọi hotline {caiDat.hotline} hoặc thử lại sau ít phút.</div>
+          <p class="formnote">Xem <a href="/chinh-sach-bao-mat">Chính sách bảo mật</a>.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+</Base>

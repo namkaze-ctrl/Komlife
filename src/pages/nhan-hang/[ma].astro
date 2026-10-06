@@ -1,0 +1,104 @@
+---
+// TRANG TỪNG NHÃN — nội dung: src/content/nhan-hang/<mã>.json (mã = tên file: spy, ura, abby...)
+import Base from '../../layouts/Base.astro';
+import Anh from '../../components/Anh.astro';
+import DaiSoLieu from '../../components/DaiSoLieu.astro';
+import nh from '../../content/trang/nhan-hang.json';
+import { caiDat, layNhanHang } from '../../lib/noi-dung';
+import { tieuDe, dong } from '../../lib/chu';
+
+export async function getStaticPaths() {
+  const ds = await layNhanHang();
+  return ds.map((b) => ({ params: { ma: b.ma }, props: { b } }));
+}
+const { b } = Astro.props;
+const mua = nh.mua_o_dau;
+const th = b.tinh_huong;
+---
+<Base tieuDe={`${b.ten} — ${b.cau_dinh_vi} | Komlife Việt Nam`} moTa={b.mo_ta} anhChiaSe={b.anh_bia}>
+  <section class="phead">
+    <div class="wrap split" style="align-items:end">
+      <div class="stack g16">
+        <div class="eb">{b.nganh}</div>
+        <h1 style="font-size:clamp(2.6rem,6vw,4.2rem)">{b.ten}</h1>
+        <p class="it" style="font-family:var(--fd);font-size:clamp(1.15rem,2vw,1.5rem);color:var(--gold)">{b.cau_dinh_vi}</p>
+        <p class="lead prose" set:html={dong(b.mo_ta)} />
+      </div>
+      <div><Anh src={b.anh_bia} alt={`Sản phẩm ${b.ten}`} style="border-radius:16px;aspect-ratio:16/9;object-fit:cover;width:100%;box-shadow:var(--shadow)" sizes="(max-width:940px) 92vw, (max-width:1240px) 52vw, 616px" widths={[740, 1340]} loading="eager" /></div>
+    </div>
+  </section>
+
+  {b.cau_chuyen && (
+    <section class="sec">
+      <div class="wrap split">
+        <div class="stack g16"><div class="eb">Vì sao có nhãn này</div><h2>Câu chuyện <span class="it">{b.ten}</span></h2></div>
+        <div class="stack g16">
+          <p class="lead" set:html={dong(b.cau_chuyen)} />
+          {b.danh_cho && <p class="muted"><strong style="color:var(--ink)">Dành cho:</strong> {b.danh_cho}</p>}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {b.san_pham.length > 0 && (
+    <section class="sec sec--panel">
+      <div class="wrap stack g28">
+        <div class="stack g12"><div class="eb">Sản phẩm</div><h2>Danh mục {b.ten}</h2></div>
+        {b.san_pham.map((p) => (
+          <div class="prod rv">
+            {p.anh && <div class="prod__img"><Anh src={p.anh} alt={p.ten} sizes="220px" /></div>}
+            <div class="stack g12">
+              <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+                <span class={`chip ${p.tinh_trang === 'Đang bán' ? 'chip--live' : 'chip--gold'}`}>{p.tinh_trang}</span>
+                {p.dung_tich && <span class="chip">{p.dung_tich}</span>}
+                {p.cong_dung && <span class="chip">{p.cong_dung}</span>}
+              </div>
+              <h3>{p.ten}</h3>
+              <p class="card__b" set:html={dong(p.mo_ta)} />
+              {p.mui_huong.length > 0 && (
+                <div class="mui">{p.mui_huong.map((v) => <div class="mui__i"><b>{v.ten}</b><span>{v.mo_ta}</span></div>)}</div>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {th.danh_sach.length > 0 && (
+    <section class="sec">
+      <div class="wrap stack g28">
+        <div class="stack g12"><div class="eb">Dùng lúc nào</div><h2 set:html={tieuDe(th.tieu_de)} />
+          {th.mo_ta && <p class="lead" style="max-width:56ch" set:html={dong(th.mo_ta)} />}</div>
+        <div class="cards cards--4">
+          {th.danh_sach.map((t) => <div class="card rv"><h4>{t.ten}</h4><p class="card__b">{t.mo_ta}</p></div>)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="sec sec--warm">
+    <div class="wrap split">
+      <div class="stack g16"><div class="eb">{mua.nhan}</div><h2 set:html={tieuDe(mua.tieu_de)} /></div>
+      <div class="stack g16">
+        <p class="lead" set:html={dong(mua.mo_ta)} />
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+          {caiDat.shopee && <a class="btn" href={caiDat.shopee} target="_blank" rel="noopener" data-rasan="shopee">{mua.nut_shopee} <i>→</i></a>}
+          {b.tiktok && <a class="btn btn--ghost" href={b.tiktok} target="_blank" rel="noopener" data-rasan="tiktok">Kênh TikTok {b.ten} <i>→</i></a>}
+        </div>
+        <a class="btn btn--ghost" href="/chat-luong-tieu-chuan" style="align-self:flex-start">{mua.nut_hang_that}</a>
+      </div>
+    </div>
+  </section>
+
+  {b.hoi_dap.length > 0 && (
+    <section class="sec">
+      <div class="wrap split" style="align-items:start">
+        <div class="stack g16"><div class="eb">Hỏi &amp; đáp</div><h2>Câu hỏi <span class="it">thường gặp</span></h2></div>
+        <div>{b.hoi_dap.map((q) => <details><summary>{q.hoi}</summary><p set:html={dong(q.dap)} /></details>)}</div>
+      </div>
+    </section>
+  )}
+
+  <DaiSoLieu />
+</Base>
