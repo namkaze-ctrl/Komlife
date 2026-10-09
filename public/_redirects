@@ -2,8 +2,8 @@
 # Lấy từ "Bảng chuyển hướng website Komlife" kiểm tay từng đường dẫn ngày 13/8/2026.
 # Cloudflare Pages tự đọc file này. Dòng bắt đầu bằng # là ghi chú.
 #
-# ⚠️ CHƯA XỬ LÝ: /pages/nuoc-xit-vai-spy — trang bán SPY xịt thơm vải có form đặt hàng COD.
-#    Phải hỏi bộ phận đang nhận đơn trước khi đổi tên miền (đơn về đâu, có đang chạy quảng cáo không).
+# /pages/nuoc-xit-vai-spy — trang bán SPY xịt thơm vải trên web cũ. Kiểm 09/10/2026: form đặt hàng COD
+#    là form GIẢ (chỉ hiện thông báo, không gửi/lưu đơn) + có từ cấm "Diệt khuẩn 99.9%" -> chuyển về trang SPY.
 #    Ba trang rác /pages/gg, /pages/trang-dich-vu, /pages/frontpage CỐ Ý để báo lỗi 404.
 
 # 1. Trang nhãn hàng — map theo NỘI DUNG THẬT, không theo chữ trong đường dẫn cũ
@@ -35,6 +35,7 @@
 /pages/chinh-sach-doi-tra         /chinh-sach-doi-tra  301
 /pages/dieu-khoan-dich-vu         /dieu-khoan-dich-vu  301
 /pages/bai-viet-spy               /nhan-hang/spy       301
+/pages/nuoc-xit-vai-spy           /nhan-hang/spy       301
 
 # 4. Tin tức — giữ nguyên tên bài, chỉ đổi nhánh
 /blogs/all                    /tin-tuc                        301

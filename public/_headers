@@ -1,0 +1,5 @@
+# Bản chạy thử komlife.pages.dev: luôn chặn Google, để Google chỉ tìm thấy tên miền chính komlife.com.vn
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex

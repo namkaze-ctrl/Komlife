@@ -11,7 +11,11 @@
   "shopee": "https://shopee.vn/komlife_vietnam",
   "nut_day_trang": "Đăng ký làm đại lý — gọi lại trong 24 giờ",
   "ma_nhan_form": "",
-  "cho_google_tim_thay": false,
+  "cho_google_tim_thay": true,
+  "zalo": "https://zalo.me/3212376397208216519",
+  "ma_gtm": "GTM-KTHLC2N4",
+  "ma_ga4": "G-XQ9SSHZEXW, G-YKJLF9XWPL",
+  "ma_xac_minh_google": "PPRBodTnq90C3TkWfL3YExyd4ZOp6L7_dFCjOc8S_SM",
   "seo_mo_ta_mac_dinh": "Komlife Việt Nam — nhà sản xuất hoá mỹ phẩm chăm sóc gia đình. Nhà máy 20.000m² tại Hưng Yên, năm nhãn hàng SPY, URA, Abby, Givebe, Eddy, có mặt tại 63 tỉnh thành.",
   "anh_chia_se": "../../assets/anh/trang-chu/hero-nha-may.jpg"
 }

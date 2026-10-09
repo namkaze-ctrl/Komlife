@@ -29,6 +29,10 @@ content:
       - { name: nut_day_trang, label: Chữ trên thanh đăng ký đại lý dính đáy màn hình, type: string }
       - { name: ma_nhan_form, label: "Mã nhận form (Web3Forms)", type: string, description: "Lấy miễn phí tại web3forms.com bằng email nhận đăng ký. Có mã thì mẫu đăng ký gửi thẳng về hòm thư, khách không phải tự mở thư." }
       - { name: cho_google_tim_thay, label: Cho Google tìm thấy web, type: boolean, description: "TẮT khi đang chạy thử. BẬT khi web đã gắn tên miền komlife.com.vn chính thức." }
+      - { name: zalo, label: Đường dẫn chat Zalo OA, type: string, description: "Nút Zalo trên thanh dính đáy màn hình. Để trống thì ẩn nút." }
+      - { name: ma_gtm, label: "Mã Google Tag Manager (GTM-…)", type: string, description: "Mang từ web Haravan cũ sang. Để trống thì không gắn." }
+      - { name: ma_ga4, label: "Mã Google Analytics 4 (G-…)", type: string, description: "Nhiều mã thì cách nhau bằng dấu phẩy. Để trống thì không gắn." }
+      - { name: ma_xac_minh_google, label: Mã xác minh Google Search Console, type: string, description: "Giữ nguyên để không mất quyền xem số liệu tìm kiếm của komlife.com.vn." }
       - { name: seo_mo_ta_mac_dinh, label: Mô tả mặc định cho Google, type: text }
       - { name: anh_chia_se, label: Ảnh hiện khi chia sẻ link lên Facebook/Zalo, type: image }
 

@@ -29,6 +29,9 @@ const ogUrl = og ? new URL(og.src, site).href : null;
 const nhan = await layNhanHang();
 const tel = soGoi(caiDat.hotline);
 const choGoogle = !!caiDat.cho_google_tim_thay;
+// Mã đo mang từ web Haravan cũ sang (giữ liền mạch số liệu GA4/GTM khi đổi web)
+const maGtm = (caiDat.ma_gtm || '').trim();
+const maGa4 = (caiDat.ma_ga4 || '').split(',').map((m) => m.trim()).filter(Boolean);
 
 const MENU = [
   ['/ve-komlife', 'Về Komlife'],
@@ -68,6 +71,10 @@ const toChuc = {
   <meta name="description" content={moTaTrang}>
   <link rel="canonical" href={canonical}>
   {!choGoogle && <meta name="robots" content="noindex,nofollow">}
+  {caiDat.ma_xac_minh_google && <meta name="google-site-verification" content={caiDat.ma_xac_minh_google}>}
+  {maGtm && <script is:inline define:vars={{ maGtm }}>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',maGtm);</script>}
+  {maGa4.length > 0 && <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${maGa4[0]}`}></script>}
+  {maGa4.length > 0 && <script is:inline define:vars={{ maGa4 }}>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());maGa4.forEach(function(m){gtag('config',m);});</script>}
   <meta property="og:type" content={loai}>
   <meta property="og:title" content={tieuDeTrang}>
   <meta property="og:description" content={moTaTrang}>
@@ -85,6 +92,7 @@ const toChuc = {
   <slot name="head" />
 </head>
 <body data-hero={coHero ? '1' : '0'} data-dai-ly={oTrangDaiLy ? '1' : '0'}>
+  {maGtm && <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${maGtm}`} height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>}
   <div class="page-bg" aria-hidden="true"></div>
   <div class="sprog" aria-hidden="true"></div>
 
@@ -145,6 +153,7 @@ const toChuc = {
       <a class="b2" href={`tel:${tel}`} aria-label={`Gọi ${caiDat.hotline}`}>
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.3-.3.75-.4 1.14-.27 1.25.41 2.6.63 3.95.63.62 0 1.12.5 1.12 1.12v3.49c0 .62-.5 1.12-1.12 1.12C10.83 21.77 2.23 13.17 2.23 2.5c0-.62.5-1.12 1.12-1.12h3.5c.62 0 1.12.5 1.12 1.12 0 1.36.22 2.7.63 3.95.12.39.03.83-.28 1.14l-2.2 2.2z"/></svg>
       </a>
+      {caiDat.zalo && <a class="b2" href={caiDat.zalo} target="_blank" rel="nofollow noreferrer" aria-label="Chat Zalo với Komlife">Zalo</a>}
     </div>
   )}
 
