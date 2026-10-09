@@ -6,10 +6,12 @@
      khoảng 3,4:1, dưới chuẩn đọc được 4,5:1 (dòng "Dành cho:" khó đọc). */
   --ink:#12163A; --body:#4A4F73; --faint:#5F6486; --line:#E1E3F0;
   /* 09/10/2026: đổi màu theo note "Sửa màu website Komlife" — Deep Blue #212b7e + Magenta #ec008c.
+     09/10 (sau): anh Nam đổi Magenta -> xanh ngọc #3fc2cf. Màu này SÁNG: chữ trắng trên nền #3fc2cf chỉ 2,1:1,
+     nên nút khi rê chuột dùng chữ Deep Blue (--on-mag, 5,7:1). Tên biến --mag giữ nguyên.
      --gold   = Deep Blue: nút tĩnh, chữ nhấn/tiêu đề phụ trên nền SÁNG.
      --gold-2 = Magenta: chữ nhấn/tiêu đề phụ trên nền TỐI.  --mag = Magenta: nút khi rê chuột.
      --deep   = Deep Blue: mọi nền màu đặc (chân trang, khối tối). */
-  --gold:#212b7e; --gold-2:#ec008c; --gold-soft:#E8E9F5; --btn:#212b7e; --mag:#ec008c;
+  --gold:#212b7e; --gold-2:#3fc2cf; --gold-soft:#E8E9F5; --btn:#212b7e; --mag:#3fc2cf; --on-mag:#212b7e;
   --deep:#212b7e; --on-deep:#F2F1FA; --on-deep-muted:#C9CDEB; --deep-line:#3A4494;
   --ok:#1D7A55; --wait:#B04A00;
   --glass:rgba(255,255,255,.78); --glass-line:rgba(255,255,255,.55);
@@ -22,7 +24,7 @@
   :root:not([data-theme="light"]){
     --cream:#0B0D22; --cream-2:#12152F; --panel:#151834;
     --ink:#EEEEF8; --body:#B9BCD8; --faint:#8286A8; --line:#282C4E;
-    --gold:#ec008c; --gold-2:#ec008c; --gold-soft:#1A1B3C;
+    --gold:#3fc2cf; --gold-2:#3fc2cf; --gold-soft:#1A1B3C;
     --deep:#212b7e; --on-deep:#F2F1FA; --on-deep-muted:#C9CDEB; --deep-line:#3A4494;
     --ok:#4FC08D; --wait:#F0954A;
     --glass:rgba(27,24,19,.74); --glass-line:rgba(255,255,255,.14);
@@ -32,7 +34,7 @@
 :root[data-theme="dark"]{
   --cream:#0B0D22; --cream-2:#12152F; --panel:#151834;
   --ink:#EEEEF8; --body:#B9BCD8; --faint:#8286A8; --line:#282C4E;
-  --gold:#ec008c; --gold-2:#ec008c; --gold-soft:#1A1B3C;
+  --gold:#3fc2cf; --gold-2:#3fc2cf; --gold-soft:#1A1B3C;
   --deep:#212b7e; --on-deep:#F2F1FA; --on-deep-muted:#C9CDEB; --deep-line:#3A4494;
   --ok:#4FC08D; --wait:#F0954A;
   --glass:rgba(27,24,19,.74); --glass-line:rgba(255,255,255,.14);
@@ -100,7 +102,7 @@ body[data-hero="1"] .nav:not(.solid) .mark__t{display:block}
 .nav__links a[aria-current="page"]{color:var(--ink);box-shadow:inset 0 -1px 0 var(--gold)}
 .nav__cta{margin-left:10px;background:var(--btn);color:#fff!important;border-radius:999px;
   padding:10px 20px!important;font-weight:600;box-shadow:none!important}
-.nav__cta:hover{background:var(--mag)}
+.nav__cta:hover,body[data-hero="1"] .nav:not(.solid) .nav__cta:hover{background:var(--mag);color:var(--on-mag)!important}
 .nav__btn{display:none;margin-left:auto;background:transparent;border:1px solid var(--line);
   border-radius:999px;padding:8px 16px;font-size:.8rem;cursor:pointer}
 .nav.solid{background:color-mix(in srgb,var(--cream) 92%,transparent);
@@ -127,15 +129,15 @@ body[data-hero="1"] .nav:not(.solid) .nav__btn{color:#fff;border-color:rgba(255,
   font-size:.86rem;font-weight:600;padding:14px 26px;border-radius:999px;
   border:1px solid var(--btn);background:var(--btn);color:#fff;
   transition:transform .18s ease,background .18s ease,border-color .18s ease}
-.btn:hover{transform:translateY(-2px);background:var(--mag);border-color:var(--mag);color:#fff}
+.btn:hover{transform:translateY(-2px);background:var(--mag);border-color:var(--mag);color:var(--on-mag)}
 .btn--gold{background:var(--btn);border-color:var(--btn);color:#fff}
-.btn--gold:hover{background:var(--mag);border-color:var(--mag)}
+.btn--gold:hover{background:var(--mag);border-color:var(--mag);color:var(--on-mag)}
 .btn--ghost{background:transparent;color:var(--ink);border-color:var(--line)}
-.btn--ghost:hover{background:var(--mag);color:#fff;border-color:var(--mag)}
+.btn--ghost:hover{background:var(--mag);color:var(--on-mag);border-color:var(--mag)}
 .btn--light{background:rgba(255,255,255,.95);border-color:transparent;color:#1D2A24}
-.btn--light:hover{background:var(--mag);color:#fff}
+.btn--light:hover{background:var(--mag);color:var(--on-mag)}
 .btn--outline-light{background:transparent;border-color:rgba(255,255,255,.6);color:#fff}
-.btn--outline-light:hover{background:var(--mag);border-color:var(--mag);color:#fff}
+.btn--outline-light:hover{background:var(--mag);border-color:var(--mag);color:var(--on-mag)}
 .btnrow{display:flex;gap:12px;flex-wrap:wrap}
 
 /* ─── chips ──────────────────────────────────────────────── */
@@ -463,7 +465,7 @@ details p{margin-top:10px;max-width:62ch;font-size:.97rem}
 #dlbar a{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:42px;
   border-radius:999px;font-size:14.5px;font-weight:700;text-decoration:none}
 #dlbar .b1{flex:1;background:var(--btn);color:#fff;transition:background .18s ease}
-#dlbar .b1:hover{background:var(--mag)}
+#dlbar .b1:hover{background:var(--mag);color:var(--on-mag)}
 #dlbar .b2{width:58px;background:var(--cream-2);color:var(--ink);border:1px solid var(--line)}
 #dlbar .b2 svg{width:20px;height:20px}
 body.co-bar .stbtn{bottom:82px}
@@ -663,7 +665,7 @@ body.co-bar .stpanel{bottom:134px}
    ══════════════════════════════════════════════════════════ */
 .pp{
   --u:max(.60px, min(1px, 100vw/1536));
-  --pp-gold:#212b7e; --pp-gold-lt:#ec008c; --pp-olive:#212b7e;
+  --pp-gold:#212b7e; --pp-gold-lt:#3fc2cf; --pp-olive:#212b7e;
   --pp-ink:#12163A; --pp-body:#4A4F73; --pp-sub:#767BA0;
   --pp-cream1:#F5F5FC; --pp-cream2:#EFF0F8; --pp-dark:#212b7e;
   --pp-quote:#FFFFFF; --pp-line:#DFE1EF;
@@ -690,8 +692,8 @@ body.co-bar .stpanel{bottom:134px}
 .pp-btn i{width:calc(26*var(--u));height:calc(26*var(--u));border-radius:999px;flex:none;
   border:1px solid var(--pp-gold);display:inline-flex;align-items:center;justify-content:center;
   font-style:normal;font-size:calc(11*var(--u));transition:background .25s var(--e),color .25s var(--e)}
-.pp-btn:hover{background:var(--mag);border-color:var(--mag);color:#fff}
-.pp-btn:hover i{border-color:#fff}
+.pp-btn:hover{background:var(--mag);border-color:var(--mag);color:var(--on-mag)}
+.pp-btn:hover i{border-color:var(--on-mag)}
 
 /* ── KHỐI 1: hệ sinh thái nhãn hàng ───────────────────── */
 .pp-eco{background:var(--pp-cream1);
@@ -822,7 +824,7 @@ body.co-bar .stpanel{bottom:134px}
   background:var(--pp-gold);color:#fff;text-decoration:none;border-radius:999px;
   padding:calc(13*var(--u)) calc(26*var(--u));font-family:var(--fb);font-weight:600;
   font-size:calc(15*var(--u));transition:background .25s var(--e),transform .25s var(--e)}
-.pp-cta__btn:hover{background:var(--mag);transform:translateY(calc(-2*var(--u)))}
+.pp-cta__btn:hover{background:var(--mag);color:var(--on-mag);transform:translateY(calc(-2*var(--u)))}
 
 /* ── màn hẹp: bỏ lưới cứng, xếp dọc cho đọc được ─────── */
 @media (max-width:1099px){
@@ -891,7 +893,7 @@ a.tin{text-decoration:none;color:inherit}
 .tab-tin{display:flex;gap:8px;flex-wrap:wrap}
 .tab-tin a{padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--panel);
   color:var(--body);font-size:.9rem;font-weight:500;text-decoration:none}
-.tab-tin a:hover{border-color:var(--mag);color:var(--mag)}
+.tab-tin a:hover{border-color:var(--mag);color:var(--gold)}
 .tab-tin a[aria-current="page"]{background:var(--btn);border-color:var(--btn);color:#fff}
 /* trang bài viết + trang chính sách */
 .bai-wrap{padding-top:clamp(116px,14vh,150px)}
