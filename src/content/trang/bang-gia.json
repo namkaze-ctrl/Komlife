@@ -1,0 +1,11 @@
+{
+  "ghi_chu": "BẢNG GIÁ CHUNG — Ecom giữ. Mọi landing lấy giá ở đây, không gõ giá trực tiếp vào trang. Để trống giá = trang hiện 'Giá đang cập nhật' và KHÔNG cho landing lên sóng.",
+  "cap_nhat": "",
+  "nguoi_chot": "",
+  "san_pham": [
+    { "ma": "abby-3l", "ten": "Abby Nước giặt xả Mẹ & Bé 5 in 1 — can 3L", "gia_ban": "", "gia_goc": "" },
+    { "ma": "abby-3l-x2", "ten": "Combo 2 can Abby 3L", "gia_ban": "", "gia_goc": "" },
+    { "ma": "abby-1l1", "ten": "Abby Nước giặt xả Mẹ & Bé 5 in 1 — chai 1,1L", "gia_ban": "", "gia_goc": "" },
+    { "ma": "ura-3l-combo", "ten": "URA 6in1 — Mua 1 tặng 1 (2 túi 3L)", "gia_ban": "249000", "gia_goc": "" }
+  ]
+}

@@ -1,0 +1,184 @@
+---
+// LANDING THEO ĐỢT — nội dung: src/content/landing/<tên>.json -> địa chỉ /lp/<tên> (vd /lp/abby-1111)
+// Khuôn 7 khối: Mở đầu · Bằng chứng · Dùng lúc nào · Review · Ưu đãi · Nút mua · Hỏi đáp.
+// Mỗi nhãn chỉ đổi màu (ô "mau"), chữ và ảnh. Luật lên sóng: src/lib/landing.ts
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Anh from '../../components/Anh.astro';
+import { caiDat, layNhanHang } from '../../lib/noi-dung';
+import { tieuDe, dong, chuTron } from '../../lib/chu';
+import { congLenSong, choHienNhap, layGia, dongTien, themUtm } from '../../lib/landing';
+
+export async function getStaticPaths() {
+  const hienNhap = choHienNhap();
+  const ds = await getCollection('landing', (x) => hienNhap || x.data.trang_thai !== 'Nháp');
+  const loi = ds.flatMap((x) => congLenSong(x.id, x.data));
+  if (loi.length) throw new Error('CỔNG LANDING CHẶN:\n- ' + loi.join('\n- '));
+  return ds.map((x) => ({ params: { slug: x.id }, props: { ma: x.id, d: x.data } }));
+}
+const { ma, d } = Astro.props;
+const nhan = (await layNhanHang()).find((b) => b.ma === d.nhan);
+const tenNhan = nhan?.ten ?? d.nhan;
+const trangNhan = `/nhan-hang/${d.nhan}`;
+const laNhap = d.trang_thai === 'Nháp';
+
+// Ô "[Chờ ...]": tô vàng ở bản nháp
+const cho = (html: string) => html.replace(/\[([^\]]{2,})\]/g, '<mark class="lp-cho">[$1]</mark>');
+const c = (s = '') => cho(dong(s));
+const t = (s = '') => cho(tieuDe(s));
+
+// Link sàn: link riêng của nhãn; chưa có thì tạm dùng gian hàng Komlife (bản nháp báo thiếu)
+const shopee = themUtm(d.nut_mua.shopee || caiDat.shopee, ma);
+const tiktok = themUtm(d.nut_mua.tiktok_shop, ma);
+const thieuLinhRieng = !d.nut_mua.shopee || !d.nut_mua.tiktok_shop;
+
+const goi = d.uu_dai.goi.map((g) => ({ ...g, gia: layGia(g.ma_gia) }));
+const ngay = (s: string) => (s ? s.split('-').reverse().join('/') : '');
+const mau = `--lp-chinh:${d.mau.chinh};--lp-nhan:${d.mau.nhan};--lp-nen:${d.mau.nen};--lp-nut:${d.mau.nut};--lp-nut-re:${d.mau.nut_re}`;
+const nutMua = (cls = '') => [
+  { href: shopee, san: 'shopee', chu: `Mua ${tenNhan} trên Shopee` },
+  { href: tiktok, san: 'tiktok', chu: 'Mua trên TikTok Shop' },
+].filter((n) => n.href).map((n, i) => ({ ...n, cls: `${cls} ${i ? 'lp-btn--phu' : ''}` }));
+---
+{d.trang_thai === 'Hết đợt' ? (
+  <html lang="vi"><head><meta charset="utf-8"><meta name="robots" content="noindex">
+    <meta http-equiv="refresh" content={`0;url=${trangNhan}`}><link rel="canonical" href={trangNhan}>
+    <title>{tenNhan} — Komlife Việt Nam</title></head>
+    <body><p>Đợt ưu đãi đã kết thúc. <a href={trangNhan}>Xem {tenNhan}</a>.</p></body></html>
+) : (
+<Base tieuDe={`${tenNhan} — ${chuTron(d.mo_dau.tieu_de)} | Ưu đãi ${d.ten_dot}`} moTa={d.mo_dau.mo_ta} anhChiaSe={d.mo_dau.anh} khongIndex anThanhDaiLy>
+  <div class="lp" style={mau}>
+    {laNhap && (
+      <div class="lp-nhap">
+        <b>BẢN NHÁP — chưa lên sóng.</b> Ô vàng là chỗ chờ bổ sung; còn ô vàng thì trang không lên được.
+        {thieuLinhRieng && ' Nút mua đang tạm trỏ về gian hàng Komlife trên Shopee vì chưa có link gian hàng riêng của nhãn.'}
+        {d.nguoi_soat && <> Người soát cuối: <span set:html={c(d.nguoi_soat)} />.</>}
+      </div>
+    )}
+
+    {/* 01 · MỞ ĐẦU */}
+    <section class="lp-hero">
+      <div class="wrap lp-hero__in">
+        <div class="stack g16">
+          <span class="lp-tag">{d.mo_dau.nhan_nho}</span>
+          <h1 set:html={t(d.mo_dau.tieu_de)} />
+          <p class="lead" set:html={c(d.mo_dau.mo_ta)} />
+          <div class="btnrow">
+            {nutMua().map((n) => <a class={`lp-btn ${n.cls}`} href={n.href} target="_blank" rel="noopener" data-rasan={n.san} data-nhan={d.nhan}>{n.chu} <i>→</i></a>)}
+          </div>
+          <p class="lp-nho">Gian hàng chính hãng · {tenNhan} là sản phẩm của {caiDat.ten_cong_ty}</p>
+        </div>
+        <div class="lp-hero__anh">
+          <Anh src={d.mo_dau.anh} alt={`${tenNhan} — ${chuTron(d.mo_dau.tieu_de)}`} class="lp-hero__img" sizes="(max-width:940px) 92vw, 640px" loading="eager" fetchpriority="high" />
+          {d.mo_dau.anh_phu && <Anh src={d.mo_dau.anh_phu} alt="" class="lp-hero__phu" sizes="160px" />}
+        </div>
+      </div>
+    </section>
+
+    {/* 02 · BẰNG CHỨNG */}
+    {d.bang_chung.danh_sach.length > 0 && (
+      <section class="sec">
+        <div class="wrap stack g28">
+          <div class="stack g12" style="max-width:44rem">
+            <div class="eb">Bằng chứng</div>
+            <h2 set:html={t(d.bang_chung.tieu_de)} />
+            {d.bang_chung.mo_ta && <p class="lead" set:html={c(d.bang_chung.mo_ta)} />}
+          </div>
+          <div class="cards cards--3 lp-cards">
+            {d.bang_chung.danh_sach.map((b, i) => (
+              <div class="card lp-card rv">
+                <span class="lp-so">0{i + 1}</span>
+                <h3>{b.ten}</h3>
+                <p class="card__b" set:html={c(b.mo_ta)} />
+                {b.nguon && <a class="lp-lienket" href={b.nguon}>Xem thêm →</a>}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {/* 03 · DÙNG LÚC NÀO */}
+    {d.dung_luc_nao.danh_sach.length > 0 && (
+      <section class="sec lp-nen">
+        <div class="wrap stack g28">
+          <div class="stack g12"><div class="eb">Dùng lúc nào</div><h2 set:html={t(d.dung_luc_nao.tieu_de)} /></div>
+          <div class="cards cards--4c">
+            {d.dung_luc_nao.danh_sach.map((x) => <div class="card rv"><h4>{x.ten}</h4><p class="card__b" set:html={c(x.mo_ta)} /></div>)}
+          </div>
+          {d.dung_luc_nao.mui_huong.length > 0 && (
+            <div class="lp-mui">
+              <span class="lp-mui__t">Ba mùi hương</span>
+              {d.dung_luc_nao.mui_huong.map((m) => <span class="lp-mui__i"><b>{m.ten}</b> {m.mo_ta}</span>)}
+            </div>
+          )}
+        </div>
+      </section>
+    )}
+
+    {/* 04 · REVIEW THẬT */}
+    {d.review.danh_sach.length > 0 && (
+      <section class="sec">
+        <div class="wrap stack g28">
+          <div class="stack g12"><div class="eb">Review thật</div><h2 set:html={t(d.review.tieu_de)} /></div>
+          <div class="cards cards--3">
+            {d.review.danh_sach.map((r) => (
+              <figure class="card lp-review rv">
+                <blockquote set:html={c(r.noi_dung)} />
+                <figcaption>
+                  <b set:html={c(r.ten)} />
+                  {r.link ? <a href={r.link} target="_blank" rel="nofollow noopener" set:html={c(r.nguon)} /> : <span set:html={c(r.nguon)} />}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {/* 05 · ƯU ĐÃI  +  06 · NÚT MUA */}
+    {goi.length > 0 && (
+      <section class="sec lp-uudai" id="uu-dai">
+        <div class="wrap stack g28">
+          <div class="stack g12" style="max-width:44rem">
+            <div class="eb">Ưu đãi {d.ten_dot}{d.ngay_ket_thuc && ` · đến hết ${ngay(d.ngay_ket_thuc)}`}</div>
+            <h2 set:html={t(d.uu_dai.tieu_de)} />
+            {d.uu_dai.mo_ta && <p class="lead" set:html={c(d.uu_dai.mo_ta)} />}
+          </div>
+          <div class="cards cards--3">
+            {goi.map((g) => (
+              <div class="lp-goi rv">
+                <div class="lp-goi__t">{g.ten || g.gia?.ten}</div>
+                {g.gia?.gia_ban
+                  ? <div class="lp-goi__gia">{dongTien(g.gia.gia_ban)}{g.gia.gia_goc && <s>{dongTien(g.gia.gia_goc)}</s>}</div>
+                  : <div class="lp-goi__gia lp-goi__gia--cho"><mark class="lp-cho">[Chờ Ecom chốt giá]</mark></div>}
+                {g.ghi_chu && <div class="lp-goi__d">{g.ghi_chu}</div>}
+              </div>
+            ))}
+          </div>
+          {d.uu_dai.dieu_kien && <p class="lp-dk" set:html={c(d.uu_dai.dieu_kien)} />}
+          <div class="btnrow">
+            {nutMua('lp-btn--sang').map((n) => <a class={`lp-btn ${n.cls}`} href={n.href} target="_blank" rel="noopener" data-rasan={n.san} data-nhan={d.nhan}>{n.chu} <i>→</i></a>)}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {/* 07 · HỎI ĐÁP */}
+    {d.hoi_dap.length > 0 && (
+      <section class="sec">
+        <div class="wrap split" style="align-items:start">
+          <div class="stack g16"><div class="eb">Hỏi &amp; đáp</div><h2>Mẹ hay <span class="it">hỏi gì</span></h2>
+            <a class="lp-lienket" href={trangNhan}>Tìm hiểu thêm về {tenNhan} →</a></div>
+          <div>{d.hoi_dap.map((q) => <details><summary>{q.hoi}</summary><p set:html={c(q.dap)} /></details>)}</div>
+        </div>
+      </section>
+    )}
+
+    {/* Thanh mua dính đáy màn hình (điện thoại) */}
+    <div class="lp-bar">
+      {nutMua().map((n) => <a class={`lp-btn ${n.cls}`} href={n.href} target="_blank" rel="noopener" data-rasan={n.san} data-nhan={d.nhan}>{n.san === 'shopee' ? 'Mua trên Shopee' : 'TikTok Shop'}</a>)}
+    </div>
+  </div>
+</Base>
+)}
