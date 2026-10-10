@@ -962,6 +962,24 @@ a.tin{text-decoration:none;color:inherit}
 .lp-mui__t{font-weight:700;color:var(--lp-chinh);font-size:.9rem;margin-right:4px}
 .lp-mui__i{background:#fff;border:1px solid color-mix(in srgb,var(--lp-nhan) 35%,transparent);border-radius:999px;padding:8px 16px;font-size:.88rem}
 .lp-mui__i b{color:var(--lp-nhan);margin-right:6px}
+.lp-sp{background:#fff!important}
+.lp-sp__in{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,64px);align-items:start}
+@media(max-width:940px){.lp-sp__in{grid-template-columns:1fr}}
+.lp-sp__anh{position:sticky;top:100px;background:var(--lp-nen);border-radius:22px;overflow:hidden}
+@media(max-width:940px){.lp-sp__anh{position:static;max-width:420px}}
+.lp-sp__img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 70%}
+.lp-sp__ten{font-weight:700;color:var(--ink);font-size:1.02rem}
+.lp-ts{margin:0;border-top:1px solid var(--line)}
+.lp-ts__r{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+@media(max-width:520px){.lp-ts__r{grid-template-columns:1fr;gap:2px}}
+.lp-ts dt{font-weight:700;color:var(--lp-chinh)}
+.lp-ts dd{margin:0;color:var(--body)}
+.lp-cd{margin:0;padding:0;list-style:none;counter-reset:cd;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.lp-cd li{counter-increment:cd;display:flex;flex-direction:column;gap:2px;background:var(--lp-nen);border-radius:12px;padding:12px 14px 12px 46px;position:relative;font-size:.92rem}
+.lp-cd li::before{content:counter(cd);position:absolute;left:12px;top:11px;width:24px;height:24px;border-radius:50%;
+  background:var(--lp-chinh);color:#fff;font-weight:700;font-size:.8rem;display:flex;align-items:center;justify-content:center}
+.lp-cachdung{font-size:.92rem;color:var(--body)}
+.lp-cachdung b{color:var(--lp-chinh)}
 .lp-review{margin:0;display:flex;flex-direction:column;gap:16px}
 .lp-review blockquote{margin:0;font-family:var(--fd);font-size:1.12rem;line-height:1.45;color:var(--ink)}
 .lp-review blockquote::before{content:"“";display:block;font-size:2.6rem;line-height:.6;color:var(--lp-nhan);margin-bottom:8px}

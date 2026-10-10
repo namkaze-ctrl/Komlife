@@ -1,6 +1,6 @@
 ---
 // LANDING THEO ĐỢT — nội dung: src/content/landing/<tên>.json -> địa chỉ /lp/<tên> (vd /lp/abby-1111)
-// Khuôn 7 khối: Mở đầu · Bằng chứng · Dùng lúc nào · Review · Ưu đãi · Nút mua · Hỏi đáp.
+// Khuôn 8 khối: Mở đầu · Giới thiệu sản phẩm · Bằng chứng · Dùng lúc nào · Review · Ưu đãi · Nút mua · Hỏi đáp.
 // Mỗi nhãn chỉ đổi màu (ô "mau"), chữ và ảnh. Luật lên sóng: src/lib/landing.ts
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
@@ -75,7 +75,42 @@ const nutMua = (cls = '') => [
       </div>
     </section>
 
-    {/* 02 · BẰNG CHỨNG */}
+    {/* 02 · GIỚI THIỆU SẢN PHẨM */}
+    {d.san_pham.ten && (
+      <section class="sec lp-sp" id="san-pham">
+        <div class="wrap lp-sp__in">
+          {d.san_pham.anh && <div class="lp-sp__anh"><Anh src={d.san_pham.anh} alt={d.san_pham.ten} class="lp-sp__img" sizes="(max-width:940px) 92vw, 460px" /></div>}
+          <div class="stack g20">
+            <div class="stack g12">
+              <div class="eb">Giới thiệu sản phẩm</div>
+              <h2 set:html={t(d.san_pham.tieu_de || d.san_pham.ten)} />
+              {d.san_pham.tieu_de && <p class="lp-sp__ten">{d.san_pham.ten}</p>}
+              {d.san_pham.mo_ta && <p class="lead" set:html={c(d.san_pham.mo_ta)} />}
+            </div>
+            {d.san_pham.thong_so.length > 0 && (
+              <dl class="lp-ts">
+                {d.san_pham.thong_so.map((x) => <div class="lp-ts__r"><dt>{x.ten}</dt><dd set:html={c(x.gia_tri)} /></div>)}
+              </dl>
+            )}
+            {d.san_pham.cong_dung.length > 0 && (
+              <div class="stack g12">
+                <h4>{d.san_pham.cong_dung.length} công dụng trong một chai</h4>
+                <ol class="lp-cd">{d.san_pham.cong_dung.map((x) => <li><b set:html={c(x.ten)} />{x.mo_ta && <span set:html={c(x.mo_ta)} />}</li>)}</ol>
+              </div>
+            )}
+            {d.san_pham.mui_huong.length > 0 && (
+              <div class="lp-mui">
+                <span class="lp-mui__t">{d.san_pham.mui_huong.length} mùi hương</span>
+                {d.san_pham.mui_huong.map((m) => <span class="lp-mui__i"><b>{m.ten}</b> {m.mo_ta}</span>)}
+              </div>
+            )}
+            {d.san_pham.cach_dung && <p class="lp-cachdung"><b>Cách dùng:</b> <span set:html={c(d.san_pham.cach_dung)} /></p>}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {/* 03 · BẰNG CHỨNG */}
     {d.bang_chung.danh_sach.length > 0 && (
       <section class="sec">
         <div class="wrap stack g28">
@@ -98,7 +133,7 @@ const nutMua = (cls = '') => [
       </section>
     )}
 
-    {/* 03 · DÙNG LÚC NÀO */}
+    {/* 04 · DÙNG LÚC NÀO */}
     {d.dung_luc_nao.danh_sach.length > 0 && (
       <section class="sec lp-nen">
         <div class="wrap stack g28">
@@ -116,7 +151,7 @@ const nutMua = (cls = '') => [
       </section>
     )}
 
-    {/* 04 · REVIEW THẬT */}
+    {/* 05 · REVIEW THẬT */}
     {d.review.danh_sach.length > 0 && (
       <section class="sec">
         <div class="wrap stack g28">
@@ -136,7 +171,7 @@ const nutMua = (cls = '') => [
       </section>
     )}
 
-    {/* 05 · ƯU ĐÃI  +  06 · NÚT MUA */}
+    {/* 06 · ƯU ĐÃI  +  07 · NÚT MUA */}
     {goi.length > 0 && (
       <section class="sec lp-uudai" id="uu-dai">
         <div class="wrap stack g28">
@@ -164,7 +199,7 @@ const nutMua = (cls = '') => [
       </section>
     )}
 
-    {/* 07 · HỎI ĐÁP */}
+    {/* 08 · HỎI ĐÁP */}
     {d.hoi_dap.length > 0 && (
       <section class="sec">
         <div class="wrap split" style="align-items:start">

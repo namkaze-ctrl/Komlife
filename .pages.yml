@@ -594,7 +594,7 @@ content:
           - { name: body, label: Nội dung, type: rich-text, options: { format: markdown } }
 
   # ─────────────────────────────────────────────────────────────
-  # LANDING THEO ĐỢT — địa chỉ komlife.com.vn/lp/<tên file>, vd abby-1111. Khuôn 7 khối.
+  # LANDING THEO ĐỢT — địa chỉ komlife.com.vn/lp/<tên file>, vd abby-1111. Khuôn 8 khối.
   # Gõ "[Chờ ...]" cho ô chưa có: bản nháp hiện vàng; còn ô [Chờ] thì KHÔNG đặt được "Đang chạy".
   - name: landing
     label: "🚀 Landing theo đợt"
@@ -637,8 +637,38 @@ content:
           - { name: mo_ta, label: Mô tả, type: text }
           - { name: anh, label: Ảnh chính (ảnh chai thật, ngang 16:10), type: image }
           - { name: anh_phu, label: Ảnh trang trí (linh vật, nền trong suốt), type: image }
+      - name: san_pham
+        label: "② Giới thiệu sản phẩm"
+        type: object
+        fields:
+          - { name: tieu_de, label: "Tiêu đề (*chữ nhấn*)", type: string }
+          - { name: ten, label: Tên sản phẩm đầy đủ (để trống = ẩn khối), type: string }
+          - { name: mo_ta, label: Mô tả ngắn, type: text }
+          - { name: anh, label: Ảnh sản phẩm (ảnh đứng 4:5), type: image }
+          - name: thong_so
+            label: Thông số (dạng, dung tích, mùi, dùng cho...)
+            type: object
+            list: true
+            fields:
+              - { name: ten, label: Mục, type: string }
+              - { name: gia_tri, label: Nội dung, type: string }
+          - name: cong_dung
+            label: Công dụng (chép đúng chữ in trên nhãn)
+            type: object
+            list: true
+            fields:
+              - { name: ten, label: Công dụng, type: string }
+              - { name: mo_ta, label: Giải thích ngắn, type: string }
+          - name: mui_huong
+            label: Mùi hương
+            type: object
+            list: true
+            fields:
+              - { name: ten, label: Tên mùi, type: string }
+              - { name: mo_ta, label: Mô tả mùi, type: string }
+          - { name: cach_dung, label: Cách dùng & liều lượng (đúng nhãn chai), type: text }
       - name: bang_chung
-        label: "② Bằng chứng"
+        label: "③ Bằng chứng"
         type: object
         fields:
           - { name: tieu_de, label: Tiêu đề, type: text }
@@ -652,7 +682,7 @@ content:
               - { name: mo_ta, label: Nội dung (ghi số phiếu, nơi cấp...), type: text }
               - { name: nguon, label: Link xem thêm, type: string }
       - name: dung_luc_nao
-        label: "③ Dùng lúc nào"
+        label: "④ Dùng lúc nào"
         type: object
         fields:
           - { name: tieu_de, label: Tiêu đề, type: text }
@@ -671,7 +701,7 @@ content:
               - { name: ten, label: Tên mùi, type: string }
               - { name: mo_ta, label: Mô tả mùi, type: string }
       - name: review
-        label: "④ Review thật (chép nguyên văn, ghi nguồn)"
+        label: "⑤ Review thật (chép nguyên văn, ghi nguồn)"
         type: object
         fields:
           - { name: tieu_de, label: Tiêu đề, type: text }
@@ -685,7 +715,7 @@ content:
               - { name: nguon, label: "Nguồn (sàn, ngày)", type: string }
               - { name: link, label: Link tới đánh giá, type: string }
       - name: uu_dai
-        label: "⑤ Ưu đãi (giá lấy từ Bảng giá chung)"
+        label: "⑥ Ưu đãi (giá lấy từ Bảng giá chung)"
         type: object
         fields:
           - { name: tieu_de, label: Tiêu đề, type: text }
@@ -700,13 +730,13 @@ content:
               - { name: ghi_chu, label: Ghi chú ngắn, type: string }
           - { name: dieu_kien, label: Điều kiện áp dụng, type: text }
       - name: nut_mua
-        label: "⑥ Nút mua — link gian hàng chính hãng của nhãn (web tự gắn UTM)"
+        label: "⑦ Nút mua — link gian hàng chính hãng của nhãn (web tự gắn UTM)"
         type: object
         fields:
           - { name: shopee, label: Link Shopee, type: string }
           - { name: tiktok_shop, label: Link TikTok Shop, type: string }
       - name: hoi_dap
-        label: "⑦ Hỏi đáp (4–6 câu)"
+        label: "⑧ Hỏi đáp (4–6 câu)"
         type: object
         list: { collapsible: { collapsed: true, summary: "{fields.hoi}" } }
         fields:

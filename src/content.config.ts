@@ -88,6 +88,16 @@ const landing = defineCollection({
       anh: z.string().optional().default(''),
       anh_phu: z.string().optional().default(''),
     }),
+    san_pham: z.object({
+      tieu_de: z.string().optional().default(''),
+      ten: z.string().optional().default(''),
+      mo_ta: z.string().optional().default(''),
+      anh: z.string().optional().default(''),
+      thong_so: z.array(z.object({ ten: z.string(), gia_tri: z.string().optional().default('') })).optional().default([]),
+      cong_dung: z.array(muc).optional().default([]),
+      mui_huong: z.array(muc).optional().default([]),
+      cach_dung: z.string().optional().default(''),
+    }).optional().default({}),
     bang_chung: z.object({
       tieu_de: z.string().optional().default(''),
       mo_ta: z.string().optional().default(''),
