@@ -1,0 +1,144 @@
+---
+// TRANG CHI TIẾT SẢN PHẨM — nội dung: src/content/san-pham/<nhãn>-<mã>.json -> /nhan-hang/<nhãn>/<mã>
+// Bấm vào thẻ sản phẩm ở trang danh mục / landing sẽ mở trang này.
+import Base from '../../../layouts/Base.astro';
+import Anh from '../../../components/Anh.astro';
+import TheSanPham from '../../../components/TheSanPham.astro';
+import { caiDat, layNhanHang } from '../../../lib/noi-dung';
+import { dong } from '../../../lib/chu';
+import { laySanPhamCt, congSanPham, layGia, dongTien, themUtm } from '../../../lib/landing';
+
+export async function getStaticPaths() {
+  const ds = await laySanPhamCt();
+  const loi = ds.flatMap(congSanPham);
+  if (loi.length) throw new Error('CỔNG SẢN PHẨM CHẶN:\n- ' + loi.join('\n- '));
+  return ds.map((p) => ({ params: { ma: p.nhan, sp: p.ma }, props: { p, cungNhan: ds.filter((x) => x.nhan === p.nhan && x.ma !== p.ma) } }));
+}
+const { p, cungNhan } = Astro.props;
+const nhan = (await layNhanHang()).find((b) => b.ma === p.nhan);
+const tenNhan = nhan?.ten ?? p.nhan;
+const laNhap = p.trang_thai === 'Nháp';
+const cho = (html: string) => html.replace(/\[([^\]]{2,})\]/g, '<mark class="lp-cho">[$1]</mark>');
+const c = (s = '') => cho(dong(s));
+
+const phienBan = p.phien_ban.map((v) => ({ ...v, gia: layGia(v.ma_gia) }));
+const chienDich = `${p.nhan}-${p.ma}`;
+const shopee = themUtm(p.shopee || caiDat.shopee, chienDich);
+const tiktok = themUtm(p.tiktok_shop, chienDich);
+const mau = `--sp:${p.mau};--sp-nhat:${p.mau_nhat}`;
+---
+<Base tieuDe={`${p.ten} — ${p.ten_dong} | ${tenNhan}`} moTa={p.mo_ta} anhChiaSe={p.anh[0]} anThanhDaiLy khongIndex={laNhap}>
+  <div class="spct" style={mau}>
+    {laNhap && <div class="lp-nhap"><b>BẢN NHÁP — chưa lên web chính.</b> Ô vàng là chỗ chờ bổ sung. Ảnh chai đang là ảnh cắt tạm từ ảnh thiết kế.</div>}
+
+    <section class="spct-top">
+      <div class="wrap">
+        <nav class="spct-duong" aria-label="Đường dẫn">
+          <a href="/nhan-hang">Nhãn hàng</a> / <a href={`/nhan-hang/${p.nhan}`}>{tenNhan}</a> / <span>{p.ten.replace(`${tenNhan} `, '')}</span>
+        </nav>
+        <div class="spct-in">
+          <div class="spct-anh">
+            <span class="spct-anh__nen" aria-hidden="true"></span>
+            {p.anh[0] && <Anh src={p.anh[0]} alt={`${p.ten} — ${p.ten_dong}`} class="spct-anh__img" sizes="(max-width:940px) 80vw, 520px" loading="eager" fetchpriority="high" />}
+          </div>
+          <div class="stack g20">
+            <div class="stack g8">
+              <span class="spct-dong">{tenNhan} · {p.ten_dong}</span>
+              <h1>{p.ten}</h1>
+              {p.cau_ngan && <p class="spct-cau">{p.cau_ngan}</p>}
+            </div>
+            <p class="lead" set:html={c(p.mo_ta)} />
+
+            {phienBan.length > 0 && (
+              <div class="stack g12">
+                <span class="spct-nhan">Chọn dung tích</span>
+                <div class="spct-pb" role="radiogroup" aria-label="Dung tích">
+                  {phienBan.map((v, i) => (
+                    <button type="button" class="spct-pb__i" role="radio" aria-checked={i === 0 ? 'true' : 'false'}
+                      data-gia={v.gia?.gia_ban ? dongTien(v.gia.gia_ban) : ''} data-goc={v.gia?.gia_goc ? dongTien(v.gia.gia_goc) : ''} data-ghichu={v.ghi_chu}>
+                      {v.ten}
+                    </button>
+                  ))}
+                </div>
+                <div class="spct-gia">
+                  <span class="spct-gia__so" data-gia-hien>{phienBan[0].gia?.gia_ban ? dongTien(phienBan[0].gia.gia_ban) : ''}</span>
+                  <s data-goc-hien>{phienBan[0].gia?.gia_goc ? dongTien(phienBan[0].gia.gia_goc) : ''}</s>
+                  <mark class="lp-cho" data-cho-gia hidden={!!phienBan[0].gia?.gia_ban}>[Chờ Ecom chốt giá]</mark>
+                  <span class="spct-gia__d" data-ghichu-hien>{phienBan[0].ghi_chu}</span>
+                </div>
+              </div>
+            )}
+
+            <div class="btnrow">
+              {shopee && <a class="lp-btn spct-btn" href={shopee} target="_blank" rel="noopener" data-rasan="shopee" data-nhan={p.nhan}>Mua trên Shopee <i>→</i></a>}
+              {tiktok && <a class="lp-btn lp-btn--phu spct-btn2" href={tiktok} target="_blank" rel="noopener" data-rasan="tiktok" data-nhan={p.nhan}>TikTok Shop <i>→</i></a>}
+            </div>
+            <p class="lp-nho">Gian hàng chính hãng · {tenNhan} là sản phẩm của {caiDat.ten_cong_ty}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec spct-chitiet">
+      <div class="wrap spct-cot">
+        <div class="stack g28">
+          {p.cong_dung.length > 0 && (
+            <div class="stack g16">
+              <h2>{p.cong_dung.length} công dụng <span class="it">trong một chai</span></h2>
+              <ol class="lp-cd spct-cd">{p.cong_dung.map((x) => <li><b set:html={c(x.ten)} />{x.mo_ta && <span set:html={c(x.mo_ta)} />}</li>)}</ol>
+            </div>
+          )}
+          {p.dung_luc_nao.length > 0 && (
+            <div class="stack g16">
+              <h2>Mẹ dùng <span class="it">để giặt gì</span></h2>
+              <div class="cards cards--2">{p.dung_luc_nao.map((x) => <div class="card"><h4>{x.ten}</h4><p class="card__b" set:html={c(x.mo_ta)} /></div>)}</div>
+            </div>
+          )}
+          {p.cach_dung && (
+            <div class="stack g12">
+              <h2>Cách <span class="it">dùng</span></h2>
+              <p class="lead" set:html={c(p.cach_dung)} />
+            </div>
+          )}
+        </div>
+        {p.thong_so.length > 0 && (
+          <aside class="spct-ts">
+            <h3>Thông tin sản phẩm</h3>
+            <dl class="lp-ts">{p.thong_so.map((x) => <div class="lp-ts__r"><dt>{x.ten}</dt><dd set:html={c(x.gia_tri)} /></div>)}</dl>
+          </aside>
+        )}
+      </div>
+    </section>
+
+    {cungNhan.length > 0 && (
+      <section class="sec spct-khac">
+        <div class="wrap stack g28">
+          <h2>Các mùi <span class="it">khác của {tenNhan}</span></h2>
+          <div class="tsp-luoi tsp-luoi--nho">{cungNhan.map((x) => <TheSanPham p={x} />)}</div>
+        </div>
+      </section>
+    )}
+
+    <div class="lp-bar">
+      {shopee && <a class="lp-btn spct-btn" href={shopee} target="_blank" rel="noopener" data-rasan="shopee" data-nhan={p.nhan}>Mua trên Shopee</a>}
+      {tiktok && <a class="lp-btn lp-btn--phu" href={tiktok} target="_blank" rel="noopener" data-rasan="tiktok" data-nhan={p.nhan}>TikTok Shop</a>}
+    </div>
+  </div>
+
+  <script>
+    // Chọn dung tích -> đổi giá + ghi chú
+    document.querySelectorAll<HTMLElement>('.spct-pb').forEach((nhom) => {
+      const goc = nhom.closest('.stack')!;
+      nhom.addEventListener('click', (e) => {
+        const b = (e.target as HTMLElement).closest<HTMLButtonElement>('.spct-pb__i');
+        if (!b) return;
+        nhom.querySelectorAll('.spct-pb__i').forEach((x) => x.setAttribute('aria-checked', String(x === b)));
+        const gia = b.dataset.gia || '';
+        goc.querySelector('[data-gia-hien]')!.textContent = gia;
+        goc.querySelector('[data-goc-hien]')!.textContent = b.dataset.goc || '';
+        (goc.querySelector('[data-cho-gia]') as HTMLElement).hidden = !!gia;
+        goc.querySelector('[data-ghichu-hien]')!.textContent = b.dataset.ghichu || '';
+      });
+    });
+  </script>
+</Base>

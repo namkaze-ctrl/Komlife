@@ -1,0 +1,44 @@
+---
+// Bố cục "Danh mục sản phẩm" của landing: màn đầu theo phong cách nhãn + lưới tất cả sản phẩm của nhãn
+// (bấm thẻ -> trang chi tiết). Ưu đãi và Hỏi đáp dùng chung với bố cục "Dài" (nằm ở trang lp/[slug]).
+import Anh from './Anh.astro';
+import TheSanPham from './TheSanPham.astro';
+
+interface Props { d: any; tenNhan: string; sanPham: any[]; nut: { href: string; san: string; chu: string }[]; t: (s: string) => string; c: (s: string) => string }
+const { d, tenNhan, sanPham, nut, t, c } = Astro.props;
+const chai = sanPham.filter((p) => p.anh[0]).slice(0, 3);
+---
+<section class="ab-hero">
+  <svg class="ab-hero__blob" viewBox="0 0 600 600" aria-hidden="true"><path d="M421 63c77 41 141 118 146 203 6 85-47 177-121 239-74 61-169 92-252 63S42 448 25 361C8 274 49 176 118 109 187 42 344 22 421 63z"/></svg>
+  <div class="wrap ab-hero__in">
+    <div class="stack g16 ab-hero__chu">
+      <span class="lp-tag">{d.mo_dau.nhan_nho}</span>
+      <h1 set:html={t(d.mo_dau.tieu_de)} />
+      <p class="lead" set:html={c(d.mo_dau.mo_ta)} />
+      <div class="btnrow">
+        <a class="lp-btn" href="#san-pham">Chọn mùi cho con <i>↓</i></a>
+        {nut[0] && <a class="lp-btn lp-btn--phu" href={nut[0].href} target="_blank" rel="noopener" data-rasan={nut[0].san} data-nhan={d.nhan}>{nut[0].chu} <i>→</i></a>}
+      </div>
+    </div>
+    <div class="ab-hero__sp" aria-hidden="true">
+      {chai.map((p, i) => <a href={`/nhan-hang/${p.nhan}/${p.ma}`} class={`ab-chai ab-chai--${i}`} tabindex="-1"><Anh src={p.anh[0]} alt="" sizes="220px" loading="eager" /></a>)}
+      {d.mo_dau.anh_phu && <Anh src={d.mo_dau.anh_phu} alt="" class="ab-tho" sizes="170px" loading="eager" />}
+    </div>
+  </div>
+</section>
+
+<section class="sec ab-sp" id="san-pham">
+  <div class="wrap stack g28">
+    <div class="stack g12 ab-sp__dau">
+      <div class="eb">Sản phẩm {tenNhan}</div>
+      <h2>Chọn <span class="it">mùi hương</span> cho con</h2>
+      <p class="lead">Cùng một công thức giặt xả, ba mùi cho ba khoảnh khắc. Bấm vào từng chai để xem chi tiết.</p>
+    </div>
+    <div class="tsp-luoi">{sanPham.map((p) => <TheSanPham p={p} />)}</div>
+    <ul class="ab-tin">
+      <li><b>Giặt và xả</b> trong một lần</li>
+      <li><b>Làm ra từ nhà máy</b> Komlife tại Hưng Yên</li>
+      <li><b>Can 3L, can 1,1L</b> và chai dùng thử 100ml</li>
+    </ul>
+  </div>
+</section>

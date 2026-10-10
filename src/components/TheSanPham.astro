@@ -1,0 +1,26 @@
+---
+// Thẻ sản phẩm: cả thẻ là một link sang trang chi tiết /nhan-hang/<nhãn>/<mã>.
+import Anh from './Anh.astro';
+import { giaTu, dongTien } from '../lib/landing';
+
+interface Props { p: any }
+const { p } = Astro.props;
+const tu = giaTu(p.phien_ban);
+const dungTich = p.phien_ban.map((v: any) => v.ten.replace(/^(Can|Chai|Dùng thử)\s*/i, '')).join(' · ');
+---
+<a class="tsp rv" href={`/nhan-hang/${p.nhan}/${p.ma}`} style={`--sp:${p.mau};--sp-nhat:${p.mau_nhat}`}>
+  <div class="tsp__anh">
+    <span class="tsp__nen" aria-hidden="true"></span>
+    {p.anh[0] && <Anh src={p.anh[0]} alt={p.ten} class="tsp__img" sizes="(max-width:700px) 70vw, 300px" />}
+  </div>
+  <div class="tsp__chu">
+    <span class="tsp__dong">{p.ten_dong}</span>
+    <h3 class="tsp__ten">{p.ten}</h3>
+    {p.cau_ngan && <p class="tsp__cau">{p.cau_ngan}</p>}
+    <div class="tsp__chan">
+      <span class="tsp__dt">{dungTich}</span>
+      <span class="tsp__gia">{tu ? `từ ${dongTien(String(tu))}` : 'Xem giá'}</span>
+    </div>
+    <span class="tsp__xem">Xem chi tiết <i>→</i></span>
+  </div>
+</a>

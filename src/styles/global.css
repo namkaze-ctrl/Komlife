@@ -1007,3 +1007,104 @@ a.tin{text-decoration:none;color:inherit}
   .lp-bar .lp-btn{flex:1;justify-content:center;padding:12px 10px;font-size:.88rem}
   .lp{padding-bottom:70px}
 }
+
+/* ─── thẻ sản phẩm (dùng ở danh mục + "các mùi khác") ───────── */
+.tsp-luoi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,28px)}
+.tsp-luoi--nho{grid-template-columns:repeat(2,minmax(0,1fr));max-width:760px}
+@media(max-width:860px){.tsp-luoi{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.tsp-luoi,.tsp-luoi--nho{grid-template-columns:1fr}}
+.tsp{--sp:#212b7e;--sp-nhat:#F1F2F9;display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;
+  border-radius:24px;overflow:hidden;border:1px solid color-mix(in srgb,var(--sp) 18%,transparent);
+  box-shadow:0 18px 40px -28px color-mix(in srgb,var(--sp) 60%,transparent);transition:transform .25s var(--e),box-shadow .25s var(--e)}
+.tsp:hover{transform:translateY(-6px);box-shadow:0 28px 50px -26px color-mix(in srgb,var(--sp) 70%,transparent)}
+.tsp__anh{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--sp-nhat)}
+.tsp__img{position:relative;width:100%;height:100%;object-fit:cover;object-position:center 85%;transition:transform .5s var(--e)}
+.tsp:hover .tsp__img{transform:scale(1.04)}
+.tsp__nen{position:absolute;inset:auto 0 0 0;height:8px;background:var(--sp);z-index:1}
+.tsp__chu{display:flex;flex-direction:column;gap:6px;padding:20px 22px 22px}
+.tsp__dong{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);font-weight:600}
+.tsp__ten{font-family:var(--fd);font-size:1.5rem;line-height:1.1;color:var(--sp)!important}
+.tsp__cau{font-size:.93rem;color:var(--body);margin:0}
+.tsp__chan{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:8px;padding-top:12px;border-top:1px dashed var(--line);font-size:.86rem}
+.tsp__dt{color:var(--faint)}
+.tsp__gia{font-weight:700;color:var(--ink)}
+.tsp__xem{margin-top:10px;align-self:flex-start;font-weight:700;font-size:.88rem;color:#fff;background:var(--sp);border-radius:999px;padding:9px 16px}
+.tsp:hover .tsp__xem{filter:brightness(1.08)}
+@media(max-width:560px){
+  .tsp{display:grid;grid-template-columns:118px 1fr;border-radius:18px}
+  .tsp__anh{aspect-ratio:auto;height:100%;min-height:170px}
+  .tsp__nen{inset:0 0 0 auto;width:5px;height:auto}
+  .tsp__chu{padding:14px 16px;gap:4px}
+  .tsp__ten{font-size:1.25rem}
+  .tsp__dong{font-size:.66rem}
+  .tsp__xem{padding:7px 13px;font-size:.82rem;margin-top:6px}
+}
+
+/* ─── trang chi tiết sản phẩm ───────────────────────────── */
+.spct{--sp:#212b7e;--sp-nhat:#F1F2F9}
+.spct h1,.spct h2,.spct h3,.spct h4{color:var(--ink)}
+.spct .it{color:var(--sp)}
+.spct-top{background:linear-gradient(180deg,var(--sp-nhat),#fff);padding-block:clamp(100px,13vh,130px) clamp(40px,6vw,72px)}
+.lp-nhap+.spct-top{padding-top:28px}
+.spct-duong{font-size:.84rem;color:var(--faint);margin-bottom:22px}
+.spct-duong a{color:var(--faint);text-decoration:none}.spct-duong a:hover{color:var(--sp)}
+.spct-duong span{color:var(--ink);font-weight:600}
+.spct-in{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,72px);align-items:center}
+@media(max-width:900px){.spct-in{grid-template-columns:1fr}}
+.spct-anh{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:3/4;max-width:460px;width:100%;justify-self:center;
+  box-shadow:0 34px 70px -40px color-mix(in srgb,var(--sp) 75%,transparent);border:6px solid #fff}
+.spct-anh__img{width:100%;height:100%;object-fit:cover}
+.spct-anh__nen{display:none}
+.spct-dong{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sp)}
+.spct h1{font-size:clamp(2.4rem,5vw,3.8rem);line-height:1.02}
+.spct-cau{font-family:var(--fd);font-size:clamp(1.1rem,1.8vw,1.35rem);color:var(--sp);margin:0}
+.spct-nhan{font-weight:700;font-size:.88rem;color:var(--ink)}
+.spct-pb{display:flex;flex-wrap:wrap;gap:10px}
+.spct-pb__i{cursor:pointer;border:1.5px solid var(--line);background:#fff;border-radius:14px;padding:11px 18px;font-weight:600;font-size:.92rem;color:var(--ink);transition:border-color .15s,background .15s}
+.spct-pb__i:hover{border-color:var(--sp)}
+.spct-pb__i[aria-checked="true"]{border-color:var(--sp);background:var(--sp-nhat);color:var(--sp);box-shadow:inset 0 0 0 1px var(--sp)}
+.spct-gia{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;min-height:2.6rem}
+.spct-gia__so{font-family:var(--fd);font-size:2.2rem;font-weight:700;color:var(--ink);line-height:1}
+.spct-gia s{color:var(--faint)}
+.spct-gia__d{flex-basis:100%;font-size:.86rem;color:var(--faint)}
+.spct .lp-btn.spct-btn{background:var(--sp);border-color:var(--sp)}
+.spct .lp-btn--phu{color:var(--sp);border-color:var(--sp);background:transparent}
+.spct .lp-btn:hover{filter:brightness(1.1)}
+.spct-chitiet{background:#fff!important}
+.spct-cot{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:clamp(28px,5vw,64px);align-items:start}
+@media(max-width:900px){.spct-cot{grid-template-columns:1fr}}
+.spct h2{font-size:clamp(1.6rem,2.6vw,2.1rem)}
+.spct-cd li::before{background:var(--sp)}
+.spct-cd li{background:var(--sp-nhat)}
+.spct-ts{position:sticky;top:100px;background:var(--sp-nhat);border-radius:20px;padding:24px}
+.spct-ts h3{font-size:1.15rem;margin-bottom:12px}
+.spct-ts .lp-ts dt{color:var(--sp)}
+.spct-khac{background:var(--cream)!important}
+.spct .lp-bar .lp-btn{background:var(--sp);border-color:var(--sp)}
+.spct .lp-bar .lp-btn--phu{background:#fff;color:var(--sp)}
+
+/* ─── landing bố cục "Danh mục sản phẩm" (phong cách nhãn) ─── */
+.ab-hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#FBD3E2 0%,#FDE7EF 55%,#FFF4F8 100%);
+  padding-block:clamp(110px,14vh,150px) clamp(56px,8vw,100px)}
+.lp-nhap+.ab-hero{padding-top:clamp(36px,5vw,60px)}
+.ab-hero__blob{position:absolute;right:-6%;top:6%;width:min(58vw,720px);height:auto;fill:#7FA9D6;opacity:.55}
+@media(max-width:900px){.ab-hero__blob{right:-30%;top:auto;bottom:-10%;width:110vw}}
+.ab-hero__in{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+@media(max-width:900px){.ab-hero__in{grid-template-columns:1fr}}
+.ab-hero h1{font-size:clamp(2.7rem,6vw,4.6rem);line-height:1}
+.ab-hero__sp{position:relative;height:clamp(330px,40vw,480px)}
+.ab-chai{position:absolute;bottom:6%;width:clamp(120px,15vw,190px);aspect-ratio:3/4;border-radius:22px;overflow:hidden;
+  border:6px solid #fff;box-shadow:0 26px 50px -24px rgba(1,81,167,.55);transition:transform .3s var(--e)}
+.ab-chai img{width:100%;height:100%;object-fit:cover}
+.ab-chai--0{left:4%;transform:rotate(-9deg)}
+.ab-chai--1{left:34%;bottom:14%;z-index:2;width:clamp(140px,17vw,215px)}
+.ab-chai--2{left:66%;transform:rotate(8deg)}
+.ab-chai:hover{transform:translateY(-8px) rotate(0)}
+.ab-tho{position:absolute;left:-6%;bottom:-4%;width:clamp(80px,9.5vw,130px);height:auto;z-index:3;filter:drop-shadow(0 12px 20px rgba(0,0,0,.18))}
+@media(max-width:900px){.ab-tho{left:-2%}}
+.ab-sp{background:#fff!important}
+.ab-sp__dau{max-width:44rem}
+.ab-tin{list-style:none;margin:8px 0 0;padding:18px 22px;display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:center;
+  background:var(--lp-nen);border-radius:18px;font-size:.93rem;color:var(--body)}
+.ab-tin li::before{content:"✓";color:var(--lp-chinh);font-weight:800;margin-right:8px}
+.ab-tin b{color:var(--lp-chinh)}

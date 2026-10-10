@@ -72,6 +72,7 @@ const landing = defineCollection({
     ten_dot: z.string(),
     duong_dan: z.string().optional().default(''),
     trang_thai: z.enum(['Nháp', 'Đang chạy', 'Hết đợt']).default('Nháp'),
+    bo_cuc: z.enum(['Dài', 'Danh mục sản phẩm']).default('Dài'),
     ngay_bat_dau: z.string().optional().default(''),
     ngay_ket_thuc: z.string().optional().default(''),
     mau: z.object({
@@ -127,4 +128,30 @@ const landing = defineCollection({
   }),
 });
 
-export const collections = { nhanHang, tinTuc, phapLy, landing };
+
+// Sản phẩm chi tiết từng nhãn: /nhan-hang/<nhãn>/<mã>. File: src/content/san-pham/<nhãn>-<mã>.json
+const sanPhamCt = defineCollection({
+  loader: glob({ pattern: '*.json', base: './src/content/san-pham' }),
+  schema: z.object({
+    nhan: z.string(),
+    ma: z.string(),
+    thu_tu: z.number().optional().default(99),
+    trang_thai: z.enum(['Nháp', 'Đang bán', 'Ngừng bán']).default('Nháp'),
+    ten: z.string(),
+    ten_dong: z.string().optional().default(''),
+    cau_ngan: z.string().optional().default(''),
+    mau: z.string().optional().default('#212b7e'),
+    mau_nhat: z.string().optional().default('#F1F2F9'),
+    anh: z.array(z.string()).optional().default([]),
+    mo_ta: z.string().optional().default(''),
+    phien_ban: z.array(z.object({ ten: z.string(), ma_gia: z.string().optional().default(''), ghi_chu: z.string().optional().default('') })).optional().default([]),
+    thong_so: z.array(z.object({ ten: z.string(), gia_tri: z.string().optional().default('') })).optional().default([]),
+    cong_dung: z.array(muc).optional().default([]),
+    dung_luc_nao: z.array(muc).optional().default([]),
+    cach_dung: z.string().optional().default(''),
+    shopee: z.string().optional().default(''),
+    tiktok_shop: z.string().optional().default(''),
+  }),
+});
+
+export const collections = { nhanHang, tinTuc, phapLy, landing, sanPhamCt };

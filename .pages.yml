@@ -616,6 +616,11 @@ content:
         type: select
         description: "Nháp = chỉ xem ở bản thử. Đang chạy = lên komlife.com.vn (máy chặn nếu còn ô [Chờ], thiếu giá, thiếu link sàn, dính từ cấm). Hết đợt = tự chuyển về trang nhãn."
         options: { values: [ "Nháp", "Đang chạy", "Hết đợt" ] }
+      - name: bo_cuc
+        label: Bố cục
+        type: select
+        description: "Dài = 8 khối kể chuyện. Danh mục sản phẩm = màn đầu + lưới tất cả sản phẩm của nhãn (bấm vào ra trang chi tiết), rồi Ưu đãi + Hỏi đáp."
+        options: { values: [ "Dài", "Danh mục sản phẩm" ] }
       - { name: ngay_bat_dau, label: Ngày bắt đầu, type: date }
       - { name: ngay_ket_thuc, label: Ngày kết thúc, type: date }
       - { name: nguoi_soat, label: Người soát cuối (ghi tên), type: string }
@@ -762,3 +767,65 @@ content:
           - { name: ten, label: Tên sản phẩm / gói, type: string }
           - { name: gia_ban, label: "Giá bán (số, vd 199000)", type: string }
           - { name: gia_goc, label: Giá gốc gạch ngang (nếu có), type: string }
+
+  # ─────────────────────────────────────────────────────────────
+  # SẢN PHẨM CHI TIẾT — trang /nhan-hang/<nhãn>/<mã>. Bấm thẻ sản phẩm ở landing/danh mục sẽ mở trang này.
+  - name: san-pham-ct
+    label: "🧴 Sản phẩm chi tiết"
+    type: collection
+    path: src/content/san-pham
+    format: json
+    filename: "{fields.nhan}-{fields.ma}.json"
+    view: { fields: [ten, nhan, trang_thai, thu_tu], primary: ten, sort: [thu_tu] }
+    fields:
+      - name: nhan
+        label: Nhãn
+        type: select
+        required: true
+        options: { values: [ abby, ura, spy, givebe, eddy ] }
+      - { name: ma, label: "Mã sản phẩm trong đường dẫn (viết thường, không dấu, vd merry-day)", type: string, required: true }
+      - { name: thu_tu, label: Thứ tự, type: number }
+      - name: trang_thai
+        label: Trạng thái
+        type: select
+        description: "Nháp = chỉ ở bản xem thử. Đang bán = lên web (máy chặn nếu còn ô [Chờ], thiếu giá, dính từ cấm)."
+        options: { values: [ "Nháp", "Đang bán", "Ngừng bán" ] }
+      - { name: ten, label: Tên sản phẩm, type: string, required: true }
+      - { name: ten_dong, label: "Dòng sản phẩm (vd Nước giặt xả Mẹ & Bé 5 in 1)", type: string }
+      - { name: cau_ngan, label: Câu ngắn dưới tên, type: string }
+      - { name: mau, label: "Màu đậm của sản phẩm (mã màu, vd #D93B78)", type: string }
+      - { name: mau_nhat, label: Màu nền nhạt, type: string }
+      - { name: anh, label: "Ảnh sản phẩm (ảnh đứng 3:4, ảnh đầu là ảnh chính)", type: image, options: { multiple: true } }
+      - { name: mo_ta, label: Mô tả, type: text }
+      - name: phien_ban
+        label: Dung tích / phiên bản (giá lấy từ Bảng giá chung)
+        type: object
+        list: true
+        fields:
+          - { name: ten, label: "Tên (vd Can 3L)", type: string }
+          - { name: ma_gia, label: Mã giá trong Bảng giá chung, type: string }
+          - { name: ghi_chu, label: Ghi chú ngắn, type: string }
+      - name: thong_so
+        label: Thông tin sản phẩm
+        type: object
+        list: true
+        fields:
+          - { name: ten, label: Mục, type: string }
+          - { name: gia_tri, label: Nội dung, type: string }
+      - name: cong_dung
+        label: Công dụng (chép đúng chữ in trên nhãn)
+        type: object
+        list: true
+        fields:
+          - { name: ten, label: Công dụng, type: string }
+          - { name: mo_ta, label: Giải thích ngắn, type: string }
+      - name: dung_luc_nao
+        label: Hợp nhất khi giặt
+        type: object
+        list: true
+        fields:
+          - { name: ten, label: Tình huống, type: string }
+          - { name: mo_ta, label: Mô tả, type: string }
+      - { name: cach_dung, label: Cách dùng & liều lượng (đúng nhãn chai), type: text }
+      - { name: shopee, label: Link sản phẩm trên Shopee, type: string }
+      - { name: tiktok_shop, label: Link sản phẩm trên TikTok Shop, type: string }

@@ -1,0 +1,89 @@
+{
+  "nhan": "abby",
+  "ma": "relax-day",
+  "thu_tu": 3,
+  "trang_thai": "Nháp",
+  "ten": "Abby Relax Day",
+  "ten_dong": "Nước giặt xả Mẹ & Bé 5 in 1",
+  "cau_ngan": "Bay bổng, thư thái",
+  "mau": "#1C8FA8",
+  "mau_nhat": "#E6F6FA",
+  "anh": [
+    "../../assets/anh/san-pham/abby/relax-day.jpg"
+  ],
+  "mo_ta": "Mùi Relax Day nhẹ và thoáng, hợp cho đồ sơ sinh và những ngày mẹ muốn cả nhà thơm thư thái. Giặt và xả trong một lần, đồ ra mềm và thơm dịu.",
+  "phien_ban": [
+    {
+      "ten": "Can 3L",
+      "ma_gia": "abby-3l",
+      "ghi_chu": "Dùng lâu cho cả nhà"
+    },
+    {
+      "ten": "Can 1,1L",
+      "ma_gia": "abby-1l1",
+      "ghi_chu": "Vừa đủ cho tháng đầu"
+    },
+    {
+      "ten": "Dùng thử 100ml",
+      "ma_gia": "abby-100ml",
+      "ghi_chu": "Thử mùi trước khi mua lớn"
+    }
+  ],
+  "thong_so": [
+    {
+      "ten": "Dòng",
+      "gia_tri": "Nước giặt xả Mẹ & Bé 5 in 1"
+    },
+    {
+      "ten": "Mùi hương",
+      "gia_tri": "Relax Day — bay bổng, thư thái"
+    },
+    {
+      "ten": "Dung tích",
+      "gia_tri": "Can 3L · can 1,1L · chai dùng thử 100ml"
+    },
+    {
+      "ten": "Dùng cho",
+      "gia_tri": "[Chờ R&D: giặt tay / máy giặt cửa trên / cửa trước]"
+    },
+    {
+      "ten": "Sản xuất",
+      "gia_tri": "Nhà máy Komlife, Yên Mỹ, Hưng Yên"
+    }
+  ],
+  "cong_dung": [
+    {
+      "ten": "[Chờ R&D: công dụng 1 — đúng chữ in trên nhãn]",
+      "mo_ta": ""
+    },
+    {
+      "ten": "[Chờ R&D: công dụng 2 — đúng chữ in trên nhãn]",
+      "mo_ta": ""
+    },
+    {
+      "ten": "[Chờ R&D: công dụng 3 — đúng chữ in trên nhãn]",
+      "mo_ta": ""
+    },
+    {
+      "ten": "[Chờ R&D: công dụng 4 — đúng chữ in trên nhãn]",
+      "mo_ta": ""
+    },
+    {
+      "ten": "[Chờ R&D: công dụng 5 — đúng chữ in trên nhãn]",
+      "mo_ta": ""
+    }
+  ],
+  "dung_luc_nao": [
+    {
+      "ten": "Đồ sơ sinh mới mua",
+      "mo_ta": "Giặt một lượt trước khi con mặc lần đầu."
+    },
+    {
+      "ten": "Đồ của cả nhà",
+      "mo_ta": "Giặt chung đồ bé với đồ bố mẹ."
+    }
+  ],
+  "cach_dung": "[Chờ R&D: cách dùng và liều lượng cho giặt tay, giặt máy — chép đúng nhãn chai]",
+  "shopee": "",
+  "tiktok_shop": ""
+}

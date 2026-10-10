@@ -5,9 +5,10 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Anh from '../../components/Anh.astro';
+import LandingDanhMuc from '../../components/LandingDanhMuc.astro';
 import { caiDat, layNhanHang } from '../../lib/noi-dung';
 import { tieuDe, dong, chuTron } from '../../lib/chu';
-import { congLenSong, choHienNhap, layGia, dongTien, themUtm } from '../../lib/landing';
+import { congLenSong, choHienNhap, layGia, dongTien, themUtm, laySanPhamCt } from '../../lib/landing';
 
 export async function getStaticPaths() {
   const hienNhap = choHienNhap();
@@ -21,6 +22,8 @@ const nhan = (await layNhanHang()).find((b) => b.ma === d.nhan);
 const tenNhan = nhan?.ten ?? d.nhan;
 const trangNhan = `/nhan-hang/${d.nhan}`;
 const laNhap = d.trang_thai === 'Nháp';
+const danhMuc = d.bo_cuc === 'Danh mục sản phẩm';
+const sanPham = danhMuc ? await laySanPhamCt(d.nhan) : [];
 
 // Ô "[Chờ ...]": tô vàng ở bản nháp
 const cho = (html: string) => html.replace(/\[([^\]]{2,})\]/g, '<mark class="lp-cho">[$1]</mark>');
@@ -56,6 +59,9 @@ const nutMua = (cls = '') => [
       </div>
     )}
 
+    {danhMuc && <LandingDanhMuc d={d} tenNhan={tenNhan} sanPham={sanPham} nut={nutMua()} t={t} c={c} />}
+
+    {!danhMuc && (<>
     {/* 01 · MỞ ĐẦU */}
     <section class="lp-hero">
       <div class="wrap lp-hero__in">
@@ -170,6 +176,8 @@ const nutMua = (cls = '') => [
         </div>
       </section>
     )}
+
+    </>)}
 
     {/* 06 · ƯU ĐÃI  +  07 · NÚT MUA */}
     {goi.length > 0 && (

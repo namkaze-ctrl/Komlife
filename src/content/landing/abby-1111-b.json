@@ -1,0 +1,202 @@
+{
+  "nhan": "abby",
+  "ten_dot": "11.11",
+  "duong_dan": "abby-1111-b",
+  "trang_thai": "Nháp",
+  "bo_cuc": "Danh mục sản phẩm",
+  "ngay_bat_dau": "2026-11-04",
+  "ngay_ket_thuc": "2026-11-15",
+  "mau": {
+    "chinh": "#0151A7",
+    "nhan": "#E0457B",
+    "nen": "#FFF4F8",
+    "nut": "#0151A7",
+    "nut_re": "#C93468"
+  },
+  "mo_dau": {
+    "nhan_nho": "Abby · Ưu đãi 11.11",
+    "tieu_de": "Đồ của con\n*thơm mùi nắng*",
+    "mo_ta": "Nước giặt xả Mẹ & Bé 5 in 1 với ba mùi dịu cho ba khoảnh khắc của con. Giặt và xả trong một lần, làm ra từ nhà máy Komlife ở Hưng Yên.",
+    "anh": "../../assets/anh/nhan-hang/abby-bia.jpg",
+    "anh_phu": "../../assets/anh/nhan-hang/abby-tho.png"
+  },
+  "san_pham": {
+    "tieu_de": "Abby *5 in 1* là gì?",
+    "ten": "Abby Nước giặt xả Mẹ & Bé 5 in 1",
+    "mo_ta": "Nước giặt và nước xả gộp trong một chai, dành cho quần áo và đồ dùng của bé. Mẹ đổ một lần là xong cả giặt lẫn xả, đồ ra mềm và thơm dịu.",
+    "anh": "../../assets/anh/nhan-hang/abby-the-doc.jpg",
+    "thong_so": [
+      {
+        "ten": "Dạng",
+        "gia_tri": "Nước giặt xả 2 trong 1"
+      },
+      {
+        "ten": "Dung tích",
+        "gia_tri": "Can 3L · chai 1,1L"
+      },
+      {
+        "ten": "Mùi hương",
+        "gia_tri": "3 mùi: Goodnight, Merry Day, Relax Day"
+      },
+      {
+        "ten": "Công nghệ",
+        "gia_tri": "Enzyme Active Detergent (in trên nhãn) [Chờ R&D: giải thích enzyme làm gì, một câu dễ hiểu]"
+      },
+      {
+        "ten": "Dùng cho",
+        "gia_tri": "[Chờ R&D: giặt tay / giặt máy cửa trên / cửa trước]"
+      },
+      {
+        "ten": "Sản xuất",
+        "gia_tri": "Nhà máy Komlife, Yên Mỹ, Hưng Yên"
+      }
+    ],
+    "cong_dung": [
+      {
+        "ten": "[Chờ R&D: công dụng 1 — đúng chữ in trên nhãn]",
+        "mo_ta": ""
+      },
+      {
+        "ten": "[Chờ R&D: công dụng 2]",
+        "mo_ta": ""
+      },
+      {
+        "ten": "[Chờ R&D: công dụng 3]",
+        "mo_ta": ""
+      },
+      {
+        "ten": "[Chờ R&D: công dụng 4]",
+        "mo_ta": ""
+      },
+      {
+        "ten": "[Chờ R&D: công dụng 5]",
+        "mo_ta": ""
+      }
+    ],
+    "mui_huong": [
+      {
+        "ten": "Goodnight",
+        "mo_ta": "Êm ái, cho giấc ngủ sâu"
+      },
+      {
+        "ten": "Merry Day",
+        "mo_ta": "Dịu nhẹ, cho ngày dài năng động"
+      },
+      {
+        "ten": "Relax Day",
+        "mo_ta": "Bay bổng, thư thái"
+      }
+    ],
+    "cach_dung": "[Chờ R&D: cách dùng và liều lượng cho giặt tay, giặt máy — chép đúng nhãn chai]"
+  },
+  "bang_chung": {
+    "tieu_de": "Mẹ không sợ vết bẩn.\nMẹ sợ *thứ còn sót lại* trên áo con.",
+    "mo_ta": "Vì vậy Abby chỉ nói những gì có giấy tờ và có thể cho mẹ xem tận mắt.",
+    "danh_sach": [
+      {
+        "ten": "Làm ra từ nhà máy của Komlife",
+        "mo_ta": "Nhà máy 20.000m² tại Từ Hồ, Yên Mỹ, Hưng Yên. Komlife tự sản xuất, không thuê gia công.",
+        "nguon": "/ve-komlife"
+      },
+      {
+        "ten": "Có phiếu kiểm nghiệm",
+        "mo_ta": "[Chờ R&D: số phiếu, đơn vị kiểm nghiệm, ngày cấp, chỉ tiêu đã kiểm]",
+        "nguon": ""
+      },
+      {
+        "ten": "Thử xả trước mặt mẹ",
+        "mo_ta": "[Chờ media: video thử giặt và xả áo bé, quay liền một cảnh, không cắt ghép]",
+        "nguon": ""
+      }
+    ]
+  },
+  "dung_luc_nao": {
+    "tieu_de": "Những lúc mẹ *cần đến Abby*",
+    "danh_sach": [
+      {
+        "ten": "Đồ sơ sinh mới mua",
+        "mo_ta": "Giặt một lượt trước khi con mặc lần đầu."
+      },
+      {
+        "ten": "Khăn sữa, yếm, khăn xô",
+        "mo_ta": "Đồ thay nhiều lần mỗi ngày, giặt và xả gọn trong một lần."
+      },
+      {
+        "ten": "Đồ con đi nhà trẻ",
+        "mo_ta": "Vết sữa, nước trái cây, bột ăn dặm sau một ngày ở lớp."
+      },
+      {
+        "ten": "Chăn, gối, thú bông",
+        "mo_ta": "Những thứ con áp má vào mỗi tối, giữ mùi thơm dịu."
+      }
+    ]
+  },
+  "review": {
+    "tieu_de": "Mẹ đã dùng *nói gì*",
+    "danh_sach": [
+      {
+        "noi_dung": "[Chờ team Abby: đánh giá thật từ gian hàng, chép nguyên văn]",
+        "ten": "[Tên hiển thị]",
+        "nguon": "[Shopee / TikTok Shop, ngày đánh giá]",
+        "link": ""
+      },
+      {
+        "noi_dung": "[Chờ team Abby: đánh giá thật từ gian hàng, chép nguyên văn]",
+        "ten": "[Tên hiển thị]",
+        "nguon": "[Shopee / TikTok Shop, ngày đánh giá]",
+        "link": ""
+      },
+      {
+        "noi_dung": "[Chờ team Abby: đánh giá thật từ gian hàng, chép nguyên văn]",
+        "ten": "[Tên hiển thị]",
+        "nguon": "[Shopee / TikTok Shop, ngày đánh giá]",
+        "link": ""
+      }
+    ]
+  },
+  "uu_dai": {
+    "tieu_de": "Ưu đãi *11.11*",
+    "mo_ta": "Áp dụng trên gian hàng chính hãng của Abby. Giá lấy từ bảng giá chung của Ecom.",
+    "goi": [
+      {
+        "ma_gia": "abby-3l",
+        "ten": "Can 3L",
+        "ghi_chu": "Dùng lâu cho cả nhà"
+      },
+      {
+        "ma_gia": "abby-3l-x2",
+        "ten": "Combo 2 can 3L",
+        "ghi_chu": "Tiết kiệm nhất"
+      },
+      {
+        "ma_gia": "abby-1l1",
+        "ten": "Chai 1,1L",
+        "ghi_chu": "Mua thử một mùi"
+      }
+    ],
+    "dieu_kien": "[Chờ Ecom: thời gian áp dụng, mã giảm giá, số lượng có hạn hay không]"
+  },
+  "nut_mua": {
+    "shopee": "",
+    "tiktok_shop": ""
+  },
+  "hoi_dap": [
+    {
+      "hoi": "Mua Abby chính hãng ở đâu?",
+      "dap": "Trên gian hàng chính hãng của Abby tại Shopee và TikTok Shop. Bấm nút trên trang này để vào đúng gian hàng."
+    },
+    {
+      "hoi": "Ba mùi Goodnight, Merry Day, Relax Day khác nhau thế nào?",
+      "dap": "Goodnight êm ái, hợp giặt đồ ngủ và chăn gối. Merry Day dịu nhẹ, hợp đồ mặc ban ngày. Relax Day bay bổng, thư thái."
+    },
+    {
+      "hoi": "Mỗi lần giặt dùng bao nhiêu?",
+      "dap": "[Chờ R&D: liều dùng cho giặt tay và giặt máy, theo đúng chữ in trên nhãn chai]"
+    },
+    {
+      "hoi": "Abby do công ty nào sản xuất?",
+      "dap": "Công ty TNHH Komlife Việt Nam, sản xuất tại nhà máy ở Từ Hồ, Yên Mỹ, Hưng Yên."
+    }
+  ],
+  "nguoi_soat": "[Chờ BGĐ chỉ định người soát cuối]"
+}

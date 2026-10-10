@@ -1,6 +1,7 @@
 // Luật chung cho landing theo đợt (/lp/...): cổng từ cấm, ô chờ bổ sung, bảng giá, UTM.
 // Cổng chạy lúc dựng web: landing "Đang chạy" mà dính từ cấm / còn ô [Chờ ...] / thiếu giá -> web KHÔNG dựng được,
 // trang lỗi không bao giờ lên sóng. Bản "Nháp" chỉ dựng ở bản xem thử (nhánh khác main) hoặc khi chạy với HIEN_NHAP=1.
+import { getCollection } from 'astro:content';
 import bangGia from '../content/trang/bang-gia.json';
 
 // "Không được nói" — lấy từ deck "Website một mối" (30/09/2026). Viết thường, so khớp không phân biệt hoa/thường.
@@ -64,4 +65,33 @@ export function congLenSong(ma: string, d: any): string[] {
     if (!d.nut_mua?.shopee && !d.nut_mua?.tiktok_shop) loi.push('chưa có link gian hàng chính hãng');
   }
   return loi.map((l) => `Landing /lp/${ma}: ${l}`);
+}
+
+// ─── Sản phẩm chi tiết (/nhan-hang/<nhãn>/<mã>) ───────────────────────────
+
+/** Sản phẩm của một nhãn (hoặc tất cả), bỏ bản Nháp ở web chính, xếp theo Thứ tự. */
+export async function laySanPhamCt(nhan?: string) {
+  const hienNhap = choHienNhap();
+  const ds = await getCollection('sanPhamCt', (x) =>
+    (!nhan || x.data.nhan === nhan) && x.data.trang_thai !== 'Ngừng bán' && (hienNhap || x.data.trang_thai !== 'Nháp'));
+  return ds.map((x) => x.data).sort((a, b) => a.thu_tu - b.thu_tu);
+}
+
+/** Cổng cho trang sản phẩm: từ cấm luôn chặn; "Đang bán" thì không được còn ô [Chờ] hay thiếu giá. */
+export function congSanPham(d: any): string[] {
+  const loi: string[] = [];
+  const cam = kiemTuCam(d.nhan, d);
+  if (cam.length) loi.push(`dính từ cấm: ${cam.join(', ')}`);
+  if (d.trang_thai === 'Đang bán') {
+    const cho = oChoBoSung(d);
+    if (cho.length) loi.push(`còn ${cho.length} ô chờ bổ sung`);
+    for (const p of d.phien_ban ?? []) if (p.ma_gia && !layGia(p.ma_gia)?.gia_ban) loi.push(`"${p.ten}" chưa có giá trong bảng giá chung`);
+  }
+  return loi.map((l) => `Sản phẩm /nhan-hang/${d.nhan}/${d.ma}: ${l}`);
+}
+
+/** Giá thấp nhất trong các phiên bản (để ghi "từ ...đ" trên thẻ). */
+export function giaTu(phienBan: { ma_gia: string }[]) {
+  const ds = phienBan.map((p) => Number(layGia(p.ma_gia)?.gia_ban || 0)).filter((n) => n > 0);
+  return ds.length ? Math.min(...ds) : 0;
 }

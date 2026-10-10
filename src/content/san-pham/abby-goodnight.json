@@ -1,0 +1,89 @@
+{
+  "nhan": "abby",
+  "ma": "goodnight",
+  "thu_tu": 1,
+  "trang_thai": "Nháp",
+  "ten": "Abby Goodnight",
+  "ten_dong": "Nước giặt xả Mẹ & Bé 5 in 1",
+  "cau_ngan": "Êm ái, cho giấc ngủ sâu",
+  "mau": "#7B5CC4",
+  "mau_nhat": "#F1ECFB",
+  "anh": [
+    "../../assets/anh/san-pham/abby/goodnight.jpg"
+  ],
+  "mo_ta": "Mùi Goodnight êm và nhẹ, hợp để giặt đồ ngủ, chăn gối và những món con ôm khi đi ngủ. Giặt và xả trong một lần, đồ ra mềm và thơm dịu.",
+  "phien_ban": [
+    {
+      "ten": "Can 3L",
+      "ma_gia": "abby-3l",
+      "ghi_chu": "Dùng lâu cho cả nhà"
+    },
+    {
+      "ten": "Can 1,1L",
+      "ma_gia": "abby-1l1",
+      "ghi_chu": "Vừa đủ cho tháng đầu"
+    },
+    {
+      "ten": "Dùng thử 100ml",
+      "ma_gia": "abby-100ml",
+      "ghi_chu": "Thử mùi trước khi mua lớn"
+    }
+  ],
+  "thong_so": [
+    {
+      "ten": "Dòng",
+      "gia_tri": "Nước giặt xả Mẹ & Bé 5 in 1"
+    },
+    {
+      "ten": "Mùi hương",
+      "gia_tri": "Goodnight — êm ái, cho giấc ngủ sâu"
+    },
+    {
+      "ten": "Dung tích",
+      "gia_tri": "Can 3L · can 1,1L · chai dùng thử 100ml"
+    },
+    {
+      "ten": "Dùng cho",
+      "gia_tri": "[Chờ R&D: giặt tay / máy giặt cửa trên / cửa trước]"
+    },
+    {
+      "ten": "Sản xuất",
+      "gia_tri": "Nhà máy Komlife, Yên Mỹ, Hưng Yên"
+    }
+  ],
+  "cong_dung": [
+    {
+      "ten": "[Chờ R&D: công dụng 1 — đúng chữ in trên nhãn]",
+      "mo_ta": ""
+    },
+    {
+      "ten": "[Chờ R&D: công dụng 2 — đúng chữ in trên nhãn]",
+      "mo_ta": ""
+    },
+    {
+      "ten": "[Chờ R&D: công dụng 3 — đúng chữ in trên nhãn]",
+      "mo_ta": ""
+    },
+    {
+      "ten": "[Chờ R&D: công dụng 4 — đúng chữ in trên nhãn]",
+      "mo_ta": ""
+    },
+    {
+      "ten": "[Chờ R&D: công dụng 5 — đúng chữ in trên nhãn]",
+      "mo_ta": ""
+    }
+  ],
+  "dung_luc_nao": [
+    {
+      "ten": "Đồ ngủ của con",
+      "mo_ta": "Bộ ngủ, túi ngủ, áo choàng sau tắm."
+    },
+    {
+      "ten": "Chăn, gối, thú bông",
+      "mo_ta": "Những thứ con áp má vào mỗi tối."
+    }
+  ],
+  "cach_dung": "[Chờ R&D: cách dùng và liều lượng cho giặt tay, giặt máy — chép đúng nhãn chai]",
+  "shopee": "",
+  "tiktok_shop": ""
+}
