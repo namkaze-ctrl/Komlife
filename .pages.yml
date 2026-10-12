@@ -294,6 +294,16 @@ content:
       - { name: anh_the_doc, label: Ảnh thẻ dọc ở trang chủ (ảnh đứng), type: image }
       - { name: anh_bia, label: Ảnh bìa (ảnh ngang), type: image }
       - { name: tiktok, label: Đường dẫn kênh TikTok riêng của nhãn (nếu có), type: string }
+      - { name: shopee, label: Link gian hàng Shopee riêng của nhãn (trống = dùng gian hàng Komlife), type: string }
+      - name: mau
+        label: "Màu riêng của nhãn (dùng ở giao diện mới — khi nhãn có Sản phẩm chi tiết)"
+        type: object
+        fields:
+          - { name: chinh, label: "Màu chính (tiêu đề, nút; vd #0151A7)", type: string }
+          - { name: nhan, label: Màu chữ nhấn, type: string }
+          - { name: nen, label: Màu nền nhạt, type: string }
+      - { name: anh_linh_vat, label: Ảnh linh vật (PNG nền trong suốt), type: image }
+      - { name: diem_nhan, label: "Điểm nổi bật dưới danh sách sản phẩm (*chữ* = in đậm)", type: string, list: true }
       - name: san_pham
         label: Sản phẩm
         type: object

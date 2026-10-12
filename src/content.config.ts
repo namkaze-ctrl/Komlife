@@ -29,6 +29,15 @@ const nhanHang = defineCollection({
     anh_the_doc: z.string().optional().default(''),
     anh_bia: z.string().optional().default(''),
     tiktok: z.string().optional().default(''),
+    // Giao diện mới (khi nhãn có "Sản phẩm chi tiết"): màu riêng của nhãn, linh vật, điểm nổi bật, gian hàng riêng
+    mau: z.object({
+      chinh: z.string().optional().default(''),
+      nhan: z.string().optional().default(''),
+      nen: z.string().optional().default(''),
+    }).optional().default({}),
+    anh_linh_vat: z.string().optional().default(''),
+    diem_nhan: z.array(z.string()).optional().default([]),
+    shopee: z.string().optional().default(''),
     san_pham: z.array(sanPham).optional().default([]),
     tinh_huong: z.object({
       tieu_de: z.string().optional().default(''),

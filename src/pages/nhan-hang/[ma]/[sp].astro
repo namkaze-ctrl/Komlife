@@ -68,7 +68,7 @@ const mau = mauSanPham(p.mau, p.mau_nhat);
                 <div class="spct-gia">
                   <span class="spct-gia__so" data-gia-hien>{phienBan[0].gia?.gia_ban ? dongTien(phienBan[0].gia.gia_ban) : ''}</span>
                   <s data-goc-hien>{phienBan[0].gia?.gia_goc ? dongTien(phienBan[0].gia.gia_goc) : ''}</s>
-                  <mark class="lp-cho" data-cho-gia hidden={!!phienBan[0].gia?.gia_ban}>[Chờ Ecom chốt giá]</mark>
+                  <span class="spct-gia__trong" data-cho-gia hidden={!!phienBan[0].gia?.gia_ban}>Xem giá tại gian hàng chính hãng</span>
                   <span class="spct-gia__d" data-ghichu-hien>{phienBan[0].ghi_chu}</span>
                 </div>
               </div>

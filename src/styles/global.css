@@ -1066,6 +1066,7 @@ a.tin{text-decoration:none;color:inherit}
 .spct-gia{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;min-height:2.6rem}
 .spct-gia__so{font-family:var(--fd);font-size:2.2rem;font-weight:700;color:var(--ink);line-height:1}
 .spct-gia s{color:var(--faint)}
+.spct-gia__trong{font-weight:600;color:var(--ink)}
 .spct-gia__d{flex-basis:100%;font-size:.86rem;color:var(--faint)}
 .spct .lp-btn.spct-btn{background:var(--sp);border-color:var(--sp);color:var(--sp-tren)}
 .spct .lp-btn--phu{color:var(--sp-chu);border-color:var(--sp);background:transparent}
@@ -1108,3 +1109,13 @@ a.tin{text-decoration:none;color:inherit}
   background:var(--lp-nen);border-radius:18px;font-size:.93rem;color:var(--body)}
 .ab-tin li::before{content:"✓";color:var(--lp-chinh);font-weight:800;margin-right:8px}
 .ab-tin b{color:var(--lp-chinh)}
+
+/* ─── trang nhãn kiểu mới (NhanHangMoi) ─────────────────── */
+.nhm h1{font-size:clamp(3rem,7vw,5.2rem);line-height:.95}
+.nhm-cau{font-family:var(--fd);font-size:clamp(1.25rem,2.4vw,1.75rem);line-height:1.2;color:var(--lp-nhan);margin:0}
+.nhm-uudai{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;justify-content:center;text-decoration:none;
+  background:var(--lp-chinh);color:#fff;padding:14px clamp(20px,5vw,52px);font-size:.95rem}
+.nhm-uudai__nhan{background:#FADF27;color:#2A2300;font-weight:800;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:4px 10px}
+.nhm-uudai__chu{font-weight:600}
+.nhm-uudai__xem{font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.nhm-uudai:hover .nhm-uudai__xem{text-decoration-thickness:2px}

@@ -85,7 +85,7 @@ export function congSanPham(d: any): string[] {
   if (d.trang_thai === 'Đang bán') {
     const cho = oChoBoSung(d);
     if (cho.length) loi.push(`còn ${cho.length} ô chờ bổ sung`);
-    for (const p of d.phien_ban ?? []) if (p.ma_gia && !layGia(p.ma_gia)?.gia_ban) loi.push(`"${p.ten}" chưa có giá trong bảng giá chung`);
+    // Giá không bắt buộc: chưa có giá thì trang ghi "Xem giá tại gian hàng chính hãng".
   }
   return loi.map((l) => `Sản phẩm /nhan-hang/${d.nhan}/${d.ma}: ${l}`);
 }
