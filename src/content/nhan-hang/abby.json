@@ -22,6 +22,37 @@
     "*Làm ra từ nhà máy* Komlife tại Hưng Yên"
   ],
   "shopee": "",
+  "diem_ban": {
+    "tieu_de": "{ten} *trên kệ* cửa hàng, siêu thị",
+    "mo_ta": "Ngoài gian hàng online, mẹ có thể tìm Abby tại các siêu thị và cửa hàng dưới đây.",
+    "danh_sach": [
+      {
+        "anh": "",
+        "ten": "GO! Đan Phượng",
+        "dia_diem": "Vincom Đan Phượng, Hà Nội [Chờ ảnh quầy Abby đợt 28–30/08/2026]"
+      },
+      {
+        "anh": "",
+        "ten": "[Chờ: tên siêu thị 2]",
+        "dia_diem": "[Chờ: địa điểm]"
+      },
+      {
+        "anh": "",
+        "ten": "[Chờ: tên cửa hàng mẹ & bé]",
+        "dia_diem": "[Chờ: địa điểm]"
+      },
+      {
+        "anh": "",
+        "ten": "[Chờ: tên đại lý / tạp hoá]",
+        "dia_diem": "[Chờ: địa điểm]"
+      },
+      {
+        "anh": "",
+        "ten": "[Chờ: tên siêu thị 5]",
+        "dia_diem": "[Chờ: địa điểm]"
+      }
+    ]
+  },
   "san_pham": [
     {
       "ten": "Abby Nước giặt xả Mẹ & Bé 5 in 1",

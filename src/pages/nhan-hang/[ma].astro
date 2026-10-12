@@ -4,6 +4,7 @@ import Base from '../../layouts/Base.astro';
 import Anh from '../../components/Anh.astro';
 import DaiSoLieu from '../../components/DaiSoLieu.astro';
 import NhanHangMoi from '../../components/NhanHangMoi.astro';
+import DiemBan from '../../components/DiemBan.astro';
 import { getCollection } from 'astro:content';
 import { laySanPhamCt, choHienNhap } from '../../lib/landing';
 import nh from '../../content/trang/nhan-hang.json';
@@ -95,6 +96,8 @@ const uuDai = moi && lp ? { href: `/lp/${lp.id}`, ten: `${b.ten} · ưu đãi ${
       </div>
     </section>
   )}
+
+  <DiemBan b={b} />
 
   <section class="sec sec--warm">
     <div class="wrap split">

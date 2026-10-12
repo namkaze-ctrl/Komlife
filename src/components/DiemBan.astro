@@ -1,0 +1,80 @@
+---
+// Slide ảnh "có mặt tại cửa hàng, siêu thị" của một nhãn. Dữ liệu: ô "diem_ban" trong src/content/nhan-hang/<mã>.json
+// Ảnh thật mới lên web chính; mục chưa có ảnh (hoặc còn chữ [Chờ ...]) chỉ hiện ở bản xem thử dưới dạng ô chờ.
+// Khối tự ẩn khi không có mục nào để hiện.
+import { getImage } from 'astro:assets';
+import Anh from './Anh.astro';
+import { timAnh } from '../lib/anh';
+import { tieuDe, dong } from '../lib/chu';
+import { choHienNhap } from '../lib/landing';
+
+interface Props { b: any }
+const { b } = Astro.props;
+const db = b.diem_ban ?? {};
+const nhap = choHienNhap();
+const laCho = (x: any) => !x.anh || /\[[^\]]+\]/.test(`${x.ten}${x.dia_diem}`);
+const ds = (db.danh_sach ?? []).filter((x: any) => nhap || !laCho(x));
+const muc = await Promise.all(ds.map(async (x: any) => {
+  const goc = timAnh(x.anh);
+  const lon = goc ? (await getImage({ src: goc, width: Math.min(1600, goc.width) })).src : '';
+  return { ...x, lon, cho: laCho(x) };
+}));
+const cho = (s = '') => dong(s).replace(/\[([^\]]{2,})\]/g, '<mark class="lp-cho">[$1]</mark>');
+---
+{muc.length > 0 && (
+  <section class="sec db" id="diem-ban">
+    <div class="wrap stack g28">
+      <div class="db__dau">
+        <div class="stack g12">
+          <div class="eb">Điểm bán</div>
+          <h2 set:html={tieuDe((db.tieu_de || '{ten} *trên kệ* cửa hàng, siêu thị').replace(/\{ten\}/g, b.ten))} />
+          {db.mo_ta && <p class="lead" style="max-width:52ch" set:html={cho(db.mo_ta)} />}
+        </div>
+        <div class="db__nut">
+          <button type="button" class="db__mt" data-db-lui aria-label="Ảnh trước">←</button>
+          <button type="button" class="db__mt" data-db-toi aria-label="Ảnh sau">→</button>
+        </div>
+      </div>
+    </div>
+    <div class="db__khung" data-db>
+      <ul class="db__day">
+        {muc.map((x) => (
+          <li class="db__o">
+            {x.cho || !x.lon ? (
+              <div class="db__anh db__anh--cho"><span>Ô chờ ảnh</span><small>Ảnh ngang 4:3 · 1600 × 1200</small></div>
+            ) : (
+              <button type="button" class="db__anh" data-lb={x.lon} aria-label={`${b.ten} tại ${x.ten}`}>
+                <Anh src={x.anh} alt={`${b.ten} tại ${x.ten}${x.dia_diem ? ', ' + x.dia_diem : ''}`} sizes="(max-width:700px) 80vw, 420px" />
+              </button>
+            )}
+            <div class="db__chu"><b set:html={cho(x.ten)} />{x.dia_diem && <span set:html={cho(x.dia_diem)} />}</div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
+
+<script>
+  // Slide tự chạy: mỗi 3,5 giây trượt sang một ảnh, hết thì quay về đầu. Dừng khi rê chuột / chạm / đang dùng bàn phím.
+  document.querySelectorAll<HTMLElement>('[data-db]').forEach((khung) => {
+    const day = khung.querySelector<HTMLElement>('.db__day')!;
+    const goc = khung.closest('.db')!;
+    const buoc = () => (day.querySelector<HTMLElement>('.db__o')?.offsetWidth ?? 320) + 18;
+    const truot = (huong: number) => {
+      const cuoi = day.scrollLeft + day.clientWidth >= day.scrollWidth - 4;
+      if (huong > 0 && cuoi) day.scrollTo({ left: 0, behavior: 'smooth' });
+      else if (huong < 0 && day.scrollLeft <= 4) day.scrollTo({ left: day.scrollWidth, behavior: 'smooth' });
+      else day.scrollBy({ left: huong * buoc(), behavior: 'smooth' });
+    };
+    goc.querySelector('[data-db-lui]')?.addEventListener('click', () => truot(-1));
+    goc.querySelector('[data-db-toi]')?.addEventListener('click', () => truot(1));
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    let dung = false;
+    ['mouseenter', 'focusin', 'touchstart'].forEach((s) => goc.addEventListener(s, () => { dung = true; }, { passive: true }));
+    ['mouseleave', 'focusout', 'touchend'].forEach((s) => goc.addEventListener(s, () => { dung = false; }, { passive: true }));
+    let thay = false;
+    new IntersectionObserver((e) => { thay = e[0].isIntersecting; }, { threshold: 0.3 }).observe(khung);
+    setInterval(() => { if (!dung && thay && !document.hidden && day.scrollWidth > day.clientWidth + 8) truot(1); }, 3500);
+  });
+</script>

@@ -304,6 +304,20 @@ content:
           - { name: nen, label: Màu nền nhạt, type: string }
       - { name: anh_linh_vat, label: Ảnh linh vật (PNG nền trong suốt), type: image }
       - { name: diem_nhan, label: "Điểm nổi bật dưới danh sách sản phẩm (*chữ* = in đậm)", type: string, list: true }
+      - name: diem_ban
+        label: "Slide ảnh: có mặt tại cửa hàng, siêu thị (không có ảnh = ẩn khối)"
+        type: object
+        fields:
+          - { name: tieu_de, label: "Tiêu đề ({ten} = tên nhãn, *chữ* = tô màu)", type: string }
+          - { name: mo_ta, label: Mô tả ngắn, type: text }
+          - name: danh_sach
+            label: Ảnh điểm bán (nên từ 5 ảnh)
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{fields.ten}" } }
+            fields:
+              - { name: anh, label: "Ảnh chụp tại điểm bán (ảnh ngang 4:3, 1600 × 1200)", type: image }
+              - { name: ten, label: Tên cửa hàng / siêu thị, type: string }
+              - { name: dia_diem, label: "Địa điểm (quận/huyện, tỉnh)", type: string }
       - name: san_pham
         label: Sản phẩm
         type: object

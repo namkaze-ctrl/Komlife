@@ -38,6 +38,12 @@ const nhanHang = defineCollection({
     anh_linh_vat: z.string().optional().default(''),
     diem_nhan: z.array(z.string()).optional().default([]),
     shopee: z.string().optional().default(''),
+    // Slide ảnh "có mặt tại cửa hàng, siêu thị"
+    diem_ban: z.object({
+      tieu_de: z.string().optional().default(''),
+      mo_ta: z.string().optional().default(''),
+      danh_sach: z.array(z.object({ anh: z.string().optional().default(''), ten: z.string(), dia_diem: z.string().optional().default('') })).optional().default([]),
+    }).optional().default({}),
     san_pham: z.array(sanPham).optional().default([]),
     tinh_huong: z.object({
       tieu_de: z.string().optional().default(''),
