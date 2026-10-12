@@ -73,6 +73,11 @@ const landing = defineCollection({
     duong_dan: z.string().optional().default(''),
     trang_thai: z.enum(['Nháp', 'Đang chạy', 'Hết đợt']).default('Nháp'),
     bo_cuc: z.enum(['Dài', 'Danh mục sản phẩm']).default('Dài'),
+    danh_muc: z.object({
+      nhan_nho: z.string().optional().default(''),
+      tieu_de: z.string().optional().default(''),
+      mo_ta: z.string().optional().default(''),
+    }).optional().default({}),
     ngay_bat_dau: z.string().optional().default(''),
     ngay_ket_thuc: z.string().optional().default(''),
     mau: z.object({
@@ -149,6 +154,12 @@ const sanPhamCt = defineCollection({
     cong_dung: z.array(muc).optional().default([]),
     dung_luc_nao: z.array(muc).optional().default([]),
     cach_dung: z.string().optional().default(''),
+    tieu_de: z.object({
+      cong_dung: z.string().optional().default(''),
+      dung_luc_nao: z.string().optional().default(''),
+      cach_dung: z.string().optional().default(''),
+      sp_khac: z.string().optional().default(''),
+    }).optional().default({}),
     shopee: z.string().optional().default(''),
     tiktok_shop: z.string().optional().default(''),
   }),

@@ -5,8 +5,10 @@ import Base from '../../../layouts/Base.astro';
 import Anh from '../../../components/Anh.astro';
 import TheSanPham from '../../../components/TheSanPham.astro';
 import { caiDat, layNhanHang } from '../../../lib/noi-dung';
-import { dong } from '../../../lib/chu';
+import { dong, tieuDe } from '../../../lib/chu';
+import cauHinh from '../../../content/trang/san-pham-ct.json';
 import { laySanPhamCt, congSanPham, layGia, dongTien, themUtm } from '../../../lib/landing';
+import { mauSanPham } from '../../../lib/mau';
 
 export async function getStaticPaths() {
   const ds = await laySanPhamCt();
@@ -25,7 +27,10 @@ const phienBan = p.phien_ban.map((v) => ({ ...v, gia: layGia(v.ma_gia) }));
 const chienDich = `${p.nhan}-${p.ma}`;
 const shopee = themUtm(p.shopee || caiDat.shopee, chienDich);
 const tiktok = themUtm(p.tiktok_shop, chienDich);
-const mau = `--sp:${p.mau};--sp-nhat:${p.mau_nhat}`;
+// Tiêu đề khối: lấy ô "Tiêu đề riêng" của sản phẩm, trống thì lấy mặc định chung. *...* = chữ tô màu
+const td = (k: keyof typeof cauHinh.tieu_de) =>
+  cho(tieuDe((p.tieu_de[k] || cauHinh.tieu_de[k]).replace(/\{so\}/g, String(p.cong_dung.length)).replace(/\{nhan\}/g, tenNhan)));
+const mau = mauSanPham(p.mau, p.mau_nhat);
 ---
 <Base tieuDe={`${p.ten} — ${p.ten_dong} | ${tenNhan}`} moTa={p.mo_ta} anhChiaSe={p.anh[0]} anThanhDaiLy khongIndex={laNhap}>
   <div class="spct" style={mau}>
@@ -84,19 +89,19 @@ const mau = `--sp:${p.mau};--sp-nhat:${p.mau_nhat}`;
         <div class="stack g28">
           {p.cong_dung.length > 0 && (
             <div class="stack g16">
-              <h2>{p.cong_dung.length} công dụng <span class="it">trong một chai</span></h2>
+              <h2 set:html={td('cong_dung')} />
               <ol class="lp-cd spct-cd">{p.cong_dung.map((x) => <li><b set:html={c(x.ten)} />{x.mo_ta && <span set:html={c(x.mo_ta)} />}</li>)}</ol>
             </div>
           )}
           {p.dung_luc_nao.length > 0 && (
             <div class="stack g16">
-              <h2>Mẹ dùng <span class="it">để giặt gì</span></h2>
+              <h2 set:html={td('dung_luc_nao')} />
               <div class="cards cards--2">{p.dung_luc_nao.map((x) => <div class="card"><h4>{x.ten}</h4><p class="card__b" set:html={c(x.mo_ta)} /></div>)}</div>
             </div>
           )}
           {p.cach_dung && (
             <div class="stack g12">
-              <h2>Cách <span class="it">dùng</span></h2>
+              <h2 set:html={td('cach_dung')} />
               <p class="lead" set:html={c(p.cach_dung)} />
             </div>
           )}
@@ -113,7 +118,7 @@ const mau = `--sp:${p.mau};--sp-nhat:${p.mau_nhat}`;
     {cungNhan.length > 0 && (
       <section class="sec spct-khac">
         <div class="wrap stack g28">
-          <h2>Các mùi <span class="it">khác của {tenNhan}</span></h2>
+          <h2 set:html={td('sp_khac')} />
           <div class="tsp-luoi tsp-luoi--nho">{cungNhan.map((x) => <TheSanPham p={x} />)}</div>
         </div>
       </section>

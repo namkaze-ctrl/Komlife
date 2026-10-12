@@ -7,6 +7,12 @@ import TheSanPham from './TheSanPham.astro';
 interface Props { d: any; tenNhan: string; sanPham: any[]; nut: { href: string; san: string; chu: string }[]; t: (s: string) => string; c: (s: string) => string }
 const { d, tenNhan, sanPham, nut, t, c } = Astro.props;
 const chai = sanPham.filter((p) => p.anh[0]).slice(0, 3);
+// Tiêu đề khối danh mục: sửa ở trang quản trị (Landing → Khối danh mục). *...* = chữ tô màu
+const dm = {
+  nhan_nho: d.danh_muc?.nhan_nho || `Sản phẩm ${tenNhan}`,
+  tieu_de: d.danh_muc?.tieu_de || `Tất cả sản phẩm *${tenNhan}*`,
+  mo_ta: d.danh_muc?.mo_ta || 'Bấm vào từng sản phẩm để xem chi tiết.',
+};
 ---
 <section class="ab-hero">
   <svg class="ab-hero__blob" viewBox="0 0 600 600" aria-hidden="true"><path d="M421 63c77 41 141 118 146 203 6 85-47 177-121 239-74 61-169 92-252 63S42 448 25 361C8 274 49 176 118 109 187 42 344 22 421 63z"/></svg>
@@ -30,9 +36,9 @@ const chai = sanPham.filter((p) => p.anh[0]).slice(0, 3);
 <section class="sec ab-sp" id="san-pham">
   <div class="wrap stack g28">
     <div class="stack g12 ab-sp__dau">
-      <div class="eb">Sản phẩm {tenNhan}</div>
-      <h2>Chọn <span class="it">mùi hương</span> cho con</h2>
-      <p class="lead">Cùng một công thức giặt xả, ba mùi cho ba khoảnh khắc. Bấm vào từng chai để xem chi tiết.</p>
+      <div class="eb">{dm.nhan_nho}</div>
+      <h2 set:html={t(dm.tieu_de)} />
+      <p class="lead" set:html={c(dm.mo_ta)} />
     </div>
     <div class="tsp-luoi">{sanPham.map((p) => <TheSanPham p={p} />)}</div>
     <ul class="ab-tin">
