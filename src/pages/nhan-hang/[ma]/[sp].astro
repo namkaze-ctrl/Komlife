@@ -34,7 +34,7 @@ const mau = mauSanPham(p.mau, p.mau_nhat);
 ---
 <Base tieuDe={`${p.ten} — ${p.ten_dong} | ${tenNhan}`} moTa={p.mo_ta} anhChiaSe={p.anh[0]} anThanhDaiLy khongIndex={laNhap}>
   <div class="spct" style={mau}>
-    {laNhap && <div class="lp-nhap"><b>BẢN NHÁP — chưa lên web chính.</b> Ô vàng là chỗ chờ bổ sung. Ảnh chai đang là ảnh cắt tạm từ ảnh thiết kế.</div>}
+    {laNhap && <div class="lp-nhap"><b>BẢN NHÁP — chưa lên web chính.</b> Ô vàng là chỗ chờ bổ sung.</div>}
 
     <section class="spct-top">
       <div class="wrap">
@@ -44,7 +44,11 @@ const mau = mauSanPham(p.mau, p.mau_nhat);
         <div class="spct-in">
           <div class="spct-anh">
             <span class="spct-anh__nen" aria-hidden="true"></span>
-            {p.anh[0] && <Anh src={p.anh[0]} alt={`${p.ten} — ${p.ten_dong}`} class="spct-anh__img" sizes="(max-width:940px) 80vw, 520px" loading="eager" fetchpriority="high" />}
+            {/* Ảnh theo dung tích đang chọn; dung tích không có ảnh riêng thì hiện ảnh chính */}
+            <div data-anh="chinh" hidden={!!phienBan[0]?.anh}>{p.anh[0] && <Anh src={p.anh[0]} alt={`${p.ten} — ${p.ten_dong}`} class="spct-anh__img" sizes="(max-width:940px) 80vw, 520px" loading="eager" />}</div>
+            {phienBan.map((v, i) => v.anh && (
+              <div data-anh={String(i)} hidden={i !== 0}><Anh src={v.anh} alt={`${p.ten} — ${v.ten}`} class="spct-anh__img" sizes="(max-width:940px) 80vw, 520px" loading={i === 0 ? 'eager' : 'lazy'} fetchpriority={i === 0 ? 'high' : undefined} /></div>
+            ))}
           </div>
           <div class="stack g20">
             <div class="stack g8">
@@ -59,7 +63,7 @@ const mau = mauSanPham(p.mau, p.mau_nhat);
                 <span class="spct-nhan">Chọn dung tích</span>
                 <div class="spct-pb" role="radiogroup" aria-label="Dung tích">
                   {phienBan.map((v, i) => (
-                    <button type="button" class="spct-pb__i" role="radio" aria-checked={i === 0 ? 'true' : 'false'}
+                    <button type="button" class="spct-pb__i" role="radio" aria-checked={i === 0 ? 'true' : 'false'} data-anh-so={v.anh ? String(i) : 'chinh'}
                       data-gia={v.gia?.gia_ban ? dongTien(v.gia.gia_ban) : ''} data-goc={v.gia?.gia_goc ? dongTien(v.gia.gia_goc) : ''} data-ghichu={v.ghi_chu}>
                       {v.ten}
                     </button>
@@ -143,6 +147,8 @@ const mau = mauSanPham(p.mau, p.mau_nhat);
         goc.querySelector('[data-goc-hien]')!.textContent = b.dataset.goc || '';
         (goc.querySelector('[data-cho-gia]') as HTMLElement).hidden = !!gia;
         goc.querySelector('[data-ghichu-hien]')!.textContent = b.dataset.ghichu || '';
+        const so = b.dataset.anhSo || 'chinh';
+        document.querySelectorAll<HTMLElement>('.spct-anh [data-anh]').forEach((x) => { x.hidden = x.dataset.anh !== so; });
       });
     });
   </script>

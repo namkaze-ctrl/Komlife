@@ -23,53 +23,61 @@
     "tieu_de": "Abby *5 in 1* là gì?",
     "ten": "Abby Nước giặt xả Mẹ & Bé 5 in 1",
     "mo_ta": "Nước giặt và nước xả gộp trong một chai, dành cho quần áo và đồ dùng của bé. Mẹ đổ một lần là xong cả giặt lẫn xả, đồ ra mềm và thơm dịu.",
-    "anh": "../../assets/anh/nhan-hang/abby-the-doc.jpg",
+    "anh": "../../assets/anh/san-pham/abby/merry-day.webp",
     "thong_so": [
       {
-        "ten": "Dạng",
-        "gia_tri": "Nước giặt xả 2 trong 1"
-      },
-      {
-        "ten": "Dung tích",
-        "gia_tri": "Can 3L · chai 1,1L"
+        "ten": "Dòng sản phẩm",
+        "gia_tri": "Nước giặt xả Mẹ & Bé 5 in 1, dòng Enzyme"
       },
       {
         "ten": "Mùi hương",
-        "gia_tri": "3 mùi: Goodnight, Merry Day, Relax Day"
+        "gia_tri": "3 mùi: Goodnight, Merry Day, Relax Days"
       },
       {
-        "ten": "Công nghệ",
-        "gia_tri": "Enzyme Active Detergent (in trên nhãn) [Chờ R&D: giải thích enzyme làm gì, một câu dễ hiểu]"
+        "ten": "Dung tích",
+        "gia_tri": "Can 3000ml · can 1100ml · chai dùng thử 100ml"
       },
       {
         "ten": "Dùng cho",
-        "gia_tri": "[Chờ R&D: giặt tay / giặt máy cửa trên / cửa trước]"
+        "gia_tri": "Giặt tay và giặt máy"
       },
       {
-        "ten": "Sản xuất",
-        "gia_tri": "Nhà máy Komlife, Yên Mỹ, Hưng Yên"
+        "ten": "Thành phần",
+        "gia_tri": "Sodium Lauryl Ether Sulfate, Sodium Linear Alkylbenzene Sulfonate, Sokalan PA30, Dehydol LS9 TH, hương liệu… [Chờ R&D xác nhận thành phần cho nhãn Enzyme mới]"
+      },
+      {
+        "ten": "Bảo quản",
+        "gia_tri": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp"
+      },
+      {
+        "ten": "Hạn sử dụng",
+        "gia_tri": "3 năm kể từ ngày sản xuất (xem trên bao bì)"
+      },
+      {
+        "ten": "Xuất xứ",
+        "gia_tri": "Việt Nam, nhà máy Komlife tại Yên Mỹ, Hưng Yên"
       }
     ],
     "cong_dung": [
       {
-        "ten": "[Chờ R&D: công dụng 1 — đúng chữ in trên nhãn]",
-        "mo_ta": ""
+        "ten": "Giặt và xả trong một lần",
+        "mo_ta": "Nước giặt xả 2 trong 1, vừa giặt vừa xả."
       },
       {
-        "ten": "[Chờ R&D: công dụng 2]",
-        "mo_ta": ""
+        "ten": "Làm sạch vết bẩn trên đồ của bé",
+        "mo_ta": "Cặn sữa, tinh bột, mồ hôi trên khăn, tã, quần áo."
       },
       {
-        "ten": "[Chờ R&D: công dụng 3]",
-        "mo_ta": ""
+        "ten": "Làm mềm sợi vải",
+        "mo_ta": "Quần áo mềm mại sau mỗi lần giặt."
       },
       {
-        "ten": "[Chờ R&D: công dụng 4]",
-        "mo_ta": ""
+        "ten": "Lưu hương dịu nhẹ",
+        "mo_ta": "Ba mùi hương cho từng khoảnh khắc trong ngày."
       },
       {
-        "ten": "[Chờ R&D: công dụng 5]",
-        "mo_ta": ""
+        "ten": "Giặt tay hay giặt máy đều được",
+        "mo_ta": "Dùng cho cả hai cách giặt."
       }
     ],
     "mui_huong": [
@@ -82,11 +90,11 @@
         "mo_ta": "Dịu nhẹ, cho ngày dài năng động"
       },
       {
-        "ten": "Relax Day",
+        "ten": "Relax Days",
         "mo_ta": "Bay bổng, thư thái"
       }
     ],
-    "cach_dung": "[Chờ R&D: cách dùng và liều lượng cho giặt tay, giặt máy — chép đúng nhãn chai]"
+    "cach_dung": "Dùng được cho cả giặt tay và giặt máy. Liều lượng theo hướng dẫn in trên nhãn chai. Bảo quản nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp và để xa tầm tay trẻ em."
   },
   "bang_chung": {
     "tieu_de": "Mẹ không sợ vết bẩn.\nMẹ sợ *thứ còn sót lại* trên áo con.",
@@ -185,12 +193,12 @@
       "dap": "Trên gian hàng chính hãng của Abby tại Shopee và TikTok Shop. Bấm nút trên trang này để vào đúng gian hàng."
     },
     {
-      "hoi": "Ba mùi Goodnight, Merry Day, Relax Day khác nhau thế nào?",
-      "dap": "Goodnight êm ái, hợp giặt đồ ngủ và chăn gối. Merry Day dịu nhẹ, hợp đồ mặc ban ngày. Relax Day bay bổng, thư thái."
+      "hoi": "Ba mùi Goodnight, Merry Day, Relax Days khác nhau thế nào?",
+      "dap": "Goodnight êm ái, hợp giặt đồ ngủ và chăn gối. Merry Day dịu nhẹ, hợp đồ mặc ban ngày. Relax Days bay bổng, thư thái."
     },
     {
       "hoi": "Mỗi lần giặt dùng bao nhiêu?",
-      "dap": "[Chờ R&D: liều dùng cho giặt tay và giặt máy, theo đúng chữ in trên nhãn chai]"
+      "dap": "Abby dùng được cho cả giặt tay và giặt máy. Liều lượng theo hướng dẫn in trên nhãn chai."
     },
     {
       "hoi": "Abby do công ty nào sản xuất?",

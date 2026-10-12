@@ -819,7 +819,7 @@ content:
       - { name: cau_ngan, label: Câu ngắn dưới tên, type: string }
       - { name: mau, label: "Màu đậm của sản phẩm (mã màu, vd #D93B78)", type: string }
       - { name: mau_nhat, label: Màu nền nhạt, type: string }
-      - { name: anh, label: "Ảnh sản phẩm (ảnh đứng 3:4, ảnh đầu là ảnh chính)", type: image, options: { multiple: true } }
+      - { name: anh, label: "Ảnh chính (nền trong suốt, đứng 3:4 — hiện ở thẻ sản phẩm)", type: image, options: { multiple: true } }
       - { name: mo_ta, label: Mô tả, type: text }
       - name: phien_ban
         label: Dung tích / phiên bản (giá lấy từ Bảng giá chung)
@@ -829,6 +829,7 @@ content:
           - { name: ten, label: "Tên (vd Can 3L)", type: string }
           - { name: ma_gia, label: Mã giá trong Bảng giá chung, type: string }
           - { name: ghi_chu, label: Ghi chú ngắn, type: string }
+          - { name: anh, label: "Ảnh riêng của dung tích này (PNG/WebP nền trong suốt; trống = dùng ảnh chính)", type: image }
       - name: thong_so
         label: Thông tin sản phẩm
         type: object

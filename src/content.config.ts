@@ -158,7 +158,7 @@ const sanPhamCt = defineCollection({
     mau_nhat: z.string().optional().default('#F1F2F9'),
     anh: z.array(z.string()).optional().default([]),
     mo_ta: z.string().optional().default(''),
-    phien_ban: z.array(z.object({ ten: z.string(), ma_gia: z.string().optional().default(''), ghi_chu: z.string().optional().default('') })).optional().default([]),
+    phien_ban: z.array(z.object({ ten: z.string(), ma_gia: z.string().optional().default(''), ghi_chu: z.string().optional().default(''), anh: z.string().optional().default('') })).optional().default([]),
     thong_so: z.array(z.object({ ten: z.string(), gia_tri: z.string().optional().default('') })).optional().default([]),
     cong_dung: z.array(muc).optional().default([]),
     dung_luc_nao: z.array(muc).optional().default([]),

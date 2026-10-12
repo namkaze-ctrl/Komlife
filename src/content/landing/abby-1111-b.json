@@ -41,7 +41,7 @@
       },
       {
         "ten": "Mùi hương",
-        "gia_tri": "3 mùi: Goodnight, Merry Day, Relax Day"
+        "gia_tri": "3 mùi: Goodnight, Merry Day, Relax Days"
       },
       {
         "ten": "Công nghệ",
@@ -88,7 +88,7 @@
         "mo_ta": "Dịu nhẹ, cho ngày dài năng động"
       },
       {
-        "ten": "Relax Day",
+        "ten": "Relax Days",
         "mo_ta": "Bay bổng, thư thái"
       }
     ],
@@ -191,12 +191,12 @@
       "dap": "Trên gian hàng chính hãng của Abby tại Shopee và TikTok Shop. Bấm nút trên trang này để vào đúng gian hàng."
     },
     {
-      "hoi": "Ba mùi Goodnight, Merry Day, Relax Day khác nhau thế nào?",
-      "dap": "Goodnight êm ái, hợp giặt đồ ngủ và chăn gối. Merry Day dịu nhẹ, hợp đồ mặc ban ngày. Relax Day bay bổng, thư thái."
+      "hoi": "Ba mùi Goodnight, Merry Day, Relax Days khác nhau thế nào?",
+      "dap": "Goodnight êm ái, hợp giặt đồ ngủ và chăn gối. Merry Day dịu nhẹ, hợp đồ mặc ban ngày. Relax Days bay bổng, thư thái."
     },
     {
       "hoi": "Mỗi lần giặt dùng bao nhiêu?",
-      "dap": "[Chờ R&D: liều dùng cho giặt tay và giặt máy, theo đúng chữ in trên nhãn chai]"
+      "dap": "Abby dùng được cho cả giặt tay và giặt máy. Liều lượng theo hướng dẫn in trên nhãn chai."
     },
     {
       "hoi": "Abby do công ty nào sản xuất?",
