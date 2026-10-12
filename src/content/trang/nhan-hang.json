@@ -12,5 +12,11 @@
     "mo_ta": "Để tránh mua phải hàng giả, hãy mua ở gian hàng chính hãng hoặc đại lý được Komlife uỷ quyền.",
     "nut_shopee": "Gian hàng Komlife trên Shopee",
     "nut_hang_that": "Cách nhận biết hàng thật"
+  },
+  "tieu_de_khoi": {
+    "ghi_chu": "{ten} = tên nhãn (SPY, Abby...). Phần giữa hai dấu * được tô màu.",
+    "cau_chuyen": "Câu chuyện *{ten}*",
+    "danh_muc": "Danh mục *{ten}*",
+    "hoi_dap": "Câu hỏi *thường gặp*"
   }
 }

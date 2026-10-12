@@ -13,6 +13,9 @@ export async function getStaticPaths() {
 }
 const { b } = Astro.props;
 const mua = nh.mua_o_dau;
+// Tiêu đề các khối: sửa ở trang quản trị (Trang Nhãn hàng → Tiêu đề các khối). {ten} = tên nhãn, *...* = chữ tô màu.
+const td = (s: string) => tieuDe(s.replace(/\{ten\}/g, b.ten));
+const k = nh.tieu_de_khoi;
 const th = b.tinh_huong;
 ---
 <Base tieuDe={`${b.ten} — ${b.cau_dinh_vi} | Komlife Việt Nam`} moTa={b.mo_ta} anhChiaSe={b.anh_bia}>
@@ -31,7 +34,7 @@ const th = b.tinh_huong;
   {b.cau_chuyen && (
     <section class="sec">
       <div class="wrap split">
-        <div class="stack g16"><div class="eb">Vì sao có nhãn này</div><h2>Câu chuyện <span class="it">{b.ten}</span></h2></div>
+        <div class="stack g16"><div class="eb">Vì sao có nhãn này</div><h2 set:html={td(k.cau_chuyen)} /></div>
         <div class="stack g16">
           <p class="lead" set:html={dong(b.cau_chuyen)} />
           {b.danh_cho && <p class="muted"><strong style="color:var(--ink)">Dành cho:</strong> {b.danh_cho}</p>}
@@ -43,7 +46,7 @@ const th = b.tinh_huong;
   {b.san_pham.length > 0 && (
     <section class="sec sec--panel">
       <div class="wrap stack g28">
-        <div class="stack g12"><div class="eb">Sản phẩm</div><h2>Danh mục {b.ten}</h2></div>
+        <div class="stack g12"><div class="eb">Sản phẩm</div><h2 set:html={td(k.danh_muc)} /></div>
         {b.san_pham.map((p) => (
           <div class="prod rv">
             {p.anh && <div class="prod__img"><Anh src={p.anh} alt={p.ten} sizes="220px" /></div>}
@@ -94,7 +97,7 @@ const th = b.tinh_huong;
   {b.hoi_dap.length > 0 && (
     <section class="sec">
       <div class="wrap split" style="align-items:start">
-        <div class="stack g16"><div class="eb">Hỏi &amp; đáp</div><h2>Câu hỏi <span class="it">thường gặp</span></h2></div>
+        <div class="stack g16"><div class="eb">Hỏi &amp; đáp</div><h2 set:html={td(k.hoi_dap)} /></div>
         <div>{b.hoi_dap.map((q) => <details><summary>{q.hoi}</summary><p set:html={dong(q.dap)} /></details>)}</div>
       </div>
     </section>

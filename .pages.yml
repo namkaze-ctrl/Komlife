@@ -425,6 +425,13 @@ content:
               - { name: mo_ta, label: Đoạn mô tả, type: text }
               - { name: nut_shopee, label: Chữ nút Shopee, type: string }
               - { name: nut_hang_that, label: Chữ nút nhận biết hàng thật, type: string }
+          - name: tieu_de_khoi
+            label: "Tiêu đề các khối trên trang từng nhãn ({ten} = tên nhãn, *chữ* = tô màu)"
+            type: object
+            fields:
+              - { name: cau_chuyen, label: "Khối câu chuyện (vd: Câu chuyện *{ten}*)", type: string }
+              - { name: danh_muc, label: "Khối danh mục sản phẩm (vd: Danh mục *{ten}*)", type: string }
+              - { name: hoi_dap, label: "Khối hỏi đáp (vd: Câu hỏi *thường gặp*)", type: string }
 
       - name: chat-luong
         label: Chất lượng & Tiêu chuẩn
