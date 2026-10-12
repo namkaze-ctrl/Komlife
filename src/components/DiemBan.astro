@@ -56,25 +56,49 @@ const cho = (s = '') => dong(s).replace(/\[([^\]]{2,})\]/g, '<mark class="lp-cho
 )}
 
 <script>
-  // Slide tự chạy: mỗi 3,5 giây trượt sang một ảnh, hết thì quay về đầu. Dừng khi rê chuột / chạm / đang dùng bàn phím.
+  // Slide TRÔI LIÊN TỤC, lặp vòng (nhân bản danh sách để nối đuôi). Chỉ dừng khi rê chuột / chạm đúng vào dải ảnh,
+  // thả ra là chạy tiếp. Nút ← → nhảy một ảnh. Người dùng bật "giảm chuyển động" thì không tự chạy.
   document.querySelectorAll<HTMLElement>('[data-db]').forEach((khung) => {
     const day = khung.querySelector<HTMLElement>('.db__day')!;
     const goc = khung.closest('.db')!;
-    const buoc = () => (day.querySelector<HTMLElement>('.db__o')?.offsetWidth ?? 320) + 18;
+    const gocO = Array.from(day.children) as HTMLElement[];
+    if (!gocO.length) return;
+    const KHE = 18;
+    const rongBo = () => gocO.reduce((t, o) => t + o.offsetWidth + KHE, 0);   // bề ngang một bộ ảnh gốc
+    // Nhân bản cho đủ dài để cuộn vòng không lộ chỗ nối
+    const nhan = () => { gocO.forEach((o) => { const c = o.cloneNode(true) as HTMLElement; c.setAttribute('aria-hidden', 'true'); c.querySelectorAll('button').forEach((b) => (b.tabIndex = -1)); day.appendChild(c); }); };
+    nhan(); while (day.scrollWidth < day.clientWidth * 2 + rongBo()) nhan();
+
+    const vong = () => { const r = rongBo(); if (day.scrollLeft >= r) day.scrollLeft -= r; else if (day.scrollLeft < 0) day.scrollLeft += r; };
+    const buoc = () => (gocO[0]?.offsetWidth ?? 320) + KHE;
+    let nhay = 0;                                   // đang trượt theo nút bấm -> tạm nhường
     const truot = (huong: number) => {
-      const cuoi = day.scrollLeft + day.clientWidth >= day.scrollWidth - 4;
-      if (huong > 0 && cuoi) day.scrollTo({ left: 0, behavior: 'smooth' });
-      else if (huong < 0 && day.scrollLeft <= 4) day.scrollTo({ left: day.scrollWidth, behavior: 'smooth' });
-      else day.scrollBy({ left: huong * buoc(), behavior: 'smooth' });
+      if (huong < 0 && day.scrollLeft < buoc()) day.scrollLeft += rongBo();
+      nhay = performance.now() + 700;
+      day.scrollBy({ left: huong * buoc(), behavior: 'smooth' });
     };
     goc.querySelector('[data-db-lui]')?.addEventListener('click', () => truot(-1));
     goc.querySelector('[data-db-toi]')?.addEventListener('click', () => truot(1));
+    day.addEventListener('scroll', vong, { passive: true });
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    let dung = false;
-    ['mouseenter', 'focusin', 'touchstart'].forEach((s) => goc.addEventListener(s, () => { dung = true; }, { passive: true }));
-    ['mouseleave', 'focusout', 'touchend'].forEach((s) => goc.addEventListener(s, () => { dung = false; }, { passive: true }));
-    let thay = false;
-    new IntersectionObserver((e) => { thay = e[0].isIntersecting; }, { threshold: 0.3 }).observe(khung);
-    setInterval(() => { if (!dung && thay && !document.hidden && day.scrollWidth > day.clientWidth + 8) truot(1); }, 3500);
+
+    let dung = false, thay = false, cham = 0;
+    day.addEventListener('mouseenter', () => { dung = true; });
+    day.addEventListener('mouseleave', () => { dung = false; });
+    day.addEventListener('touchstart', () => { cham = Infinity; }, { passive: true });
+    day.addEventListener('touchend', () => { cham = performance.now() + 2500; }, { passive: true });   // vuốt xong 2,5s thì chạy tiếp
+    new IntersectionObserver((e) => { thay = e[0].isIntersecting; }, { threshold: 0.15 }).observe(khung);
+    const TOC = 42;                                 // px mỗi giây
+    let truoc = performance.now(), du = 0;
+    const chay = (luc: number) => {
+      const dt = Math.min(luc - truoc, 100); truoc = luc;
+      if (!dung && thay && !document.hidden && luc > nhay && luc > cham) {
+        du += (TOC * dt) / 1000;
+        const n = Math.floor(du);
+        if (n >= 1) { day.scrollLeft += n; du -= n; vong(); }
+      }
+      requestAnimationFrame(chay);
+    };
+    requestAnimationFrame(chay);
   });
 </script>
