@@ -26,6 +26,15 @@ const linkMua = themUtm(shopee, `${b.ma}-trang-nhan`);
           <a class="lp-btn" href="#san-pham">Xem {sanPham.length} sản phẩm <i>↓</i></a>
           {linkMua && <a class="lp-btn lp-btn--phu" href={linkMua} target="_blank" rel="noopener" data-rasan="shopee" data-nhan={b.ma}>Mua trên Shopee <i>→</i></a>}
         </div>
+        {(b.facebook || b.tiktok) && (
+          <p class="nhm-mxh">
+            <span>Theo dõi {b.ten}</span>
+            {b.facebook && <a href={b.facebook} target="_blank" rel="noopener" data-rasan="facebook" data-nhan={b.ma}>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.6-1.5h1.5V4.3c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8.2v3h2.5V21h2.8z"/></svg>Fanpage Facebook</a>}
+            {b.tiktok && <a href={b.tiktok} target="_blank" rel="noopener" data-rasan="tiktok-kenh" data-nhan={b.ma}>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3c.3 2.1 1.5 3.5 3.5 3.7v2.8c-1.3.1-2.5-.3-3.5-1v6.1c0 3.200-2.300 5.400-5.300 5.400-2.900 0-5.200-2.200-5.200-5 0-3.100 2.700-5.400 6-4.900v2.900c-1.5-.4-3 .5-3 2 0 1.2 1 2.1 2.2 2.1 1.4 0 2.3-.9 2.3-2.6V3h3z"/></svg>Video TikTok</a>}
+          </p>
+        )}
       </div>
       <div class="ab-hero__sp" aria-hidden="true">
         {chai.map((p, i) => <a href={`/nhan-hang/${p.nhan}/${p.ma}`} class={`ab-chai ab-chai--${i}`} style={`--sp-nhat:${p.mau_nhat}`} tabindex="-1"><Anh src={p.anh[0]} alt="" sizes="220px" loading="eager" /></a>)}

@@ -39,6 +39,7 @@ const nhanHang = defineCollection({
     diem_nhan: z.array(z.string()).optional().default([]),
     shopee: z.string().optional().default(''),
     tiktok_shop: z.string().optional().default(''),
+    facebook: z.string().optional().default(''),
     // Khối video minh chứng (TikTok)
     video: z.object({
       tieu_de: z.string().optional().default(''),
