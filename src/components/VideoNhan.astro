@@ -1,0 +1,71 @@
+---
+// Khối video minh chứng của một nhãn. Dữ liệu: ô "video" trong src/content/nhan-hang/<mã>.json
+// Thẻ video dọc (ảnh bìa + nút phát); bấm mới tải trình phát TikTok (iframe player chính thức) trong khung nổi.
+// Video chưa tick "Đã duyệt nội dung" chỉ hiện ở bản xem thử. Không có video nào được hiện thì ẩn cả khối.
+import Anh from './Anh.astro';
+import { tieuDe, dong } from '../lib/chu';
+import { choHienNhap } from '../lib/landing';
+
+interface Props { b: any }
+const { b } = Astro.props;
+const vd = b.video ?? {};
+const nhap = choHienNhap();
+const maVideo = (link = '') => (link.match(/video\/(\d+)/) || [])[1] || '';
+const ds = (vd.danh_sach ?? []).filter((x: any) => maVideo(x.link) && (nhap || x.da_duyet)).map((x: any) => ({ ...x, ma: maVideo(x.link) }));
+---
+{ds.length > 0 && (
+  <section class="sec vdn" id="video">
+    <div class="wrap stack g28">
+      <div class="db__dau">
+        <div class="stack g12">
+          <div class="eb">Video</div>
+          <h2 set:html={tieuDe((vd.tieu_de || '{ten} *dùng thật*, quay thật').replace(/\{ten\}/g, b.ten))} />
+          {vd.mo_ta && <p class="lead" style="max-width:54ch" set:html={dong(vd.mo_ta)} />}
+        </div>
+        {vd.kenh && <a class="btn btn--ghost" href={vd.kenh} target="_blank" rel="noopener" data-rasan="tiktok-kenh" data-nhan={b.ma}>Xem thêm trên TikTok <i>→</i></a>}
+      </div>
+      <ul class="vdn__luoi">
+        {ds.map((x: any) => (
+          <li>
+            <button type="button" class="vdn__the" data-video={x.ma} aria-label={`Phát video: ${x.tieu_de}`}>
+              <span class="vdn__bia">
+                {x.anh_bia && <Anh src={x.anh_bia} alt="" sizes="(max-width:700px) 60vw, 220px" />}
+                <span class="vdn__phat" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14v13.72a1 1 0 0 0 1.52.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86A1 1 0 0 0 8 5.14z"/></svg></span>
+                {x.thoi_luong && <span class="vdn__dai">{x.thoi_luong}</span>}
+                {!x.da_duyet && <span class="vdn__cho">Chờ duyệt nội dung</span>}
+              </span>
+              <span class="vdn__td">{x.tieu_de}</span>
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+  <div class="vdn-hop" id="vdn-hop" role="dialog" aria-modal="true" aria-label="Phát video" hidden>
+    <button type="button" class="vdn-hop__dong" aria-label="Đóng video">×</button>
+    <div class="vdn-hop__khung"></div>
+  </div>
+)}
+
+<script>
+  // Bấm thẻ -> mở khung nổi và mới tải trình phát TikTok. Đóng thì gỡ iframe để dừng tiếng.
+  (() => {
+    const hop = document.getElementById('vdn-hop'); if (!hop) return;
+    const khung = hop.querySelector<HTMLElement>('.vdn-hop__khung')!;
+    let truoc: HTMLElement | null = null;
+    const dong = () => { hop.hidden = true; khung.innerHTML = ''; document.body.style.overflow = ''; truoc?.focus(); };
+    document.addEventListener('click', (e) => {
+      const the = (e.target as HTMLElement).closest<HTMLElement>('[data-video]');
+      if (the) {
+        truoc = the;
+        khung.innerHTML = `<iframe src="https://www.tiktok.com/player/v1/${the.dataset.video}?autoplay=1&rel=0&description=0&music_info=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen title="Video TikTok"></iframe>`;
+        hop.hidden = false; document.body.style.overflow = 'hidden';
+        hop.querySelector<HTMLElement>('.vdn-hop__dong')!.focus();
+        const w = window as any; (w.dataLayer = w.dataLayer || []).push({ event: 'xem_video', video: the.dataset.video, trang: location.pathname });
+        return;
+      }
+      if (!hop.hidden && ((e.target as HTMLElement) === hop || (e.target as HTMLElement).closest('.vdn-hop__dong'))) dong();
+    });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !hop.hidden) dong(); });
+  })();
+</script>

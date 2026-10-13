@@ -5,6 +5,7 @@ import Anh from '../../components/Anh.astro';
 import DaiSoLieu from '../../components/DaiSoLieu.astro';
 import NhanHangMoi from '../../components/NhanHangMoi.astro';
 import DiemBan from '../../components/DiemBan.astro';
+import VideoNhan from '../../components/VideoNhan.astro';
 import { getCollection } from 'astro:content';
 import { laySanPhamCt, choHienNhap } from '../../lib/landing';
 import nh from '../../content/trang/nhan-hang.json';
@@ -33,6 +34,8 @@ const uuDai = moi && lp ? { href: `/lp/${lp.id}`, ten: `${b.ten} · ưu đãi ${
 ---
 <Base tieuDe={`${b.ten} — ${b.cau_dinh_vi} | Komlife Việt Nam`} moTa={b.mo_ta} anhChiaSe={b.anh_bia}>
   {moi && <NhanHangMoi b={b} sanPham={sanPham} tdDanhMuc={td(k.danh_muc)} shopee={shopee} uuDai={uuDai} />}
+
+  <VideoNhan b={b} />
 
   {!moi && (
   <section class="phead">

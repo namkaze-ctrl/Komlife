@@ -305,6 +305,23 @@ content:
           - { name: nen, label: Màu nền nhạt, type: string }
       - { name: anh_linh_vat, label: Ảnh linh vật (PNG nền trong suốt), type: image }
       - { name: diem_nhan, label: "Điểm nổi bật dưới danh sách sản phẩm (*chữ* = in đậm)", type: string, list: true }
+      - name: video
+        label: "Khối video minh chứng (TikTok) — không có video đã duyệt = ẩn khối"
+        type: object
+        fields:
+          - { name: tieu_de, label: "Tiêu đề ({ten} = tên nhãn, *chữ* = tô màu)", type: string }
+          - { name: mo_ta, label: Mô tả ngắn, type: text }
+          - { name: kenh, label: Link kênh TikTok của nhãn, type: string }
+          - name: danh_sach
+            label: Video (nên 6)
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{fields.tieu_de}" } }
+            fields:
+              - { name: link, label: "Link video TikTok (dạng …/video/768…)", type: string }
+              - { name: tieu_de, label: Tiêu đề ngắn dưới video, type: string }
+              - { name: anh_bia, label: "Ảnh bìa (ảnh đứng 9:16)", type: image }
+              - { name: thoi_luong, label: "Thời lượng (vd 0:29)", type: string }
+              - { name: da_duyet, label: "Đã duyệt nội dung (xem hết video, không có câu cấm) — tick mới lên web chính", type: boolean }
       - name: diem_ban
         label: "Slide ảnh: có mặt tại cửa hàng, siêu thị (không có ảnh = ẩn khối)"
         type: object

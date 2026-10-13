@@ -39,6 +39,13 @@ const nhanHang = defineCollection({
     diem_nhan: z.array(z.string()).optional().default([]),
     shopee: z.string().optional().default(''),
     tiktok_shop: z.string().optional().default(''),
+    // Khối video minh chứng (TikTok)
+    video: z.object({
+      tieu_de: z.string().optional().default(''),
+      mo_ta: z.string().optional().default(''),
+      kenh: z.string().optional().default(''),
+      danh_sach: z.array(z.object({ link: z.string(), tieu_de: z.string().optional().default(''), anh_bia: z.string().optional().default(''), thoi_luong: z.string().optional().default(''), da_duyet: z.boolean().optional().default(false) })).optional().default([]),
+    }).optional().default({}),
     // Slide ảnh "có mặt tại cửa hàng, siêu thị"
     diem_ban: z.object({
       tieu_de: z.string().optional().default(''),
