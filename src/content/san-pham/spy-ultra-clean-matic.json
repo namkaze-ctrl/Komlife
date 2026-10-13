@@ -8,11 +8,12 @@
   "ten_dong": "Nước giặt xả cho máy giặt cửa trước",
   "cau_ngan": "Ít bọt, chống tái bám",
   "mau": "#C4211F",
-  "mau_nhat": "#FBFDFC",
+  "mau_nhat": "#F9E7E6",
   "anh": [
-    "../../assets/anh/san-pham/spy/ultra-clean-matic.jpg"
+    "../../assets/anh/san-pham/spy/ultra-clean-matic.webp"
   ],
-  "anh_co_nen": true,
+  "anh_co_nen": false,
+  "khong_phong_to": true,
   "mo_ta": "Nước giặt xả 2 trong 1 công thức ít bọt, dành cho máy giặt cửa trước. Chống tái bám bẩn nhờ hoạt chất Sokalan.",
   "nhan_phien_ban": "Chọn quy cách",
   "phien_ban": [

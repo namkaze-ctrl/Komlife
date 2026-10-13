@@ -8,11 +8,12 @@
   "ten_dong": "Nước giặt xả 2 trong 1",
   "cau_ngan": "Sạch sâu, khử mùi, mềm vải",
   "mau": "#1F3C8F",
-  "mau_nhat": "#F1E9F7",
+  "mau_nhat": "#E6EAF3",
   "anh": [
-    "../../assets/anh/san-pham/spy/deep-clean-plus.jpg"
+    "../../assets/anh/san-pham/spy/deep-clean-plus.webp"
   ],
-  "anh_co_nen": true,
+  "anh_co_nen": false,
+  "khong_phong_to": true,
   "mo_ta": "Dòng nước giặt xả sạch sâu của SPY: giặt, xả và làm mềm vải trong một bước.",
   "nhan_phien_ban": "Chọn quy cách",
   "phien_ban": [

@@ -8,11 +8,12 @@
   "ten_dong": "Sữa rửa tay 500ml",
   "cau_ngan": "Hương trái cây, dưỡng ẩm da tay",
   "mau": "#D6457A",
-  "mau_nhat": "#F3E8F5",
+  "mau_nhat": "#FAEBF0",
   "anh": [
-    "../../assets/anh/san-pham/spy/sua-rua-tay.jpg"
+    "../../assets/anh/san-pham/spy/sua-rua-tay.webp"
   ],
-  "anh_co_nen": true,
+  "anh_co_nen": false,
+  "khong_phong_to": true,
   "mo_ta": "Sữa rửa tay hương trái cây, không chứa cồn, có thành phần dưỡng ẩm cho da tay.",
   "nhan_phien_ban": "Chọn mùi hương",
   "phien_ban": [

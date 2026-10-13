@@ -54,7 +54,7 @@ const mau = mauSanPham(p.mau, p.mau_nhat);
         <div class="spct-in">
           <div class="spct-zoom" aria-hidden="true"></div>
           <div class="spct-anhkhoi">
-            <div class={`spct-anh ${p.anh_co_nen ? 'spct-anh--kin' : ''}`} data-zoom-khung data-khong-zoom={p.anh_co_nen ? '1' : undefined}>
+            <div class={`spct-anh ${p.anh_co_nen ? 'spct-anh--kin' : ''}`} data-zoom-khung data-khong-zoom={p.anh_co_nen || p.khong_phong_to ? '1' : undefined}>
               <span class="spct-anh__nen" aria-hidden="true"></span>
               {/* Ảnh theo dung tích đang chọn; dung tích không có ảnh riêng thì hiện ảnh chính */}
               <div data-anh="chinh" data-zoom={lonChinh.url} data-tile={lonChinh.tile} hidden={!!phienBan[0]?.anh}>{p.anh[0] && <Anh src={p.anh[0]} alt={`${p.ten} — ${p.ten_dong}`} class="spct-anh__img" sizes="(max-width:940px) 80vw, 520px" loading="eager" />}</div>
@@ -63,7 +63,7 @@ const mau = mauSanPham(p.mau, p.mau_nhat);
               ))}
               <span class="spct-kinh" aria-hidden="true"></span>
             </div>
-            <p class="spct-goiy"><span class="spct-goiy__may">{p.anh_co_nen ? 'Bấm vào ảnh để xem lớn' : 'Rê chuột lên ảnh để phóng to · bấm để xem ảnh lớn'}</span><span class="spct-goiy__dt">Chạm vào ảnh để xem lớn</span></p>
+            <p class="spct-goiy"><span class="spct-goiy__may">{p.anh_co_nen || p.khong_phong_to ? 'Bấm vào ảnh để xem lớn' : 'Rê chuột lên ảnh để phóng to · bấm để xem ảnh lớn'}</span><span class="spct-goiy__dt">Chạm vào ảnh để xem lớn</span></p>
           </div>
           <div class="stack g20">
             <div class="stack g8">

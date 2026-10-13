@@ -176,6 +176,8 @@ const sanPhamCt = defineCollection({
     anh: z.array(z.string()).optional().default([]),
     // true = ảnh có nền (ảnh chụp/banner) -> phủ kín khung; false = ảnh chai nền trong suốt -> nằm gọn trong khung, rê chuột phóng to được
     anh_co_nen: z.boolean().optional().default(false),
+    // true = ảnh gốc độ phân giải thấp -> tắt rê chuột phóng to (vẫn bấm xem ảnh lớn được)
+    khong_phong_to: z.boolean().optional().default(false),
     mo_ta: z.string().optional().default(''),
     nhan_phien_ban: z.string().optional().default('Chọn dung tích'),
     phien_ban: z.array(z.object({ ten: z.string(), ma_gia: z.string().optional().default(''), ghi_chu: z.string().optional().default(''), anh: z.string().optional().default('') })).optional().default([]),

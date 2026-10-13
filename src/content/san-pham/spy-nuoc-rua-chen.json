@@ -8,11 +8,12 @@
   "ten_dong": "Nước rửa chén",
   "cau_ngan": "Sạch dầu mỡ, hương quế và gừng sả",
   "mau": "#B5651D",
-  "mau_nhat": "#FFFFFF",
+  "mau_nhat": "#F7EEE6",
   "anh": [
-    "../../assets/anh/san-pham/spy/nuoc-rua-chen.jpg"
+    "../../assets/anh/san-pham/spy/nuoc-rua-chen.webp"
   ],
-  "anh_co_nen": true,
+  "anh_co_nen": false,
+  "khong_phong_to": true,
   "mo_ta": "Nước rửa chén làm sạch dầu mỡ, tinh bột khô và mùi tanh trên chén đĩa. Dùng được cho sành sứ, thủy tinh, inox, nhôm, nhựa.",
   "nhan_phien_ban": "Chọn dung tích",
   "phien_ban": [

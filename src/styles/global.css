@@ -1314,3 +1314,9 @@ body:has(#dlbar) .foot{padding-bottom:calc(28px + 64px + env(safe-area-inset-bot
 .nhm-nhom+.nhm-nhom{margin-top:14px}
 .nhm-nhom__t{font-family:var(--fd);font-size:1.45rem;color:var(--lp-chinh)!important;display:flex;align-items:center;gap:14px}
 .nhm-nhom__t::after{content:"";flex:1;height:1px;background:color-mix(in srgb,var(--lp-chinh) 22%,transparent)}
+
+/* thẻ sản phẩm: chân thẻ thẳng hàng giữa các thẻ cùng dòng */
+.tsp__chu{flex:1}
+.tsp__chan{margin-top:auto;align-items:center}
+.tsp__dt{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tsp__gia{white-space:nowrap;flex:none}

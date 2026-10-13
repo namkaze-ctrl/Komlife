@@ -8,11 +8,12 @@
   "ten_dong": "Nước giặt xả cho máy giặt cửa ngang",
   "cau_ngan": "Ít bọt, sạch sâu",
   "mau": "#C81E3A",
-  "mau_nhat": "#E9E6F6",
+  "mau_nhat": "#F9E6E9",
   "anh": [
-    "../../assets/anh/san-pham/spy/deep-clean-matic.jpg"
+    "../../assets/anh/san-pham/spy/deep-clean-matic.webp"
   ],
-  "anh_co_nen": true,
+  "anh_co_nen": false,
+  "khong_phong_to": true,
   "mo_ta": "Nước giặt xả 2 trong 1 ít bọt, dành cho máy giặt cửa ngang. Giặt sạch và xả thơm cùng lúc.",
   "nhan_phien_ban": "Quy cách",
   "phien_ban": [

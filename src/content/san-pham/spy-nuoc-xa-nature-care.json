@@ -8,11 +8,12 @@
   "ten_dong": "Nước xả vải",
   "cau_ngan": "Mềm vải, hương hoa cỏ",
   "mau": "#C2188B",
-  "mau_nhat": "#DCF4F6",
+  "mau_nhat": "#F8E6F2",
   "anh": [
-    "../../assets/anh/san-pham/spy/nuoc-xa-nature-care.jpg"
+    "../../assets/anh/san-pham/spy/nuoc-xa-nature-care.webp"
   ],
-  "anh_co_nen": true,
+  "anh_co_nen": false,
+  "khong_phong_to": true,
   "mo_ta": "Nước xả vải hương hoa cỏ, làm mềm sợi vải, giữ màu quần áo và giúp dễ là ủi hơn.",
   "nhan_phien_ban": "Chọn mùi hương",
   "phien_ban": [

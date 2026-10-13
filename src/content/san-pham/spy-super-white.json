@@ -8,11 +8,12 @@
   "ten_dong": "Nước giặt xả 5 trong 1",
   "cau_ngan": "Cho quần áo trắng sáng",
   "mau": "#5B2D90",
-  "mau_nhat": "#FBFDFC",
+  "mau_nhat": "#EDE8F3",
   "anh": [
-    "../../assets/anh/san-pham/spy/super-white.jpg"
+    "../../assets/anh/san-pham/spy/super-white.webp"
   ],
-  "anh_co_nen": true,
+  "anh_co_nen": false,
+  "khong_phong_to": true,
   "mo_ta": "Nước giặt xả đậm đặc có hoạt chất Tinopal cho quần áo trắng sáng. Giặt và xả trong một bước.",
   "nhan_phien_ban": "Chọn quy cách",
   "phien_ban": [

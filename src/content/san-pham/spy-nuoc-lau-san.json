@@ -8,11 +8,12 @@
   "ten_dong": "Nước lau sàn",
   "cau_ngan": "Sạch nhanh, ít bọt",
   "mau": "#8E44AD",
-  "mau_nhat": "#EFE3F6",
+  "mau_nhat": "#F3EAF6",
   "anh": [
-    "../../assets/anh/san-pham/spy/nuoc-lau-san.jpg"
+    "../../assets/anh/san-pham/spy/nuoc-lau-san.webp"
   ],
-  "anh_co_nen": true,
+  "anh_co_nen": false,
+  "khong_phong_to": true,
   "mo_ta": "Nước lau sàn công thức ít bọt, làm sạch nhanh, không cần lau lại bằng nước. Dùng cho sàn gạch, sàn gỗ, đá hoa cương.",
   "nhan_phien_ban": "Chọn quy cách",
   "phien_ban": [

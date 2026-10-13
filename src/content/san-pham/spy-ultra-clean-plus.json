@@ -8,11 +8,12 @@
   "ten_dong": "Nước giặt xả 2 trong 1",
   "cau_ngan": "Sạch sâu, thơm lâu",
   "mau": "#8010A0",
-  "mau_nhat": "#DCF4F6",
+  "mau_nhat": "#F1E5F5",
   "anh": [
-    "../../assets/anh/san-pham/spy/ultra-clean-plus.jpg"
+    "../../assets/anh/san-pham/spy/ultra-clean-plus.webp"
   ],
-  "anh_co_nen": true,
+  "anh_co_nen": false,
+  "khong_phong_to": true,
   "mo_ta": "Nước giặt xả đậm đặc, giặt và xả trong một bước nên không cần dùng thêm nước xả. Dùng được cho cả giặt tay và giặt máy.",
   "nhan_phien_ban": "Chọn quy cách",
   "phien_ban": [

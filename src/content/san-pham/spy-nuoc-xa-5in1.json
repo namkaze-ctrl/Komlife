@@ -8,11 +8,12 @@
   "ten_dong": "Nước xả vải, công nghệ hạt lưu hương",
   "cau_ngan": "Mềm vải, lưu hương, chống mốc",
   "mau": "#A3195B",
-  "mau_nhat": "#DCF4F6",
+  "mau_nhat": "#F5E6ED",
   "anh": [
-    "../../assets/anh/san-pham/spy/nuoc-xa-5in1.jpg"
+    "../../assets/anh/san-pham/spy/nuoc-xa-5in1.webp"
   ],
-  "anh_co_nen": true,
+  "anh_co_nen": false,
+  "khong_phong_to": true,
   "mo_ta": "Nước xả vải dùng công nghệ hạt lưu hương, làm mềm vải và hỗ trợ chống mốc cho quần áo.",
   "nhan_phien_ban": "Chọn mùi hương",
   "phien_ban": [
