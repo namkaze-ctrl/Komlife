@@ -45,7 +45,7 @@ const nhanHang = defineCollection({
       tieu_de: z.string().optional().default(''),
       mo_ta: z.string().optional().default(''),
       kenh: z.string().optional().default(''),
-      danh_sach: z.array(z.object({ link: z.string(), tieu_de: z.string().optional().default(''), anh_bia: z.string().optional().default(''), thoi_luong: z.string().optional().default(''), da_duyet: z.boolean().optional().default(false) })).optional().default([]),
+      danh_sach: z.array(z.object({ link: z.string(), tep_video: z.string().optional().default(''), tieu_de: z.string().optional().default(''), anh_bia: z.string().optional().default(''), thoi_luong: z.string().optional().default(''), da_duyet: z.boolean().optional().default(false) })).optional().default([]),
     }).optional().default({}),
     // Slide ảnh "có mặt tại cửa hàng, siêu thị"
     diem_ban: z.object({

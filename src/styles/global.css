@@ -1183,7 +1183,11 @@ a.tin{text-decoration:none;color:inherit}
 .vdn-hop{position:fixed;inset:0;z-index:310;background:rgba(8,10,24,.9);display:flex;align-items:center;justify-content:center;padding:20px}
 .vdn-hop[hidden]{display:none}
 .vdn-hop__khung{height:min(86vh,760px);aspect-ratio:9/16;max-width:92vw;border-radius:18px;overflow:hidden;background:#000}
-.vdn-hop__khung iframe{width:100%;height:100%;border:0;display:block}
+.vdn-hop__khung iframe,.vdn-hop__khung video{width:100%;height:100%;border:0;display:block;background:#000;object-fit:contain}
+.vdn-hop{flex-direction:column;gap:12px}
+.vdn-hop__khung{height:min(80vh,760px)}
+.vdn-hop__tt{color:#fff;font-weight:600;font-size:.9rem;text-decoration:underline;text-underline-offset:4px;opacity:.85}
+.vdn-hop__tt:hover{opacity:1}
 .vdn-hop__dong{position:absolute;top:14px;right:18px;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.14);color:#fff;font-size:1.7rem;line-height:1;cursor:pointer}
 .vdn-hop__dong:hover{background:rgba(255,255,255,.28)}
 

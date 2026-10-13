@@ -1,8 +1,12 @@
 ---
 // Khối video minh chứng của một nhãn. Dữ liệu: ô "video" trong src/content/nhan-hang/<mã>.json
-// Thẻ video dọc (ảnh bìa + nút phát); bấm mới tải trình phát TikTok (iframe player chính thức) trong khung nổi.
+// Thẻ video dọc (ảnh bìa + nút phát); bấm mới tải video trong khung nổi.
+// Có ô "tep_video" (file .mp4 đặt trong public/video/...) thì phát thẳng file — NÊN DÙNG: trình phát nhúng của TikTok
+// KHÔNG phát video bị gắn mác quảng cáo (is_ads), tức mọi video có gắn giỏ hàng / chạy ads. Không có file thì mới nhúng TikTok.
 // Video chưa tick "Đã duyệt nội dung" chỉ hiện ở bản xem thử. Không có video nào được hiện thì ẩn cả khối.
+import { getImage } from 'astro:assets';
 import Anh from './Anh.astro';
+import { timAnh } from '../lib/anh';
 import { tieuDe, dong } from '../lib/chu';
 import { choHienNhap } from '../lib/landing';
 
@@ -11,7 +15,10 @@ const { b } = Astro.props;
 const vd = b.video ?? {};
 const nhap = choHienNhap();
 const maVideo = (link = '') => (link.match(/video\/(\d+)/) || [])[1] || '';
-const ds = (vd.danh_sach ?? []).filter((x: any) => maVideo(x.link) && (nhap || x.da_duyet)).map((x: any) => ({ ...x, ma: maVideo(x.link) }));
+const ds = await Promise.all((vd.danh_sach ?? []).filter((x: any) => (maVideo(x.link) || x.tep_video) && (nhap || x.da_duyet)).map(async (x: any) => {
+  const bia = timAnh(x.anh_bia);
+  return { ...x, ma: maVideo(x.link), poster: bia ? (await getImage({ src: bia, width: Math.min(720, bia.width) })).src : '' };
+}));
 ---
 {ds.length > 0 && (
   <section class="sec vdn" id="video">
@@ -27,7 +34,7 @@ const ds = (vd.danh_sach ?? []).filter((x: any) => maVideo(x.link) && (nhap || x
       <ul class="vdn__luoi" style={`--n:${Math.min(ds.length, 6)}`}>
         {ds.map((x: any) => (
           <li>
-            <button type="button" class="vdn__the" data-video={x.ma} aria-label={`Phát video: ${x.tieu_de}`}>
+            <button type="button" class="vdn__the" data-video={x.ma} data-tep={x.tep_video} data-poster={x.poster} data-link={x.link} aria-label={`Phát video: ${x.tieu_de}`}>
               <span class="vdn__bia">
                 {x.anh_bia && <Anh src={x.anh_bia} alt="" sizes="(max-width:700px) 60vw, 220px" />}
                 <span class="vdn__phat" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14v13.72a1 1 0 0 0 1.52.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86A1 1 0 0 0 8 5.14z"/></svg></span>
@@ -44,6 +51,7 @@ const ds = (vd.danh_sach ?? []).filter((x: any) => maVideo(x.link) && (nhap || x
   <div class="vdn-hop" id="vdn-hop" role="dialog" aria-modal="true" aria-label="Phát video" hidden>
     <button type="button" class="vdn-hop__dong" aria-label="Đóng video">×</button>
     <div class="vdn-hop__khung"></div>
+    <a class="vdn-hop__tt" target="_blank" rel="noopener" hidden>Xem trên TikTok →</a>
   </div>
 )}
 
@@ -53,12 +61,20 @@ const ds = (vd.danh_sach ?? []).filter((x: any) => maVideo(x.link) && (nhap || x
     const hop = document.getElementById('vdn-hop'); if (!hop) return;
     const khung = hop.querySelector<HTMLElement>('.vdn-hop__khung')!;
     let truoc: HTMLElement | null = null;
-    const dong = () => { hop.hidden = true; khung.innerHTML = ''; document.body.style.overflow = ''; truoc?.focus(); };
+    const dong = () => { hop.hidden = true; khung.querySelector('video')?.pause(); khung.innerHTML = ''; document.body.style.overflow = ''; truoc?.focus(); };
     document.addEventListener('click', (e) => {
       const the = (e.target as HTMLElement).closest<HTMLElement>('[data-video]');
       if (the) {
         truoc = the;
-        khung.innerHTML = `<iframe src="https://www.tiktok.com/player/v1/${the.dataset.video}?autoplay=1&rel=0&description=0&music_info=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen title="Video TikTok"></iframe>`;
+        if (the.dataset.tep) {
+          const v = document.createElement('video');
+          Object.assign(v, { src: the.dataset.tep, poster: the.dataset.poster || '', controls: true, autoplay: true, playsInline: true, preload: 'auto' });
+          v.setAttribute('playsinline', ''); v.setAttribute('controlslist', 'nodownload');
+          khung.replaceChildren(v); v.play().catch(() => {});
+        } else {
+          khung.innerHTML = `<iframe src="https://www.tiktok.com/player/v1/${the.dataset.video}?autoplay=1&rel=0&description=0&music_info=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen title="Video TikTok"></iframe>`;
+        }
+        const tt = hop.querySelector<HTMLAnchorElement>('.vdn-hop__tt')!; tt.hidden = !the.dataset.link; if (the.dataset.link) tt.href = the.dataset.link;
         hop.hidden = false; document.body.style.overflow = 'hidden';
         hop.querySelector<HTMLElement>('.vdn-hop__dong')!.focus();
         const w = window as any; (w.dataLayer = w.dataLayer || []).push({ event: 'xem_video', video: the.dataset.video, trang: location.pathname });

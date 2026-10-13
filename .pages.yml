@@ -319,6 +319,7 @@ content:
             list: { collapsible: { collapsed: true, summary: "{fields.tieu_de}" } }
             fields:
               - { name: link, label: "Link video TikTok (dạng …/video/768…)", type: string }
+              - { name: tep_video, label: "Đường dẫn file video .mp4 trên web (vd /video/abby/768….mp4)", type: string, description: "NÊN CÓ. Video TikTok có gắn giỏ hàng / chạy quảng cáo KHÔNG phát được qua trình phát nhúng của TikTok, nên web phát thẳng file. Gửi file video cho người phụ trách web để đưa lên." }
               - { name: tieu_de, label: Tiêu đề ngắn dưới video, type: string }
               - { name: anh_bia, label: "Ảnh bìa (ảnh đứng 9:16)", type: image }
               - { name: thoi_luong, label: "Thời lượng (vd 0:29)", type: string }
