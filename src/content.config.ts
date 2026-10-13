@@ -38,6 +38,7 @@ const nhanHang = defineCollection({
     anh_linh_vat: z.string().optional().default(''),
     diem_nhan: z.array(z.string()).optional().default([]),
     shopee: z.string().optional().default(''),
+    tiktok_shop: z.string().optional().default(''),
     // Slide ảnh "có mặt tại cửa hàng, siêu thị"
     diem_ban: z.object({
       tieu_de: z.string().optional().default(''),

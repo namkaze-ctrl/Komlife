@@ -295,6 +295,7 @@ content:
       - { name: anh_bia, label: Ảnh bìa (ảnh ngang), type: image }
       - { name: tiktok, label: Đường dẫn kênh TikTok riêng của nhãn (nếu có), type: string }
       - { name: shopee, label: Link gian hàng Shopee riêng của nhãn (trống = dùng gian hàng Komlife), type: string }
+      - { name: tiktok_shop, label: Link gian hàng TikTok Shop riêng của nhãn (trống = ẩn nút TikTok Shop), type: string }
       - name: mau
         label: "Màu riêng của nhãn (dùng ở giao diện mới — khi nhãn có Sản phẩm chi tiết)"
         type: object

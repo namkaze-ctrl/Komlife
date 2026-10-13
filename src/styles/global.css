@@ -1072,6 +1072,7 @@ a.tin{text-decoration:none;color:inherit}
 .spct-gia s{color:var(--faint)}
 .spct-gia__trong{font-weight:600;color:var(--ink)}
 .spct-gia__d{flex-basis:100%;font-size:.86rem;color:var(--faint)}
+.spct .lp-btn{border:2px solid var(--sp)}   /* trang chi tiết không nằm trong .lp nên phải tự khai viền */
 .spct .lp-btn.spct-btn{background:var(--sp);border-color:var(--sp);color:var(--sp-tren)}
 .spct .lp-btn--phu{color:var(--sp-chu);border-color:var(--sp);background:transparent}
 .spct .lp-btn:hover{filter:brightness(1.1)}

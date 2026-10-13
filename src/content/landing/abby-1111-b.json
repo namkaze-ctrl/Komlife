@@ -58,24 +58,16 @@
     ],
     "cong_dung": [
       {
-        "ten": "[Chờ R&D: công dụng 1 — đúng chữ in trên nhãn]",
-        "mo_ta": ""
+        "ten": "Giặt và xả trong một lần",
+        "mo_ta": "Nước giặt xả 2 trong 1, vừa giặt vừa xả."
       },
       {
-        "ten": "[Chờ R&D: công dụng 2]",
-        "mo_ta": ""
+        "ten": "Làm sạch vết bẩn trên đồ của bé",
+        "mo_ta": "Cặn sữa, tinh bột, mồ hôi trên khăn, tã, quần áo."
       },
       {
-        "ten": "[Chờ R&D: công dụng 3]",
-        "mo_ta": ""
-      },
-      {
-        "ten": "[Chờ R&D: công dụng 4]",
-        "mo_ta": ""
-      },
-      {
-        "ten": "[Chờ R&D: công dụng 5]",
-        "mo_ta": ""
+        "ten": "Mềm vải, lưu hương dịu nhẹ",
+        "mo_ta": "Quần áo mềm mại sau mỗi lần giặt, ba mùi hương cho từng khoảnh khắc trong ngày."
       }
     ],
     "mui_huong": [
@@ -182,8 +174,8 @@
     "dieu_kien": "[Chờ Ecom: thời gian áp dụng, mã giảm giá, số lượng có hạn hay không]"
   },
   "nut_mua": {
-    "shopee": "",
-    "tiktok_shop": ""
+    "shopee": "https://shopee.vn/abby.vietnam",
+    "tiktok_shop": "https://www.tiktok.com/@abby.vietnam"
   },
   "hoi_dap": [
     {

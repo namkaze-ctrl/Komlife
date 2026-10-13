@@ -31,16 +31,16 @@ const c = (s = '') => cho(dong(s));
 const t = (s = '') => cho(tieuDe(s));
 
 // Link sàn: link riêng của nhãn; chưa có thì tạm dùng gian hàng Komlife (bản nháp báo thiếu)
-const shopee = themUtm(d.nut_mua.shopee || caiDat.shopee, ma);
-const tiktok = themUtm(d.nut_mua.tiktok_shop, ma);
-const thieuLinhRieng = !d.nut_mua.shopee || !d.nut_mua.tiktok_shop;
+const shopee = themUtm(d.nut_mua.shopee || nhan?.shopee || caiDat.shopee, ma);
+const tiktok = themUtm(d.nut_mua.tiktok_shop || nhan?.tiktok_shop || '', ma);
+const thieuLinhRieng = !(d.nut_mua.shopee || nhan?.shopee);
 
 const goi = d.uu_dai.goi.map((g) => ({ ...g, gia: layGia(g.ma_gia) }));
 const ngay = (s: string) => (s ? s.split('-').reverse().join('/') : '');
 const mau = `--lp-chinh:${d.mau.chinh};--lp-nhan:${d.mau.nhan};--lp-nen:${d.mau.nen};--lp-nut:${d.mau.nut};--lp-nut-re:${d.mau.nut_re}`;
 const nutMua = (cls = '') => [
   { href: shopee, san: 'shopee', chu: `Mua ${tenNhan} trên Shopee` },
-  { href: tiktok, san: 'tiktok', chu: 'Mua trên TikTok Shop' },
+  { href: tiktok, san: 'tiktok', chu: 'Gian hàng TikTok Shop' },
 ].filter((n) => n.href).map((n, i) => ({ ...n, cls: `${cls} ${i ? 'lp-btn--phu' : ''}` }));
 ---
 {d.trang_thai === 'Hết đợt' ? (

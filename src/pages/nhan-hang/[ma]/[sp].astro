@@ -25,8 +25,9 @@ const c = (s = '') => cho(dong(s));
 
 const phienBan = p.phien_ban.map((v) => ({ ...v, gia: layGia(v.ma_gia) }));
 const chienDich = `${p.nhan}-${p.ma}`;
-const shopee = themUtm(p.shopee || caiDat.shopee, chienDich);
-const tiktok = themUtm(p.tiktok_shop, chienDich);
+// Link mua: link riêng của sản phẩm -> gian hàng riêng của nhãn -> gian hàng Komlife
+const shopee = themUtm(p.shopee || nhan?.shopee || caiDat.shopee, chienDich);
+const tiktok = themUtm(p.tiktok_shop || nhan?.tiktok_shop || '', chienDich);
 // Tiêu đề khối: lấy ô "Tiêu đề riêng" của sản phẩm, trống thì lấy mặc định chung. *...* = chữ tô màu
 const td = (k: keyof typeof cauHinh.tieu_de) =>
   cho(tieuDe((p.tieu_de[k] || cauHinh.tieu_de[k]).replace(/\{so\}/g, String(p.cong_dung.length)).replace(/\{nhan\}/g, tenNhan)));
@@ -80,7 +81,7 @@ const mau = mauSanPham(p.mau, p.mau_nhat);
 
             <div class="btnrow">
               {shopee && <a class="lp-btn spct-btn" href={shopee} target="_blank" rel="noopener" data-rasan="shopee" data-nhan={p.nhan}>Mua trên Shopee <i>→</i></a>}
-              {tiktok && <a class="lp-btn lp-btn--phu spct-btn2" href={tiktok} target="_blank" rel="noopener" data-rasan="tiktok" data-nhan={p.nhan}>TikTok Shop <i>→</i></a>}
+              {tiktok && <a class="lp-btn lp-btn--phu spct-btn2" href={tiktok} target="_blank" rel="noopener" data-rasan="tiktok" data-nhan={p.nhan}>Gian hàng TikTok Shop <i>→</i></a>}
             </div>
             <p class="lp-nho">Gian hàng chính hãng · {tenNhan} là sản phẩm của {caiDat.ten_cong_ty}</p>
           </div>

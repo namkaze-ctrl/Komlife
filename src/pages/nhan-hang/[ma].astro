@@ -106,7 +106,9 @@ const uuDai = moi && lp ? { href: `/lp/${lp.id}`, ten: `${b.ten} · ưu đãi ${
         <p class="lead" set:html={dong(mua.mo_ta)} />
         <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
           {shopee && <a class="btn" href={shopee} target="_blank" rel="noopener" data-rasan="shopee">{b.shopee ? `Gian hàng ${b.ten} trên Shopee` : mua.nut_shopee} <i>→</i></a>}
-          {b.tiktok && <a class="btn btn--ghost" href={b.tiktok} target="_blank" rel="noopener" data-rasan="tiktok">Kênh TikTok {b.ten} <i>→</i></a>}
+          {b.tiktok_shop
+            ? <a class="btn btn--ghost" href={b.tiktok_shop} target="_blank" rel="noopener" data-rasan="tiktok" data-nhan={b.ma}>Gian hàng {b.ten} trên TikTok Shop <i>→</i></a>
+            : b.tiktok && <a class="btn btn--ghost" href={b.tiktok} target="_blank" rel="noopener" data-rasan="tiktok">Kênh TikTok {b.ten} <i>→</i></a>}
         </div>
         <a class="btn btn--ghost" href="/chat-luong-tieu-chuan" style="align-self:flex-start">{mua.nut_hang_that}</a>
       </div>

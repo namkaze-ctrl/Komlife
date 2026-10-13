@@ -68,16 +68,8 @@
         "mo_ta": "Cặn sữa, tinh bột, mồ hôi trên khăn, tã, quần áo."
       },
       {
-        "ten": "Làm mềm sợi vải",
-        "mo_ta": "Quần áo mềm mại sau mỗi lần giặt."
-      },
-      {
-        "ten": "Lưu hương dịu nhẹ",
-        "mo_ta": "Ba mùi hương cho từng khoảnh khắc trong ngày."
-      },
-      {
-        "ten": "Giặt tay hay giặt máy đều được",
-        "mo_ta": "Dùng cho cả hai cách giặt."
+        "ten": "Mềm vải, lưu hương dịu nhẹ",
+        "mo_ta": "Quần áo mềm mại sau mỗi lần giặt, ba mùi hương cho từng khoảnh khắc trong ngày."
       }
     ],
     "mui_huong": [
@@ -184,8 +176,8 @@
     "dieu_kien": "[Chờ Ecom: thời gian áp dụng, mã giảm giá, số lượng có hạn hay không]"
   },
   "nut_mua": {
-    "shopee": "",
-    "tiktok_shop": ""
+    "shopee": "https://shopee.vn/abby.vietnam",
+    "tiktok_shop": "https://www.tiktok.com/@abby.vietnam"
   },
   "hoi_dap": [
     {
