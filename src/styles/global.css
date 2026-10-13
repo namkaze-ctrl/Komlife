@@ -69,8 +69,8 @@ body[data-hero="1"] .nav:not(.solid) .mark small{color:var(--mag)}
 p{margin:0}
 
 .wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:clamp(20px,5vw,52px)}
-.sec{padding-block:clamp(58px,8vw,112px)}
-.sec--tight{padding-block:clamp(38px,5vw,66px)}
+.sec{padding-block:clamp(40px,4.4vw,60px)}   /* 13/10: gọn lại (trước 58–112px) */
+.sec--tight{padding-block:clamp(28px,3.2vw,44px)}
 .sec--panel{background:var(--panel)}
 .sec--warm{background:var(--cream-2)}
 .sec--deep{background:var(--deep);color:var(--on-deep-muted)}
@@ -198,7 +198,7 @@ body[data-hero="1"] .nav:not(.solid) .nav__btn{color:#fff;border-color:rgba(255,
 /* 23/09: phủ đậm thêm. Ảnh nền đã đổi từ ảnh vẽ cảnh hoàng hôn tối sang
    ảnh chụp thật ban ngày (trời và cây sáng) nên chữ số liệu bị chìm. */
 .band__veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,16,13,.76),rgba(10,16,13,.9))}
-.band__in{position:relative;padding-block:clamp(46px,6vw,78px)}
+.band__in{position:relative;padding-block:clamp(36px,4.4vw,56px)}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 @media(max-width:860px){.stats{grid-template-columns:repeat(2,1fr);gap:26px}}
 .stat{display:flex;flex-direction:column;gap:2px;padding-left:20px;border-left:1px solid rgba(255,255,255,.25)}
@@ -314,10 +314,10 @@ details p{margin-top:10px;max-width:62ch;font-size:.97rem}
 .pcta__img img{width:100%;height:100%;object-fit:cover;object-position:right center}
 .pcta__veil{position:absolute;inset:0;
   background:linear-gradient(90deg,rgba(12,18,15,.95) 0%,rgba(12,18,15,.82) 42%,rgba(12,18,15,.3) 100%)}
-.pcta__in{position:relative;padding-block:clamp(52px,7vw,92px);max-width:44rem;color:rgba(255,255,255,.86)}
+.pcta__in{position:relative;padding-block:clamp(40px,4.6vw,64px);max-width:44rem;color:rgba(255,255,255,.86)}
 .pcta h2{color:#fff;font-weight:700}
 
-.foot{background:var(--deep);color:var(--on-deep-muted);padding-block:60px 28px}
+.foot{background:var(--deep);color:var(--on-deep-muted);padding-block:48px 28px}
 .foot a{color:var(--on-deep-muted);text-decoration:none}
 .foot a:hover{color:var(--on-deep)}
 .foot .mark{color:var(--on-deep)}
@@ -331,7 +331,7 @@ details p{margin-top:10px;max-width:62ch;font-size:.97rem}
 .foot__bar{margin-top:42px;padding-top:20px;border-top:1px solid var(--deep-line);
   display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem}
 
-.phead{padding-block:clamp(124px,15vh,168px) clamp(34px,5vw,56px);background:var(--cream-2)}
+.phead{padding-block:clamp(104px,12vh,116px) clamp(26px,3vw,40px);background:var(--cream-2)}
 
 .stbtn{position:fixed;right:16px;bottom:16px;z-index:80;background:var(--ink);color:var(--cream);
   border:1px solid var(--ink);border-radius:999px;padding:11px 19px;cursor:pointer;
@@ -697,7 +697,7 @@ body.co-bar .stpanel{bottom:134px}
 
 /* ── KHỐI 1: hệ sinh thái nhãn hàng ───────────────────── */
 .pp-eco{background:var(--pp-cream1);
-  padding:calc(78*var(--u)) calc(115*var(--u)) calc(78*var(--u)) calc(63*var(--u));
+  padding:calc(56*var(--u)) calc(115*var(--u)) calc(56*var(--u)) calc(63*var(--u));
   display:grid;grid-template-columns:minmax(0,1fr) calc(848*var(--u));
   column-gap:calc(49*var(--u));align-items:center}
 .pp-eco__l{display:flex;flex-direction:column;align-items:flex-start;gap:calc(15*var(--u))}
@@ -762,7 +762,7 @@ body.co-bar .stpanel{bottom:134px}
 
 /* ── KHỐI 3: chất lượng là cam kết ────────────────────── */
 .pp-ql{background:var(--pp-cream2);
-  padding:calc(60*var(--u)) calc(58*var(--u)) calc(64*var(--u)) calc(63*var(--u));
+  padding:calc(50*var(--u)) calc(58*var(--u)) calc(52*var(--u)) calc(63*var(--u));
   display:grid;grid-template-columns:minmax(0,1fr) calc(1023*var(--u));
   column-gap:calc(35*var(--u));align-items:start}
 .pp-ql__l{display:flex;flex-direction:column;align-items:flex-start;gap:calc(14*var(--u))}
@@ -830,7 +830,7 @@ body.co-bar .stpanel{bottom:134px}
 @media (max-width:1099px){
   .pp{--u:1px}
   .pp-h{white-space:normal;font-size:clamp(26px,3.4vw,32px);line-height:1.28}
-  .pp-eco,.pp-ql{grid-template-columns:1fr;padding:52px clamp(20px,5vw,40px);row-gap:34px}
+  .pp-eco,.pp-ql{grid-template-columns:1fr;padding:44px clamp(20px,5vw,40px);row-gap:28px}
   .pp-eco__l .pp-body,.pp-ql__l .pp-body{max-width:56ch}
   .pp-cards{grid-template-columns:repeat(3,1fr);gap:10px}
   .pp-qgrid{grid-template-columns:repeat(2,1fr);gap:14px}
@@ -935,7 +935,7 @@ a.tin{text-decoration:none;color:inherit}
   font-size:.84rem;line-height:1.55;padding:10px clamp(20px,5vw,52px);text-align:center}
 .lp-cho{background:#FFE66D;color:#3D3200;border-radius:4px;padding:0 4px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .lp-hero{background:linear-gradient(180deg,color-mix(in srgb,var(--lp-nen) 55%,#FFD3E1) 0%,var(--lp-nen) 100%);
-  padding-block:clamp(108px,14vh,150px) clamp(48px,7vw,88px);overflow:hidden}
+  padding-block:clamp(100px,12vh,116px) clamp(40px,4.6vw,64px);overflow:hidden}
 .lp-nhap+.lp-hero{padding-top:clamp(40px,6vw,72px)}
 .lp-hero__in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(28px,5vw,64px);align-items:center}
 @media(max-width:940px){.lp-hero__in{grid-template-columns:1fr}}
@@ -1046,7 +1046,7 @@ a.tin{text-decoration:none;color:inherit}
 .spct{--sp:#212b7e;--sp-nhat:#F1F2F9}
 .spct h1,.spct h2,.spct h3,.spct h4{color:var(--ink)}
 .spct .it{color:var(--sp-chu)}
-.spct-top{background:linear-gradient(180deg,var(--sp-nhat),#fff);padding-block:clamp(100px,13vh,130px) clamp(40px,6vw,72px)}
+.spct-top{background:linear-gradient(180deg,var(--sp-nhat),#fff);padding-block:clamp(96px,11vh,108px) clamp(30px,3.6vw,48px)}
 .lp-nhap+.spct-top{padding-top:28px}
 .spct-duong{font-size:.84rem;color:var(--faint);margin-bottom:22px}
 .spct-duong a{color:var(--faint);text-decoration:none}.spct-duong a:hover{color:var(--sp-chu)}
@@ -1091,7 +1091,7 @@ a.tin{text-decoration:none;color:inherit}
 
 /* ─── landing bố cục "Danh mục sản phẩm" (phong cách nhãn) ─── */
 .ab-hero{position:relative;overflow:hidden;background:linear-gradient(160deg,color-mix(in srgb,var(--lp-nhan) 22%,#fff) 0%,color-mix(in srgb,var(--lp-nhan) 10%,#fff) 55%,var(--lp-nen) 100%);
-  padding-block:clamp(110px,14vh,150px) clamp(56px,8vw,100px)}
+  padding-block:clamp(100px,12vh,116px) clamp(40px,4.6vw,64px)}
 .lp-nhap+.ab-hero{padding-top:clamp(36px,5vw,60px)}
 .ab-hero__blob{position:absolute;right:-6%;top:6%;width:min(58vw,720px);height:auto;fill:color-mix(in srgb,var(--lp-chinh) 50%,#fff);opacity:.55}
 @media(max-width:900px){.ab-hero__blob{right:-30%;top:auto;bottom:-10%;width:110vw}}
@@ -1127,7 +1127,7 @@ a.tin{text-decoration:none;color:inherit}
 .nhm-uudai:hover .nhm-uudai__xem{text-decoration-thickness:2px}
 
 /* ─── slide ảnh điểm bán (DiemBan) ─────────────────────── */
-.db{background:var(--panel)!important;overflow:hidden;padding-block:clamp(34px,4.6vw,60px)}
+.db{background:var(--panel)!important;overflow:hidden;padding-block:clamp(34px,4.4vw,56px)}
 .db__dau{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
 .db__nut{display:flex;gap:8px}
 .db__mt{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:1.1rem;cursor:pointer;transition:background .18s,color .18s,border-color .18s}
@@ -1251,8 +1251,8 @@ body:has(#dlbar) .foot{padding-bottom:calc(28px + 64px + env(safe-area-inset-bot
    Dãy thẻ -> hàng vuốt ngang (thấy mép thẻ kế tiếp); nhóm nhỏ -> lưới 2 cột. */
 @media(max-width:700px){
   :root{--mep:clamp(20px,5vw,40px)}
-  .sec{padding-block:44px}
-  .pp-eco,.pp-ql{padding-block:44px;row-gap:22px}
+  .sec{padding-block:36px}
+  .pp-eco,.pp-ql{padding-block:36px;row-gap:20px}
   .pp-eb{letter-spacing:.14em;font-size:12.5px}
   .stack.g40{gap:26px}
 
