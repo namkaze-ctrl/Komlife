@@ -1193,3 +1193,9 @@ a.tin{text-decoration:none;color:inherit}
 .nhm-mxh a{display:inline-flex;align-items:center;gap:7px;font-weight:700;color:var(--lp-chinh);text-decoration:underline;text-underline-offset:4px;text-decoration-color:color-mix(in srgb,var(--lp-chinh) 35%,transparent)}
 .nhm-mxh a:hover{color:var(--lp-nhan);text-decoration-color:currentColor}
 .nhm-mxh svg{width:18px;height:18px;flex:none}
+
+/* trang nhãn kiểu mới: tiêu đề mọi khối theo màu nhãn (chữ màu chính, phần nhấn màu nhấn) */
+.nhm-trang .sec h2{color:var(--lp-chinh)}
+.nhm-trang .sec h2 .it{color:var(--lp-nhan)}
+.nhm-trang .sec .eb{color:var(--lp-chinh)}
+.nhm-trang .sec .eb::after{background:var(--lp-nhan)}

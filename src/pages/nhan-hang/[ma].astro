@@ -30,9 +30,12 @@ const shopee = b.shopee || caiDat.shopee;
 // Dải "Đang có ưu đãi": landing của nhãn đang chạy (bản xem thử: tính cả Nháp, ưu tiên bố cục Danh mục)
 const lp = (await getCollection('landing', (x) => x.data.nhan === b.ma && (x.data.trang_thai === 'Đang chạy' || (choHienNhap() && x.data.trang_thai === 'Nháp'))))
   .sort((x, y) => Number(y.data.trang_thai === 'Đang chạy') - Number(x.data.trang_thai === 'Đang chạy') || Number(y.data.bo_cuc !== 'Dài') - Number(x.data.bo_cuc !== 'Dài'))[0];
+// Giao diện mới: tiêu đề các khối trên cả trang dùng màu riêng của nhãn (chữ = màu chính, tên nhãn = màu nhấn)
+const mauNhan = moi && b.mau?.chinh ? `--lp-chinh:${b.mau.chinh};--lp-nhan:${b.mau.nhan || b.mau.chinh}` : undefined;
 const uuDai = moi && lp ? { href: `/lp/${lp.id}`, ten: `${b.ten} · ưu đãi ${lp.data.ten_dot}` } : null;
 ---
 <Base tieuDe={`${b.ten} — ${b.cau_dinh_vi} | Komlife Việt Nam`} moTa={b.mo_ta} anhChiaSe={b.anh_bia}>
+  <div class={mauNhan ? 'nhm-trang' : undefined} style={mauNhan}>
   {moi && <NhanHangMoi b={b} sanPham={sanPham} tdDanhMuc={td(k.danh_muc)} shopee={shopee} uuDai={uuDai} />}
 
   <VideoNhan b={b} />
@@ -128,4 +131,5 @@ const uuDai = moi && lp ? { href: `/lp/${lp.id}`, ten: `${b.ten} · ưu đãi ${
   )}
 
   <DaiSoLieu />
+  </div>
 </Base>
