@@ -172,7 +172,10 @@ const sanPhamCt = defineCollection({
     mau: z.string().optional().default('#212b7e'),
     mau_nhat: z.string().optional().default('#F1F2F9'),
     anh: z.array(z.string()).optional().default([]),
+    // true = ảnh có nền (ảnh chụp/banner) -> phủ kín khung; false = ảnh chai nền trong suốt -> nằm gọn trong khung, rê chuột phóng to được
+    anh_co_nen: z.boolean().optional().default(false),
     mo_ta: z.string().optional().default(''),
+    nhan_phien_ban: z.string().optional().default('Chọn dung tích'),
     phien_ban: z.array(z.object({ ten: z.string(), ma_gia: z.string().optional().default(''), ghi_chu: z.string().optional().default(''), anh: z.string().optional().default('') })).optional().default([]),
     thong_so: z.array(z.object({ ten: z.string(), gia_tri: z.string().optional().default('') })).optional().default([]),
     cong_dung: z.array(muc).optional().default([]),

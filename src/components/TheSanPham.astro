@@ -9,7 +9,7 @@ const { p } = Astro.props;
 const tu = giaTu(p.phien_ban);
 const dungTich = p.phien_ban.map((v: any) => v.ten.replace(/^(Can|Chai|Dùng thử)\s*/i, '')).join(' · ');
 ---
-<a class="tsp rv" href={`/nhan-hang/${p.nhan}/${p.ma}`} style={mauSanPham(p.mau, p.mau_nhat)}>
+<a class={`tsp rv ${p.anh_co_nen ? 'tsp--kin' : ''}`} href={`/nhan-hang/${p.nhan}/${p.ma}`} style={mauSanPham(p.mau, p.mau_nhat)}>
   <div class="tsp__anh">
     <span class="tsp__nen" aria-hidden="true"></span>
     {p.anh[0] && <Anh src={p.anh[0]} alt={p.ten} class="tsp__img" sizes="(max-width:700px) 70vw, 300px" />}

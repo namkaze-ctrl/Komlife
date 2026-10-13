@@ -1,0 +1,104 @@
+{
+  "nhan": "spy",
+  "ma": "xit-thom-vai",
+  "thu_tu": 3,
+  "trang_thai": "Nháp",
+  "ten": "SPY Xịt thơm vải",
+  "ten_dong": "Xịt thơm vải 100ml",
+  "cau_ngan": "Thơm lại ngay, không cần giặt",
+  "mau": "#0060C0",
+  "mau_nhat": "#F8F7FD",
+  "anh": [
+    "../../assets/anh/san-pham/spy/xit-thom-vai.jpg"
+  ],
+  "anh_co_nen": true,
+  "mo_ta": "Chai xịt bỏ túi, xịt trực tiếp lên quần áo, chăn ga, rèm, ghế sofa để xử lý mùi phát sinh trong ngày mà không phải giặt lại.",
+  "nhan_phien_ban": "Chọn mùi hương",
+  "phien_ban": [
+    {
+      "ten": "Dream Violet",
+      "ma_gia": "",
+      "ghi_chu": "Hương hoa violet",
+      "anh": ""
+    },
+    {
+      "ten": "Pink Whisper",
+      "ma_gia": "",
+      "ghi_chu": "Hương hoa anh đào",
+      "anh": ""
+    },
+    {
+      "ten": "Pure White",
+      "ma_gia": "",
+      "ghi_chu": "Hương hoa trắng",
+      "anh": ""
+    }
+  ],
+  "thong_so": [
+    {
+      "ten": "Dòng sản phẩm",
+      "gia_tri": "Xịt thơm vải (Fabric Spray)"
+    },
+    {
+      "ten": "Dung tích",
+      "gia_tri": "Chai 100ml"
+    },
+    {
+      "ten": "Mùi hương",
+      "gia_tri": "Dream Violet · Pink Whisper · Pure White"
+    },
+    {
+      "ten": "Dùng cho",
+      "gia_tri": "Quần áo, chăn ga, rèm, ghế sofa"
+    },
+    {
+      "ten": "Sản xuất",
+      "gia_tri": "Nhà máy Komlife, Yên Mỹ, Hưng Yên"
+    },
+    {
+      "ten": "Xuất xứ",
+      "gia_tri": "Việt Nam"
+    }
+  ],
+  "cong_dung": [
+    {
+      "ten": "Khử mùi suốt 24h",
+      "mo_ta": "Theo nhãn chai, ở điều kiện sử dụng thông thường."
+    },
+    {
+      "ten": "Dạng sương mịn",
+      "mo_ta": "Bay hơi nhanh, không để lại vết trên vải sáng màu."
+    },
+    {
+      "ten": "Chai 100ml bỏ túi",
+      "mo_ta": "Mang theo đi làm, đi chơi."
+    }
+  ],
+  "dung_luc_nao": [
+    {
+      "ten": "Trước khi ra khỏi nhà",
+      "mo_ta": "Xịt lên áo khoác, áo sơ mi."
+    },
+    {
+      "ten": "Sau bữa cơm",
+      "mo_ta": "Mùi dầu mỡ bám vào áo."
+    },
+    {
+      "ten": "Ngày mưa nồm",
+      "mo_ta": "Quần áo có mùi ẩm."
+    },
+    {
+      "ten": "Trước khi đi ngủ",
+      "mo_ta": "Xịt lên chăn ga, gối."
+    }
+  ],
+  "cach_dung": "Xịt cách bề mặt vải khoảng 20–30cm. Với vải lụa hoặc đồ da, nên xịt thử ở mặt trong trước.",
+  "tieu_de": {
+    "cong_dung": "*{so} điểm chính* của sản phẩm",
+    "dung_luc_nao": "Dùng *lúc nào*",
+    "cach_dung": "",
+    "sp_khac": ""
+  },
+  "shopee": "",
+  "tiktok_shop": ""
+}

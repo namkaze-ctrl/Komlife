@@ -854,7 +854,9 @@ content:
       - { name: mau, label: "Màu đậm của sản phẩm (mã màu, vd #D93B78)", type: string }
       - { name: mau_nhat, label: Màu nền nhạt, type: string }
       - { name: anh, label: "Ảnh chính (nền trong suốt, đứng 3:4 — hiện ở thẻ sản phẩm)", type: image, options: { multiple: true } }
+      - { name: anh_co_nen, label: "Ảnh có nền (ảnh chụp / banner) — tick để ảnh phủ kín khung; KHÔNG tick với ảnh chai nền trong suốt", type: boolean }
       - { name: mo_ta, label: Mô tả, type: text }
+      - { name: nhan_phien_ban, label: "Chữ trên hàng lựa chọn (mặc định: Chọn dung tích; vd Chọn mùi hương)", type: string }
       - name: phien_ban
         label: Dung tích / phiên bản (giá lấy từ Bảng giá chung)
         type: object

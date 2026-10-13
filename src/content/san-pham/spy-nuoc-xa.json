@@ -1,0 +1,80 @@
+{
+  "nhan": "spy",
+  "ma": "nuoc-xa",
+  "thu_tu": 2,
+  "trang_thai": "Nháp",
+  "ten": "SPY Nước xả vải",
+  "ten_dong": "Nước xả vải Nature Care",
+  "cau_ngan": "Mềm vải, giữ hương",
+  "mau": "#C2188B",
+  "mau_nhat": "#FCEAF5",
+  "anh": [
+    "../../assets/anh/san-pham/spy/nuoc-xa.jpg"
+  ],
+  "anh_co_nen": true,
+  "mo_ta": "Làm mềm sợi vải và giữ hương, kèm khả năng chống mốc cho quần áo phơi trong nhà những ngày ẩm.",
+  "nhan_phien_ban": "Quy cách",
+  "phien_ban": [
+    {
+      "ten": "Túi",
+      "ma_gia": "",
+      "ghi_chu": "[Chờ Ecom: dung tích túi đang bán]",
+      "anh": ""
+    }
+  ],
+  "thong_so": [
+    {
+      "ten": "Dòng sản phẩm",
+      "gia_tri": "Nước xả vải [Chờ xác nhận: bao bì ghi 5 in 1, web cũ ghi 6 in 1]"
+    },
+    {
+      "ten": "Mùi hương",
+      "gia_tri": "[Chờ: tên các mùi đang bán]"
+    },
+    {
+      "ten": "Dùng cho",
+      "gia_tri": "Giặt tay và giặt máy"
+    },
+    {
+      "ten": "Sản xuất",
+      "gia_tri": "Nhà máy Komlife, Yên Mỹ, Hưng Yên"
+    },
+    {
+      "ten": "Xuất xứ",
+      "gia_tri": "Việt Nam"
+    }
+  ],
+  "cong_dung": [
+    {
+      "ten": "Làm mềm sợi vải",
+      "mo_ta": "Quần áo mềm hơn sau khi phơi."
+    },
+    {
+      "ten": "Giữ hương",
+      "mo_ta": "Hương lưu trên vải sau khi giặt."
+    },
+    {
+      "ten": "Chống mốc",
+      "mo_ta": "Cho quần áo phơi trong nhà những ngày ẩm."
+    }
+  ],
+  "dung_luc_nao": [
+    {
+      "ten": "Ngày mưa nồm",
+      "mo_ta": "Quần áo phơi trong nhà lâu khô."
+    },
+    {
+      "ten": "Chăn ga, rèm",
+      "mo_ta": "Đồ dày, lâu thay."
+    }
+  ],
+  "cach_dung": "Cho vào ngăn nước xả hoặc lần xả cuối. [Chờ R&D: liều dùng theo nhãn]",
+  "tieu_de": {
+    "cong_dung": "*{so} điểm chính* của sản phẩm",
+    "dung_luc_nao": "Dùng *lúc nào*",
+    "cach_dung": "",
+    "sp_khac": ""
+  },
+  "shopee": "",
+  "tiktok_shop": ""
+}

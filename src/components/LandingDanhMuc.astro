@@ -27,7 +27,7 @@ const dm = {
       </div>
     </div>
     <div class="ab-hero__sp" aria-hidden="true">
-      {chai.map((p, i) => <a href={`/nhan-hang/${p.nhan}/${p.ma}`} class={`ab-chai ab-chai--${i}`} style={`--sp-nhat:${p.mau_nhat}`} tabindex="-1"><Anh src={p.anh[0]} alt="" sizes="220px" loading="eager" /></a>)}
+      {chai.map((p, i) => <a href={`/nhan-hang/${p.nhan}/${p.ma}`} class={`ab-chai ab-chai--${i} ${p.anh_co_nen ? 'ab-chai--kin' : ''}`} style={`--sp-nhat:${p.mau_nhat}`} tabindex="-1"><Anh src={p.anh[0]} alt="" sizes="220px" loading="eager" /></a>)}
       {d.mo_dau.anh_phu && <Anh src={d.mo_dau.anh_phu} alt="" class="ab-tho" sizes="170px" loading="eager" />}
     </div>
   </div>

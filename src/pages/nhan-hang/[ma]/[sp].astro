@@ -54,7 +54,7 @@ const mau = mauSanPham(p.mau, p.mau_nhat);
         <div class="spct-in">
           <div class="spct-zoom" aria-hidden="true"></div>
           <div class="spct-anhkhoi">
-            <div class="spct-anh" data-zoom-khung>
+            <div class={`spct-anh ${p.anh_co_nen ? 'spct-anh--kin' : ''}`} data-zoom-khung data-khong-zoom={p.anh_co_nen ? '1' : undefined}>
               <span class="spct-anh__nen" aria-hidden="true"></span>
               {/* Ảnh theo dung tích đang chọn; dung tích không có ảnh riêng thì hiện ảnh chính */}
               <div data-anh="chinh" data-zoom={lonChinh.url} data-tile={lonChinh.tile} hidden={!!phienBan[0]?.anh}>{p.anh[0] && <Anh src={p.anh[0]} alt={`${p.ten} — ${p.ten_dong}`} class="spct-anh__img" sizes="(max-width:940px) 80vw, 520px" loading="eager" />}</div>
@@ -63,7 +63,7 @@ const mau = mauSanPham(p.mau, p.mau_nhat);
               ))}
               <span class="spct-kinh" aria-hidden="true"></span>
             </div>
-            <p class="spct-goiy"><span class="spct-goiy__may">Rê chuột lên ảnh để phóng to · bấm để xem ảnh lớn</span><span class="spct-goiy__dt">Chạm vào ảnh để xem lớn</span></p>
+            <p class="spct-goiy"><span class="spct-goiy__may">{p.anh_co_nen ? 'Bấm vào ảnh để xem lớn' : 'Rê chuột lên ảnh để phóng to · bấm để xem ảnh lớn'}</span><span class="spct-goiy__dt">Chạm vào ảnh để xem lớn</span></p>
           </div>
           <div class="stack g20">
             <div class="stack g8">
@@ -75,8 +75,8 @@ const mau = mauSanPham(p.mau, p.mau_nhat);
 
             {phienBan.length > 0 && (
               <div class="stack g12">
-                <span class="spct-nhan">Chọn dung tích</span>
-                <div class="spct-pb" role="radiogroup" aria-label="Dung tích">
+                <span class="spct-nhan">{p.nhan_phien_ban}</span>
+                <div class="spct-pb" role="radiogroup" aria-label={p.nhan_phien_ban}>
                   {phienBan.map((v, i) => (
                     <button type="button" class="spct-pb__i" role="radio" aria-checked={i === 0 ? 'true' : 'false'} data-anh-so={v.anh ? String(i) : 'chinh'}
                       data-gia={v.gia?.gia_ban ? dongTien(v.gia.gia_ban) : ''} data-goc={v.gia?.gia_goc ? dongTien(v.gia.gia_goc) : ''} data-ghichu={v.ghi_chu}>
@@ -174,6 +174,7 @@ const mau = mauSanPham(p.mau, p.mau_nhat);
         lbimg.src = lop.dataset.zoom; lbimg.alt = lop.querySelector('img')?.alt || ''; lb.classList.add('on'); an();
       });
       if (!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+      if (khung.dataset.khongZoom) return;                       // ảnh có nền: chỉ bấm xem ảnh lớn
       khung.addEventListener('mousemove', (e) => {
         const lop = dangHien(); if (!lop?.dataset.zoom || innerWidth < 901) return an();
         const v = vungVe(lop), kr = khung.getBoundingClientRect(), goc = o.parentElement!.getBoundingClientRect();
