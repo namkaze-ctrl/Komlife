@@ -122,7 +122,7 @@ const uuDai = moi && lp ? { href: `/lp/${lp.id}`, ten: `${b.ten} · ưu đãi ${
   </section>
 
   {b.hoi_dap.length > 0 && (
-    <section class="sec">
+    <section class="sec sec--hoidap">
       <div class="wrap split" style="align-items:start">
         <div class="stack g16"><div class="eb">Hỏi &amp; đáp</div><h2 set:html={td(k.hoi_dap)} /></div>
         <div>{b.hoi_dap.map((q) => <details><summary>{q.hoi}</summary><p set:html={dong(q.dap)} /></details>)}</div>

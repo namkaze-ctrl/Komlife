@@ -1297,3 +1297,8 @@ body:has(#dlbar) .foot{padding-bottom:calc(28px + 64px + env(safe-area-inset-bot
   .nguoi__img{max-width:168px}
   .nguoi__q{font-size:1.12rem;line-height:1.5}
 }
+
+/* khối Hỏi & đáp trên trang nhãn: đệm trên dưới gọn hơn (trước 112px) */
+.sec.sec--hoidap{padding-block:clamp(36px,4.2vw,56px)}
+.sec--hoidap details{padding:14px 0}
+.sec--hoidap details:first-child{border-top:0;padding-top:4px}
