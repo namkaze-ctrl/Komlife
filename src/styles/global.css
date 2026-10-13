@@ -1252,7 +1252,7 @@ body:has(#dlbar) .foot{padding-bottom:calc(28px + 64px + env(safe-area-inset-bot
   .pp-eb{letter-spacing:.14em;font-size:12.5px}
   .stack.g40{gap:26px}
 
-  .pp-cards,.pp-qgrid,.nmg,.nmv,.cards.hang-vuot{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;
+  .pp-cards,.pp-qgrid,.nmg,.nmv,.cards.hang-vuot{display:flex;max-width:none;width:auto;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;
     -webkit-overflow-scrolling:touch;margin-inline:calc(-1*var(--mep));padding:4px var(--mep) 10px;scroll-padding-inline:var(--mep)}
   .pp-cards::-webkit-scrollbar,.pp-qgrid::-webkit-scrollbar,.nmg::-webkit-scrollbar,.nmv::-webkit-scrollbar,.cards.hang-vuot::-webkit-scrollbar{display:none}
   .pp-cards>*,.pp-qgrid>*,.nmg>*,.nmv>*,.cards.hang-vuot>*{scroll-snap-align:start;flex:none;opacity:1!important;transform:none!important}
