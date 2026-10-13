@@ -1242,3 +1242,54 @@ a.tin{text-decoration:none;color:inherit}
 }
 /* chừa chỗ cho thanh dính đáy để dòng cuối chân trang không bị che */
 body:has(#dlbar) .foot{padding-bottom:calc(28px + 64px + env(safe-area-inset-bottom))}
+
+/* ═══ ĐIỆN THOẠI (≤700px): sắp gọn các khối dài ═══════════════
+   Dãy thẻ -> hàng vuốt ngang (thấy mép thẻ kế tiếp); nhóm nhỏ -> lưới 2 cột. */
+@media(max-width:700px){
+  :root{--mep:clamp(20px,5vw,40px)}
+  .sec{padding-block:44px}
+  .pp-eco,.pp-ql{padding-block:44px;row-gap:22px}
+  .pp-eb{letter-spacing:.14em;font-size:12.5px}
+  .stack.g40{gap:26px}
+
+  .pp-cards,.pp-qgrid,.nmg,.nmv,.cards.hang-vuot{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;margin-inline:calc(-1*var(--mep));padding:4px var(--mep) 10px;scroll-padding-inline:var(--mep)}
+  .pp-cards::-webkit-scrollbar,.pp-qgrid::-webkit-scrollbar,.nmg::-webkit-scrollbar,.nmv::-webkit-scrollbar,.cards.hang-vuot::-webkit-scrollbar{display:none}
+  .pp-cards>*,.pp-qgrid>*,.nmg>*,.nmv>*,.cards.hang-vuot>*{scroll-snap-align:start;flex:none;opacity:1!important;transform:none!important}
+  .pp-cards>*{width:43vw}
+  .pp-qgrid>*{width:72vw}
+  .nmg>*{width:76vw}
+  .nmv>*{width:46vw}
+  .cards.hang-vuot>*{width:78vw}
+  .nmg{margin-top:24px}.nmv{margin-top:8px}
+
+  /* dải số liệu: 2 × 2 */
+  .pp-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 12px;padding:20px 16px}
+  .pp-stat{grid-template-columns:26px minmax(0,1fr);column-gap:8px}
+  .pp-stat svg{width:22px;height:22px}
+  .pp-stat__n{font-size:21px}
+  .pp-stat__k{font-size:11px;letter-spacing:.06em}
+  .pp-stat__d{font-size:11.5px}
+
+  /* khối chữ trên ảnh: cao theo chữ, không cắt dòng */
+  .tran>img{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto}
+  .tran__v{background:linear-gradient(180deg,rgba(10,14,11,.9),rgba(10,14,11,.8))}
+  .tran__in{position:relative;inset:auto;padding-block:40px}
+  .tran__t{max-width:none}
+
+  /* nhà cung cấp nguyên liệu + giấy chứng nhận: 2 cột */
+  .ngl__r{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 16px}
+  .ngl__r .ncc{border-top:0;padding:0}
+  .ncc__n{font-size:1.45rem}
+  .ncc__d{font-size:.86rem;line-height:1.55}
+  .giay{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .giay__c{padding:12px 12px 14px}
+  .giay__c h3{font-size:.9rem!important}
+  .giay__c .card__b{font-size:.82rem!important;line-height:1.5}
+  .giay__m{font-size:.72rem;line-height:1.5}
+
+  /* người đứng đầu: ảnh nhỏ lại, không chiếm cả màn hình */
+  .sec--deep .nguoi{gap:22px}
+  .nguoi__img{max-width:168px}
+  .nguoi__q{font-size:1.12rem;line-height:1.5}
+}
