@@ -27,7 +27,7 @@ const cho = (s = '') => dong(s).replace(/\[([^\]]{2,})\]/g, '<mark class="lp-cho
       <div class="db__dau">
         <div class="stack g12">
           <div class="eb">Điểm bán</div>
-          <h2 set:html={tieuDe((db.tieu_de || '{ten} *trên kệ* cửa hàng, siêu thị').replace(/\{ten\}/g, b.ten))} />
+          <h2 set:html={tieuDe((db.tieu_de || '*{ten}* trên kệ cửa hàng, siêu thị').replace(/\{ten\}/g, b.ten))} />
           {db.mo_ta && <p class="lead" style="max-width:52ch" set:html={cho(db.mo_ta)} />}
         </div>
         <div class="db__nut">

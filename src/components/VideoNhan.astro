@@ -19,7 +19,7 @@ const ds = (vd.danh_sach ?? []).filter((x: any) => maVideo(x.link) && (nhap || x
       <div class="db__dau">
         <div class="stack g12">
           <div class="eb">Video</div>
-          <h2 set:html={tieuDe((vd.tieu_de || '{ten} *dùng thật*, quay thật').replace(/\{ten\}/g, b.ten))} />
+          <h2 set:html={tieuDe((vd.tieu_de || 'Trải nghiệm thực tế với *{ten}*').replace(/\{ten\}/g, b.ten))} />
           {vd.mo_ta && <p class="lead" style="max-width:54ch" set:html={dong(vd.mo_ta)} />}
         </div>
         {vd.kenh && <a class="btn btn--ghost" href={vd.kenh} target="_blank" rel="noopener" data-rasan="tiktok-kenh" data-nhan={b.ma}>Xem thêm trên TikTok <i>→</i></a>}

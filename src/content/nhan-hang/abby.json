@@ -25,7 +25,7 @@
   "tiktok_shop": "https://www.tiktok.com/@abby.vietnam",
   "facebook": "https://www.facebook.com/nuocgiatabby",
   "video": {
-    "tieu_de": "Trải nghiệm *thực tế* với {ten}",
+    "tieu_de": "Trải nghiệm thực tế với *{ten}*",
     "mo_ta": "Xem Abby được dùng thế nào ngoài đời: đổ ra tay để nhìn chất nước giặt, cầm từng chai lên xem cận cảnh, đong lượng dùng cho một mẻ đồ của con.",
     "kenh": "https://www.tiktok.com/@abby.vietnam",
     "danh_sach": [
@@ -74,7 +74,7 @@
     ]
   },
   "diem_ban": {
-    "tieu_de": "{ten} *trên kệ* cửa hàng, siêu thị",
+    "tieu_de": "*{ten}* trên kệ cửa hàng, siêu thị",
     "mo_ta": "Ngoài gian hàng online, mẹ có thể tìm Abby trên kệ siêu thị. Ảnh chụp thực tế tại quầy.",
     "danh_sach": [
       {
