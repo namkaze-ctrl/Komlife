@@ -3,7 +3,7 @@
   "ma": "nuoc-rua-chen",
   "thu_tu": 11,
   "nhom": "Chăm sóc nhà cửa",
-  "trang_thai": "Nháp",
+  "trang_thai": "Đang bán",
   "ten": "SPY Nước rửa chén",
   "ten_dong": "Nước rửa chén",
   "cau_ngan": "Sạch dầu mỡ, hương quế và gừng sả",
@@ -32,7 +32,7 @@
     {
       "ten": "1 lít",
       "ma_gia": "",
-      "ghi_chu": "[Chờ Ecom: mã SKU chai 1L]",
+      "ghi_chu": "",
       "anh": ""
     },
     {
