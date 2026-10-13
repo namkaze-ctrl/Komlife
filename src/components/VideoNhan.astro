@@ -24,7 +24,7 @@ const ds = (vd.danh_sach ?? []).filter((x: any) => maVideo(x.link) && (nhap || x
         </div>
         {vd.kenh && <a class="btn btn--ghost" href={vd.kenh} target="_blank" rel="noopener" data-rasan="tiktok-kenh" data-nhan={b.ma}>Xem thêm trên TikTok <i>→</i></a>}
       </div>
-      <ul class="vdn__luoi">
+      <ul class="vdn__luoi" style={`--n:${Math.min(ds.length, 6)}`}>
         {ds.map((x: any) => (
           <li>
             <button type="button" class="vdn__the" data-video={x.ma} aria-label={`Phát video: ${x.tieu_de}`}>

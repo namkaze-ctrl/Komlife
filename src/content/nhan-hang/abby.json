@@ -25,9 +25,30 @@
   "tiktok_shop": "https://www.tiktok.com/@abby.vietnam",
   "video": {
     "tieu_de": "Trải nghiệm *thực tế* với {ten}",
-    "mo_ta": "Xem Abby được dùng thế nào ngoài đời: đổ ra tay để nhìn chất nước giặt, cầm từng chai lên xem cận cảnh, đong lượng dùng cho một mẻ đồ của con.",
+    "mo_ta": "Xem Abby được dùng thế nào ngoài đời: cầm từng chai lên xem cận cảnh, đong lượng dùng cho một mẻ đồ của con, và mùi thơm sau khi giặt.",
     "kenh": "https://www.tiktok.com/@abby.vietnam",
     "danh_sach": [
+      {
+        "link": "https://www.tiktok.com/@abby.vietnam/video/7686803374880165140",
+        "tieu_de": "Xem cận cảnh nước giặt xả Abby",
+        "anh_bia": "../../assets/anh/video/abby/7686803374880165140.jpg",
+        "thoi_luong": "0:26",
+        "da_duyet": true
+      },
+      {
+        "link": "https://www.tiktok.com/@abby.vietnam/video/7684270831320435989",
+        "tieu_de": "Abby dùng bao nhiêu là đủ cho đồ của con?",
+        "anh_bia": "../../assets/anh/video/abby/7684270831320435989.jpg",
+        "thoi_luong": "0:24",
+        "da_duyet": true
+      },
+      {
+        "link": "https://www.tiktok.com/@abby.vietnam/video/7686725724543241493",
+        "tieu_de": "Giặt đồ cho con, chồng khen thơm dịu nhẹ",
+        "anh_bia": "../../assets/anh/video/abby/7686725724543241493.jpg",
+        "thoi_luong": "0:26",
+        "da_duyet": true
+      },
       {
         "link": "https://www.tiktok.com/@abby.vietnam/video/7682775441999924501",
         "tieu_de": "Nước giặt tốt hay không, đổ ra tay là biết",
@@ -40,27 +61,6 @@
         "tieu_de": "Mình dùng hết mấy chai Abby này rồi",
         "anh_bia": "../../assets/anh/video/abby/7683014970451184916.jpg",
         "thoi_luong": "0:28",
-        "da_duyet": false
-      },
-      {
-        "link": "https://www.tiktok.com/@abby.vietnam/video/7686803374880165140",
-        "tieu_de": "Xem cận cảnh nước giặt xả Abby",
-        "anh_bia": "../../assets/anh/video/abby/7686803374880165140.jpg",
-        "thoi_luong": "0:26",
-        "da_duyet": false
-      },
-      {
-        "link": "https://www.tiktok.com/@abby.vietnam/video/7684270831320435989",
-        "tieu_de": "Abby dùng bao nhiêu là đủ cho đồ của con?",
-        "anh_bia": "../../assets/anh/video/abby/7684270831320435989.jpg",
-        "thoi_luong": "0:24",
-        "da_duyet": false
-      },
-      {
-        "link": "https://www.tiktok.com/@abby.vietnam/video/7686725724543241493",
-        "tieu_de": "Giặt đồ cho con, chồng khen thơm dịu nhẹ",
-        "anh_bia": "../../assets/anh/video/abby/7686725724543241493.jpg",
-        "thoi_luong": "0:26",
         "da_duyet": false
       },
       {
