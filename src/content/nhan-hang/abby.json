@@ -74,32 +74,27 @@
   },
   "diem_ban": {
     "tieu_de": "{ten} *trên kệ* cửa hàng, siêu thị",
-    "mo_ta": "Ngoài gian hàng online, mẹ có thể tìm Abby tại các siêu thị và cửa hàng dưới đây.",
+    "mo_ta": "Ngoài gian hàng online, mẹ có thể tìm Abby trên kệ siêu thị. Ảnh chụp thực tế tại quầy.",
     "danh_sach": [
       {
-        "anh": "",
-        "ten": "GO! Đan Phượng",
-        "dia_diem": "Vincom Đan Phượng, Hà Nội [Chờ ảnh quầy Abby đợt 28–30/08/2026]"
+        "anh": "../../assets/anh/diem-ban/abby/go-dan-phuong-1.jpg",
+        "ten": "Kệ nước giặt Abby",
+        "dia_diem": "Siêu thị GO! Đan Phượng, Hà Nội"
       },
       {
-        "anh": "",
-        "ten": "[Chờ: tên siêu thị 2]",
-        "dia_diem": "[Chờ: địa điểm]"
+        "anh": "../../assets/anh/diem-ban/abby/go-dan-phuong-2.jpg",
+        "ten": "Abby Merry Day và Goodnight",
+        "dia_diem": "Siêu thị GO! Đan Phượng, Hà Nội"
       },
       {
-        "anh": "",
-        "ten": "[Chờ: tên cửa hàng mẹ & bé]",
-        "dia_diem": "[Chờ: địa điểm]"
+        "anh": "../../assets/anh/diem-ban/abby/go-dan-phuong-3.jpg",
+        "ten": "Đủ ba mùi, can 3L và can 1,1L",
+        "dia_diem": "Siêu thị GO! Đan Phượng, Hà Nội"
       },
       {
-        "anh": "",
-        "ten": "[Chờ: tên đại lý / tạp hoá]",
-        "dia_diem": "[Chờ: địa điểm]"
-      },
-      {
-        "anh": "",
-        "ten": "[Chờ: tên siêu thị 5]",
-        "dia_diem": "[Chờ: địa điểm]"
+        "anh": "../../assets/anh/diem-ban/abby/go-dan-phuong-4.jpg",
+        "ten": "Abby Relax Days trên kệ",
+        "dia_diem": "Siêu thị GO! Đan Phượng, Hà Nội"
       }
     ]
   },
