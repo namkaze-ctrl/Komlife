@@ -1127,24 +1127,24 @@ a.tin{text-decoration:none;color:inherit}
 .nhm-uudai:hover .nhm-uudai__xem{text-decoration-thickness:2px}
 
 /* ─── slide ảnh điểm bán (DiemBan) ─────────────────────── */
-.db{background:var(--panel)!important;overflow:hidden}
+.db{background:var(--panel)!important;overflow:hidden;padding-block:clamp(34px,4.6vw,60px)}
 .db__dau{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
 .db__nut{display:flex;gap:8px}
 .db__mt{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:1.1rem;cursor:pointer;transition:background .18s,color .18s,border-color .18s}
 .db__mt:hover{background:var(--btn);border-color:var(--btn);color:#fff}
-.db__khung{margin-top:28px}
-.db__day{list-style:none;margin:0;display:flex;gap:18px;overflow-x:auto;scrollbar-width:none;
-  padding:6px max(clamp(20px,5vw,52px),calc((100vw - var(--wrap))/2 + 52px)) 18px;scroll-padding-inline:max(clamp(20px,5vw,52px),calc((100vw - var(--wrap))/2 + 52px))}
+.db__khung{margin-top:18px}
+.db__day{list-style:none;margin:0;display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;
+  padding:4px max(clamp(20px,5vw,52px),calc((100vw - var(--wrap))/2 + 52px)) 6px;scroll-padding-inline:max(clamp(20px,5vw,52px),calc((100vw - var(--wrap))/2 + 52px))}
 .db__day::-webkit-scrollbar{display:none}
-.db__o{flex:0 0 min(80vw,420px);display:flex;flex-direction:column;gap:12px}
-.db__anh{display:block;width:100%;aspect-ratio:4/3;border-radius:18px;overflow:hidden;border:0;padding:0;background:var(--cream-2);cursor:zoom-in;
+.db__o{flex:0 0 min(84vw,520px);display:flex;flex-direction:column;gap:10px}
+.db__anh{display:block;width:100%;aspect-ratio:16/9;border-radius:16px;overflow:hidden;border:0;padding:0;background:var(--cream-2);cursor:zoom-in;
   box-shadow:0 18px 36px -24px rgba(20,30,70,.45)}
 .db__anh img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--e)}
 .db__anh:hover img{transform:scale(1.04)}
 .db__anh--cho{cursor:default;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
   border:2px dashed #E0C24A;background:#FFFBE8;color:#6B5A10;box-shadow:none;font-weight:700}
 .db__anh--cho small{font-weight:500;font-size:.8rem;opacity:.8}
-.db__chu{display:flex;flex-direction:column;gap:2px;font-size:.92rem;color:var(--faint)}
+.db__chu{display:flex;flex-direction:column;align-items:center;text-align:center;gap:2px;font-size:.92rem;color:var(--faint)}
 .db__chu b{color:var(--ink);font-size:1rem}
 
 /* ─── rê chuột phóng to ảnh sản phẩm ────────────────────── */

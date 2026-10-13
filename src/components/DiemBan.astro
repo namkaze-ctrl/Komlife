@@ -16,7 +16,7 @@ const laCho = (x: any) => !x.anh || /\[[^\]]+\]/.test(`${x.ten}${x.dia_diem}`);
 const ds = (db.danh_sach ?? []).filter((x: any) => nhap || !laCho(x));
 const muc = await Promise.all(ds.map(async (x: any) => {
   const goc = timAnh(x.anh);
-  const lon = goc ? (await getImage({ src: goc, width: Math.min(1600, goc.width) })).src : '';
+  const lon = goc ? (await getImage({ src: goc, width: Math.min(1920, goc.width) })).src : '';
   return { ...x, lon, cho: laCho(x) };
 }));
 const cho = (s = '') => dong(s).replace(/\[([^\]]{2,})\]/g, '<mark class="lp-cho">[$1]</mark>');
@@ -41,10 +41,10 @@ const cho = (s = '') => dong(s).replace(/\[([^\]]{2,})\]/g, '<mark class="lp-cho
         {muc.map((x) => (
           <li class="db__o">
             {x.cho || !x.lon ? (
-              <div class="db__anh db__anh--cho"><span>Ô chờ ảnh</span><small>Ảnh ngang 4:3 · 1600 × 1200</small></div>
+              <div class="db__anh db__anh--cho"><span>Ô chờ ảnh</span><small>Ảnh ngang 16:9 · 1920 × 1080</small></div>
             ) : (
               <button type="button" class="db__anh" data-lb={x.lon} aria-label={`${b.ten} tại ${x.ten}`}>
-                <Anh src={x.anh} alt={`${b.ten} tại ${x.ten}${x.dia_diem ? ', ' + x.dia_diem : ''}`} sizes="(max-width:700px) 80vw, 420px" />
+                <Anh src={x.anh} alt={`${b.ten} tại ${x.ten}${x.dia_diem ? ', ' + x.dia_diem : ''}`} sizes="(max-width:700px) 84vw, 520px" />
               </button>
             )}
             <div class="db__chu"><b set:html={cho(x.ten)} />{x.dia_diem && <span set:html={cho(x.dia_diem)} />}</div>
@@ -63,7 +63,7 @@ const cho = (s = '') => dong(s).replace(/\[([^\]]{2,})\]/g, '<mark class="lp-cho
     const goc = khung.closest('.db')!;
     const gocO = Array.from(day.children) as HTMLElement[];
     if (!gocO.length) return;
-    const KHE = 18;
+    const KHE = 12;
     const rongBo = () => gocO.reduce((t, o) => t + o.offsetWidth + KHE, 0);   // bề ngang một bộ ảnh gốc
     // Nhân bản cho đủ dài để cuộn vòng không lộ chỗ nối
     const nhan = () => { gocO.forEach((o) => { const c = o.cloneNode(true) as HTMLElement; c.setAttribute('aria-hidden', 'true'); c.querySelectorAll('button').forEach((b) => (b.tabIndex = -1)); day.appendChild(c); }); };

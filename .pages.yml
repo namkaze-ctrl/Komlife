@@ -333,7 +333,7 @@ content:
             type: object
             list: { collapsible: { collapsed: true, summary: "{fields.ten}" } }
             fields:
-              - { name: anh, label: "Ảnh chụp tại điểm bán (ảnh ngang 4:3, 1600 × 1200)", type: image }
+              - { name: anh, label: "Ảnh chụp tại điểm bán (ảnh ngang 16:9, 1920 × 1080)", type: image }
               - { name: ten, label: Tên cửa hàng / siêu thị, type: string }
               - { name: dia_diem, label: "Địa điểm (quận/huyện, tỉnh)", type: string }
       - name: san_pham
