@@ -1146,3 +1146,17 @@ a.tin{text-decoration:none;color:inherit}
 .db__anh--cho small{font-weight:500;font-size:.8rem;opacity:.8}
 .db__chu{display:flex;flex-direction:column;gap:2px;font-size:.92rem;color:var(--faint)}
 .db__chu b{color:var(--ink);font-size:1rem}
+
+/* ─── rê chuột phóng to ảnh sản phẩm ────────────────────── */
+.spct-in{position:relative}
+.spct-anhkhoi{display:flex;flex-direction:column;align-items:center;gap:12px;width:100%}
+.spct-anh{cursor:zoom-in}
+.spct-kinh{position:absolute;display:none;pointer-events:none;border:1.5px solid var(--sp);background:color-mix(in srgb,var(--sp) 14%,transparent);border-radius:6px}
+.spct-kinh.on{display:block}
+.spct-zoom{position:absolute;z-index:20;display:none;border-radius:22px;border:1px solid var(--line);background-color:#fff;background-repeat:no-repeat;
+  box-shadow:0 30px 70px -30px rgba(20,30,70,.45);pointer-events:none}
+.spct-zoom.on{display:block}
+.spct-goiy{font-size:.8rem;color:var(--faint);margin:0;text-align:center}
+.spct-goiy__dt{display:none}
+@media (hover:none),(max-width:900px){.spct-goiy__may{display:none}.spct-goiy__dt{display:inline}.spct-anh{cursor:pointer}}
+.lb img{background:#fff}

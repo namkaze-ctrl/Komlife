@@ -2,7 +2,9 @@
 // TRANG CHI TIẾT SẢN PHẨM — nội dung: src/content/san-pham/<nhãn>-<mã>.json -> /nhan-hang/<nhãn>/<mã>
 // Bấm vào thẻ sản phẩm ở trang danh mục / landing sẽ mở trang này.
 import Base from '../../../layouts/Base.astro';
+import { getImage } from 'astro:assets';
 import Anh from '../../../components/Anh.astro';
+import { timAnh } from '../../../lib/anh';
 import TheSanPham from '../../../components/TheSanPham.astro';
 import { caiDat, layNhanHang } from '../../../lib/noi-dung';
 import { dong, tieuDe } from '../../../lib/chu';
@@ -23,7 +25,14 @@ const laNhap = p.trang_thai === 'Nháp';
 const cho = (html: string) => html.replace(/\[([^\]]{2,})\]/g, '<mark class="lp-cho">[$1]</mark>');
 const c = (s = '') => cho(dong(s));
 
-const phienBan = p.phien_ban.map((v) => ({ ...v, gia: layGia(v.ma_gia) }));
+// Ảnh lớn cho tính năng rê chuột phóng to (chỉ tải khi khách rê chuột vào ảnh)
+const anhLon = async (duong: string) => {
+  const g = timAnh(duong);
+  if (!g) return { url: '', tile: 1 };
+  return { url: (await getImage({ src: g, width: Math.min(g.width, 2000), quality: 86 })).src, tile: g.width / g.height };
+};
+const lonChinh = await anhLon(p.anh[0] || '');
+const phienBan = await Promise.all(p.phien_ban.map(async (v) => ({ ...v, gia: layGia(v.ma_gia), lon: await anhLon(v.anh) })));
 const chienDich = `${p.nhan}-${p.ma}`;
 // Link mua: link riêng của sản phẩm -> gian hàng riêng của nhãn -> gian hàng Komlife
 const shopee = themUtm(p.shopee || nhan?.shopee || caiDat.shopee, chienDich);
@@ -43,13 +52,18 @@ const mau = mauSanPham(p.mau, p.mau_nhat);
           <a href="/nhan-hang">Nhãn hàng</a> / <a href={`/nhan-hang/${p.nhan}`}>{tenNhan}</a> / <span>{p.ten.replace(`${tenNhan} `, '')}</span>
         </nav>
         <div class="spct-in">
-          <div class="spct-anh">
-            <span class="spct-anh__nen" aria-hidden="true"></span>
-            {/* Ảnh theo dung tích đang chọn; dung tích không có ảnh riêng thì hiện ảnh chính */}
-            <div data-anh="chinh" hidden={!!phienBan[0]?.anh}>{p.anh[0] && <Anh src={p.anh[0]} alt={`${p.ten} — ${p.ten_dong}`} class="spct-anh__img" sizes="(max-width:940px) 80vw, 520px" loading="eager" />}</div>
-            {phienBan.map((v, i) => v.anh && (
-              <div data-anh={String(i)} hidden={i !== 0}><Anh src={v.anh} alt={`${p.ten} — ${v.ten}`} class="spct-anh__img" sizes="(max-width:940px) 80vw, 520px" loading={i === 0 ? 'eager' : 'lazy'} fetchpriority={i === 0 ? 'high' : undefined} /></div>
-            ))}
+          <div class="spct-zoom" aria-hidden="true"></div>
+          <div class="spct-anhkhoi">
+            <div class="spct-anh" data-zoom-khung>
+              <span class="spct-anh__nen" aria-hidden="true"></span>
+              {/* Ảnh theo dung tích đang chọn; dung tích không có ảnh riêng thì hiện ảnh chính */}
+              <div data-anh="chinh" data-zoom={lonChinh.url} data-tile={lonChinh.tile} hidden={!!phienBan[0]?.anh}>{p.anh[0] && <Anh src={p.anh[0]} alt={`${p.ten} — ${p.ten_dong}`} class="spct-anh__img" sizes="(max-width:940px) 80vw, 520px" loading="eager" />}</div>
+              {phienBan.map((v, i) => v.anh && (
+                <div data-anh={String(i)} data-zoom={v.lon.url} data-tile={v.lon.tile} hidden={i !== 0}><Anh src={v.anh} alt={`${p.ten} — ${v.ten}`} class="spct-anh__img" sizes="(max-width:940px) 80vw, 520px" loading={i === 0 ? 'eager' : 'lazy'} fetchpriority={i === 0 ? 'high' : undefined} /></div>
+              ))}
+              <span class="spct-kinh" aria-hidden="true"></span>
+            </div>
+            <p class="spct-goiy"><span class="spct-goiy__may">Rê chuột lên ảnh để phóng to · bấm để xem ảnh lớn</span><span class="spct-goiy__dt">Chạm vào ảnh để xem lớn</span></p>
           </div>
           <div class="stack g20">
             <div class="stack g8">
@@ -136,6 +150,48 @@ const mau = mauSanPham(p.mau, p.mau_nhat);
   </div>
 
   <script>
+    // RÊ CHUỘT PHÓNG TO (kiểu Amazon): khung kính trên ảnh + ô phóng to bên phải; bấm ảnh mở ảnh lớn.
+    // Chỉ bật trên máy có chuột; điện thoại chạm vào ảnh là mở ảnh lớn.
+    (() => {
+      const khung = document.querySelector<HTMLElement>('[data-zoom-khung]');
+      const o = document.querySelector<HTMLElement>('.spct-zoom');
+      const kinh = khung?.querySelector<HTMLElement>('.spct-kinh');
+      const lb = document.getElementById('lb'), lbimg = document.getElementById('lbimg') as HTMLImageElement | null;
+      if (!khung || !o || !kinh) return;
+      const Z = 2.6;                                              // độ phóng
+      const dangHien = () => khung.querySelector<HTMLElement>('[data-anh]:not([hidden])');
+      // Vùng ảnh thật sự được vẽ bên trong khung (ảnh "contain" + có lề)
+      const vungVe = (lop: HTMLElement) => {
+        const img = lop.querySelector('img')!; const r = img.getBoundingClientRect(); const cs = getComputedStyle(img);
+        const pl = parseFloat(cs.paddingLeft), pr = parseFloat(cs.paddingRight), pt = parseFloat(cs.paddingTop), pb = parseFloat(cs.paddingBottom);
+        const w = r.width - pl - pr, h = r.height - pt - pb, tile = Number(lop.dataset.tile) || 1;
+        const vw = Math.min(w, h * tile), vh = vw / tile;
+        return { x: r.left + pl + (w - vw) / 2, y: r.top + pt + (h - vh) / 2, w: vw, h: vh };
+      };
+      const an = () => { o.classList.remove('on'); kinh.classList.remove('on'); };
+      khung.addEventListener('click', () => {
+        const lop = dangHien(); if (!lop?.dataset.zoom || !lb || !lbimg) return;
+        lbimg.src = lop.dataset.zoom; lbimg.alt = lop.querySelector('img')?.alt || ''; lb.classList.add('on'); an();
+      });
+      if (!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+      khung.addEventListener('mousemove', (e) => {
+        const lop = dangHien(); if (!lop?.dataset.zoom || innerWidth < 901) return an();
+        const v = vungVe(lop), kr = khung.getBoundingClientRect(), goc = o.parentElement!.getBoundingClientRect();
+        // ô phóng to: bên phải ảnh, cao bằng khung ảnh
+        const trai = kr.right - goc.left + 28, rong = Math.min(goc.width - trai, 640), cao = kr.height;
+        Object.assign(o.style, { left: trai + 'px', top: kr.top - goc.top + 'px', width: rong + 'px', height: cao + 'px',
+          backgroundImage: `url("${lop.dataset.zoom}")`, backgroundSize: `${v.w * Z}px ${v.h * Z}px` });
+        const kw = rong / Z, kh = cao / Z;                         // kích thước khung kính
+        const cx = Math.min(Math.max(e.clientX, v.x + kw / 2 - 0), v.x + v.w - kw / 2 + 0);
+        const cy = Math.min(Math.max(e.clientY, v.y + kh / 2), v.y + v.h - kh / 2);
+        const gx = kw >= v.w ? v.x + v.w / 2 : cx, gy = kh >= v.h ? v.y + v.h / 2 : cy;
+        Object.assign(kinh.style, { width: Math.min(kw, kr.width) + 'px', height: Math.min(kh, kr.height) + 'px', left: gx - kr.left - Math.min(kw, kr.width) / 2 + 'px', top: gy - kr.top - Math.min(kh, kr.height) / 2 + 'px' });
+        o.style.backgroundPosition = `${-((gx - v.x) * Z - rong / 2)}px ${-((gy - v.y) * Z - cao / 2)}px`;
+        o.classList.add('on'); kinh.classList.add('on');
+      });
+      khung.addEventListener('mouseleave', an);
+    })();
+
     // Chọn dung tích -> đổi giá + ghi chú
     document.querySelectorAll<HTMLElement>('.spct-pb').forEach((nhom) => {
       const goc = nhom.closest('.stack')!;
