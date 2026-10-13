@@ -25,9 +25,23 @@
   "tiktok_shop": "https://www.tiktok.com/@abby.vietnam",
   "video": {
     "tieu_de": "Trải nghiệm *thực tế* với {ten}",
-    "mo_ta": "Xem Abby được dùng thế nào ngoài đời: cầm từng chai lên xem cận cảnh, đong lượng dùng cho một mẻ đồ của con, và mùi thơm sau khi giặt.",
+    "mo_ta": "Xem Abby được dùng thế nào ngoài đời: đổ ra tay để nhìn chất nước giặt, cầm từng chai lên xem cận cảnh, đong lượng dùng cho một mẻ đồ của con.",
     "kenh": "https://www.tiktok.com/@abby.vietnam",
     "danh_sach": [
+      {
+        "link": "https://www.tiktok.com/@abby.vietnam/video/7682775441999924501",
+        "tieu_de": "Nước giặt tốt hay không, đổ ra tay là biết",
+        "anh_bia": "../../assets/anh/video/abby/7682775441999924501.jpg",
+        "thoi_luong": "0:29",
+        "da_duyet": true
+      },
+      {
+        "link": "https://www.tiktok.com/@abby.vietnam/video/7683014970451184916",
+        "tieu_de": "Mình dùng hết mấy chai Abby này rồi",
+        "anh_bia": "../../assets/anh/video/abby/7683014970451184916.jpg",
+        "thoi_luong": "0:28",
+        "da_duyet": true
+      },
       {
         "link": "https://www.tiktok.com/@abby.vietnam/video/7686803374880165140",
         "tieu_de": "Xem cận cảnh nước giặt xả Abby",
@@ -50,25 +64,11 @@
         "da_duyet": true
       },
       {
-        "link": "https://www.tiktok.com/@abby.vietnam/video/7682775441999924501",
-        "tieu_de": "Nước giặt tốt hay không, đổ ra tay là biết",
-        "anh_bia": "../../assets/anh/video/abby/7682775441999924501.jpg",
-        "thoi_luong": "0:29",
-        "da_duyet": false
-      },
-      {
-        "link": "https://www.tiktok.com/@abby.vietnam/video/7683014970451184916",
-        "tieu_de": "Mình dùng hết mấy chai Abby này rồi",
-        "anh_bia": "../../assets/anh/video/abby/7683014970451184916.jpg",
-        "thoi_luong": "0:28",
-        "da_duyet": false
-      },
-      {
         "link": "https://www.tiktok.com/@abby.vietnam/video/7683532137940913428",
         "tieu_de": "Tìm nơi uy tín để mua nước giặt xả Abby 5in1",
         "anh_bia": "../../assets/anh/video/abby/7683532137940913428.jpg",
         "thoi_luong": "0:22",
-        "da_duyet": false
+        "da_duyet": true
       }
     ]
   },
