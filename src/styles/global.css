@@ -1320,3 +1320,7 @@ body:has(#dlbar) .foot{padding-bottom:calc(28px + 64px + env(safe-area-inset-bot
 .tsp__chan{margin-top:auto;align-items:center}
 .tsp__dt{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tsp__gia{white-space:nowrap;flex:none}
+/* khối Hỏi & đáp trên trang nhãn: đệm trên dưới gọn hơn (trước 112px) */
+.sec.sec--hoidap{padding-block:clamp(36px,4.2vw,56px)}
+.sec--hoidap details{padding:14px 0}
+.sec--hoidap details:first-child{border-top:0;padding-top:4px}
