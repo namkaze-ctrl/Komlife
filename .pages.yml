@@ -843,6 +843,7 @@ content:
         options: { values: [ abby, ura, spy, givebe, eddy ] }
       - { name: ma, label: "Mã sản phẩm trong đường dẫn (viết thường, không dấu, vd merry-day)", type: string, required: true }
       - { name: thu_tu, label: Thứ tự, type: number }
+      - { name: nhom, label: "Nhóm trong danh mục (vd Nước giặt xả; để trống = không chia nhóm)", type: string }
       - name: trang_thai
         label: Trạng thái
         type: select

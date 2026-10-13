@@ -1,0 +1,113 @@
+{
+  "nhan": "spy",
+  "ma": "nuoc-rua-chen",
+  "thu_tu": 11,
+  "nhom": "Chăm sóc nhà cửa",
+  "trang_thai": "Nháp",
+  "ten": "SPY Nước rửa chén",
+  "ten_dong": "Nước rửa chén",
+  "cau_ngan": "Sạch dầu mỡ, hương quế và gừng sả",
+  "mau": "#B5651D",
+  "mau_nhat": "#FFFFFF",
+  "anh": [
+    "../../assets/anh/san-pham/spy/nuoc-rua-chen.jpg"
+  ],
+  "anh_co_nen": true,
+  "mo_ta": "Nước rửa chén làm sạch dầu mỡ, tinh bột khô và mùi tanh trên chén đĩa. Dùng được cho sành sứ, thủy tinh, inox, nhôm, nhựa.",
+  "nhan_phien_ban": "Chọn dung tích",
+  "phien_ban": [
+    {
+      "ten": "380ml",
+      "ma_gia": "",
+      "ghi_chu": "SKU SNRC-C-01",
+      "anh": ""
+    },
+    {
+      "ten": "760ml",
+      "ma_gia": "",
+      "ghi_chu": "SKU SNRC-C-02",
+      "anh": ""
+    },
+    {
+      "ten": "1 lít",
+      "ma_gia": "",
+      "ghi_chu": "[Chờ Ecom: mã SKU chai 1L]",
+      "anh": ""
+    },
+    {
+      "ten": "2 lít",
+      "ma_gia": "",
+      "ghi_chu": "SKU SNRC-C-03",
+      "anh": ""
+    },
+    {
+      "ten": "3,6 lít",
+      "ma_gia": "",
+      "ghi_chu": "SKU SNRC-C-04",
+      "anh": ""
+    }
+  ],
+  "thong_so": [
+    {
+      "ten": "Dòng sản phẩm",
+      "gia_tri": "Nước rửa chén"
+    },
+    {
+      "ten": "Mùi hương",
+      "gia_tri": "Quế · Gừng & Sả · Dịu nhẹ (một số cỡ có Trà xanh, Cam & Muối)"
+    },
+    {
+      "ten": "Dùng cho",
+      "gia_tri": "Sành sứ, thủy tinh, inox, nhôm, sắt, nhựa"
+    },
+    {
+      "ten": "Thành phần chính",
+      "gia_tri": "Deionized Water, Sodium Laureth Sulfate, Sodium Hydroxide, Linear Alkyl Benzene Sulfonic Acid, Trilon M, Aloe Vera Extract, hương liệu…"
+    },
+    {
+      "ten": "Hạn sử dụng",
+      "gia_tri": "3 năm kể từ ngày sản xuất (xem trên bao bì)"
+    },
+    {
+      "ten": "Bảo quản",
+      "gia_tri": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp"
+    },
+    {
+      "ten": "Sản xuất",
+      "gia_tri": "Công ty TNHH Komlife Việt Nam, nhà máy Yên Mỹ, Hưng Yên"
+    }
+  ],
+  "cong_dung": [
+    {
+      "ten": "Sạch dầu mỡ, tinh bột khô",
+      "mo_ta": ""
+    },
+    {
+      "ten": "Khử mùi tanh trên chén đĩa",
+      "mo_ta": ""
+    },
+    {
+      "ten": "Có chiết xuất lô hội",
+      "mo_ta": ""
+    }
+  ],
+  "dung_luc_nao": [
+    {
+      "ten": "Chén bát hằng ngày",
+      "mo_ta": ""
+    },
+    {
+      "ten": "Xoong nồi nhiều dầu mỡ",
+      "mo_ta": ""
+    }
+  ],
+  "cach_dung": "Cho một lượng vừa đủ vào miếng rửa chén, bóp nhẹ tạo bọt, rửa rồi xả lại bằng nước sạch.",
+  "tieu_de": {
+    "cong_dung": "*{so} điểm chính* của sản phẩm",
+    "dung_luc_nao": "Dùng *lúc nào*",
+    "cach_dung": "",
+    "sp_khac": ""
+  },
+  "shopee": "",
+  "tiktok_shop": ""
+}

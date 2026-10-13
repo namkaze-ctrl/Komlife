@@ -1,0 +1,97 @@
+{
+  "nhan": "spy",
+  "ma": "nuoc-xa-nature-care",
+  "thu_tu": 8,
+  "nhom": "Nước xả vải & xịt thơm",
+  "trang_thai": "Nháp",
+  "ten": "SPY Nature Care",
+  "ten_dong": "Nước xả vải",
+  "cau_ngan": "Mềm vải, hương hoa cỏ",
+  "mau": "#C2188B",
+  "mau_nhat": "#DCF4F6",
+  "anh": [
+    "../../assets/anh/san-pham/spy/nuoc-xa-nature-care.jpg"
+  ],
+  "anh_co_nen": true,
+  "mo_ta": "Nước xả vải hương hoa cỏ, làm mềm sợi vải, giữ màu quần áo và giúp dễ là ủi hơn.",
+  "nhan_phien_ban": "Chọn mùi hương",
+  "phien_ban": [
+    {
+      "ten": "Kyoto Spring",
+      "ma_gia": "",
+      "ghi_chu": "Túi 2L · SKU SXV-T-02-H · hoa anh đào & tre xanh (hồng)",
+      "anh": ""
+    },
+    {
+      "ten": "Jeju Garden",
+      "ma_gia": "",
+      "ghi_chu": "Túi 2L · SKU SXV-T-02-V · cẩm tú cầu & hoa cải dầu (vàng)",
+      "anh": ""
+    },
+    {
+      "ten": "Bali Dream",
+      "ma_gia": "",
+      "ghi_chu": "Túi 2L · SKU SXV-T-02-T · lan nhiệt đới & hoa dâm bụt (tím)",
+      "anh": ""
+    }
+  ],
+  "thong_so": [
+    {
+      "ten": "Dòng sản phẩm",
+      "gia_tri": "Nước xả vải Nature Care"
+    },
+    {
+      "ten": "Quy cách",
+      "gia_tri": "Túi 2 lít"
+    },
+    {
+      "ten": "Dùng cho",
+      "gia_tri": "Giặt tay và giặt máy"
+    },
+    {
+      "ten": "Hạn sử dụng",
+      "gia_tri": "3 năm kể từ ngày sản xuất (xem trên bao bì)"
+    },
+    {
+      "ten": "Bảo quản",
+      "gia_tri": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp"
+    },
+    {
+      "ten": "Sản xuất",
+      "gia_tri": "Công ty TNHH Komlife Việt Nam, nhà máy Yên Mỹ, Hưng Yên"
+    }
+  ],
+  "cong_dung": [
+    {
+      "ten": "Mềm vải, dễ là ủi",
+      "mo_ta": ""
+    },
+    {
+      "ten": "Giữ màu quần áo",
+      "mo_ta": ""
+    },
+    {
+      "ten": "Ba mùi hương hoa cỏ",
+      "mo_ta": "Kyoto Spring, Jeju Garden, Bali Dream."
+    }
+  ],
+  "dung_luc_nao": [
+    {
+      "ten": "Quần áo mặc hằng ngày",
+      "mo_ta": ""
+    },
+    {
+      "ten": "Đồ mỏng, đồ sáng màu",
+      "mo_ta": ""
+    }
+  ],
+  "cach_dung": "Dùng 50–100ml cho mỗi lần giặt 5–7kg quần áo, ở bước xả cuối cùng.",
+  "tieu_de": {
+    "cong_dung": "*{so} điểm chính* của sản phẩm",
+    "dung_luc_nao": "Dùng *lúc nào*",
+    "cach_dung": "",
+    "sp_khac": ""
+  },
+  "shopee": "",
+  "tiktok_shop": ""
+}

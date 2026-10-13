@@ -4,7 +4,7 @@
   "nganh": "Chăm sóc gia đình",
   "cau_ngan": "Giữ trọn cảm giác\nsạch thơm mỗi ngày",
   "cau_dinh_vi": "Giữ trọn cảm giác sạch thơm mỗi ngày",
-  "mo_ta": "Từ nước giặt, nước xả đến xịt thơm vải, SPY mang đến giải pháp chăm sóc quần áo trọn vẹn – sạch sâu, thơm lâu và sẵn sàng cho mọi nhịp sống hiện đại.",
+  "mo_ta": "Từ nước giặt xả, nước xả vải, xịt thơm vải đến nước lau sàn, nước rửa chén và sữa rửa tay: SPY là bộ sản phẩm chăm sóc quần áo và nhà cửa của Komlife.",
   "cau_chuyen": "SPY sinh ra cho áp lực thầm lặng của người nội trợ: giặt giũ phải sạch, phải nhanh, mà quần áo vẫn thơm được lâu. Trục chính của SPY là nước giặt xả và nước xả vải sản xuất tại nhà máy Komlife. Dòng xịt thơm vải ra sau, để xử lý mùi phát sinh trong ngày mà không phải giặt lại.",
   "danh_cho": "Gia đình trẻ và người đi làm tại thành thị, quan tâm đến mùi hương và sự chỉn chu.",
   "anh_the_doc": "../../assets/anh/nhan-hang/spy-the-doc.jpg",
@@ -17,8 +17,8 @@
   },
   "anh_linh_vat": "",
   "diem_nhan": [
-    "*Giặt, xả, xịt thơm*: đủ bộ chăm sóc quần áo",
-    "*Hương thơm* lưu trên sợi vải",
+    "*12 dòng sản phẩm* cho quần áo và nhà cửa",
+    "*Giặt và xả* trong một bước",
     "*Làm ra từ nhà máy* Komlife tại Hưng Yên"
   ],
   "shopee": "",
@@ -84,29 +84,29 @@
     "mo_ta": "Ngoài gian hàng online, SPY có mặt trên kệ siêu thị và cửa hàng.",
     "danh_sach": [
       {
+        "anh": "../../assets/anh/diem-ban/spy/ke-super-white-1.jpg",
+        "ten": "SPY Super White trên kệ",
+        "dia_diem": ""
+      },
+      {
         "anh": "../../assets/anh/diem-ban/spy/ke-sieu-thi-1.jpg",
         "ten": "Kệ nước giặt SPY tại siêu thị",
         "dia_diem": ""
       },
       {
-        "anh": "",
-        "ten": "[Chờ: tên siêu thị 2]",
-        "dia_diem": "[Chờ: địa điểm]"
+        "anh": "../../assets/anh/diem-ban/spy/ke-ultra-clean.jpg",
+        "ten": "SPY Ultra Clean trên kệ",
+        "dia_diem": ""
       },
       {
-        "anh": "",
-        "ten": "[Chờ: tên siêu thị 3]",
-        "dia_diem": "[Chờ: địa điểm]"
+        "anh": "../../assets/anh/diem-ban/spy/ke-ultra-clean-matic.jpg",
+        "ten": "SPY Ultra Clean Matic trên kệ",
+        "dia_diem": ""
       },
       {
-        "anh": "",
-        "ten": "[Chờ: cửa hàng / đại lý]",
-        "dia_diem": "[Chờ: địa điểm]"
-      },
-      {
-        "anh": "",
-        "ten": "[Chờ: cửa hàng / đại lý]",
-        "dia_diem": "[Chờ: địa điểm]"
+        "anh": "../../assets/anh/diem-ban/spy/ke-super-white-2.jpg",
+        "ten": "SPY Super White, túi 3,6kg",
+        "dia_diem": ""
       }
     ]
   },

@@ -165,6 +165,8 @@ const sanPhamCt = defineCollection({
     nhan: z.string(),
     ma: z.string(),
     thu_tu: z.number().optional().default(99),
+    // Nhóm trong danh mục (vd "Nước giặt xả"). Các sản phẩm cùng nhóm xếp chung dưới một tiêu đề nhỏ; để trống = không chia nhóm
+    nhom: z.string().optional().default(''),
     trang_thai: z.enum(['Nháp', 'Đang bán', 'Ngừng bán']).default('Nháp'),
     ten: z.string(),
     ten_dong: z.string().optional().default(''),

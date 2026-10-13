@@ -1,0 +1,103 @@
+{
+  "nhan": "spy",
+  "ma": "sua-rua-tay",
+  "thu_tu": 12,
+  "nhom": "Chăm sóc nhà cửa",
+  "trang_thai": "Nháp",
+  "ten": "SPY Sữa rửa tay",
+  "ten_dong": "Sữa rửa tay 500ml",
+  "cau_ngan": "Hương trái cây, dưỡng ẩm da tay",
+  "mau": "#D6457A",
+  "mau_nhat": "#F3E8F5",
+  "anh": [
+    "../../assets/anh/san-pham/spy/sua-rua-tay.jpg"
+  ],
+  "anh_co_nen": true,
+  "mo_ta": "Sữa rửa tay hương trái cây, không chứa cồn, có thành phần dưỡng ẩm cho da tay.",
+  "nhan_phien_ban": "Chọn mùi hương",
+  "phien_ban": [
+    {
+      "ten": "Đào Nhật",
+      "ma_gia": "",
+      "ghi_chu": "SKU SRT-C-01-DN",
+      "anh": ""
+    },
+    {
+      "ten": "Táo xanh",
+      "ma_gia": "",
+      "ghi_chu": "SKU SRT-C-01-TX",
+      "anh": ""
+    },
+    {
+      "ten": "Dâu tây",
+      "ma_gia": "",
+      "ghi_chu": "SKU SRT-C-01-DT",
+      "anh": ""
+    },
+    {
+      "ten": "Sữa gạo",
+      "ma_gia": "",
+      "ghi_chu": "SKU SRT-C-01-SG",
+      "anh": ""
+    }
+  ],
+  "thong_so": [
+    {
+      "ten": "Dòng sản phẩm",
+      "gia_tri": "Sữa rửa tay"
+    },
+    {
+      "ten": "Dung tích",
+      "gia_tri": "Chai 500ml"
+    },
+    {
+      "ten": "Mùi hương",
+      "gia_tri": "Đào Nhật · Táo xanh · Dâu tây · Sữa gạo"
+    },
+    {
+      "ten": "Hạn sử dụng",
+      "gia_tri": "3 năm kể từ ngày sản xuất (xem trên bao bì)"
+    },
+    {
+      "ten": "Bảo quản",
+      "gia_tri": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp"
+    },
+    {
+      "ten": "Sản xuất",
+      "gia_tri": "Công ty TNHH Komlife Việt Nam, nhà máy Yên Mỹ, Hưng Yên"
+    }
+  ],
+  "cong_dung": [
+    {
+      "ten": "Làm sạch và khử mùi tay",
+      "mo_ta": ""
+    },
+    {
+      "ten": "Dưỡng ẩm da tay",
+      "mo_ta": "Không chứa cồn."
+    },
+    {
+      "ten": "Bốn mùi trái cây",
+      "mo_ta": ""
+    }
+  ],
+  "dung_luc_nao": [
+    {
+      "ten": "Trước khi ăn",
+      "mo_ta": ""
+    },
+    {
+      "ten": "Sau khi nấu nướng",
+      "mo_ta": ""
+    }
+  ],
+  "cach_dung": "Lấy một lượng vừa đủ vào lòng bàn tay, xoa đều ít nhất 30 giây rồi rửa lại với nước sạch.",
+  "tieu_de": {
+    "cong_dung": "*{so} điểm chính* của sản phẩm",
+    "dung_luc_nao": "Dùng *lúc nào*",
+    "cach_dung": "",
+    "sp_khac": ""
+  },
+  "shopee": "",
+  "tiktok_shop": ""
+}

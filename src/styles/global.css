@@ -1303,3 +1303,14 @@ body:has(#dlbar) .foot{padding-bottom:calc(28px + 64px + env(safe-area-inset-bot
 .spct-anh--kin{cursor:zoom-in}
 
 .spct-gia__so:empty,.spct-gia s:empty{display:none}
+
+/* danh mục chia nhóm (nhãn nhiều sản phẩm) */
+.nhm-nhomnav{display:flex;flex-wrap:wrap;gap:10px}
+.nhm-nhomnav a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:.9rem;color:var(--lp-chinh);
+  border:1.5px solid color-mix(in srgb,var(--lp-chinh) 30%,transparent);border-radius:999px;padding:8px 16px;transition:background .15s,color .15s}
+.nhm-nhomnav a:hover{background:var(--lp-chinh);color:#fff}
+.nhm-nhomnav span{font-size:.76rem;font-weight:700;background:var(--lp-nen);color:var(--lp-chinh);border-radius:999px;padding:1px 8px}
+.nhm-nhom{display:flex;flex-direction:column;gap:18px;scroll-margin-top:96px}
+.nhm-nhom+.nhm-nhom{margin-top:14px}
+.nhm-nhom__t{font-family:var(--fd);font-size:1.45rem;color:var(--lp-chinh)!important;display:flex;align-items:center;gap:14px}
+.nhm-nhom__t::after{content:"";flex:1;height:1px;background:color-mix(in srgb,var(--lp-chinh) 22%,transparent)}

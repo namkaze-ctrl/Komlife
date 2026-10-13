@@ -1,0 +1,101 @@
+{
+  "nhan": "spy",
+  "ma": "nuoc-xa-5in1",
+  "thu_tu": 7,
+  "nhom": "Nước xả vải & xịt thơm",
+  "trang_thai": "Nháp",
+  "ten": "SPY Nước xả vải 5 trong 1",
+  "ten_dong": "Nước xả vải, công nghệ hạt lưu hương",
+  "cau_ngan": "Mềm vải, lưu hương, chống mốc",
+  "mau": "#A3195B",
+  "mau_nhat": "#DCF4F6",
+  "anh": [
+    "../../assets/anh/san-pham/spy/nuoc-xa-5in1.jpg"
+  ],
+  "anh_co_nen": true,
+  "mo_ta": "Nước xả vải dùng công nghệ hạt lưu hương, làm mềm vải và hỗ trợ chống mốc cho quần áo.",
+  "nhan_phien_ban": "Chọn mùi hương",
+  "phien_ban": [
+    {
+      "ten": "Quyến Rũ",
+      "ma_gia": "",
+      "ghi_chu": "Can 3L · SKU SXV-C-01-QR · hương hoa ngọt ngào",
+      "anh": ""
+    },
+    {
+      "ten": "Đắm Say",
+      "ma_gia": "",
+      "ghi_chu": "Can 3L · SKU SXV-C-01-DS · thanh khiết, tươi mát",
+      "anh": ""
+    },
+    {
+      "ten": "Ruby Isabelle",
+      "ma_gia": "",
+      "ghi_chu": "Can 3L · SKU SXV-C-01-RI · dịu nhẹ, thư giãn",
+      "anh": ""
+    }
+  ],
+  "thong_so": [
+    {
+      "ten": "Dòng sản phẩm",
+      "gia_tri": "Nước xả vải 5 trong 1"
+    },
+    {
+      "ten": "5 trong 1 gồm",
+      "gia_tri": "Chống mốc · Bền màu · Hạt lưu hương · Siêu mềm · Ngăn mùi hôi"
+    },
+    {
+      "ten": "Quy cách",
+      "gia_tri": "Can 3L"
+    },
+    {
+      "ten": "Dùng cho",
+      "gia_tri": "Giặt tay và giặt máy"
+    },
+    {
+      "ten": "Hạn sử dụng",
+      "gia_tri": "3 năm kể từ ngày sản xuất (xem trên bao bì)"
+    },
+    {
+      "ten": "Bảo quản",
+      "gia_tri": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp"
+    },
+    {
+      "ten": "Sản xuất",
+      "gia_tri": "Công ty TNHH Komlife Việt Nam, nhà máy Yên Mỹ, Hưng Yên"
+    }
+  ],
+  "cong_dung": [
+    {
+      "ten": "Hạt lưu hương",
+      "mo_ta": "Giữ hương trên vải."
+    },
+    {
+      "ten": "Mềm vải, bền màu",
+      "mo_ta": ""
+    },
+    {
+      "ten": "Chống mốc",
+      "mo_ta": "Cho quần áo phơi trong nhà ngày ẩm."
+    }
+  ],
+  "dung_luc_nao": [
+    {
+      "ten": "Ngày mưa nồm",
+      "mo_ta": ""
+    },
+    {
+      "ten": "Chăn ga, rèm",
+      "mo_ta": ""
+    }
+  ],
+  "cach_dung": "Hòa 50–100ml vào nước cho 5–7kg quần áo. Dùng ở lần xả cuối để hương lưu lâu hơn.",
+  "tieu_de": {
+    "cong_dung": "*{so} điểm chính* của sản phẩm",
+    "dung_luc_nao": "Dùng *lúc nào*",
+    "cach_dung": "",
+    "sp_khac": ""
+  },
+  "shopee": "",
+  "tiktok_shop": ""
+}

@@ -1,0 +1,95 @@
+{
+  "nhan": "spy",
+  "ma": "ultra-clean-matic",
+  "thu_tu": 3,
+  "nhom": "Nước giặt xả",
+  "trang_thai": "Nháp",
+  "ten": "SPY Ultra Clean Matic",
+  "ten_dong": "Nước giặt xả cho máy giặt cửa trước",
+  "cau_ngan": "Ít bọt, chống tái bám",
+  "mau": "#C4211F",
+  "mau_nhat": "#FBFDFC",
+  "anh": [
+    "../../assets/anh/san-pham/spy/ultra-clean-matic.jpg"
+  ],
+  "anh_co_nen": true,
+  "mo_ta": "Nước giặt xả 2 trong 1 công thức ít bọt, dành cho máy giặt cửa trước. Chống tái bám bẩn nhờ hoạt chất Sokalan.",
+  "nhan_phien_ban": "Chọn quy cách",
+  "phien_ban": [
+    {
+      "ten": "Can 3,6kg",
+      "ma_gia": "",
+      "ghi_chu": "SKU SUCM-C-01",
+      "anh": ""
+    },
+    {
+      "ten": "Can 4,6kg",
+      "ma_gia": "",
+      "ghi_chu": "SKU SUCM-C-02",
+      "anh": ""
+    }
+  ],
+  "thong_so": [
+    {
+      "ten": "Dòng sản phẩm",
+      "gia_tri": "Nước giặt xả 2 trong 1, ít bọt"
+    },
+    {
+      "ten": "Mùi hương",
+      "gia_tri": "Floral (hương hoa)"
+    },
+    {
+      "ten": "Dùng cho",
+      "gia_tri": "Máy giặt cửa trước; giặt tay vẫn dùng được"
+    },
+    {
+      "ten": "Thành phần chính",
+      "gia_tri": "Deionized Water, Sodium Lauryl Ether Sulfate, Sodium Linear Alkylbenzene Sulfonate, Sokalan, hương liệu…"
+    },
+    {
+      "ten": "Hạn sử dụng",
+      "gia_tri": "3 năm kể từ ngày sản xuất (xem trên bao bì)"
+    },
+    {
+      "ten": "Bảo quản",
+      "gia_tri": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp"
+    },
+    {
+      "ten": "Sản xuất",
+      "gia_tri": "Công ty TNHH Komlife Việt Nam, nhà máy Yên Mỹ, Hưng Yên"
+    }
+  ],
+  "cong_dung": [
+    {
+      "ten": "Công thức ít bọt",
+      "mo_ta": "Hợp với máy giặt cửa trước, hạn chế trào bọt."
+    },
+    {
+      "ten": "Giặt và xả một bước",
+      "mo_ta": ""
+    },
+    {
+      "ten": "Chống tái bám bẩn",
+      "mo_ta": ""
+    }
+  ],
+  "dung_luc_nao": [
+    {
+      "ten": "Máy giặt cửa trước",
+      "mo_ta": ""
+    },
+    {
+      "ten": "Giặt tay",
+      "mo_ta": ""
+    }
+  ],
+  "cach_dung": "Liều lượng theo hướng dẫn in trên bao bì. Đổ vào ngăn nước giặt của máy.",
+  "tieu_de": {
+    "cong_dung": "*{so} điểm chính* của sản phẩm",
+    "dung_luc_nao": "Dùng *lúc nào*",
+    "cach_dung": "",
+    "sp_khac": ""
+  },
+  "shopee": "",
+  "tiktok_shop": ""
+}

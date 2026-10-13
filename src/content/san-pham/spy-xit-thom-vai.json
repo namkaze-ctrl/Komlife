@@ -1,7 +1,8 @@
 {
   "nhan": "spy",
   "ma": "xit-thom-vai",
-  "thu_tu": 3,
+  "thu_tu": 9,
+  "nhom": "Nước xả vải & xịt thơm",
   "trang_thai": "Nháp",
   "ten": "SPY Xịt thơm vải",
   "ten_dong": "Xịt thơm vải 100ml",
@@ -41,23 +42,31 @@
     },
     {
       "ten": "Dung tích",
-      "gia_tri": "Chai 100ml"
-    },
-    {
-      "ten": "Mùi hương",
-      "gia_tri": "Dream Violet · Pink Whisper · Pure White"
+      "gia_tri": "Chai 100ml · có combo 3 chai"
     },
     {
       "ten": "Dùng cho",
       "gia_tri": "Quần áo, chăn ga, rèm, ghế sofa"
     },
     {
-      "ten": "Sản xuất",
-      "gia_tri": "Nhà máy Komlife, Yên Mỹ, Hưng Yên"
+      "ten": "Thành phần",
+      "gia_tri": "Deionized water, Ethanol, hương liệu, Polyoxyethylene lauryl ether, PEG-40 Hydrogenated Castor Oil, Alkyldimethyl benzyl ammonium chloride, DMDM Hydantoin"
     },
     {
-      "ten": "Xuất xứ",
-      "gia_tri": "Việt Nam"
+      "ten": "Lưu ý",
+      "gia_tri": "Để xa tầm tay trẻ em. Không xịt trực tiếp lên da. Không được uống"
+    },
+    {
+      "ten": "Hạn sử dụng",
+      "gia_tri": "3 năm kể từ ngày sản xuất (xem trên bao bì)"
+    },
+    {
+      "ten": "Bảo quản",
+      "gia_tri": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp"
+    },
+    {
+      "ten": "Sản xuất",
+      "gia_tri": "Công ty TNHH Komlife Việt Nam, nhà máy Yên Mỹ, Hưng Yên"
     }
   ],
   "cong_dung": [
@@ -67,11 +76,11 @@
     },
     {
       "ten": "Dạng sương mịn",
-      "mo_ta": "Bay hơi nhanh, không để lại vết trên vải sáng màu."
+      "mo_ta": "Không để lại vết trên vải sáng màu."
     },
     {
       "ten": "Chai 100ml bỏ túi",
-      "mo_ta": "Mang theo đi làm, đi chơi."
+      "mo_ta": ""
     }
   ],
   "dung_luc_nao": [
@@ -92,7 +101,7 @@
       "mo_ta": "Xịt lên chăn ga, gối."
     }
   ],
-  "cach_dung": "Xịt cách bề mặt vải khoảng 20–30cm. Với vải lụa hoặc đồ da, nên xịt thử ở mặt trong trước.",
+  "cach_dung": "Xịt lên vải đã khô, cách khoảng 20–30cm. Đợi vài giây để hương lan tỏa. Với vải lụa hoặc đồ da, nên xịt thử ở mặt trong trước.",
   "tieu_de": {
     "cong_dung": "*{so} điểm chính* của sản phẩm",
     "dung_luc_nao": "Dùng *lúc nào*",

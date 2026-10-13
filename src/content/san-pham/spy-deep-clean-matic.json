@@ -1,0 +1,85 @@
+{
+  "nhan": "spy",
+  "ma": "deep-clean-matic",
+  "thu_tu": 5,
+  "nhom": "Nước giặt xả",
+  "trang_thai": "Nháp",
+  "ten": "SPY Deep Clean Matic",
+  "ten_dong": "Nước giặt xả cho máy giặt cửa ngang",
+  "cau_ngan": "Ít bọt, sạch sâu",
+  "mau": "#C81E3A",
+  "mau_nhat": "#E9E6F6",
+  "anh": [
+    "../../assets/anh/san-pham/spy/deep-clean-matic.jpg"
+  ],
+  "anh_co_nen": true,
+  "mo_ta": "Nước giặt xả 2 trong 1 ít bọt, dành cho máy giặt cửa ngang. Giặt sạch và xả thơm cùng lúc.",
+  "nhan_phien_ban": "Quy cách",
+  "phien_ban": [
+    {
+      "ten": "Can 3,6kg",
+      "ma_gia": "",
+      "ghi_chu": "SKU SDC-01",
+      "anh": ""
+    }
+  ],
+  "thong_so": [
+    {
+      "ten": "Dòng sản phẩm",
+      "gia_tri": "Nước giặt xả 2 trong 1, ít bọt"
+    },
+    {
+      "ten": "Dùng cho",
+      "gia_tri": "Máy giặt cửa ngang; giặt tay vẫn dùng được"
+    },
+    {
+      "ten": "Thành phần chính",
+      "gia_tri": "Sodium Lauryl Ether Sulfate, Sodium Linear Alkylbenzene Sulfonate, Sokalan PA30, Trilon M, Noverite 301 Polymer, Dehydol LS9 TH, hương liệu"
+    },
+    {
+      "ten": "Hạn sử dụng",
+      "gia_tri": "3 năm kể từ ngày sản xuất (xem trên bao bì)"
+    },
+    {
+      "ten": "Bảo quản",
+      "gia_tri": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp"
+    },
+    {
+      "ten": "Sản xuất",
+      "gia_tri": "Công ty TNHH Komlife Việt Nam, nhà máy Yên Mỹ, Hưng Yên"
+    }
+  ],
+  "cong_dung": [
+    {
+      "ten": "Ít bọt",
+      "mo_ta": "Hợp với máy giặt cửa ngang."
+    },
+    {
+      "ten": "Giặt và xả một bước",
+      "mo_ta": ""
+    },
+    {
+      "ten": "Mềm vải",
+      "mo_ta": "Không cần thêm nước xả."
+    }
+  ],
+  "dung_luc_nao": [
+    {
+      "ten": "Máy giặt cửa ngang",
+      "mo_ta": ""
+    },
+    {
+      "ten": "Giặt tay",
+      "mo_ta": ""
+    }
+  ],
+  "cach_dung": "Hòa tan 50ml cho 3–5 bộ quần áo. Đổ trực tiếp vào ngăn nước giặt hoặc hòa tan trước khi giặt.",
+  "tieu_de": {
+    "cong_dung": "*{so} điểm chính* của sản phẩm",
+    "dung_luc_nao": "Dùng *lúc nào*",
+    "cach_dung": "",
+    "sp_khac": ""
+  },
+  "shopee": "",
+  "tiktok_shop": ""
+}

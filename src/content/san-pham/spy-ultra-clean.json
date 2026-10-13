@@ -1,0 +1,101 @@
+{
+  "nhan": "spy",
+  "ma": "ultra-clean",
+  "thu_tu": 2,
+  "nhom": "Nước giặt xả",
+  "trang_thai": "Nháp",
+  "ten": "SPY Ultra Clean",
+  "ten_dong": "Nước giặt xả 2 trong 1",
+  "cau_ngan": "Lưu hương, chống tái bám bẩn",
+  "mau": "#7A3DB8",
+  "mau_nhat": "#FBFDFC",
+  "anh": [
+    "../../assets/anh/san-pham/spy/ultra-clean.jpg"
+  ],
+  "anh_co_nen": true,
+  "mo_ta": "Dòng nước giặt xả 2 trong 1 của SPY: giặt sạch và làm mềm vải trong một bước, có hoạt chất chống tái bám bẩn.",
+  "nhan_phien_ban": "Chọn quy cách",
+  "phien_ban": [
+    {
+      "ten": "Can 3,6kg",
+      "ma_gia": "",
+      "ghi_chu": "SKU SUC-C-01-T",
+      "anh": ""
+    },
+    {
+      "ten": "Can 4,6kg",
+      "ma_gia": "",
+      "ghi_chu": "SKU SUC-C-02-T · SUC-C-03-T",
+      "anh": ""
+    },
+    {
+      "ten": "Túi 1,5kg",
+      "ma_gia": "",
+      "ghi_chu": "SKU SUC-T-01-T",
+      "anh": ""
+    }
+  ],
+  "thong_so": [
+    {
+      "ten": "Dòng sản phẩm",
+      "gia_tri": "Nước giặt xả 2 trong 1"
+    },
+    {
+      "ten": "Mùi hương",
+      "gia_tri": "Blossom (tím): cam, chanh, hoa ly · violet, hoa hồng · hoắc hương, hổ phách. Có thêm bản xanh lá và xanh dương"
+    },
+    {
+      "ten": "Dùng cho",
+      "gia_tri": "Giặt tay và giặt máy"
+    },
+    {
+      "ten": "Thành phần chính",
+      "gia_tri": "Sodium Lauryl Ether Sulfate, Sodium Linear Alkylbenzene Sulfonate, Sokalan PA30, hương liệu…"
+    },
+    {
+      "ten": "Hạn sử dụng",
+      "gia_tri": "3 năm kể từ ngày sản xuất (xem trên bao bì)"
+    },
+    {
+      "ten": "Bảo quản",
+      "gia_tri": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp"
+    },
+    {
+      "ten": "Sản xuất",
+      "gia_tri": "Công ty TNHH Komlife Việt Nam, nhà máy Yên Mỹ, Hưng Yên"
+    }
+  ],
+  "cong_dung": [
+    {
+      "ten": "Giặt và làm mềm vải một bước",
+      "mo_ta": ""
+    },
+    {
+      "ten": "Chống tái bám bẩn",
+      "mo_ta": "Nhờ hoạt chất Sokalan."
+    },
+    {
+      "ten": "Lưu hương trên vải",
+      "mo_ta": ""
+    }
+  ],
+  "dung_luc_nao": [
+    {
+      "ten": "Giặt máy hằng ngày",
+      "mo_ta": ""
+    },
+    {
+      "ten": "Ngâm quần áo trước khi giặt",
+      "mo_ta": ""
+    }
+  ],
+  "cach_dung": "Hòa tan 50–70ml cho mỗi lần giặt khoảng 5–7kg quần áo. Dùng được cho cả giặt tay và giặt máy.",
+  "tieu_de": {
+    "cong_dung": "*{so} điểm chính* của sản phẩm",
+    "dung_luc_nao": "Dùng *lúc nào*",
+    "cach_dung": "",
+    "sp_khac": ""
+  },
+  "shopee": "",
+  "tiktok_shop": ""
+}

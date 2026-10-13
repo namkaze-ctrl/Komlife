@@ -1,0 +1,113 @@
+{
+  "nhan": "spy",
+  "ma": "ultra-clean-plus",
+  "thu_tu": 1,
+  "nhom": "Nước giặt xả",
+  "trang_thai": "Nháp",
+  "ten": "SPY Ultra Clean Plus",
+  "ten_dong": "Nước giặt xả 2 trong 1",
+  "cau_ngan": "Sạch sâu, thơm lâu",
+  "mau": "#8010A0",
+  "mau_nhat": "#DCF4F6",
+  "anh": [
+    "../../assets/anh/san-pham/spy/ultra-clean-plus.jpg"
+  ],
+  "anh_co_nen": true,
+  "mo_ta": "Nước giặt xả đậm đặc, giặt và xả trong một bước nên không cần dùng thêm nước xả. Dùng được cho cả giặt tay và giặt máy.",
+  "nhan_phien_ban": "Chọn quy cách",
+  "phien_ban": [
+    {
+      "ten": "Can 3,6kg",
+      "ma_gia": "",
+      "ghi_chu": "SKU SUCP-C-01-V (vàng) · SUCP-C-01-T (tím)",
+      "anh": ""
+    },
+    {
+      "ten": "Can 4,6kg",
+      "ma_gia": "",
+      "ghi_chu": "SKU SUCP-C-02-V · SUCP-C-02-T",
+      "anh": ""
+    },
+    {
+      "ten": "Túi 3kg",
+      "ma_gia": "",
+      "ghi_chu": "SKU SUCP-T-02-V",
+      "anh": ""
+    },
+    {
+      "ten": "Túi 1,5kg",
+      "ma_gia": "",
+      "ghi_chu": "SKU SUCP-T-01-V",
+      "anh": ""
+    },
+    {
+      "ten": "Can 5,2kg",
+      "ma_gia": "",
+      "ghi_chu": "[Chờ Ecom: mã SKU can 5,2kg]",
+      "anh": ""
+    }
+  ],
+  "thong_so": [
+    {
+      "ten": "Dòng sản phẩm",
+      "gia_tri": "Nước giặt xả 2 trong 1, công thức đậm đặc"
+    },
+    {
+      "ten": "Mùi hương",
+      "gia_tri": "Golden Blossom (vàng): hiện đại, tinh tế · Blossom (tím): nồng nàn"
+    },
+    {
+      "ten": "Dùng cho",
+      "gia_tri": "Giặt tay và giặt máy"
+    },
+    {
+      "ten": "Thành phần chính",
+      "gia_tri": "Sodium Lauryl Ether Sulfate, Sodium Linear Alkylbenzene Sulfonate, Sokalan PA30, hương liệu…"
+    },
+    {
+      "ten": "Hạn sử dụng",
+      "gia_tri": "3 năm kể từ ngày sản xuất (xem trên bao bì)"
+    },
+    {
+      "ten": "Bảo quản",
+      "gia_tri": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp"
+    },
+    {
+      "ten": "Sản xuất",
+      "gia_tri": "Công ty TNHH Komlife Việt Nam, nhà máy Yên Mỹ, Hưng Yên"
+    }
+  ],
+  "cong_dung": [
+    {
+      "ten": "Giặt và xả một bước",
+      "mo_ta": "Không cần dùng thêm nước xả."
+    },
+    {
+      "ten": "Công thức đậm đặc",
+      "mo_ta": "Làm sạch và khử mùi trên quần áo."
+    },
+    {
+      "ten": "Hai mùi hương",
+      "mo_ta": "Golden Blossom và Blossom."
+    }
+  ],
+  "dung_luc_nao": [
+    {
+      "ten": "Giặt máy hằng ngày",
+      "mo_ta": ""
+    },
+    {
+      "ten": "Giặt tay",
+      "mo_ta": ""
+    }
+  ],
+  "cach_dung": "Hòa tan 50–70ml cho mỗi lần giặt 5–7kg quần áo. Dùng được cho cả giặt tay và giặt máy, không cần thêm nước xả.",
+  "tieu_de": {
+    "cong_dung": "*{so} điểm chính* của sản phẩm",
+    "dung_luc_nao": "Dùng *lúc nào*",
+    "cach_dung": "",
+    "sp_khac": ""
+  },
+  "shopee": "",
+  "tiktok_shop": ""
+}

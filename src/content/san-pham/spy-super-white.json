@@ -1,0 +1,99 @@
+{
+  "nhan": "spy",
+  "ma": "super-white",
+  "thu_tu": 6,
+  "nhom": "Nước giặt xả",
+  "trang_thai": "Nháp",
+  "ten": "SPY Super White",
+  "ten_dong": "Nước giặt xả 5 trong 1",
+  "cau_ngan": "Cho quần áo trắng sáng",
+  "mau": "#5B2D90",
+  "mau_nhat": "#FBFDFC",
+  "anh": [
+    "../../assets/anh/san-pham/spy/super-white.jpg"
+  ],
+  "anh_co_nen": true,
+  "mo_ta": "Nước giặt xả đậm đặc có hoạt chất Tinopal cho quần áo trắng sáng. Giặt và xả trong một bước.",
+  "nhan_phien_ban": "Chọn quy cách",
+  "phien_ban": [
+    {
+      "ten": "Túi 3,6kg",
+      "ma_gia": "",
+      "ghi_chu": "SKU SSW-T-01-P (Passion) · SSW-T-01-L (Luxor)",
+      "anh": ""
+    },
+    {
+      "ten": "Can 5,2kg",
+      "ma_gia": "",
+      "ghi_chu": "[Chờ Ecom: mã SKU can 5,2kg]",
+      "anh": ""
+    }
+  ],
+  "thong_so": [
+    {
+      "ten": "Dòng sản phẩm",
+      "gia_tri": "Nước giặt xả đậm đặc 5 trong 1"
+    },
+    {
+      "ten": "5 trong 1 gồm",
+      "gia_tri": "Trắng sáng · Sạch nhanh · Mềm mại · Lưu hương · Tiết kiệm"
+    },
+    {
+      "ten": "Mùi hương",
+      "gia_tri": "Passion · Luxor"
+    },
+    {
+      "ten": "Dùng cho",
+      "gia_tri": "Giặt tay và giặt máy"
+    },
+    {
+      "ten": "Thành phần chính",
+      "gia_tri": "Deionized Water, Sodium Lauryl Ether Sulfate, Sodium Linear Alkylbenzen Sulfonate, Dehydol LS9, Tinopal, hương liệu"
+    },
+    {
+      "ten": "Hạn sử dụng",
+      "gia_tri": "3 năm kể từ ngày sản xuất (xem trên bao bì)"
+    },
+    {
+      "ten": "Bảo quản",
+      "gia_tri": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp"
+    },
+    {
+      "ten": "Sản xuất",
+      "gia_tri": "Công ty TNHH Komlife Việt Nam, nhà máy Yên Mỹ, Hưng Yên"
+    }
+  ],
+  "cong_dung": [
+    {
+      "ten": "Trắng sáng",
+      "mo_ta": "Với hoạt chất Tinopal."
+    },
+    {
+      "ten": "Giặt và xả một bước",
+      "mo_ta": ""
+    },
+    {
+      "ten": "Hai mùi hương",
+      "mo_ta": "Passion và Luxor."
+    }
+  ],
+  "dung_luc_nao": [
+    {
+      "ten": "Áo trắng, đồng phục",
+      "mo_ta": ""
+    },
+    {
+      "ten": "Chăn ga sáng màu",
+      "mo_ta": ""
+    }
+  ],
+  "cach_dung": "Liều lượng theo hướng dẫn in trên bao bì. Dùng được cho cả giặt tay và giặt máy.",
+  "tieu_de": {
+    "cong_dung": "*{so} điểm chính* của sản phẩm",
+    "dung_luc_nao": "Dùng *lúc nào*",
+    "cach_dung": "",
+    "sp_khac": ""
+  },
+  "shopee": "",
+  "tiktok_shop": ""
+}

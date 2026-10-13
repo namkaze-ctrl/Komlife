@@ -1,0 +1,95 @@
+{
+  "nhan": "spy",
+  "ma": "deep-clean-plus",
+  "thu_tu": 4,
+  "nhom": "Nước giặt xả",
+  "trang_thai": "Nháp",
+  "ten": "SPY Deep Clean Plus",
+  "ten_dong": "Nước giặt xả 2 trong 1",
+  "cau_ngan": "Sạch sâu, khử mùi, mềm vải",
+  "mau": "#1F3C8F",
+  "mau_nhat": "#F1E9F7",
+  "anh": [
+    "../../assets/anh/san-pham/spy/deep-clean-plus.jpg"
+  ],
+  "anh_co_nen": true,
+  "mo_ta": "Dòng nước giặt xả sạch sâu của SPY: giặt, xả và làm mềm vải trong một bước.",
+  "nhan_phien_ban": "Chọn quy cách",
+  "phien_ban": [
+    {
+      "ten": "Can 3,6kg",
+      "ma_gia": "",
+      "ghi_chu": "SKU SDCP-C-01-V (hoa vàng) · SDCP-C-01-T (hoa tím)",
+      "anh": ""
+    },
+    {
+      "ten": "Túi 2,6kg",
+      "ma_gia": "",
+      "ghi_chu": "SKU SDCP-T-02-V",
+      "anh": ""
+    }
+  ],
+  "thong_so": [
+    {
+      "ten": "Dòng sản phẩm",
+      "gia_tri": "Nước giặt xả 2 trong 1"
+    },
+    {
+      "ten": "Mùi hương",
+      "gia_tri": "Blossom: nồng nàn · Golden Blossom: hiện đại, thanh lịch"
+    },
+    {
+      "ten": "Dùng cho",
+      "gia_tri": "Giặt tay và giặt máy"
+    },
+    {
+      "ten": "Thành phần đáng chú ý",
+      "gia_tri": "Tinosan HP100 (khử mùi), Noverite (làm mềm sợi vải)"
+    },
+    {
+      "ten": "Hạn sử dụng",
+      "gia_tri": "3 năm kể từ ngày sản xuất (xem trên bao bì)"
+    },
+    {
+      "ten": "Bảo quản",
+      "gia_tri": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp"
+    },
+    {
+      "ten": "Sản xuất",
+      "gia_tri": "Công ty TNHH Komlife Việt Nam, nhà máy Yên Mỹ, Hưng Yên"
+    }
+  ],
+  "cong_dung": [
+    {
+      "ten": "Giặt sạch sâu",
+      "mo_ta": ""
+    },
+    {
+      "ten": "Khử mùi",
+      "mo_ta": "Với hoạt chất Tinosan HP100."
+    },
+    {
+      "ten": "Mềm vải",
+      "mo_ta": "Thành phần Noverite giúp làm mềm sợi vải."
+    }
+  ],
+  "dung_luc_nao": [
+    {
+      "ten": "Quần áo mặc cả ngày",
+      "mo_ta": ""
+    },
+    {
+      "ten": "Đồ dày, đồ thể thao",
+      "mo_ta": ""
+    }
+  ],
+  "cach_dung": "Dùng 50–70ml cho mỗi lần giặt 5–7kg quần áo. Dùng được cho cả giặt tay và giặt máy.",
+  "tieu_de": {
+    "cong_dung": "*{so} điểm chính* của sản phẩm",
+    "dung_luc_nao": "Dùng *lúc nào*",
+    "cach_dung": "",
+    "sp_khac": ""
+  },
+  "shopee": "",
+  "tiktok_shop": ""
+}
