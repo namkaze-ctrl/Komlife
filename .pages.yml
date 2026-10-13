@@ -294,6 +294,48 @@ content:
       - { name: anh_the_doc, label: Ảnh thẻ dọc ở trang chủ (ảnh đứng), type: image }
       - { name: anh_bia, label: Ảnh bìa (ảnh ngang), type: image }
       - { name: tiktok, label: Đường dẫn kênh TikTok riêng của nhãn (nếu có), type: string }
+      - { name: shopee, label: Link gian hàng Shopee riêng của nhãn (trống = dùng gian hàng Komlife), type: string }
+      - { name: tiktok_shop, label: Link gian hàng TikTok Shop riêng của nhãn (trống = ẩn nút TikTok Shop), type: string }
+      - name: mau
+        label: "Màu riêng của nhãn (dùng ở giao diện mới — khi nhãn có Sản phẩm chi tiết)"
+        type: object
+        fields:
+          - { name: chinh, label: "Màu chính (tiêu đề, nút; vd #0151A7)", type: string }
+          - { name: nhan, label: Màu chữ nhấn, type: string }
+          - { name: nen, label: Màu nền nhạt, type: string }
+      - { name: anh_linh_vat, label: Ảnh linh vật (PNG nền trong suốt), type: image }
+      - { name: diem_nhan, label: "Điểm nổi bật dưới danh sách sản phẩm (*chữ* = in đậm)", type: string, list: true }
+      - name: video
+        label: "Khối video minh chứng (TikTok) — không có video đã duyệt = ẩn khối"
+        type: object
+        fields:
+          - { name: tieu_de, label: "Tiêu đề ({ten} = tên nhãn, *chữ* = tô màu)", type: string }
+          - { name: mo_ta, label: Mô tả ngắn, type: text }
+          - { name: kenh, label: Link kênh TikTok của nhãn, type: string }
+          - name: danh_sach
+            label: Video (nên 6)
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{fields.tieu_de}" } }
+            fields:
+              - { name: link, label: "Link video TikTok (dạng …/video/768…)", type: string }
+              - { name: tieu_de, label: Tiêu đề ngắn dưới video, type: string }
+              - { name: anh_bia, label: "Ảnh bìa (ảnh đứng 9:16)", type: image }
+              - { name: thoi_luong, label: "Thời lượng (vd 0:29)", type: string }
+              - { name: da_duyet, label: "Đã duyệt nội dung (xem hết video, không có câu cấm) — tick mới lên web chính", type: boolean }
+      - name: diem_ban
+        label: "Slide ảnh: có mặt tại cửa hàng, siêu thị (không có ảnh = ẩn khối)"
+        type: object
+        fields:
+          - { name: tieu_de, label: "Tiêu đề ({ten} = tên nhãn, *chữ* = tô màu)", type: string }
+          - { name: mo_ta, label: Mô tả ngắn, type: text }
+          - name: danh_sach
+            label: Ảnh điểm bán (nên từ 5 ảnh)
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{fields.ten}" } }
+            fields:
+              - { name: anh, label: "Ảnh chụp tại điểm bán (ảnh ngang 16:9, 1920 × 1080)", type: image }
+              - { name: ten, label: Tên cửa hàng / siêu thị, type: string }
+              - { name: dia_diem, label: "Địa điểm (quận/huyện, tỉnh)", type: string }
       - name: san_pham
         label: Sản phẩm
         type: object
@@ -599,3 +641,273 @@ content:
           - { name: mo_ta, label: Mô tả ngắn, type: text }
           - { name: cap_nhat, label: "Cập nhật (ví dụ: Tháng 10/2026)", type: string }
           - { name: body, label: Nội dung, type: rich-text, options: { format: markdown } }
+
+  # ─────────────────────────────────────────────────────────────
+  # LANDING THEO ĐỢT — địa chỉ komlife.com.vn/lp/<tên file>, vd abby-1111. Khuôn 8 khối.
+  # Gõ "[Chờ ...]" cho ô chưa có: bản nháp hiện vàng; còn ô [Chờ] thì KHÔNG đặt được "Đang chạy".
+  - name: landing
+    label: "🚀 Landing theo đợt"
+    type: collection
+    path: src/content/landing
+    format: json
+    filename: "{fields.duong_dan}.json"
+    view: { fields: [nhan, ten_dot, trang_thai, ngay_ket_thuc], primary: nhan }
+    fields:
+      - name: nhan
+        label: Nhãn
+        type: select
+        required: true
+        options: { values: [ abby, ura, spy, givebe, eddy ] }
+      - { name: ten_dot, label: "Tên đợt (vd 11.11)", type: string, required: true }
+      - { name: duong_dan, label: "Đường dẫn: komlife.com.vn/lp/... (viết thường, không dấu, vd abby-1111)", type: string, required: true, description: "Chỉ đặt lúc tạo mới. Đổi sau khi đã chạy quảng cáo sẽ làm hỏng link." }
+      - name: trang_thai
+        label: Trạng thái
+        type: select
+        description: "Nháp = chỉ xem ở bản thử. Đang chạy = lên komlife.com.vn (máy chặn nếu còn ô [Chờ], thiếu giá, thiếu link sàn, dính từ cấm). Hết đợt = tự chuyển về trang nhãn."
+        options: { values: [ "Nháp", "Đang chạy", "Hết đợt" ] }
+      - name: bo_cuc
+        label: Bố cục
+        type: select
+        description: "Dài = 8 khối kể chuyện. Danh mục sản phẩm = màn đầu + lưới tất cả sản phẩm của nhãn (bấm vào ra trang chi tiết), rồi Ưu đãi + Hỏi đáp."
+        options: { values: [ "Dài", "Danh mục sản phẩm" ] }
+      - name: danh_muc
+        label: "Khối danh mục (chỉ dùng khi Bố cục = Danh mục sản phẩm; *chữ* = tô màu)"
+        type: object
+        fields:
+          - { name: nhan_nho, label: Nhãn nhỏ, type: string }
+          - { name: tieu_de, label: "Tiêu đề (vd: Chọn mùi hương *cho con*)", type: string }
+          - { name: mo_ta, label: Mô tả, type: text }
+      - { name: ngay_bat_dau, label: Ngày bắt đầu, type: date }
+      - { name: ngay_ket_thuc, label: Ngày kết thúc, type: date }
+      - { name: nguoi_soat, label: Người soát cuối (ghi tên), type: string }
+      - name: mau
+        label: Màu của nhãn
+        type: object
+        fields:
+          - { name: chinh, label: "Màu chính (tiêu đề, khối ưu đãi)", type: string }
+          - { name: nhan, label: Màu chữ nhấn, type: string }
+          - { name: nen, label: Màu nền nhạt, type: string }
+          - { name: nut, label: Màu nút, type: string }
+          - { name: nut_re, label: Màu nút khi rê chuột, type: string }
+      - name: mo_dau
+        label: "① Mở đầu"
+        type: object
+        fields:
+          - { name: nhan_nho, label: Nhãn nhỏ trên tiêu đề, type: string }
+          - { name: tieu_de, label: "Tiêu đề (*chữ nhấn*, Enter = xuống dòng)", type: text }
+          - { name: mo_ta, label: Mô tả, type: text }
+          - { name: anh, label: Ảnh chính (ảnh chai thật, ngang 16:10), type: image }
+          - { name: anh_phu, label: Ảnh trang trí (linh vật, nền trong suốt), type: image }
+      - name: san_pham
+        label: "② Giới thiệu sản phẩm"
+        type: object
+        fields:
+          - { name: tieu_de, label: "Tiêu đề (*chữ nhấn*)", type: string }
+          - { name: ten, label: Tên sản phẩm đầy đủ (để trống = ẩn khối), type: string }
+          - { name: mo_ta, label: Mô tả ngắn, type: text }
+          - { name: anh, label: Ảnh sản phẩm (ảnh đứng 4:5), type: image }
+          - name: thong_so
+            label: Thông số (dạng, dung tích, mùi, dùng cho...)
+            type: object
+            list: true
+            fields:
+              - { name: ten, label: Mục, type: string }
+              - { name: gia_tri, label: Nội dung, type: string }
+          - name: cong_dung
+            label: Công dụng (chép đúng chữ in trên nhãn)
+            type: object
+            list: true
+            fields:
+              - { name: ten, label: Công dụng, type: string }
+              - { name: mo_ta, label: Giải thích ngắn, type: string }
+          - name: mui_huong
+            label: Mùi hương
+            type: object
+            list: true
+            fields:
+              - { name: ten, label: Tên mùi, type: string }
+              - { name: mo_ta, label: Mô tả mùi, type: string }
+          - { name: cach_dung, label: Cách dùng & liều lượng (đúng nhãn chai), type: text }
+      - name: bang_chung
+        label: "③ Bằng chứng"
+        type: object
+        fields:
+          - { name: tieu_de, label: Tiêu đề, type: text }
+          - { name: mo_ta, label: Mô tả, type: text }
+          - name: danh_sach
+            label: Các bằng chứng (nên 3)
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{fields.ten}" } }
+            fields:
+              - { name: ten, label: Tên, type: string }
+              - { name: mo_ta, label: Nội dung (ghi số phiếu, nơi cấp...), type: text }
+              - { name: nguon, label: Link xem thêm, type: string }
+      - name: dung_luc_nao
+        label: "④ Dùng lúc nào"
+        type: object
+        fields:
+          - { name: tieu_de, label: Tiêu đề, type: text }
+          - name: danh_sach
+            label: Tình huống (nên 4)
+            type: object
+            list: true
+            fields:
+              - { name: ten, label: Tình huống, type: string }
+              - { name: mo_ta, label: Mô tả, type: string }
+          - name: mui_huong
+            label: Mùi hương (nếu có)
+            type: object
+            list: true
+            fields:
+              - { name: ten, label: Tên mùi, type: string }
+              - { name: mo_ta, label: Mô tả mùi, type: string }
+      - name: review
+        label: "⑤ Review thật (chép nguyên văn, ghi nguồn)"
+        type: object
+        fields:
+          - { name: tieu_de, label: Tiêu đề, type: text }
+          - name: danh_sach
+            label: Review
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{fields.ten}" } }
+            fields:
+              - { name: noi_dung, label: Nguyên văn đánh giá, type: text }
+              - { name: ten, label: Tên hiển thị của khách, type: string }
+              - { name: nguon, label: "Nguồn (sàn, ngày)", type: string }
+              - { name: link, label: Link tới đánh giá, type: string }
+      - name: uu_dai
+        label: "⑥ Ưu đãi (giá lấy từ Bảng giá chung)"
+        type: object
+        fields:
+          - { name: tieu_de, label: Tiêu đề, type: text }
+          - { name: mo_ta, label: Mô tả, type: text }
+          - name: goi
+            label: Các gói
+            type: object
+            list: true
+            fields:
+              - { name: ma_gia, label: "Mã giá (trùng ô Mã trong Bảng giá chung)", type: string }
+              - { name: ten, label: Tên gói hiển thị, type: string }
+              - { name: ghi_chu, label: Ghi chú ngắn, type: string }
+          - { name: dieu_kien, label: Điều kiện áp dụng, type: text }
+      - name: nut_mua
+        label: "⑦ Nút mua — link gian hàng chính hãng của nhãn (web tự gắn UTM)"
+        type: object
+        fields:
+          - { name: shopee, label: Link Shopee, type: string }
+          - { name: tiktok_shop, label: Link TikTok Shop, type: string }
+      - name: hoi_dap
+        label: "⑧ Hỏi đáp (4–6 câu)"
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.hoi}" } }
+        fields:
+          - { name: hoi, label: Câu hỏi, type: string }
+          - { name: dap, label: Trả lời, type: text }
+
+  # ─────────────────────────────────────────────────────────────
+  - name: bang-gia
+    label: "💰 Bảng giá chung (Ecom giữ)"
+    type: file
+    path: src/content/trang/bang-gia.json
+    format: json
+    fields:
+      - { name: ghi_chu, label: Ghi chú, type: text }
+      - { name: cap_nhat, label: Ngày cập nhật, type: date }
+      - { name: nguoi_chot, label: Người chốt giá, type: string }
+      - name: san_pham
+        label: Sản phẩm
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.ma} — {fields.ten}" } }
+        fields:
+          - { name: ma, label: "Mã (viết thường, không dấu, vd abby-3l)", type: string }
+          - { name: ten, label: Tên sản phẩm / gói, type: string }
+          - { name: gia_ban, label: "Giá bán (số, vd 199000)", type: string }
+          - { name: gia_goc, label: Giá gốc gạch ngang (nếu có), type: string }
+
+  # ─────────────────────────────────────────────────────────────
+  # SẢN PHẨM CHI TIẾT — trang /nhan-hang/<nhãn>/<mã>. Bấm thẻ sản phẩm ở landing/danh mục sẽ mở trang này.
+  - name: san-pham-ct
+    label: "🧴 Sản phẩm chi tiết"
+    type: collection
+    path: src/content/san-pham
+    format: json
+    filename: "{fields.nhan}-{fields.ma}.json"
+    view: { fields: [ten, nhan, trang_thai, thu_tu], primary: ten, sort: [thu_tu] }
+    fields:
+      - name: nhan
+        label: Nhãn
+        type: select
+        required: true
+        options: { values: [ abby, ura, spy, givebe, eddy ] }
+      - { name: ma, label: "Mã sản phẩm trong đường dẫn (viết thường, không dấu, vd merry-day)", type: string, required: true }
+      - { name: thu_tu, label: Thứ tự, type: number }
+      - name: trang_thai
+        label: Trạng thái
+        type: select
+        description: "Nháp = chỉ ở bản xem thử. Đang bán = lên web (máy chặn nếu còn ô [Chờ], thiếu giá, dính từ cấm)."
+        options: { values: [ "Nháp", "Đang bán", "Ngừng bán" ] }
+      - { name: ten, label: Tên sản phẩm, type: string, required: true }
+      - { name: ten_dong, label: "Dòng sản phẩm (vd Nước giặt xả Mẹ & Bé 5 in 1)", type: string }
+      - { name: cau_ngan, label: Câu ngắn dưới tên, type: string }
+      - { name: mau, label: "Màu đậm của sản phẩm (mã màu, vd #D93B78)", type: string }
+      - { name: mau_nhat, label: Màu nền nhạt, type: string }
+      - { name: anh, label: "Ảnh chính (nền trong suốt, đứng 3:4 — hiện ở thẻ sản phẩm)", type: image, options: { multiple: true } }
+      - { name: mo_ta, label: Mô tả, type: text }
+      - name: phien_ban
+        label: Dung tích / phiên bản (giá lấy từ Bảng giá chung)
+        type: object
+        list: true
+        fields:
+          - { name: ten, label: "Tên (vd Can 3L)", type: string }
+          - { name: ma_gia, label: Mã giá trong Bảng giá chung, type: string }
+          - { name: ghi_chu, label: Ghi chú ngắn, type: string }
+          - { name: anh, label: "Ảnh riêng của dung tích này (PNG/WebP nền trong suốt; trống = dùng ảnh chính)", type: image }
+      - name: thong_so
+        label: Thông tin sản phẩm
+        type: object
+        list: true
+        fields:
+          - { name: ten, label: Mục, type: string }
+          - { name: gia_tri, label: Nội dung, type: string }
+      - name: cong_dung
+        label: Công dụng (chép đúng chữ in trên nhãn)
+        type: object
+        list: true
+        fields:
+          - { name: ten, label: Công dụng, type: string }
+          - { name: mo_ta, label: Giải thích ngắn, type: string }
+      - name: dung_luc_nao
+        label: Hợp nhất khi giặt
+        type: object
+        list: true
+        fields:
+          - { name: ten, label: Tình huống, type: string }
+          - { name: mo_ta, label: Mô tả, type: string }
+      - { name: cach_dung, label: Cách dùng & liều lượng (đúng nhãn chai), type: text }
+      - name: tieu_de
+        label: "Tiêu đề riêng (để trống = dùng mặc định chung; {so} = số công dụng, {nhan} = tên nhãn, *chữ* = tô màu)"
+        type: object
+        fields:
+          - { name: cong_dung, label: Khối công dụng, type: string }
+          - { name: dung_luc_nao, label: Khối dùng để giặt gì, type: string }
+          - { name: cach_dung, label: Khối cách dùng, type: string }
+          - { name: sp_khac, label: Khối sản phẩm khác, type: string }
+      - { name: shopee, label: Link sản phẩm trên Shopee, type: string }
+      - { name: tiktok_shop, label: Link sản phẩm trên TikTok Shop, type: string }
+
+  # ─────────────────────────────────────────────────────────────
+  - name: san-pham-ct-tieu-de
+    label: "🧴 Tiêu đề mặc định — trang chi tiết sản phẩm"
+    type: file
+    path: src/content/trang/san-pham-ct.json
+    format: json
+    fields:
+      - { name: ghi_chu, label: Ghi chú, type: text }
+      - name: tieu_de
+        label: "Tiêu đề các khối ({so} = số công dụng, {nhan} = tên nhãn, *chữ* = tô màu)"
+        type: object
+        fields:
+          - { name: cong_dung, label: Khối công dụng, type: string }
+          - { name: dung_luc_nao, label: Khối dùng để giặt gì, type: string }
+          - { name: cach_dung, label: Khối cách dùng, type: string }
+          - { name: sp_khac, label: Khối sản phẩm khác, type: string }

@@ -13,8 +13,11 @@ interface Props {
   anhChiaSe?: string;
   coHero?: boolean;
   loai?: 'website' | 'article';
+  /** Landing theo đợt: không cho Google tìm (tránh trùng trang nhãn), ẩn thanh đăng ký đại lý. */
+  khongIndex?: boolean;
+  anThanhDaiLy?: boolean;
 }
-const { tieuDe, moTa, anhChiaSe, coHero = false, loai = 'website' } = Astro.props;
+const { tieuDe, moTa, anhChiaSe, coHero = false, loai = 'website', khongIndex = false, anThanhDaiLy = false } = Astro.props;
 
 const site = Astro.site ?? new URL('https://komlife.com.vn');
 const duong = Astro.url.pathname.replace(/\/$/, '') || '/';
@@ -70,7 +73,7 @@ const toChuc = {
   <title>{tieuDeTrang}</title>
   <meta name="description" content={moTaTrang}>
   <link rel="canonical" href={canonical}>
-  {!choGoogle && <meta name="robots" content="noindex,nofollow">}
+  {(!choGoogle || khongIndex) && <meta name="robots" content={choGoogle ? 'noindex,follow' : 'noindex,nofollow'}>}
   {caiDat.ma_xac_minh_google && <meta name="google-site-verification" content={caiDat.ma_xac_minh_google}>}
   {maGtm && <script is:inline define:vars={{ maGtm }}>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',maGtm);</script>}
   {maGa4.length > 0 && <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${maGa4[0]}`}></script>}
@@ -150,7 +153,7 @@ const toChuc = {
     </div>
   </footer>
 
-  {!oTrangDaiLy && (
+  {!oTrangDaiLy && !anThanhDaiLy && (
     <div id="dlbar" aria-hidden="true">
       <a class="b1" href="/hop-tac-dai-ly">{caiDat.nut_day_trang}</a>
       <a class="b2" href={`tel:${tel}`} aria-label={`Gọi ${caiDat.hotline}`}>
@@ -165,6 +168,15 @@ const toChuc = {
   <script>
     import { khoiDong } from '../lib/hieu-ung';
     khoiDong();
+    // Đếm lượt bấm sang sàn: nút nào có data-rasan (shopee / tiktok...) -> sự kiện GA4 "bam_sang_san"
+    document.addEventListener('click', (e) => {
+      const a = (e.target as HTMLElement).closest<HTMLElement>('[data-rasan]');
+      if (!a) return;
+      const sk = { san: a.dataset.rasan || '', nhan: a.dataset.nhan || '', trang: location.pathname };
+      const w = window as any;
+      (w.dataLayer = w.dataLayer || []).push({ event: 'bam_sang_san', ...sk });
+      if (typeof w.gtag === 'function') w.gtag('event', 'bam_sang_san', sk);
+    });
   </script>
 </body>
 </html>

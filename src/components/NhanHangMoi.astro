@@ -1,0 +1,56 @@
+---
+// Đầu trang nhãn kiểu mới (dùng khi nhãn đã có "Sản phẩm chi tiết"): màn đầu theo màu nhãn + dải ưu đãi đang chạy
+// + lưới tất cả sản phẩm (bấm thẻ -> /nhan-hang/<nhãn>/<mã>). Phần còn lại của trang nhãn giữ nguyên màu Komlife.
+import Anh from './Anh.astro';
+import TheSanPham from './TheSanPham.astro';
+import { dong, tieuDe } from '../lib/chu';
+import { themUtm } from '../lib/landing';
+
+interface Props { b: any; sanPham: any[]; tdDanhMuc: string; shopee: string; uuDai?: { href: string; ten: string } | null }
+const { b, sanPham, tdDanhMuc, shopee, uuDai } = Astro.props;
+const m = b.mau ?? {};
+const bien = `--lp-chinh:${m.chinh || '#212b7e'};--lp-nhan:${m.nhan || '#3fc2cf'};--lp-nen:${m.nen || '#F1F2F9'};--lp-nut:${m.chinh || '#212b7e'};--lp-nut-re:${m.nhan || '#3fc2cf'}`;
+const chai = sanPham.filter((p) => p.anh[0]).slice(0, 3);
+const linkMua = themUtm(shopee, `${b.ma}-trang-nhan`);
+---
+<div class="lp nhm" style={bien}>
+  <section class="ab-hero nhm-hero">
+    <svg class="ab-hero__blob" viewBox="0 0 600 600" aria-hidden="true"><path d="M421 63c77 41 141 118 146 203 6 85-47 177-121 239-74 61-169 92-252 63S42 448 25 361C8 274 49 176 118 109 187 42 344 22 421 63z"/></svg>
+    <div class="wrap ab-hero__in">
+      <div class="stack g16 ab-hero__chu">
+        <span class="lp-tag">{b.nganh}</span>
+        <h1>{b.ten}</h1>
+        {b.cau_dinh_vi && <p class="nhm-cau">{b.cau_dinh_vi}</p>}
+        <p class="lead" set:html={dong(b.mo_ta)} />
+        <div class="btnrow">
+          <a class="lp-btn" href="#san-pham">Xem {sanPham.length} sản phẩm <i>↓</i></a>
+          {linkMua && <a class="lp-btn lp-btn--phu" href={linkMua} target="_blank" rel="noopener" data-rasan="shopee" data-nhan={b.ma}>Mua trên Shopee <i>→</i></a>}
+        </div>
+      </div>
+      <div class="ab-hero__sp" aria-hidden="true">
+        {chai.map((p, i) => <a href={`/nhan-hang/${p.nhan}/${p.ma}`} class={`ab-chai ab-chai--${i}`} style={`--sp-nhat:${p.mau_nhat}`} tabindex="-1"><Anh src={p.anh[0]} alt="" sizes="220px" loading="eager" /></a>)}
+        {b.anh_linh_vat && <Anh src={b.anh_linh_vat} alt="" class="ab-tho" sizes="170px" loading="eager" />}
+      </div>
+    </div>
+  </section>
+
+  {uuDai && (
+    <a class="nhm-uudai" href={uuDai.href}>
+      <span class="nhm-uudai__nhan">Đang có ưu đãi</span>
+      <span class="nhm-uudai__chu">{uuDai.ten}</span>
+      <span class="nhm-uudai__xem">Xem ưu đãi →</span>
+    </a>
+  )}
+
+  <section class="sec ab-sp" id="san-pham">
+    <div class="wrap stack g28">
+      <div class="stack g12 ab-sp__dau">
+        <div class="eb">Sản phẩm</div>
+        <h2 set:html={tdDanhMuc} />
+        <p class="lead">Bấm vào từng sản phẩm để xem chi tiết, dung tích và nơi mua.</p>
+      </div>
+      <div class="tsp-luoi">{sanPham.map((p) => <TheSanPham p={p} />)}</div>
+      {b.diem_nhan.length > 0 && <ul class="ab-tin">{b.diem_nhan.map((x: string) => <li set:html={tieuDe(x).replace(/<span class="it">([^<]*)<\/span>/g, '<b>$1</b>')} />)}</ul>}
+    </div>
+  </section>
+</div>

@@ -1,0 +1,9 @@
+{
+  "ghi_chu": "Tiêu đề mặc định cho trang chi tiết sản phẩm. {so} = số công dụng, {nhan} = tên nhãn. Phần giữa hai dấu * được tô màu. Từng sản phẩm có thể ghi đè ở ô 'Tiêu đề riêng'.",
+  "tieu_de": {
+    "cong_dung": "*{so} công dụng* trong một chai",
+    "dung_luc_nao": "Dùng để giặt *đồ gì của con*",
+    "cach_dung": "Cách dùng",
+    "sp_khac": "Các sản phẩm khác của *{nhan}*"
+  }
+}

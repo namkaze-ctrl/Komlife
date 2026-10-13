@@ -1,0 +1,104 @@
+---
+// Slide ảnh "có mặt tại cửa hàng, siêu thị" của một nhãn. Dữ liệu: ô "diem_ban" trong src/content/nhan-hang/<mã>.json
+// Ảnh thật mới lên web chính; mục chưa có ảnh (hoặc còn chữ [Chờ ...]) chỉ hiện ở bản xem thử dưới dạng ô chờ.
+// Khối tự ẩn khi không có mục nào để hiện.
+import { getImage } from 'astro:assets';
+import Anh from './Anh.astro';
+import { timAnh } from '../lib/anh';
+import { tieuDe, dong } from '../lib/chu';
+import { choHienNhap } from '../lib/landing';
+
+interface Props { b: any }
+const { b } = Astro.props;
+const db = b.diem_ban ?? {};
+const nhap = choHienNhap();
+const laCho = (x: any) => !x.anh || /\[[^\]]+\]/.test(`${x.ten}${x.dia_diem}`);
+const ds = (db.danh_sach ?? []).filter((x: any) => nhap || !laCho(x));
+const muc = await Promise.all(ds.map(async (x: any) => {
+  const goc = timAnh(x.anh);
+  const lon = goc ? (await getImage({ src: goc, width: Math.min(1920, goc.width) })).src : '';
+  return { ...x, lon, cho: laCho(x) };
+}));
+const cho = (s = '') => dong(s).replace(/\[([^\]]{2,})\]/g, '<mark class="lp-cho">[$1]</mark>');
+---
+{muc.length > 0 && (
+  <section class="sec db" id="diem-ban">
+    <div class="wrap stack g28">
+      <div class="db__dau">
+        <div class="stack g12">
+          <div class="eb">Điểm bán</div>
+          <h2 set:html={tieuDe((db.tieu_de || '{ten} *trên kệ* cửa hàng, siêu thị').replace(/\{ten\}/g, b.ten))} />
+          {db.mo_ta && <p class="lead" style="max-width:52ch" set:html={cho(db.mo_ta)} />}
+        </div>
+        <div class="db__nut">
+          <button type="button" class="db__mt" data-db-lui aria-label="Ảnh trước">←</button>
+          <button type="button" class="db__mt" data-db-toi aria-label="Ảnh sau">→</button>
+        </div>
+      </div>
+    </div>
+    <div class="db__khung" data-db>
+      <ul class="db__day">
+        {muc.map((x) => (
+          <li class="db__o">
+            {x.cho || !x.lon ? (
+              <div class="db__anh db__anh--cho"><span>Ô chờ ảnh</span><small>Ảnh ngang 16:9 · 1920 × 1080</small></div>
+            ) : (
+              <button type="button" class="db__anh" data-lb={x.lon} aria-label={`${b.ten} tại ${x.ten}`}>
+                <Anh src={x.anh} alt={`${b.ten} tại ${x.ten}${x.dia_diem ? ', ' + x.dia_diem : ''}`} sizes="(max-width:700px) 84vw, 520px" />
+              </button>
+            )}
+            <div class="db__chu"><b set:html={cho(x.ten)} />{x.dia_diem && <span set:html={cho(x.dia_diem)} />}</div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
+
+<script>
+  // Slide TRÔI LIÊN TỤC, lặp vòng (nhân bản danh sách để nối đuôi). Chỉ dừng khi rê chuột / chạm đúng vào dải ảnh,
+  // thả ra là chạy tiếp. Nút ← → nhảy một ảnh. Người dùng bật "giảm chuyển động" thì không tự chạy.
+  document.querySelectorAll<HTMLElement>('[data-db]').forEach((khung) => {
+    const day = khung.querySelector<HTMLElement>('.db__day')!;
+    const goc = khung.closest('.db')!;
+    const gocO = Array.from(day.children) as HTMLElement[];
+    if (!gocO.length) return;
+    const KHE = 12;
+    const rongBo = () => gocO.reduce((t, o) => t + o.offsetWidth + KHE, 0);   // bề ngang một bộ ảnh gốc
+    // Nhân bản cho đủ dài để cuộn vòng không lộ chỗ nối
+    const nhan = () => { gocO.forEach((o) => { const c = o.cloneNode(true) as HTMLElement; c.setAttribute('aria-hidden', 'true'); c.querySelectorAll('button').forEach((b) => (b.tabIndex = -1)); day.appendChild(c); }); };
+    nhan(); while (day.scrollWidth < day.clientWidth * 2 + rongBo()) nhan();
+
+    const vong = () => { const r = rongBo(); if (day.scrollLeft >= r) day.scrollLeft -= r; else if (day.scrollLeft < 0) day.scrollLeft += r; };
+    const buoc = () => (gocO[0]?.offsetWidth ?? 320) + KHE;
+    let nhay = 0;                                   // đang trượt theo nút bấm -> tạm nhường
+    const truot = (huong: number) => {
+      if (huong < 0 && day.scrollLeft < buoc()) day.scrollLeft += rongBo();
+      nhay = performance.now() + 700;
+      day.scrollBy({ left: huong * buoc(), behavior: 'smooth' });
+    };
+    goc.querySelector('[data-db-lui]')?.addEventListener('click', () => truot(-1));
+    goc.querySelector('[data-db-toi]')?.addEventListener('click', () => truot(1));
+    day.addEventListener('scroll', vong, { passive: true });
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    let dung = false, thay = false, cham = 0;
+    day.addEventListener('mouseenter', () => { dung = true; });
+    day.addEventListener('mouseleave', () => { dung = false; });
+    day.addEventListener('touchstart', () => { cham = Infinity; }, { passive: true });
+    day.addEventListener('touchend', () => { cham = performance.now() + 2500; }, { passive: true });   // vuốt xong 2,5s thì chạy tiếp
+    new IntersectionObserver((e) => { thay = e[0].isIntersecting; }, { threshold: 0.15 }).observe(khung);
+    const TOC = 42;                                 // px mỗi giây
+    let truoc = performance.now(), du = 0;
+    const chay = (luc: number) => {
+      const dt = Math.min(luc - truoc, 100); truoc = luc;
+      if (!dung && thay && !document.hidden && luc > nhay && luc > cham) {
+        du += (TOC * dt) / 1000;
+        const n = Math.floor(du);
+        if (n >= 1) { day.scrollLeft += n; du -= n; vong(); }
+      }
+      requestAnimationFrame(chay);
+    };
+    requestAnimationFrame(chay);
+  });
+</script>

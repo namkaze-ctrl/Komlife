@@ -3,6 +3,11 @@
 import Base from '../../layouts/Base.astro';
 import Anh from '../../components/Anh.astro';
 import DaiSoLieu from '../../components/DaiSoLieu.astro';
+import NhanHangMoi from '../../components/NhanHangMoi.astro';
+import DiemBan from '../../components/DiemBan.astro';
+import VideoNhan from '../../components/VideoNhan.astro';
+import { getCollection } from 'astro:content';
+import { laySanPhamCt, choHienNhap } from '../../lib/landing';
 import nh from '../../content/trang/nhan-hang.json';
 import { caiDat, layNhanHang } from '../../lib/noi-dung';
 import { tieuDe, dong } from '../../lib/chu';
@@ -17,8 +22,22 @@ const mua = nh.mua_o_dau;
 const td = (s: string) => tieuDe(s.replace(/\{ten\}/g, b.ten));
 const k = nh.tieu_de_khoi;
 const th = b.tinh_huong;
+
+// Giao diện mới: bật tự động khi nhãn có "Sản phẩm chi tiết" đang hiện (bản Nháp chỉ hiện ở bản xem thử).
+const sanPham = await laySanPhamCt(b.ma);
+const moi = sanPham.length > 0;
+const shopee = b.shopee || caiDat.shopee;
+// Dải "Đang có ưu đãi": landing của nhãn đang chạy (bản xem thử: tính cả Nháp, ưu tiên bố cục Danh mục)
+const lp = (await getCollection('landing', (x) => x.data.nhan === b.ma && (x.data.trang_thai === 'Đang chạy' || (choHienNhap() && x.data.trang_thai === 'Nháp'))))
+  .sort((x, y) => Number(y.data.trang_thai === 'Đang chạy') - Number(x.data.trang_thai === 'Đang chạy') || Number(y.data.bo_cuc !== 'Dài') - Number(x.data.bo_cuc !== 'Dài'))[0];
+const uuDai = moi && lp ? { href: `/lp/${lp.id}`, ten: `${b.ten} · ưu đãi ${lp.data.ten_dot}` } : null;
 ---
 <Base tieuDe={`${b.ten} — ${b.cau_dinh_vi} | Komlife Việt Nam`} moTa={b.mo_ta} anhChiaSe={b.anh_bia}>
+  {moi && <NhanHangMoi b={b} sanPham={sanPham} tdDanhMuc={td(k.danh_muc)} shopee={shopee} uuDai={uuDai} />}
+
+  <VideoNhan b={b} />
+
+  {!moi && (
   <section class="phead">
     <div class="wrap split" style="align-items:end">
       <div class="stack g16">
@@ -30,6 +49,7 @@ const th = b.tinh_huong;
       <div><Anh src={b.anh_bia} alt={`Sản phẩm ${b.ten}`} style="border-radius:16px;aspect-ratio:16/9;object-fit:cover;width:100%;box-shadow:var(--shadow)" sizes="(max-width:940px) 92vw, (max-width:1240px) 52vw, 616px" widths={[740, 1340]} loading="eager" /></div>
     </div>
   </section>
+  )}
 
   {b.cau_chuyen && (
     <section class="sec">
@@ -43,7 +63,7 @@ const th = b.tinh_huong;
     </section>
   )}
 
-  {b.san_pham.length > 0 && (
+  {!moi && b.san_pham.length > 0 && (
     <section class="sec sec--panel">
       <div class="wrap stack g28">
         <div class="stack g12"><div class="eb">Sản phẩm</div><h2 set:html={td(k.danh_muc)} /></div>
@@ -80,14 +100,18 @@ const th = b.tinh_huong;
     </section>
   )}
 
+  <DiemBan b={b} />
+
   <section class="sec sec--warm">
     <div class="wrap split">
       <div class="stack g16"><div class="eb">{mua.nhan}</div><h2 set:html={tieuDe(mua.tieu_de)} /></div>
       <div class="stack g16">
         <p class="lead" set:html={dong(mua.mo_ta)} />
         <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
-          {caiDat.shopee && <a class="btn" href={caiDat.shopee} target="_blank" rel="noopener" data-rasan="shopee">{mua.nut_shopee} <i>→</i></a>}
-          {b.tiktok && <a class="btn btn--ghost" href={b.tiktok} target="_blank" rel="noopener" data-rasan="tiktok">Kênh TikTok {b.ten} <i>→</i></a>}
+          {shopee && <a class="btn" href={shopee} target="_blank" rel="noopener" data-rasan="shopee">{b.shopee ? `Gian hàng ${b.ten} trên Shopee` : mua.nut_shopee} <i>→</i></a>}
+          {b.tiktok_shop
+            ? <a class="btn btn--ghost" href={b.tiktok_shop} target="_blank" rel="noopener" data-rasan="tiktok" data-nhan={b.ma}>Gian hàng {b.ten} trên TikTok Shop <i>→</i></a>
+            : b.tiktok && <a class="btn btn--ghost" href={b.tiktok} target="_blank" rel="noopener" data-rasan="tiktok">Kênh TikTok {b.ten} <i>→</i></a>}
         </div>
         <a class="btn btn--ghost" href="/chat-luong-tieu-chuan" style="align-self:flex-start">{mua.nut_hang_that}</a>
       </div>

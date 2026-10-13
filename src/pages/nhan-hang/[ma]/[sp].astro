@@ -1,0 +1,212 @@
+---
+// TRANG CHI TIẾT SẢN PHẨM — nội dung: src/content/san-pham/<nhãn>-<mã>.json -> /nhan-hang/<nhãn>/<mã>
+// Bấm vào thẻ sản phẩm ở trang danh mục / landing sẽ mở trang này.
+import Base from '../../../layouts/Base.astro';
+import { getImage } from 'astro:assets';
+import Anh from '../../../components/Anh.astro';
+import { timAnh } from '../../../lib/anh';
+import TheSanPham from '../../../components/TheSanPham.astro';
+import { caiDat, layNhanHang } from '../../../lib/noi-dung';
+import { dong, tieuDe } from '../../../lib/chu';
+import cauHinh from '../../../content/trang/san-pham-ct.json';
+import { laySanPhamCt, congSanPham, layGia, dongTien, themUtm } from '../../../lib/landing';
+import { mauSanPham } from '../../../lib/mau';
+
+export async function getStaticPaths() {
+  const ds = await laySanPhamCt();
+  const loi = ds.flatMap(congSanPham);
+  if (loi.length) throw new Error('CỔNG SẢN PHẨM CHẶN:\n- ' + loi.join('\n- '));
+  return ds.map((p) => ({ params: { ma: p.nhan, sp: p.ma }, props: { p, cungNhan: ds.filter((x) => x.nhan === p.nhan && x.ma !== p.ma) } }));
+}
+const { p, cungNhan } = Astro.props;
+const nhan = (await layNhanHang()).find((b) => b.ma === p.nhan);
+const tenNhan = nhan?.ten ?? p.nhan;
+const laNhap = p.trang_thai === 'Nháp';
+const cho = (html: string) => html.replace(/\[([^\]]{2,})\]/g, '<mark class="lp-cho">[$1]</mark>');
+const c = (s = '') => cho(dong(s));
+
+// Ảnh lớn cho tính năng rê chuột phóng to (chỉ tải khi khách rê chuột vào ảnh)
+const anhLon = async (duong: string) => {
+  const g = timAnh(duong);
+  if (!g) return { url: '', tile: 1 };
+  return { url: (await getImage({ src: g, width: Math.min(g.width, 2000), quality: 86 })).src, tile: g.width / g.height };
+};
+const lonChinh = await anhLon(p.anh[0] || '');
+const phienBan = await Promise.all(p.phien_ban.map(async (v) => ({ ...v, gia: layGia(v.ma_gia), lon: await anhLon(v.anh) })));
+const chienDich = `${p.nhan}-${p.ma}`;
+// Link mua: link riêng của sản phẩm -> gian hàng riêng của nhãn -> gian hàng Komlife
+const shopee = themUtm(p.shopee || nhan?.shopee || caiDat.shopee, chienDich);
+const tiktok = themUtm(p.tiktok_shop || nhan?.tiktok_shop || '', chienDich);
+// Tiêu đề khối: lấy ô "Tiêu đề riêng" của sản phẩm, trống thì lấy mặc định chung. *...* = chữ tô màu
+const td = (k: keyof typeof cauHinh.tieu_de) =>
+  cho(tieuDe((p.tieu_de[k] || cauHinh.tieu_de[k]).replace(/\{so\}/g, String(p.cong_dung.length)).replace(/\{nhan\}/g, tenNhan)));
+const mau = mauSanPham(p.mau, p.mau_nhat);
+---
+<Base tieuDe={`${p.ten} — ${p.ten_dong} | ${tenNhan}`} moTa={p.mo_ta} anhChiaSe={p.anh[0]} anThanhDaiLy khongIndex={laNhap}>
+  <div class="spct" style={mau}>
+    {laNhap && <div class="lp-nhap"><b>BẢN NHÁP — chưa lên web chính.</b> Ô vàng là chỗ chờ bổ sung.</div>}
+
+    <section class="spct-top">
+      <div class="wrap">
+        <nav class="spct-duong" aria-label="Đường dẫn">
+          <a href="/nhan-hang">Nhãn hàng</a> / <a href={`/nhan-hang/${p.nhan}`}>{tenNhan}</a> / <span>{p.ten.replace(`${tenNhan} `, '')}</span>
+        </nav>
+        <div class="spct-in">
+          <div class="spct-zoom" aria-hidden="true"></div>
+          <div class="spct-anhkhoi">
+            <div class="spct-anh" data-zoom-khung>
+              <span class="spct-anh__nen" aria-hidden="true"></span>
+              {/* Ảnh theo dung tích đang chọn; dung tích không có ảnh riêng thì hiện ảnh chính */}
+              <div data-anh="chinh" data-zoom={lonChinh.url} data-tile={lonChinh.tile} hidden={!!phienBan[0]?.anh}>{p.anh[0] && <Anh src={p.anh[0]} alt={`${p.ten} — ${p.ten_dong}`} class="spct-anh__img" sizes="(max-width:940px) 80vw, 520px" loading="eager" />}</div>
+              {phienBan.map((v, i) => v.anh && (
+                <div data-anh={String(i)} data-zoom={v.lon.url} data-tile={v.lon.tile} hidden={i !== 0}><Anh src={v.anh} alt={`${p.ten} — ${v.ten}`} class="spct-anh__img" sizes="(max-width:940px) 80vw, 520px" loading={i === 0 ? 'eager' : 'lazy'} fetchpriority={i === 0 ? 'high' : undefined} /></div>
+              ))}
+              <span class="spct-kinh" aria-hidden="true"></span>
+            </div>
+            <p class="spct-goiy"><span class="spct-goiy__may">Rê chuột lên ảnh để phóng to · bấm để xem ảnh lớn</span><span class="spct-goiy__dt">Chạm vào ảnh để xem lớn</span></p>
+          </div>
+          <div class="stack g20">
+            <div class="stack g8">
+              <span class="spct-dong">{tenNhan} · {p.ten_dong}</span>
+              <h1>{p.ten}</h1>
+              {p.cau_ngan && <p class="spct-cau">{p.cau_ngan}</p>}
+            </div>
+            <p class="lead" set:html={c(p.mo_ta)} />
+
+            {phienBan.length > 0 && (
+              <div class="stack g12">
+                <span class="spct-nhan">Chọn dung tích</span>
+                <div class="spct-pb" role="radiogroup" aria-label="Dung tích">
+                  {phienBan.map((v, i) => (
+                    <button type="button" class="spct-pb__i" role="radio" aria-checked={i === 0 ? 'true' : 'false'} data-anh-so={v.anh ? String(i) : 'chinh'}
+                      data-gia={v.gia?.gia_ban ? dongTien(v.gia.gia_ban) : ''} data-goc={v.gia?.gia_goc ? dongTien(v.gia.gia_goc) : ''} data-ghichu={v.ghi_chu}>
+                      {v.ten}
+                    </button>
+                  ))}
+                </div>
+                <div class="spct-gia">
+                  <span class="spct-gia__so" data-gia-hien>{phienBan[0].gia?.gia_ban ? dongTien(phienBan[0].gia.gia_ban) : ''}</span>
+                  <s data-goc-hien>{phienBan[0].gia?.gia_goc ? dongTien(phienBan[0].gia.gia_goc) : ''}</s>
+                  <span class="spct-gia__trong" data-cho-gia hidden={!!phienBan[0].gia?.gia_ban}>Xem giá tại gian hàng chính hãng</span>
+                  <span class="spct-gia__d" data-ghichu-hien>{phienBan[0].ghi_chu}</span>
+                </div>
+              </div>
+            )}
+
+            <div class="btnrow">
+              {shopee && <a class="lp-btn spct-btn" href={shopee} target="_blank" rel="noopener" data-rasan="shopee" data-nhan={p.nhan}>Mua trên Shopee <i>→</i></a>}
+              {tiktok && <a class="lp-btn lp-btn--phu spct-btn2" href={tiktok} target="_blank" rel="noopener" data-rasan="tiktok" data-nhan={p.nhan}>Gian hàng TikTok Shop <i>→</i></a>}
+            </div>
+            <p class="lp-nho">Gian hàng chính hãng · {tenNhan} là sản phẩm của {caiDat.ten_cong_ty}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec spct-chitiet">
+      <div class="wrap spct-cot">
+        <div class="stack g28">
+          {p.cong_dung.length > 0 && (
+            <div class="stack g16">
+              <h2 set:html={td('cong_dung')} />
+              <ol class="lp-cd spct-cd">{p.cong_dung.map((x) => <li><b set:html={c(x.ten)} />{x.mo_ta && <span set:html={c(x.mo_ta)} />}</li>)}</ol>
+            </div>
+          )}
+          {p.dung_luc_nao.length > 0 && (
+            <div class="stack g16">
+              <h2 set:html={td('dung_luc_nao')} />
+              <div class="cards cards--2">{p.dung_luc_nao.map((x) => <div class="card"><h4>{x.ten}</h4><p class="card__b" set:html={c(x.mo_ta)} /></div>)}</div>
+            </div>
+          )}
+          {p.cach_dung && (
+            <div class="stack g12">
+              <h2 set:html={td('cach_dung')} />
+              <p class="lead" set:html={c(p.cach_dung)} />
+            </div>
+          )}
+        </div>
+        {p.thong_so.length > 0 && (
+          <aside class="spct-ts">
+            <h3>Thông tin sản phẩm</h3>
+            <dl class="lp-ts">{p.thong_so.map((x) => <div class="lp-ts__r"><dt>{x.ten}</dt><dd set:html={c(x.gia_tri)} /></div>)}</dl>
+          </aside>
+        )}
+      </div>
+    </section>
+
+    {cungNhan.length > 0 && (
+      <section class="sec spct-khac">
+        <div class="wrap stack g28">
+          <h2 set:html={td('sp_khac')} />
+          <div class="tsp-luoi tsp-luoi--nho">{cungNhan.map((x) => <TheSanPham p={x} />)}</div>
+        </div>
+      </section>
+    )}
+
+    <div class="lp-bar">
+      {shopee && <a class="lp-btn spct-btn" href={shopee} target="_blank" rel="noopener" data-rasan="shopee" data-nhan={p.nhan}>Mua trên Shopee</a>}
+      {tiktok && <a class="lp-btn lp-btn--phu" href={tiktok} target="_blank" rel="noopener" data-rasan="tiktok" data-nhan={p.nhan}>TikTok Shop</a>}
+    </div>
+  </div>
+
+  <script>
+    // RÊ CHUỘT PHÓNG TO (kiểu Amazon): khung kính trên ảnh + ô phóng to bên phải; bấm ảnh mở ảnh lớn.
+    // Chỉ bật trên máy có chuột; điện thoại chạm vào ảnh là mở ảnh lớn.
+    (() => {
+      const khung = document.querySelector<HTMLElement>('[data-zoom-khung]');
+      const o = document.querySelector<HTMLElement>('.spct-zoom');
+      const kinh = khung?.querySelector<HTMLElement>('.spct-kinh');
+      const lb = document.getElementById('lb'), lbimg = document.getElementById('lbimg') as HTMLImageElement | null;
+      if (!khung || !o || !kinh) return;
+      const Z = 2.6;                                              // độ phóng
+      const dangHien = () => khung.querySelector<HTMLElement>('[data-anh]:not([hidden])');
+      // Vùng ảnh thật sự được vẽ bên trong khung (ảnh "contain" + có lề)
+      const vungVe = (lop: HTMLElement) => {
+        const img = lop.querySelector('img')!; const r = img.getBoundingClientRect(); const cs = getComputedStyle(img);
+        const pl = parseFloat(cs.paddingLeft), pr = parseFloat(cs.paddingRight), pt = parseFloat(cs.paddingTop), pb = parseFloat(cs.paddingBottom);
+        const w = r.width - pl - pr, h = r.height - pt - pb, tile = Number(lop.dataset.tile) || 1;
+        const vw = Math.min(w, h * tile), vh = vw / tile;
+        return { x: r.left + pl + (w - vw) / 2, y: r.top + pt + (h - vh) / 2, w: vw, h: vh };
+      };
+      const an = () => { o.classList.remove('on'); kinh.classList.remove('on'); };
+      khung.addEventListener('click', () => {
+        const lop = dangHien(); if (!lop?.dataset.zoom || !lb || !lbimg) return;
+        lbimg.src = lop.dataset.zoom; lbimg.alt = lop.querySelector('img')?.alt || ''; lb.classList.add('on'); an();
+      });
+      if (!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+      khung.addEventListener('mousemove', (e) => {
+        const lop = dangHien(); if (!lop?.dataset.zoom || innerWidth < 901) return an();
+        const v = vungVe(lop), kr = khung.getBoundingClientRect(), goc = o.parentElement!.getBoundingClientRect();
+        // ô phóng to: bên phải ảnh, cao bằng khung ảnh
+        const trai = kr.right - goc.left + 28, rong = Math.min(goc.width - trai, 640), cao = kr.height;
+        Object.assign(o.style, { left: trai + 'px', top: kr.top - goc.top + 'px', width: rong + 'px', height: cao + 'px',
+          backgroundImage: `url("${lop.dataset.zoom}")`, backgroundSize: `${v.w * Z}px ${v.h * Z}px` });
+        const kw = rong / Z, kh = cao / Z;                         // kích thước khung kính
+        const cx = Math.min(Math.max(e.clientX, v.x + kw / 2 - 0), v.x + v.w - kw / 2 + 0);
+        const cy = Math.min(Math.max(e.clientY, v.y + kh / 2), v.y + v.h - kh / 2);
+        const gx = kw >= v.w ? v.x + v.w / 2 : cx, gy = kh >= v.h ? v.y + v.h / 2 : cy;
+        Object.assign(kinh.style, { width: Math.min(kw, kr.width) + 'px', height: Math.min(kh, kr.height) + 'px', left: gx - kr.left - Math.min(kw, kr.width) / 2 + 'px', top: gy - kr.top - Math.min(kh, kr.height) / 2 + 'px' });
+        o.style.backgroundPosition = `${-((gx - v.x) * Z - rong / 2)}px ${-((gy - v.y) * Z - cao / 2)}px`;
+        o.classList.add('on'); kinh.classList.add('on');
+      });
+      khung.addEventListener('mouseleave', an);
+    })();
+
+    // Chọn dung tích -> đổi giá + ghi chú
+    document.querySelectorAll<HTMLElement>('.spct-pb').forEach((nhom) => {
+      const goc = nhom.closest('.stack')!;
+      nhom.addEventListener('click', (e) => {
+        const b = (e.target as HTMLElement).closest<HTMLButtonElement>('.spct-pb__i');
+        if (!b) return;
+        nhom.querySelectorAll('.spct-pb__i').forEach((x) => x.setAttribute('aria-checked', String(x === b)));
+        const gia = b.dataset.gia || '';
+        goc.querySelector('[data-gia-hien]')!.textContent = gia;
+        goc.querySelector('[data-goc-hien]')!.textContent = b.dataset.goc || '';
+        (goc.querySelector('[data-cho-gia]') as HTMLElement).hidden = !!gia;
+        goc.querySelector('[data-ghichu-hien]')!.textContent = b.dataset.ghichu || '';
+        const so = b.dataset.anhSo || 'chinh';
+        document.querySelectorAll<HTMLElement>('.spct-anh [data-anh]').forEach((x) => { x.hidden = x.dataset.anh !== so; });
+      });
+    });
+  </script>
+</Base>

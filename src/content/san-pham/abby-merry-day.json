@@ -1,0 +1,106 @@
+{
+  "nhan": "abby",
+  "ma": "merry-day",
+  "thu_tu": 2,
+  "trang_thai": "Đang bán",
+  "ten": "Abby Merry Day",
+  "ten_dong": "Nước giặt xả Mẹ & Bé 5 in 1",
+  "cau_ngan": "Dịu nhẹ, cho ngày dài năng động",
+  "mau": "#d03470",
+  "mau_nhat": "#FBE6EE",
+  "anh": [
+    "../../assets/anh/san-pham/abby/merry-day.webp"
+  ],
+  "mo_ta": "Mùi Merry Day dịu và tươi, hợp với quần áo con mặc ban ngày, đi chơi, đi nhà trẻ. Giặt và xả trong một lần, đồ ra mềm và thơm dịu.",
+  "phien_ban": [
+    {
+      "ten": "Can 3L",
+      "ma_gia": "abby-3l",
+      "ghi_chu": "Can 3000ml, tiết kiệm hơn khi dùng lâu",
+      "anh": "../../assets/anh/san-pham/abby/merry-day-3l.webp"
+    },
+    {
+      "ten": "Can 1,1L",
+      "ma_gia": "abby-1l1",
+      "ghi_chu": "Can 1100ml, tiện lợi",
+      "anh": "../../assets/anh/san-pham/abby/merry-day-1l1.webp"
+    },
+    {
+      "ten": "Dùng thử 100ml",
+      "ma_gia": "abby-100ml",
+      "ghi_chu": "Chai 100ml, thử mùi trước khi mua can lớn",
+      "anh": "../../assets/anh/san-pham/abby/merry-day-100ml.webp"
+    }
+  ],
+  "thong_so": [
+    {
+      "ten": "Dòng sản phẩm",
+      "gia_tri": "Nước giặt xả Mẹ & Bé 5 in 1, dòng Enzyme"
+    },
+    {
+      "ten": "5 in 1 gồm",
+      "gia_tri": "Sạch sâu · Khử mùi · Mềm vải · Bền màu · Lưu hương"
+    },
+    {
+      "ten": "Mùi hương",
+      "gia_tri": "Merry Day: dịu nhẹ, cho ngày dài năng động"
+    },
+    {
+      "ten": "Dung tích",
+      "gia_tri": "Can 3000ml · can 1100ml · chai dùng thử 100ml"
+    },
+    {
+      "ten": "Dùng cho",
+      "gia_tri": "Giặt tay và giặt máy"
+    },
+    {
+      "ten": "Thành phần",
+      "gia_tri": "Công thức kết hợp thành phần có nguồn gốc thực vật và enzyme, hỗ trợ làm sạch quần áo."
+    },
+    {
+      "ten": "Bảo quản",
+      "gia_tri": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp"
+    },
+    {
+      "ten": "Hạn sử dụng",
+      "gia_tri": "3 năm kể từ ngày sản xuất (xem trên bao bì)"
+    },
+    {
+      "ten": "Xuất xứ",
+      "gia_tri": "Việt Nam, nhà máy Komlife tại Yên Mỹ, Hưng Yên"
+    }
+  ],
+  "cong_dung": [
+    {
+      "ten": "Giặt và xả trong một lần",
+      "mo_ta": "Nước giặt xả 2 trong 1, vừa giặt vừa xả."
+    },
+    {
+      "ten": "Làm sạch vết bẩn trên đồ của bé",
+      "mo_ta": "Cặn sữa, tinh bột, mồ hôi trên khăn, tã, quần áo."
+    },
+    {
+      "ten": "Mềm vải, lưu hương dịu nhẹ",
+      "mo_ta": "Quần áo mềm mại sau mỗi lần giặt. Hương Merry Day dịu nhẹ, hợp với đồ con mặc ban ngày."
+    }
+  ],
+  "dung_luc_nao": [
+    {
+      "ten": "Đồ con đi nhà trẻ",
+      "mo_ta": "Vết sữa, nước trái cây, bột ăn dặm sau một ngày ở lớp."
+    },
+    {
+      "ten": "Khăn sữa, yếm",
+      "mo_ta": "Đồ thay nhiều lần mỗi ngày."
+    }
+  ],
+  "cach_dung": "Cho lượng nước giặt phù hợp với lượng quần áo và mức độ bẩn, có thể điều chỉnh lượng dùng tùy nhu cầu. Với vết bẩn cứng đầu, nên xử lý sơ bộ trước khi giặt. Dùng được cho giặt tay và giặt máy.\nLưu ý: đọc kỹ hướng dẫn trên bao bì trước khi sử dụng, để xa tầm tay trẻ em, đậy kín nắp sau khi dùng.",
+  "shopee": "",
+  "tiktok_shop": "",
+  "tieu_de": {
+    "cong_dung": "*{so} đặc điểm* của Abby",
+    "dung_luc_nao": "",
+    "cach_dung": "",
+    "sp_khac": ""
+  }
+}

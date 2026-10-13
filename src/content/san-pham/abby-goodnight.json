@@ -1,0 +1,106 @@
+{
+  "nhan": "abby",
+  "ma": "goodnight",
+  "thu_tu": 1,
+  "trang_thai": "Đang bán",
+  "ten": "Abby Goodnight",
+  "ten_dong": "Nước giặt xả Mẹ & Bé 5 in 1",
+  "cau_ngan": "Êm ái, cho giấc ngủ sâu",
+  "mau": "#7B5CC4",
+  "mau_nhat": "#F1ECFB",
+  "anh": [
+    "../../assets/anh/san-pham/abby/goodnight.webp"
+  ],
+  "mo_ta": "Mùi Goodnight êm và nhẹ, hợp để giặt đồ ngủ, chăn gối và những món con ôm khi đi ngủ. Giặt và xả trong một lần, đồ ra mềm và thơm dịu.",
+  "phien_ban": [
+    {
+      "ten": "Can 3L",
+      "ma_gia": "abby-3l",
+      "ghi_chu": "Can 3000ml, tiết kiệm hơn khi dùng lâu",
+      "anh": "../../assets/anh/san-pham/abby/goodnight-3l.webp"
+    },
+    {
+      "ten": "Can 1,1L",
+      "ma_gia": "abby-1l1",
+      "ghi_chu": "Can 1100ml, tiện lợi",
+      "anh": "../../assets/anh/san-pham/abby/goodnight-1l1.webp"
+    },
+    {
+      "ten": "Dùng thử 100ml",
+      "ma_gia": "abby-100ml",
+      "ghi_chu": "Chai 100ml, thử mùi trước khi mua can lớn",
+      "anh": "../../assets/anh/san-pham/abby/goodnight-100ml.webp"
+    }
+  ],
+  "thong_so": [
+    {
+      "ten": "Dòng sản phẩm",
+      "gia_tri": "Nước giặt xả Mẹ & Bé 5 in 1, dòng Enzyme"
+    },
+    {
+      "ten": "5 in 1 gồm",
+      "gia_tri": "Sạch sâu · Khử mùi · Mềm vải · Bền màu · Lưu hương"
+    },
+    {
+      "ten": "Mùi hương",
+      "gia_tri": "Goodnight: êm ái, cho giấc ngủ sâu"
+    },
+    {
+      "ten": "Dung tích",
+      "gia_tri": "Can 3000ml · can 1100ml · chai dùng thử 100ml"
+    },
+    {
+      "ten": "Dùng cho",
+      "gia_tri": "Giặt tay và giặt máy"
+    },
+    {
+      "ten": "Thành phần",
+      "gia_tri": "Công thức kết hợp thành phần có nguồn gốc thực vật và enzyme, hỗ trợ làm sạch quần áo."
+    },
+    {
+      "ten": "Bảo quản",
+      "gia_tri": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp"
+    },
+    {
+      "ten": "Hạn sử dụng",
+      "gia_tri": "3 năm kể từ ngày sản xuất (xem trên bao bì)"
+    },
+    {
+      "ten": "Xuất xứ",
+      "gia_tri": "Việt Nam, nhà máy Komlife tại Yên Mỹ, Hưng Yên"
+    }
+  ],
+  "cong_dung": [
+    {
+      "ten": "Giặt và xả trong một lần",
+      "mo_ta": "Nước giặt xả 2 trong 1, vừa giặt vừa xả."
+    },
+    {
+      "ten": "Làm sạch vết bẩn trên đồ của bé",
+      "mo_ta": "Cặn sữa, tinh bột, mồ hôi trên khăn, tã, quần áo."
+    },
+    {
+      "ten": "Mềm vải, lưu hương dịu nhẹ",
+      "mo_ta": "Quần áo mềm mại sau mỗi lần giặt. Hương Goodnight êm ái, hợp với đồ ngủ và chăn gối."
+    }
+  ],
+  "dung_luc_nao": [
+    {
+      "ten": "Đồ ngủ của con",
+      "mo_ta": "Bộ ngủ, túi ngủ, áo choàng sau tắm."
+    },
+    {
+      "ten": "Chăn, gối, thú bông",
+      "mo_ta": "Những thứ con áp má vào mỗi tối."
+    }
+  ],
+  "cach_dung": "Cho lượng nước giặt phù hợp với lượng quần áo và mức độ bẩn, có thể điều chỉnh lượng dùng tùy nhu cầu. Với vết bẩn cứng đầu, nên xử lý sơ bộ trước khi giặt. Dùng được cho giặt tay và giặt máy.\nLưu ý: đọc kỹ hướng dẫn trên bao bì trước khi sử dụng, để xa tầm tay trẻ em, đậy kín nắp sau khi dùng.",
+  "shopee": "",
+  "tiktok_shop": "",
+  "tieu_de": {
+    "cong_dung": "*{so} đặc điểm* của Abby",
+    "dung_luc_nao": "",
+    "cach_dung": "",
+    "sp_khac": ""
+  }
+}
