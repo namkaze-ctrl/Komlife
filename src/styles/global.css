@@ -1199,3 +1199,25 @@ a.tin{text-decoration:none;color:inherit}
 .nhm-trang .sec h2 .it{color:var(--lp-nhan)}
 .nhm-trang .sec .eb{color:var(--lp-chinh)}
 .nhm-trang .sec .eb::after{background:var(--lp-nhan)}
+
+/* màn đầu trang nhãn trên điện thoại: gọn lại */
+@media(max-width:700px){
+  .nhm-hero{padding-block:92px 34px}
+  .nhm-hero .ab-hero__in{gap:22px}
+  .nhm-hero .ab-hero__chu{gap:12px}
+  .nhm h1{font-size:3.1rem}
+  .nhm-cau{font-size:1.2rem}
+  .nhm-hero .lead{font-size:1rem;line-height:1.6}
+  /* hai nút cùng cỡ, nằm một hàng */
+  .nhm-hero .btnrow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+  .nhm-hero .btnrow .lp-btn{justify-content:center;padding:13px 8px;font-size:.9rem;white-space:nowrap}
+  .nhm-hero .btnrow .lp-btn i{display:none}
+  /* dòng mạng xã hội: nhãn một dòng, hai link cùng một dòng */
+  .nhm-mxh{gap:6px 20px;margin-top:6px;font-size:.9rem}
+  .nhm-mxh span{flex-basis:100%;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+  /* cụm ảnh sản phẩm: bỏ khoảng trống phía trên */
+  .nhm-hero .ab-hero__sp{height:232px}
+  .nhm-hero .ab-chai{bottom:0}
+  .nhm-hero .ab-chai--1{bottom:10%}
+  .nhm-hero .ab-tho{width:66px;left:-3%;bottom:-7%}
+}
