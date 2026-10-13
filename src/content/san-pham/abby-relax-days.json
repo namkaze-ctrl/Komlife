@@ -38,6 +38,10 @@
       "gia_tri": "Nước giặt xả Mẹ & Bé 5 in 1, dòng Enzyme"
     },
     {
+      "ten": "5 in 1 gồm",
+      "gia_tri": "Sạch sâu · Khử mùi · Mềm vải · Bền màu · Lưu hương"
+    },
+    {
       "ten": "Mùi hương",
       "gia_tri": "Relax Days: bay bổng, thư thái"
     },
@@ -51,7 +55,7 @@
     },
     {
       "ten": "Thành phần",
-      "gia_tri": "Sodium Lauryl Ether Sulfate, Sodium Linear Alkylbenzene Sulfonate, Sokalan PA30, Dehydol LS9 TH, hương liệu… [Chờ R&D xác nhận thành phần cho nhãn Enzyme mới]"
+      "gia_tri": "Công thức kết hợp thành phần có nguồn gốc thực vật và enzyme, hỗ trợ làm sạch quần áo."
     },
     {
       "ten": "Bảo quản",
@@ -90,7 +94,7 @@
       "mo_ta": "Giặt chung đồ bé với đồ bố mẹ."
     }
   ],
-  "cach_dung": "Dùng được cho cả giặt tay và giặt máy. Liều lượng theo hướng dẫn in trên nhãn chai. Bảo quản nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp và để xa tầm tay trẻ em.",
+  "cach_dung": "Cho lượng nước giặt phù hợp với lượng quần áo và mức độ bẩn, có thể điều chỉnh lượng dùng tùy nhu cầu. Với vết bẩn cứng đầu, nên xử lý sơ bộ trước khi giặt. Dùng được cho giặt tay và giặt máy.\nLưu ý: đọc kỹ hướng dẫn trên bao bì trước khi sử dụng, để xa tầm tay trẻ em, đậy kín nắp sau khi dùng.",
   "shopee": "",
   "tiktok_shop": "",
   "tieu_de": {
