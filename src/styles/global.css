@@ -1221,3 +1221,24 @@ a.tin{text-decoration:none;color:inherit}
   .nhm-hero .ab-chai--1{bottom:10%}
   .nhm-hero .ab-tho{width:66px;left:-3%;bottom:-7%}
 }
+
+/* thanh dính đáy: chữ nút không bao giờ xuống dòng / tràn; màn hẹp chỉ giữ phần chính */
+#dlbar .b1{min-width:0;padding-inline:14px;white-space:nowrap;overflow:hidden}
+#dlbar .b1 span{overflow:hidden;text-overflow:ellipsis}
+#dlbar .b2{flex:none}
+@media(max-width:640px){#dlbar .b1__them{display:none}}
+
+@media(max-width:700px){
+  /* chân trang: danh sách nhãn hàng xếp lưới 3 cột thay vì một cột dài */
+  .foot__cols>div:nth-child(2) .foot__l{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 12px}
+  /* khối Đồng hành: 4 điểm mạnh nằm một hàng, trải hết bề ngang */
+  .pp-cta__r{align-items:stretch}
+  .pp-feat{grid-template-columns:repeat(4,minmax(0,1fr));gap:0;width:100%}
+  .pp-feat div{padding-inline:4px;gap:8px}
+  .pp-feat div:nth-child(3)::before{display:block}
+  .pp-feat svg{width:24px;height:24px}
+  .pp-feat span{font-size:11.5px;line-height:1.3;text-align:center}
+  .pp-cta__btn{align-self:stretch;justify-content:center}
+}
+/* chừa chỗ cho thanh dính đáy để dòng cuối chân trang không bị che */
+body:has(#dlbar) .foot{padding-bottom:calc(28px + 64px + env(safe-area-inset-bottom))}

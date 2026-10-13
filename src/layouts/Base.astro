@@ -155,7 +155,7 @@ const toChuc = {
 
   {!oTrangDaiLy && !anThanhDaiLy && (
     <div id="dlbar" aria-hidden="true">
-      <a class="b1" href="/hop-tac-dai-ly">{caiDat.nut_day_trang}</a>
+      <a class="b1" href="/hop-tac-dai-ly">{(() => { const [dau, ...sau] = caiDat.nut_day_trang.split(/\s+[—–-]\s+/); return <><span>{dau}</span>{sau.length > 0 && <span class="b1__them"> — {sau.join(' — ')}</span>}</>; })()}</a>
       <a class="b2" href={`tel:${tel}`} aria-label={`Gọi ${caiDat.hotline}`}>
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.3-.3.75-.4 1.14-.27 1.25.41 2.6.63 3.95.63.62 0 1.12.5 1.12 1.12v3.49c0 .62-.5 1.12-1.12 1.12C10.83 21.77 2.23 13.17 2.23 2.5c0-.62.5-1.12 1.12-1.12h3.5c.62 0 1.12.5 1.12 1.12 0 1.36.22 2.7.63 3.95.12.39.03.83-.28 1.14l-2.2 2.2z"/></svg>
       </a>
