@@ -1225,11 +1225,12 @@ a.tin{text-decoration:none;color:inherit}
   .nhm-hero .nhm-cau{font-size:clamp(1.12rem,1.7vw,1.4rem)}
   .nhm-hero .lead{font-size:clamp(.98rem,1.25vw,1.06rem);line-height:1.65;max-width:46ch}
   .nhm-hero .ab-hero__chu{gap:14px}
-  .nhm-hero .ab-hero__sp{height:clamp(280px,29vw,370px)}
-  .nhm-hero .ab-chai{width:clamp(104px,11.5vw,150px)}
-  .nhm-hero .ab-chai--1{width:clamp(120px,13.2vw,172px)}
-  .nhm-hero .ab-tho{width:clamp(70px,7.4vw,104px)}
-  .nhm-hero .ab-hero__blob{width:min(48vw,600px)}
+  .nhm-hero .ab-hero__sp{height:clamp(330px,33vw,450px)}
+  .nhm-hero .ab-chai{width:clamp(130px,14vw,190px)}
+  .nhm-hero .ab-chai--1{width:clamp(150px,16.4vw,222px)}
+  .nhm-hero .ab-chai:not(.ab-chai--kin) img{padding:6% 4% 3%}
+  .nhm-hero .ab-tho{width:clamp(84px,9vw,126px)}
+  .nhm-hero .ab-hero__blob{width:min(54vw,680px)}
 }
 .ab-sp{background:#fff!important}
 .ab-sp__dau{max-width:44rem}
