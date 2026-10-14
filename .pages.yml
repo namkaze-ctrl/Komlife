@@ -57,7 +57,7 @@ content:
           - { name: nut_1, label: Chữ nút 1 (sang Nhãn hàng), type: string }
           - { name: nut_2, label: Chữ nút 2 (sang Về Komlife), type: string }
       - name: vi_sao
-        label: Khối "Vì sao chọn Komlife"
+        label: "Khối 'Vì sao chọn Komlife' — ĐANG ẨN (bỏ khỏi trang chủ 14/10)"
         type: object
         fields:
           - { name: nhan, label: Nhãn nhỏ, type: string }
@@ -80,7 +80,7 @@ content:
           - { name: nhan, label: Nhãn nhỏ, type: string }
           - { name: tieu_de, label: Tiêu đề, type: text }
       - name: quy_trinh
-        label: Khối "Quy trình sản xuất" (4 khâu lấy từ Khối dùng chung)
+        label: "Khối 'Quy trình sản xuất' — ĐANG ẨN ở trang chủ (4 khâu vẫn hiện ở trang Chất lượng)"
         type: object
         fields:
           - { name: nhan, label: Nhãn nhỏ, type: string }
@@ -97,14 +97,14 @@ content:
               - { name: chu, label: Chữ, type: text }
           - { name: nut, label: Chữ nút, type: string }
       - name: tap_the
-        label: Khối "Tập thể & hạ tầng" (ảnh + video nhà máy)
+        label: "Khối 'Tập thể & hạ tầng' — trang chủ hiện 3 ảnh đầu; Về Komlife hiện đủ ảnh + video"
         type: object
         fields:
           - { name: nhan, label: Nhãn nhỏ, type: string }
           - { name: tieu_de, label: Tiêu đề, type: text }
           - { name: mo_ta, label: Đoạn mô tả, type: text }
           - name: anh
-            label: Ảnh nhà máy (nên đủ 3 hoặc 6 ảnh)
+            label: Ảnh nhà máy (nên đủ 6 ảnh; 3 ảnh ĐẦU hiện ở trang chủ)
             type: object
             list: { collapsible: { collapsed: true, summary: "{fields.chu_thich}" } }
             fields:
@@ -119,14 +119,14 @@ content:
               - { name: chu_thich, label: Chú thích, type: string }
           - { name: ghi_chu, label: Ghi chú nhỏ cuối khối, type: string }
       - name: sinh_ke
-        label: Khối ảnh tràn "2.000 sinh kế"
+        label: "Khối ảnh tràn '2.000 sinh kế' — hiện ở trang Về Komlife"
         type: object
         fields:
           - { name: tieu_de, label: Tiêu đề, type: text }
           - { name: mo_ta, label: Đoạn mô tả, type: text }
           - { name: anh, label: Ảnh nền, type: image }
       - name: nguyen_lieu
-        label: Khối "Tiêu chuẩn nguyên liệu" (4 đối tác lấy từ Khối dùng chung)
+        label: "Khối 'Tiêu chuẩn nguyên liệu' — ĐANG ẨN (trang chủ chỉ hiện tên 4 đối tác cạnh giấy chứng nhận)"
         type: object
         fields:
           - { name: nhan, label: Nhãn nhỏ, type: string }
@@ -135,7 +135,7 @@ content:
           - { name: anh, label: Ảnh, type: image }
           - { name: chu_thich_anh, label: Chú thích ảnh, type: string }
       - name: dau_moc
-        label: Khối "Dấu mốc" (các mốc lấy từ Khối dùng chung)
+        label: "Khối 'Dấu mốc' — ĐANG ẨN ở trang chủ (các mốc hiện cuối trang Về Komlife)"
         type: object
         fields:
           - { name: nhan, label: Nhãn nhỏ, type: string }
@@ -143,7 +143,7 @@ content:
           - { name: anh, label: Ảnh, type: image }
           - { name: chu_thich_anh, label: Chú thích ảnh, type: string }
       - name: nguoi_dung_dau
-        label: Khối "Người đứng đầu"
+        label: "Khối 'Người đứng đầu' — hiện ở trang chủ (kèm sứ mệnh) và đầu trang Về Komlife"
         type: object
         fields:
           - { name: hien_thi, label: Hiện khối này, type: boolean }
@@ -160,7 +160,7 @@ content:
           - { name: tieu_de, label: Tiêu đề, type: text }
           - { name: mo_ta, label: Đoạn mô tả, type: text }
       - name: nha_phan_phoi
-        label: Khối "Thông tin dành cho nhà phân phối"
+        label: "Khối 'Thông tin dành cho nhà phân phối' — trang chủ chỉ hiện 3 ô ĐẦU, dưới dải logo bán lẻ"
         type: object
         fields:
           - { name: nhan, label: Nhãn nhỏ, type: string }
