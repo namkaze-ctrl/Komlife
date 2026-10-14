@@ -3,8 +3,10 @@
 import Anh from './Anh.astro';
 import { khoiChung } from '../lib/noi-dung';
 import { tieuDe } from '../lib/chu';
-interface Props { nhan: string; tieuDe: string }
-const { nhan, tieuDe: td } = Astro.props;
+import tc from '../content/trang/trang-chu.json';
+interface Props { nhan: string; tieuDe: string; phanPhoi?: boolean } // trang chủ: thêm 3 ô "Thông tin dành cho nhà phân phối"
+const { nhan, tieuDe: td, phanPhoi = false } = Astro.props;
+const npp = tc.nha_phan_phoi;
 const ds = khoiChung.he_thong_ban_le;
 ---
 <section class="sec sec--tight sec--panel sec--banle">
@@ -20,5 +22,13 @@ const ds = khoiChung.he_thong_ban_le;
         </div>
       )))}
     </div></div>
+    {phanPhoi && (
+      <div class="ppo">
+        {npp.cac_o.slice(0, 3).map((x) => (
+          <div class="ppo__i rv"><div class="ppo__q">{x.tieu_de}</div><div class="ppo__a">{x.mo_ta}</div></div>
+        ))}
+        <a class="btn btn--ghost ppo__nut" href="/hop-tac-dai-ly">Thông tin dành cho nhà phân phối</a>
+      </div>
+    )}
   </div>
 </section>

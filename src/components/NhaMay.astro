@@ -1,0 +1,40 @@
+---
+// Khối ảnh + video thật tại nhà máy. gon = trang chủ: 3 ảnh đầu, không video, có link sang Về Komlife.
+// Nội dung: Trang chủ → Tập thể & hạ tầng.
+import Anh from './Anh.astro';
+import tc from '../content/trang/trang-chu.json';
+import { tieuDe, dong } from '../lib/chu';
+interface Props { gon?: boolean }
+const { gon = false } = Astro.props;
+const tt = tc.tap_the;
+const anh = gon ? tt.anh.slice(0, 3) : tt.anh;
+---
+<section class={`sec${gon ? ' sec--nmgon' : ''}`} id={gon ? undefined : 'nha-may'}>
+  <div class="wrap">
+    <div class={gon ? 'nm-dau' : 'stack g16'}>
+      <div class="stack g16">
+        <div class="eb">{tt.nhan}</div>
+        <h2 set:html={tieuDe(tt.tieu_de)} />
+      </div>
+      {gon
+        ? <a class="btn btn--ghost" href="/ve-komlife#nha-may">Xem thêm ảnh và video nhà máy</a>
+        : <p class="lead" set:html={dong(tt.mo_ta)} />}
+    </div>
+    <div class="nmg">
+      {anh.map((a) => (
+        <figure class="nmc rv" style="margin:0">
+          <Anh src={a.anh} alt={a.chu_thich} sizes="(max-width:560px) 92vw, (max-width:900px) 46vw, (max-width:1240px) 30vw, 368px" widths={[740, 1200]} />
+          <figcaption>{a.chu_thich}</figcaption>
+        </figure>
+      ))}
+    </div>
+    {!gon && tt.video.length > 0 && (
+      <div class="nmv">
+        {tt.video.map((v) => (
+          <figure class="rv"><div class="fr"><iframe src={`https://www.youtube-nocookie.com/embed/${v.ma_youtube}?rel=0&modestbranding=1&playsinline=1`} title={v.chu_thich} loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><figcaption>{v.chu_thich}</figcaption></figure>
+        ))}
+      </div>
+    )}
+    {!gon && tt.ghi_chu && <p class="nm-note">{tt.ghi_chu}</p>}
+  </div>
+</section>

@@ -5,6 +5,8 @@ import Anh from './Anh.astro';
 import { khoiChung } from '../lib/noi-dung';
 import { timAnh } from '../lib/anh';
 import { tieuDe, dong } from '../lib/chu';
+interface Props { nguyenLieu?: boolean } // trang chủ: thêm dải 4 đối tác nguyên liệu dưới đoạn chữ
+const { nguyenLieu = false } = Astro.props;
 const p = khoiChung.phap_ly;
 const giay = await Promise.all(p.giay.filter((g) => g.hien_thi !== false).map(async (g) => {
   const a = timAnh(g.anh);
@@ -20,6 +22,15 @@ const giay = await Promise.all(p.giay.filter((g) => g.hien_thi !== false).map(as
       <div class="eb">{p.nhan}</div>
       <h2 set:html={tieuDe(p.tieu_de)} />
       <p class="lead" set:html={dong(p.mo_ta)} />
+      {nguyenLieu && (
+        <div class="nlg">
+          <div class="nlg__k">Đối tác nguyên liệu</div>
+          <ul class="nlg__ds">
+            {khoiChung.doi_tac_nguyen_lieu.map((n) => <li><b>{n.ten}</b><span>{n.quoc_gia} · {n.nhom}</span></li>)}
+          </ul>
+          <a class="nguoi__lnk nlg__lnk" href="/chat-luong-tieu-chuan">Quy trình và tiêu chuẩn chất lượng <i aria-hidden="true">→</i></a>
+        </div>
+      )}
     </div>
     <div class="giay">
       {giay.map((g) => (

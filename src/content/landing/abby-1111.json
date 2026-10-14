@@ -59,7 +59,7 @@
       },
       {
         "ten": "Xuất xứ",
-        "gia_tri": "Việt Nam, nhà máy Komlife tại Yên Mỹ, Hưng Yên"
+        "gia_tri": "Việt Nam, nhà máy Komlife tại Hưng Yên"
       }
     ],
     "cong_dung": [
@@ -98,7 +98,7 @@
     "danh_sach": [
       {
         "ten": "Làm ra từ nhà máy của Komlife",
-        "mo_ta": "Nhà máy 20.000m² tại Từ Hồ, Yên Mỹ, Hưng Yên. Komlife tự sản xuất, không thuê gia công.",
+        "mo_ta": "Nhà máy 20.000m² tại Từ Hồ, Hưng Yên. Komlife tự sản xuất, không thuê gia công.",
         "nguon": "/ve-komlife"
       },
       {
@@ -198,7 +198,7 @@
     },
     {
       "hoi": "Abby do công ty nào sản xuất?",
-      "dap": "Công ty TNHH Komlife Việt Nam, sản xuất tại nhà máy ở Từ Hồ, Yên Mỹ, Hưng Yên."
+      "dap": "Công ty TNHH Komlife Việt Nam, sản xuất tại nhà máy ở Từ Hồ, Hưng Yên."
     }
   ],
   "nguoi_soat": "[Chờ BGĐ chỉ định người soát cuối]"

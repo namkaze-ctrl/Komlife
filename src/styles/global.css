@@ -662,6 +662,36 @@ body.co-bar .stpanel{bottom:134px}
   font-variation-settings:'wdth' 88}
 .nguoi__n{font-family:var(--fb);font-weight:600;color:var(--gold-2);font-size:.95rem;margin-top:4px}
 .nguoi__r{font-size:.86rem;color:var(--on-deep-muted)}
+/* Trang chủ gọn (góp ý anh Cường 14/10): sứ mệnh dưới câu trích, nhà máy 3 ảnh, kiểm chứng, phân phối 3 ô, tin gọn */
+.nguoi__sm{margin-top:6px;padding-top:18px;border-top:1px solid var(--deep-line)}
+.nguoi__smk,.nlg__k{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--mag)}
+.nguoi__sm p{color:var(--on-deep);font-size:1rem;line-height:1.65;margin-top:6px;max-width:60ch}
+.nguoi__lnk{display:inline-flex;gap:8px;align-items:center;margin-top:12px;font-weight:600;font-size:.92rem;color:var(--mag);
+  text-decoration:underline;text-underline-offset:4px}
+.nm-dau,.tin-dau{display:flex;justify-content:space-between;align-items:flex-end;gap:16px 24px;flex-wrap:wrap}
+.sec--nmgon .nmg{margin-top:28px}
+.sec--nmgon .nmc img{aspect-ratio:16/10}
+.nlg{margin-top:6px;padding-top:18px;border-top:1px solid var(--line)}
+.nlg__k{color:var(--gold)}
+.nlg__ds{list-style:none;padding:0;margin:10px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 20px}
+.nlg__ds li{display:flex;flex-direction:column;gap:2px}
+.nlg__ds b{font-family:var(--fd);font-weight:700;font-size:1.3rem;color:var(--ink);line-height:1.1}
+.nlg__ds span{font-size:.8rem;color:var(--faint)}
+.nlg__lnk{color:var(--gold)}
+.ppo{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 24px;margin-top:6px}
+.ppo__i{border-top:2px solid var(--gold);padding-top:14px}
+.ppo__q{font-family:var(--fd);font-weight:700;font-size:1.05rem;color:var(--ink);line-height:1.4}
+.ppo__a{font-size:.9rem;color:var(--body);line-height:1.6;margin-top:6px}
+.ppo__nut{grid-column:1/-1;justify-self:start}
+@media(max-width:760px){.ppo{grid-template-columns:1fr}}
+.tin-gon{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}
+.tg{text-decoration:none;color:inherit;display:grid;grid-template-columns:112px minmax(0,1fr);gap:14px;align-items:center;padding:12px;border:1px solid var(--line);
+  border-radius:14px;background:var(--panel);transition:border-color .2s ease}
+.tg:hover{border-color:var(--gold)}
+.tg img{width:112px;height:84px;object-fit:cover;border-radius:10px;display:block}
+.tg__m{font-size:.72rem;color:var(--faint);letter-spacing:.04em}
+.tg__t{font-size:.95rem;line-height:1.4;margin-top:4px;color:var(--ink);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+@media(max-width:900px){.tin-gon{grid-template-columns:1fr}}
 /* 14/10: bỏ lớp phủ tối. Chữ nằm bên trái trên nền sáng, ảnh tập thể nằm bên phải NGUYÊN MÀU (mép trái ảnh hoà dần vào nền),
    không còn chữ đè lên người. Màn hẹp hơn 1400px: chữ ở trên, ảnh xếp bên dưới. */
 .tran{position:relative;overflow:hidden;background:var(--cream-2);

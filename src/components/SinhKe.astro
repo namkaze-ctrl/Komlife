@@ -1,0 +1,15 @@
+---
+// Khối ảnh tập thể "2.000 sinh kế". Nội dung: Trang chủ → Khối ảnh tràn "2.000 sinh kế".
+import Anh from './Anh.astro';
+import tc from '../content/trang/trang-chu.json';
+import { tieuDe, dong } from '../lib/chu';
+const sk = tc.sinh_ke;
+---
+<section class="tran">
+  <Anh src={sk.anh} alt="Tập thể cán bộ nhân viên Komlife trước nhà điều hành tại nhà máy Hưng Yên" sizes="100vw" widths={[960, 1920]} />
+  <div class="tran__v"></div>
+  <div class="tran__in"><div class="wrap"><div class="tran__t rv">
+    <h2 set:html={tieuDe(sk.tieu_de)} />
+    <p set:html={dong(sk.mo_ta)} />
+  </div></div></div>
+</section>
