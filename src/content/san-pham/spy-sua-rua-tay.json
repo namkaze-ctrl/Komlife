@@ -20,25 +20,29 @@
     {
       "ten": "Đào Nhật",
       "ma_gia": "",
-      "ghi_chu": "SKU SRT-C-01-DN",
+      "ghi_chu": "Chai 500ml, hương đào Nhật thanh lịch",
+      "sku": "SRT-C-01-DN",
       "anh": ""
     },
     {
       "ten": "Táo xanh",
       "ma_gia": "",
-      "ghi_chu": "SKU SRT-C-01-TX",
+      "ghi_chu": "Chai 500ml, hương táo xanh sảng khoái",
+      "sku": "SRT-C-01-TX",
       "anh": ""
     },
     {
       "ten": "Dâu tây",
       "ma_gia": "",
-      "ghi_chu": "SKU SRT-C-01-DT",
+      "ghi_chu": "Chai 500ml, hương dâu tây ngọt ngào",
+      "sku": "SRT-C-01-DT",
       "anh": ""
     },
     {
       "ten": "Sữa gạo",
       "ma_gia": "",
-      "ghi_chu": "SKU SRT-C-01-SG",
+      "ghi_chu": "Chai 500ml, hương sữa gạo nhẹ dịu",
+      "sku": "SRT-C-01-SG",
       "anh": ""
     }
   ],

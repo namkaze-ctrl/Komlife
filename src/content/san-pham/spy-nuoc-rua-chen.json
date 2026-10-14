@@ -20,31 +20,36 @@
     {
       "ten": "380ml",
       "ma_gia": "",
-      "ghi_chu": "SKU SNRC-C-01",
+      "ghi_chu": "Chai nhỏ, hợp với bếp ít người",
+      "sku": "SNRC-C-01",
       "anh": ""
     },
     {
       "ten": "760ml",
       "ma_gia": "",
-      "ghi_chu": "SKU SNRC-C-02",
+      "ghi_chu": "Chai vừa, dùng hằng ngày cho gia đình",
+      "sku": "SNRC-C-02",
       "anh": ""
     },
     {
       "ten": "1 lít",
       "ma_gia": "",
-      "ghi_chu": "",
+      "ghi_chu": "Chai một lít, dùng lâu hơn cỡ nhỏ",
+      "sku": "",
       "anh": ""
     },
     {
       "ten": "2 lít",
       "ma_gia": "",
-      "ghi_chu": "SKU SNRC-C-03",
+      "ghi_chu": "Can hai lít cho gia đình đông người",
+      "sku": "SNRC-C-03",
       "anh": ""
     },
     {
       "ten": "3,6 lít",
       "ma_gia": "",
-      "ghi_chu": "SKU SNRC-C-04",
+      "ghi_chu": "Can lớn, tiết kiệm khi dùng nhiều",
+      "sku": "SNRC-C-04",
       "anh": ""
     }
   ],

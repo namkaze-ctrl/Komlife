@@ -180,7 +180,7 @@ const sanPhamCt = defineCollection({
     khong_phong_to: z.boolean().optional().default(false),
     mo_ta: z.string().optional().default(''),
     nhan_phien_ban: z.string().optional().default('Chọn dung tích'),
-    phien_ban: z.array(z.object({ ten: z.string(), ma_gia: z.string().optional().default(''), ghi_chu: z.string().optional().default(''), anh: z.string().optional().default('') })).optional().default([]),
+    phien_ban: z.array(z.object({ ten: z.string(), ma_gia: z.string().optional().default(''), ghi_chu: z.string().optional().default(''), sku: z.string().optional().default(''), anh: z.string().optional().default('') })).optional().default([]),
     thong_so: z.array(z.object({ ten: z.string(), gia_tri: z.string().optional().default('') })).optional().default([]),
     cong_dung: z.array(muc).optional().default([]),
     dung_luc_nao: z.array(muc).optional().default([]),

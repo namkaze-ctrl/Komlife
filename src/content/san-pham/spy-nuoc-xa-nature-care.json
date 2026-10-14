@@ -20,19 +20,22 @@
     {
       "ten": "Kyoto Spring",
       "ma_gia": "",
-      "ghi_chu": "Túi 2L · SKU SXV-T-02-H · hoa anh đào & tre xanh (hồng)",
+      "ghi_chu": "Túi 2L, hương hoa anh đào và tre xanh",
+      "sku": "SXV-T-02-H",
       "anh": ""
     },
     {
       "ten": "Jeju Garden",
       "ma_gia": "",
-      "ghi_chu": "Túi 2L · SKU SXV-T-02-V · cẩm tú cầu & hoa cải dầu (vàng)",
+      "ghi_chu": "Túi 2L, hương cẩm tú cầu và hoa cải",
+      "sku": "SXV-T-02-V",
       "anh": ""
     },
     {
       "ten": "Bali Dream",
       "ma_gia": "",
-      "ghi_chu": "Túi 2L · SKU SXV-T-02-T · lan nhiệt đới & hoa dâm bụt (tím)",
+      "ghi_chu": "Túi 2L, hương lan nhiệt đới và dâm bụt",
+      "sku": "SXV-T-02-T",
       "anh": ""
     }
   ],

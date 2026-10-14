@@ -20,13 +20,15 @@
     {
       "ten": "Chai 950ml",
       "ma_gia": "",
-      "ghi_chu": "SKU SLS-C-01 (T tím · H hồng · XL xanh lá · Q quế · GS gừng sả)",
+      "ghi_chu": "Chai nhỏ, tiện cho căn hộ, phòng trọ",
+      "sku": "SLS-C-01 (T tím · H hồng · XL xanh lá · Q quế · GS gừng sả)",
       "anh": ""
     },
     {
       "ten": "Can 3,6L",
       "ma_gia": "",
-      "ghi_chu": "SKU SLS-C-02 (T · H · XL · Q · GS)",
+      "ghi_chu": "Can lớn cho nhà rộng, lau thường xuyên",
+      "sku": "SLS-C-02 (T · H · XL · Q · GS)",
       "anh": ""
     }
   ],

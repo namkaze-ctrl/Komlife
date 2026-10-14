@@ -20,13 +20,15 @@
     {
       "ten": "Can 3,6kg",
       "ma_gia": "",
-      "ghi_chu": "SKU SUCM-C-01",
+      "ghi_chu": "Cho máy giặt cửa trước, dùng hằng ngày",
+      "sku": "SUCM-C-01",
       "anh": ""
     },
     {
       "ten": "Can 4,6kg",
       "ma_gia": "",
-      "ghi_chu": "SKU SUCM-C-02",
+      "ghi_chu": "Can lớn hơn cho nhà giặt nhiều",
+      "sku": "SUCM-C-02",
       "anh": ""
     }
   ],

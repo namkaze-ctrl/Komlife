@@ -20,19 +20,22 @@
     {
       "ten": "Dream Violet",
       "ma_gia": "",
-      "ghi_chu": "Hương hoa violet",
+      "ghi_chu": "Chai 100ml bỏ túi, hương hoa violet",
+      "sku": "",
       "anh": ""
     },
     {
       "ten": "Pink Whisper",
       "ma_gia": "",
-      "ghi_chu": "Hương hoa anh đào",
+      "ghi_chu": "Chai 100ml bỏ túi, hương hoa anh đào",
+      "sku": "",
       "anh": ""
     },
     {
       "ten": "Pure White",
       "ma_gia": "",
-      "ghi_chu": "Hương hoa trắng",
+      "ghi_chu": "Chai 100ml bỏ túi, hương hoa trắng",
+      "sku": "",
       "anh": ""
     }
   ],

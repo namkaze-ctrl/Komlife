@@ -20,31 +20,36 @@
     {
       "ten": "Can 3,6kg",
       "ma_gia": "",
-      "ghi_chu": "SKU SUCP-C-01-V (vàng) · SUCP-C-01-T (tím)",
+      "ghi_chu": "Cỡ phổ biến, vừa cho gia đình nhỏ",
+      "sku": "SUCP-C-01-V (vàng) · SUCP-C-01-T (tím)",
       "anh": ""
     },
     {
       "ten": "Can 4,6kg",
       "ma_gia": "",
-      "ghi_chu": "SKU SUCP-C-02-V · SUCP-C-02-T",
+      "ghi_chu": "Dùng lâu hơn cho nhà giặt nhiều",
+      "sku": "SUCP-C-02-V · SUCP-C-02-T",
       "anh": ""
     },
     {
       "ten": "Túi 3kg",
       "ma_gia": "",
-      "ghi_chu": "SKU SUCP-T-02-V",
+      "ghi_chu": "Túi tiết kiệm, đổ thêm vào can cũ",
+      "sku": "SUCP-T-02-V",
       "anh": ""
     },
     {
       "ten": "Túi 1,5kg",
       "ma_gia": "",
-      "ghi_chu": "SKU SUCP-T-01-V",
+      "ghi_chu": "Túi nhỏ gọn, hợp để dùng thử",
+      "sku": "SUCP-T-01-V",
       "anh": ""
     },
     {
       "ten": "Can 5,2kg",
       "ma_gia": "",
-      "ghi_chu": "",
+      "ghi_chu": "Can lớn cho gia đình đông người",
+      "sku": "",
       "anh": ""
     }
   ],

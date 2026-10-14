@@ -20,13 +20,15 @@
     {
       "ten": "Can 3,6kg",
       "ma_gia": "",
-      "ghi_chu": "SKU SDCP-C-01-V (hoa vàng) · SDCP-C-01-T (hoa tím)",
+      "ghi_chu": "Có hai mùi Golden Blossom và Blossom",
+      "sku": "SDCP-C-01-V (hoa vàng) · SDCP-C-01-T (hoa tím)",
       "anh": ""
     },
     {
       "ten": "Túi 2,6kg",
       "ma_gia": "",
-      "ghi_chu": "SKU SDCP-T-02-V",
+      "ghi_chu": "Túi tiết kiệm, đổ thêm vào can cũ",
+      "sku": "SDCP-T-02-V",
       "anh": ""
     }
   ],

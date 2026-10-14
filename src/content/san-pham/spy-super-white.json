@@ -20,13 +20,15 @@
     {
       "ten": "Túi 3,6kg",
       "ma_gia": "",
-      "ghi_chu": "SKU SSW-T-01-P (Passion) · SSW-T-01-L (Luxor)",
+      "ghi_chu": "Có hai mùi Passion và Luxor để chọn",
+      "sku": "SSW-T-01-P (Passion) · SSW-T-01-L (Luxor)",
       "anh": ""
     },
     {
       "ten": "Can 5,2kg",
       "ma_gia": "",
-      "ghi_chu": "",
+      "ghi_chu": "Can lớn cho gia đình đông người",
+      "sku": "",
       "anh": ""
     }
   ],

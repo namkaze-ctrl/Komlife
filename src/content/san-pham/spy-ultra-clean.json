@@ -20,19 +20,22 @@
     {
       "ten": "Can 3,6kg",
       "ma_gia": "",
-      "ghi_chu": "SKU SUC-C-01-T",
+      "ghi_chu": "Cỡ phổ biến, vừa cho gia đình nhỏ",
+      "sku": "SUC-C-01-T",
       "anh": ""
     },
     {
       "ten": "Can 4,6kg",
       "ma_gia": "",
-      "ghi_chu": "SKU SUC-C-02-T · SUC-C-03-T",
+      "ghi_chu": "Dùng lâu hơn cho nhà giặt nhiều",
+      "sku": "SUC-C-02-T · SUC-C-03-T",
       "anh": ""
     },
     {
       "ten": "Túi 1,5kg",
       "ma_gia": "",
-      "ghi_chu": "SKU SUC-T-01-T",
+      "ghi_chu": "Túi nhỏ gọn, hợp để dùng thử",
+      "sku": "SUC-T-01-T",
       "anh": ""
     }
   ],

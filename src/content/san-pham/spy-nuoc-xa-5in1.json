@@ -20,19 +20,22 @@
     {
       "ten": "Quyến Rũ",
       "ma_gia": "",
-      "ghi_chu": "Can 3L · SKU SXV-C-01-QR · hương hoa ngọt ngào",
+      "ghi_chu": "Can 3L, hương hoa sang trọng, ngọt ngào",
+      "sku": "SXV-C-01-QR",
       "anh": ""
     },
     {
       "ten": "Đắm Say",
       "ma_gia": "",
-      "ghi_chu": "Can 3L · SKU SXV-C-01-DS · thanh khiết, tươi mát",
+      "ghi_chu": "Can 3L, hương thanh khiết, tươi mát",
+      "sku": "SXV-C-01-DS",
       "anh": ""
     },
     {
       "ten": "Ruby Isabelle",
       "ma_gia": "",
-      "ghi_chu": "Can 3L · SKU SXV-C-01-RI · dịu nhẹ, thư giãn",
+      "ghi_chu": "Can 3L, hương dịu nhẹ, thư giãn",
+      "sku": "SXV-C-01-RI",
       "anh": ""
     }
   ],
