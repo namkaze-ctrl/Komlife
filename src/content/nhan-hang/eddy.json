@@ -9,6 +9,7 @@
   "danh_cho": "Hộ gia đình, quán ăn, cửa hàng nhỏ.",
   "anh_the_doc": "../../assets/anh/nhan-hang/eddy-the-doc.jpg",
   "anh_bia": "../../assets/anh/nhan-hang/eddy-bia.jpg",
+  "anh_the": "../../assets/anh/nhan-hang/the/eddy.jpg",
   "tiktok": "",
   "san_pham": [
     {
@@ -19,7 +20,10 @@
       "cong_dung": "Sạch bóng, chống bám bụi",
       "mo_ta": "Làm sạch trong suốt mọi bề mặt kính chỉ sau một lần lau, chống bụi bám trở lại. Dùng được cho kính trong, kính mờ, gương, pha lê, ly tách và đồ thuỷ tinh.",
       "mui_huong": [
-        { "ten": "Lavender", "mo_ta": "Hương oải hương tươi mát" }
+        {
+          "ten": "Lavender",
+          "mo_ta": "Hương oải hương tươi mát"
+        }
       ]
     },
     {
@@ -32,6 +36,10 @@
       "mui_huong": []
     }
   ],
-  "tinh_huong": { "tieu_de": "", "mo_ta": "", "danh_sach": [] },
+  "tinh_huong": {
+    "tieu_de": "",
+    "mo_ta": "",
+    "danh_sach": []
+  },
   "hoi_dap": []
 }

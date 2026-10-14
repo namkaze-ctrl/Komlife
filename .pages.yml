@@ -293,6 +293,7 @@ content:
       - { name: danh_cho, label: Dành cho ai, type: string }
       - { name: anh_the_doc, label: Ảnh thẻ dọc ở trang chủ (ảnh đứng), type: image }
       - { name: anh_bia, label: Ảnh bìa (ảnh ngang), type: image }
+      - { name: anh_the, label: "Ảnh thẻ ở trang Nhãn hàng (ngang 16:10, 1340 × 838, sản phẩm nằm GIỮA ảnh)", type: image }
       - { name: tiktok, label: Đường dẫn kênh TikTok riêng của nhãn (nếu có), type: string }
       - { name: shopee, label: Link gian hàng Shopee riêng của nhãn (trống = dùng gian hàng Komlife), type: string }
       - { name: tiktok_shop, label: Link gian hàng TikTok Shop riêng của nhãn (trống = ẩn nút TikTok Shop), type: string }

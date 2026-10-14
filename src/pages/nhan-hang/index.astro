@@ -14,7 +14,7 @@ const ds = await layNhanHang();
     <div class="wrap cards cards--3 spot">
       {ds.map((b) => (
         <a class="card rv fx-glow" href={`/nhan-hang/${b.ma}`} style="padding:0;overflow:hidden">
-          <Anh src={b.anh_bia} alt={b.ten} style="aspect-ratio:16/10;object-fit:cover;width:100%" sizes="(max-width:640px) 92vw, (max-width:1000px) 46vw, (max-width:1240px) 30vw, 367px" widths={[740, 1340]} />
+          <Anh src={b.anh_the || b.anh_bia} alt={`Sản phẩm ${b.ten}`} style="aspect-ratio:16/10;object-fit:cover;width:100%" sizes="(max-width:640px) 92vw, (max-width:1000px) 46vw, (max-width:1240px) 30vw, 367px" widths={[740, 1340]} />
           <div style="padding:20px 22px 24px;display:flex;flex-direction:column;gap:8px">
             <div class="eb">{b.nganh}</div>
             <h3>{b.ten}</h3>

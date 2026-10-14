@@ -9,6 +9,7 @@
   "danh_cho": "Người dùng quan tâm đến thành phần và nguồn gốc tự nhiên.",
   "anh_the_doc": "../../assets/anh/nhan-hang/givebe-the-doc.jpg",
   "anh_bia": "../../assets/anh/nhan-hang/givebe-bia.jpg",
+  "anh_the": "../../assets/anh/nhan-hang/the/givebe.jpg",
   "tiktok": "",
   "san_pham": [
     {
@@ -19,9 +20,18 @@
       "cong_dung": "Cấp ẩm bằng AHA",
       "mo_ta": "Dưỡng chất AHA giúp phục hồi lớp giữ ẩm tự nhiên, cho da mềm mịn ngay sau khi tắm.",
       "mui_huong": [
-        { "ten": "Red Poppy", "mo_ta": "Hoa và quả mọng, ngọt ngào" },
-        { "ten": "Sansuzu", "mo_ta": "Nốt hương hoa, thanh lịch" },
-        { "ten": "Sweet Comos", "mo_ta": "Độc đáo, khác biệt" }
+        {
+          "ten": "Red Poppy",
+          "mo_ta": "Hoa và quả mọng, ngọt ngào"
+        },
+        {
+          "ten": "Sansuzu",
+          "mo_ta": "Nốt hương hoa, thanh lịch"
+        },
+        {
+          "ten": "Sweet Comos",
+          "mo_ta": "Độc đáo, khác biệt"
+        }
       ]
     },
     {
@@ -34,6 +44,10 @@
       "mui_huong": []
     }
   ],
-  "tinh_huong": { "tieu_de": "", "mo_ta": "", "danh_sach": [] },
+  "tinh_huong": {
+    "tieu_de": "",
+    "mo_ta": "",
+    "danh_sach": []
+  },
   "hoi_dap": []
 }

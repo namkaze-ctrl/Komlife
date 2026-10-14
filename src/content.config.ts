@@ -28,6 +28,8 @@ const nhanHang = defineCollection({
     danh_cho: z.string().optional().default(''),
     anh_the_doc: z.string().optional().default(''),
     anh_bia: z.string().optional().default(''),
+    // Ảnh thẻ ở trang danh sách Nhãn hàng: sản phẩm nằm GIỮA khung 16:10 (1340×838). Trống = dùng ảnh bìa
+    anh_the: z.string().optional().default(''),
     tiktok: z.string().optional().default(''),
     // Giao diện mới (khi nhãn có "Sản phẩm chi tiết"): màu riêng của nhãn, linh vật, điểm nổi bật, gian hàng riêng
     mau: z.object({
