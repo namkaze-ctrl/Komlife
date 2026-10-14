@@ -1,0 +1,32 @@
+---
+// Khối "Tiêu chuẩn nguyên liệu": ảnh + 4 đối tác (Mane, Givaudan, BASF, Kao). Nội dung: Trang chủ → Tiêu chuẩn nguyên liệu (+ 4 đối tác ở Khối dùng chung).
+import Anh from './Anh.astro';
+import tc from '../content/trang/trang-chu.json';
+import { khoiChung } from '../lib/noi-dung';
+import { tieuDe, dong } from '../lib/chu';
+const nl = tc.nguyen_lieu;
+---
+<section class="sec">
+  <div class="wrap ngl">
+    <div class="stack g16 ngl__l">
+      <div class="eb">{nl.nhan}</div>
+      <h2 set:html={tieuDe(nl.tieu_de)} />
+      <p class="lead" set:html={dong(nl.mo_ta)} />
+      {nl.anh && (
+        <figure class="ngl__img rv" style="margin:0">
+          <Anh src={nl.anh} alt={nl.chu_thich_anh || 'Komlife và đối tác nguyên liệu'} sizes="(max-width:940px) 92vw, (max-width:1240px) 40vw, 482px" widths={[500, 1000]} />
+          {nl.chu_thich_anh && <figcaption>{nl.chu_thich_anh}</figcaption>}
+        </figure>
+      )}
+    </div>
+    <div class="ngl__r rv">
+      {khoiChung.doi_tac_nguyen_lieu.map((n) => (
+        <div class="ncc">
+          <div class="ncc__n">{n.ten}</div>
+          <div class="ncc__m"><span class="ncc__q">{n.quoc_gia}</span><span class="ncc__v">{n.nhom}</span></div>
+          <p class="ncc__d">{n.mo_ta}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

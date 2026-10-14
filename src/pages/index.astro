@@ -7,6 +7,7 @@ import DaiSoLieu from '../components/DaiSoLieu.astro';
 import ChungNhan from '../components/ChungNhan.astro';
 import NhaMay from '../components/NhaMay.astro';
 import NguoiDungDau from '../components/NguoiDungDau.astro';
+import NguyenLieu from '../components/NguyenLieu.astro';
 import DongHanh from '../components/DongHanh.astro';
 import tc from '../content/trang/trang-chu.json';
 import { layNhanHang, layTinTrangChu, duongDanTin } from '../lib/noi-dung';
@@ -17,7 +18,7 @@ const tin = await layTinTrangChu(3);
 const tenMuc = { 'tin-doanh-nghiep': 'Tin doanh nghiệp', 'tin-thi-truong': 'Tin thị trường' } as Record<string, string>;
 const { dau_trang: h, he_sinh_thai: hst, ban_tin: bt } = tc;
 // Thứ tự theo góp ý anh Cường 14/10: nhà máy → người đứng đầu & sứ mệnh → nhãn hàng → kiểm chứng
-// (chứng nhận + nguyên liệu) → điểm bán & phân phối (3 ô) → tin. Các khối ảnh nhà máy đầy đủ, 2.000 sinh kế,
+// (chứng nhận) → điểm bán & phân phối (3 ô) → tin. Các khối ảnh nhà máy đầy đủ, 2.000 sinh kế,
 // mốc lịch sử chuyển sang Về Komlife; quy trình 4 khâu + đối tác nguyên liệu chi tiết ở Chất lượng.
 ---
 <Base tieuDe={tc.seo_tieu_de} moTa={tc.seo_mo_ta} anhChiaSe={h.anh} coHero>
@@ -39,9 +40,11 @@ const { dau_trang: h, he_sinh_thai: hst, ban_tin: bt } = tc;
     </div>
   </section>
 
+  <NhaMay gon />
+
   <DaiSoLieu />
 
-  <NhaMay gon />
+  <NguyenLieu />
 
   <NguoiDungDau suMenh />
 
@@ -63,7 +66,7 @@ const { dau_trang: h, he_sinh_thai: hst, ban_tin: bt } = tc;
     </div>
   </section>
 
-  <ChungNhan nguyenLieu />
+  <ChungNhan />
 
   <BanLe nhan={tc.ban_le.nhan} tieuDe={tc.ban_le.tieu_de} phanPhoi />
 

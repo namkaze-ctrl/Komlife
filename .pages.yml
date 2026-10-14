@@ -126,7 +126,7 @@ content:
           - { name: mo_ta, label: Đoạn mô tả, type: text }
           - { name: anh, label: Ảnh nền, type: image }
       - name: nguyen_lieu
-        label: "Khối 'Tiêu chuẩn nguyên liệu' — ĐANG ẨN (trang chủ chỉ hiện tên 4 đối tác cạnh giấy chứng nhận)"
+        label: "Khối 'Tiêu chuẩn nguyên liệu' — trang chủ, ngay dưới ảnh nhà máy + dải số liệu (4 đối tác lấy từ Khối dùng chung)"
         type: object
         fields:
           - { name: nhan, label: Nhãn nhỏ, type: string }
