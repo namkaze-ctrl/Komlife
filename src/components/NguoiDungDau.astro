@@ -10,7 +10,7 @@ const { suMenh = false } = Astro.props;
 const ng = tc.nguoi_dung_dau;
 ---
 {ng.hien_thi && (
-  <section class="sec sec--deep sec--nguoi">
+  <section class={`sec sec--deep sec--nguoi${suMenh ? ' nguoi--tc' : ''}`}>
     <div class="wrap nguoi">
       <figure class="nguoi__img rv" style="margin:0">
         <Anh src={ng.anh} alt={`${ng.ten} — ${ng.chuc_vu}`} sizes="(max-width:820px) 92vw, (max-width:1240px) 27vw, 334px" widths={[360, 648, 800]} />
@@ -18,7 +18,7 @@ const ng = tc.nguoi_dung_dau;
       <div class="stack g16 rv">
         <div class="eb">{ng.nhan}</div>
         <p class="nguoi__q">{ng.trich_dan}</p>
-        <div>
+        <div class="nguoi__ky">
           <div class="nguoi__n">{ng.ten}</div>
           <div class="nguoi__r">{ng.chuc_vu}</div>
         </div>
@@ -26,8 +26,10 @@ const ng = tc.nguoi_dung_dau;
           <div class="nguoi__sm">
             <div class="nguoi__smk">Sứ mệnh</div>
             <p set:html={dong(vk.su_menh)} />
-            <a class="nguoi__lnk" href="/ve-komlife">Về Komlife: tầm nhìn, giá trị cốt lõi, hành trình <i aria-hidden="true">→</i></a>
           </div>
+        )}
+        {suMenh && (
+          <a class="nguoi__nut" href="/ve-komlife">Tìm hiểu về Komlife <i aria-hidden="true">→</i></a>
         )}
       </div>
     </div>
