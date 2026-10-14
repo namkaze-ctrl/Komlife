@@ -708,8 +708,8 @@ body.co-bar .stpanel{bottom:134px}
    Ảnh đứng yên, nội dung trượt đè lên → có chiều sâu.
    Dùng div position:fixed chứ KHÔNG dùng background-attachment:fixed
    (cái đó vỡ trên iPhone). Thay ảnh: đổi file assets/gpt/nen-trang.jpg */
-.page-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background:var(--cream) url("../assets/anh/chung/nen-tim.jpg") center / cover no-repeat}
+/* 14/10: anh Nam đổi nền toàn web sang TRẮNG trơn (bỏ ảnh màu nước tím nen-tim.jpg; file ảnh vẫn giữ) */
+.page-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;background:var(--panel)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .page-bg{opacity:.22}}
 :root[data-theme="dark"] .page-bg{opacity:.22}
 
