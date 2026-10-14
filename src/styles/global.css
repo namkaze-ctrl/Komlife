@@ -1218,6 +1218,19 @@ a.tin{text-decoration:none;color:inherit}
 .ab-chai:hover{transform:translateY(-8px) rotate(0)}
 .ab-tho{position:absolute;left:-6%;bottom:-4%;width:clamp(80px,9.5vw,130px);height:auto;z-index:3;filter:drop-shadow(0 12px 20px rgba(0,0,0,.18))}
 @media(max-width:900px){.ab-tho{left:-2%}}
+/* Màn đầu trang nhãn (Abby, SPY...) trên máy tính: gọn như màn đầu trang chủ (anh Nam 14/10) — cao 647 -> ~520px ở màn 1512 */
+@media(min-width:701px){
+  .nhm-hero{padding-block:clamp(92px,10vh,108px) clamp(32px,3.4vw,48px)}
+  .nhm .nhm-hero h1{font-size:clamp(2.6rem,4.6vw,4rem);line-height:1}
+  .nhm-hero .nhm-cau{font-size:clamp(1.12rem,1.7vw,1.4rem)}
+  .nhm-hero .lead{font-size:clamp(.98rem,1.25vw,1.06rem);line-height:1.65;max-width:46ch}
+  .nhm-hero .ab-hero__chu{gap:14px}
+  .nhm-hero .ab-hero__sp{height:clamp(280px,29vw,370px)}
+  .nhm-hero .ab-chai{width:clamp(104px,11.5vw,150px)}
+  .nhm-hero .ab-chai--1{width:clamp(120px,13.2vw,172px)}
+  .nhm-hero .ab-tho{width:clamp(70px,7.4vw,104px)}
+  .nhm-hero .ab-hero__blob{width:min(48vw,600px)}
+}
 .ab-sp{background:#fff!important}
 .ab-sp__dau{max-width:44rem}
 .ab-tin{list-style:none;margin:8px 0 0;padding:18px 22px;display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:center;
