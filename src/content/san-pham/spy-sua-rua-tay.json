@@ -15,34 +15,35 @@
   "anh_co_nen": false,
   "khong_phong_to": false,
   "mo_ta": "Sữa rửa tay hương trái cây, không chứa cồn, có thành phần dưỡng ẩm cho da tay.",
-  "nhan_phien_ban": "Chọn mùi hương",
-  "phien_ban": [
+  "nhan_phien_ban": "Quy cách",
+  "mui_huong": [
     {
       "ten": "Đào Nhật",
-      "ma_gia": "",
-      "ghi_chu": "Chai 500ml, hương đào Nhật thanh lịch",
-      "sku": "SRT-C-01-DN",
-      "anh": ""
+      "mo_ta": "Hương đào Nhật thanh lịch",
+      "mau": "#F28B66"
     },
     {
       "ten": "Táo xanh",
-      "ma_gia": "",
-      "ghi_chu": "Chai 500ml, hương táo xanh sảng khoái",
-      "sku": "SRT-C-01-TX",
-      "anh": ""
+      "mo_ta": "Hương táo xanh sảng khoái",
+      "mau": "#7CB342"
     },
     {
       "ten": "Dâu tây",
-      "ma_gia": "",
-      "ghi_chu": "Chai 500ml, hương dâu tây ngọt ngào",
-      "sku": "SRT-C-01-DT",
-      "anh": ""
+      "mo_ta": "Hương dâu tây ngọt ngào",
+      "mau": "#E0457B"
     },
     {
       "ten": "Sữa gạo",
+      "mo_ta": "Hương sữa gạo nhẹ dịu",
+      "mau": "#E8C55A"
+    }
+  ],
+  "phien_ban": [
+    {
+      "ten": "Chai 500ml",
       "ma_gia": "",
-      "ghi_chu": "Chai 500ml, hương sữa gạo nhẹ dịu",
-      "sku": "SRT-C-01-SG",
+      "ghi_chu": "Chai có vòi bấm, đặt cạnh bồn rửa",
+      "sku": "SRT-C-01-DN · SRT-C-01-TX · SRT-C-01-DT · SRT-C-01-SG",
       "anh": ""
     }
   ],

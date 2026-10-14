@@ -16,6 +16,18 @@
   "khong_phong_to": false,
   "mo_ta": "Nước giặt xả đậm đặc, giặt và xả trong một bước nên không cần dùng thêm nước xả. Dùng được cho cả giặt tay và giặt máy.",
   "nhan_phien_ban": "Chọn quy cách",
+  "mui_huong": [
+    {
+      "ten": "Golden Blossom",
+      "mo_ta": "Hương hiện đại, tinh tế, bao bì vàng",
+      "mau": "#E0A526"
+    },
+    {
+      "ten": "Blossom",
+      "mo_ta": "Hương nồng nàn, quyến rũ, bao bì tím",
+      "mau": "#8E44AD"
+    }
+  ],
   "phien_ban": [
     {
       "ten": "Can 3,6kg",

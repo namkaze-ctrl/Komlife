@@ -16,11 +16,23 @@
   "khong_phong_to": false,
   "mo_ta": "Dòng nước giặt xả sạch sâu của SPY: giặt, xả và làm mềm vải trong một bước.",
   "nhan_phien_ban": "Chọn quy cách",
+  "mui_huong": [
+    {
+      "ten": "Golden Blossom",
+      "mo_ta": "Hương hiện đại, thanh lịch, hoa vàng",
+      "mau": "#E0A526"
+    },
+    {
+      "ten": "Blossom",
+      "mo_ta": "Hương nồng nàn, sang trọng, hoa tím",
+      "mau": "#8E44AD"
+    }
+  ],
   "phien_ban": [
     {
       "ten": "Can 3,6kg",
       "ma_gia": "",
-      "ghi_chu": "Có hai mùi Golden Blossom và Blossom",
+      "ghi_chu": "Cỡ phổ biến, vừa cho gia đình nhỏ",
       "sku": "SDCP-C-01-V (hoa vàng) · SDCP-C-01-T (hoa tím)",
       "anh": ""
     },

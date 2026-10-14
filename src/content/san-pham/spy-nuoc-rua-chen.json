@@ -16,6 +16,23 @@
   "khong_phong_to": false,
   "mo_ta": "Nước rửa chén làm sạch dầu mỡ, tinh bột khô và mùi tanh trên chén đĩa. Dùng được cho sành sứ, thủy tinh, inox, nhôm, nhựa.",
   "nhan_phien_ban": "Chọn dung tích",
+  "mui_huong": [
+    {
+      "ten": "Quế",
+      "mo_ta": "Tinh dầu quế, khử mùi tanh",
+      "mau": "#A0522D"
+    },
+    {
+      "ten": "Gừng & Sả",
+      "mo_ta": "Hương gừng sả, sạch dầu mỡ",
+      "mau": "#C2C83A"
+    },
+    {
+      "ten": "Dịu nhẹ",
+      "mo_ta": "Hương dịu nhẹ, dùng hằng ngày",
+      "mau": "#5FB6E5"
+    }
+  ],
   "phien_ban": [
     {
       "ten": "380ml",

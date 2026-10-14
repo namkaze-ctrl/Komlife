@@ -84,11 +84,24 @@ const mau = mauSanPham(p.mau, p.mau_nhat);
                     </button>
                   ))}
                 </div>
+                <span class="spct-ghichu" data-ghichu-hien>{phienBan[0].ghi_chu}</span>
+                {p.mui_huong.length > 0 && (
+                  <>
+                    <span class="spct-nhan spct-nhan--2">Chọn mùi hương</span>
+                    <div class="spct-mui" role="radiogroup" aria-label="Mùi hương">
+                      {p.mui_huong.map((m, i) => (
+                        <button type="button" class="spct-pb__i spct-mui__i" role="radio" aria-checked={i === 0 ? 'true' : 'false'} data-mota={m.mo_ta}>
+                          {m.mau && <i style={`background:${m.mau}`} aria-hidden="true"></i>}{m.ten}
+                        </button>
+                      ))}
+                    </div>
+                    <span class="spct-ghichu" data-mui-hien>{p.mui_huong[0].mo_ta}</span>
+                  </>
+                )}
                 <div class="spct-gia">
                   <span class="spct-gia__so" data-gia-hien>{phienBan[0].gia?.gia_ban ? dongTien(phienBan[0].gia.gia_ban) : ''}</span>
                   <s data-goc-hien>{phienBan[0].gia?.gia_goc ? dongTien(phienBan[0].gia.gia_goc) : ''}</s>
                   <span class="spct-gia__trong" data-cho-gia hidden={!!phienBan[0].gia?.gia_ban}>Xem giá tại gian hàng chính hãng</span>
-                  <span class="spct-gia__d" data-ghichu-hien>{phienBan[0].ghi_chu}</span>
                 </div>
               </div>
             )}
@@ -193,12 +206,22 @@ const mau = mauSanPham(p.mau, p.mau_nhat);
       khung.addEventListener('mouseleave', an);
     })();
 
+    // Chọn mùi hương (hàng lựa chọn thứ hai) -> đổi dòng mô tả mùi
+    document.querySelectorAll<HTMLElement>('.spct-mui').forEach((nhom) => {
+      nhom.addEventListener('click', (e) => {
+        const b = (e.target as HTMLElement).closest<HTMLButtonElement>('.spct-mui__i');
+        if (!b) return;
+        nhom.querySelectorAll('.spct-mui__i').forEach((x) => x.setAttribute('aria-checked', String(x === b)));
+        const d = nhom.parentElement!.querySelector('[data-mui-hien]'); if (d) d.textContent = b.dataset.mota || '';
+      });
+    });
+
     // Chọn dung tích -> đổi giá + ghi chú
     document.querySelectorAll<HTMLElement>('.spct-pb').forEach((nhom) => {
       const goc = nhom.closest('.stack')!;
       nhom.addEventListener('click', (e) => {
         const b = (e.target as HTMLElement).closest<HTMLButtonElement>('.spct-pb__i');
-        if (!b) return;
+        if (!b || b.classList.contains('spct-mui__i')) return;
         nhom.querySelectorAll('.spct-pb__i').forEach((x) => x.setAttribute('aria-checked', String(x === b)));
         const gia = b.dataset.gia || '';
         goc.querySelector('[data-gia-hien]')!.textContent = gia;

@@ -182,6 +182,8 @@ const sanPhamCt = defineCollection({
     khong_phong_to: z.boolean().optional().default(false),
     mo_ta: z.string().optional().default(''),
     nhan_phien_ban: z.string().optional().default('Chọn dung tích'),
+    // Hàng lựa chọn THỨ HAI: mùi hương (dùng khi sản phẩm vừa có nhiều quy cách vừa có nhiều mùi). Trống = không hiện
+    mui_huong: z.array(z.object({ ten: z.string(), mo_ta: z.string().optional().default(''), mau: z.string().optional().default('') })).optional().default([]),
     phien_ban: z.array(z.object({ ten: z.string(), ma_gia: z.string().optional().default(''), ghi_chu: z.string().optional().default(''), sku: z.string().optional().default(''), anh: z.string().optional().default('') })).optional().default([]),
     thong_so: z.array(z.object({ ten: z.string(), gia_tri: z.string().optional().default('') })).optional().default([]),
     cong_dung: z.array(muc).optional().default([]),

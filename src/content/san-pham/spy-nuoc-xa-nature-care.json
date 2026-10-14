@@ -15,27 +15,30 @@
   "anh_co_nen": false,
   "khong_phong_to": false,
   "mo_ta": "Nước xả vải hương hoa cỏ, làm mềm sợi vải, giữ màu quần áo và giúp dễ là ủi hơn.",
-  "nhan_phien_ban": "Chọn mùi hương",
-  "phien_ban": [
+  "nhan_phien_ban": "Chọn quy cách",
+  "mui_huong": [
     {
       "ten": "Kyoto Spring",
-      "ma_gia": "",
-      "ghi_chu": "Túi 2L, hương hoa anh đào và tre xanh",
-      "sku": "SXV-T-02-H",
-      "anh": ""
+      "mo_ta": "Hoa anh đào và tre xanh",
+      "mau": "#E86A9A"
     },
     {
       "ten": "Jeju Garden",
-      "ma_gia": "",
-      "ghi_chu": "Túi 2L, hương cẩm tú cầu và hoa cải",
-      "sku": "SXV-T-02-V",
-      "anh": ""
+      "mo_ta": "Cẩm tú cầu và hoa cải dầu",
+      "mau": "#F2B31F"
     },
     {
       "ten": "Bali Dream",
+      "mo_ta": "Lan nhiệt đới và hoa dâm bụt",
+      "mau": "#7B5CC4"
+    }
+  ],
+  "phien_ban": [
+    {
+      "ten": "Túi 2L",
       "ma_gia": "",
-      "ghi_chu": "Túi 2L, hương lan nhiệt đới và dâm bụt",
-      "sku": "SXV-T-02-T",
+      "ghi_chu": "Túi hai lít, dễ cất, dễ rót",
+      "sku": "SXV-T-02-H · SXV-T-02-V · SXV-T-02-T",
       "anh": ""
     }
   ],

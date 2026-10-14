@@ -16,6 +16,33 @@
   "khong_phong_to": false,
   "mo_ta": "Nước lau sàn công thức ít bọt, làm sạch nhanh, không cần lau lại bằng nước. Dùng cho sàn gạch, sàn gỗ, đá hoa cương.",
   "nhan_phien_ban": "Chọn quy cách",
+  "mui_huong": [
+    {
+      "ten": "Blossom Relax",
+      "mo_ta": "Hương thư giãn, dễ chịu, chai tím",
+      "mau": "#8E44AD"
+    },
+    {
+      "ten": "Pink Relax",
+      "mo_ta": "Hương nhẹ nhàng, thoang thoảng, chai hồng",
+      "mau": "#E85AA5"
+    },
+    {
+      "ten": "Green Relax",
+      "mo_ta": "Hương tươi mát, thanh thoát, chai xanh",
+      "mau": "#8BC34A"
+    },
+    {
+      "ten": "Quế",
+      "mo_ta": "Tinh dầu quế, hương ấm áp",
+      "mau": "#A0522D"
+    },
+    {
+      "ten": "Gừng & Sả",
+      "mo_ta": "Hương gừng sả tươi mát",
+      "mau": "#C2C83A"
+    }
+  ],
   "phien_ban": [
     {
       "ten": "Chai 950ml",

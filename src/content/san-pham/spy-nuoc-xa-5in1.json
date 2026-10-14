@@ -15,27 +15,30 @@
   "anh_co_nen": false,
   "khong_phong_to": false,
   "mo_ta": "Nước xả vải dùng công nghệ hạt lưu hương, làm mềm vải và hỗ trợ chống mốc cho quần áo.",
-  "nhan_phien_ban": "Chọn mùi hương",
-  "phien_ban": [
+  "nhan_phien_ban": "Chọn quy cách",
+  "mui_huong": [
     {
       "ten": "Quyến Rũ",
-      "ma_gia": "",
-      "ghi_chu": "Can 3L, hương hoa sang trọng, ngọt ngào",
-      "sku": "SXV-C-01-QR",
-      "anh": ""
+      "mo_ta": "Hương hoa sang trọng, ngọt ngào",
+      "mau": ""
     },
     {
       "ten": "Đắm Say",
-      "ma_gia": "",
-      "ghi_chu": "Can 3L, hương thanh khiết, tươi mát",
-      "sku": "SXV-C-01-DS",
-      "anh": ""
+      "mo_ta": "Hương thanh khiết, tươi mát",
+      "mau": ""
     },
     {
       "ten": "Ruby Isabelle",
+      "mo_ta": "Hương dịu nhẹ, thư giãn",
+      "mau": ""
+    }
+  ],
+  "phien_ban": [
+    {
+      "ten": "Can 3L",
       "ma_gia": "",
-      "ghi_chu": "Can 3L, hương dịu nhẹ, thư giãn",
-      "sku": "SXV-C-01-RI",
+      "ghi_chu": "Can ba lít, dùng lâu cho cả nhà",
+      "sku": "SXV-C-01-QR · SXV-C-01-DS · SXV-C-01-RI",
       "anh": ""
     }
   ],

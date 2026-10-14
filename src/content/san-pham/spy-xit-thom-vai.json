@@ -15,26 +15,36 @@
   "anh_co_nen": false,
   "khong_phong_to": false,
   "mo_ta": "Chai xịt bỏ túi, xịt trực tiếp lên quần áo, chăn ga, rèm, ghế sofa để xử lý mùi phát sinh trong ngày mà không phải giặt lại.",
-  "nhan_phien_ban": "Chọn mùi hương",
-  "phien_ban": [
+  "nhan_phien_ban": "Chọn quy cách",
+  "mui_huong": [
     {
       "ten": "Dream Violet",
-      "ma_gia": "",
-      "ghi_chu": "Chai 100ml bỏ túi, hương hoa violet",
-      "sku": "",
-      "anh": ""
+      "mo_ta": "Hương hoa violet",
+      "mau": "#7B5CC4"
     },
     {
       "ten": "Pink Whisper",
+      "mo_ta": "Hương hoa anh đào",
+      "mau": "#E86A9A"
+    },
+    {
+      "ten": "Pure White",
+      "mo_ta": "Hương hoa trắng",
+      "mau": "#D5D5E4"
+    }
+  ],
+  "phien_ban": [
+    {
+      "ten": "Chai 100ml",
       "ma_gia": "",
-      "ghi_chu": "Chai 100ml bỏ túi, hương hoa anh đào",
+      "ghi_chu": "Chai xịt bỏ túi, mang theo dễ dàng",
       "sku": "",
       "anh": ""
     },
     {
-      "ten": "Pure White",
+      "ten": "Combo 3 chai",
       "ma_gia": "",
-      "ghi_chu": "Chai 100ml bỏ túi, hương hoa trắng",
+      "ghi_chu": "Đủ ba mùi, mỗi chai 100ml",
       "sku": "",
       "anh": ""
     }

@@ -870,6 +870,14 @@ content:
           - { name: ghi_chu, label: "Mô tả ngắn 7–8 chữ (hiện dưới hàng lựa chọn; KHÔNG ghi mã SKU ở đây)", type: string }
           - { name: sku, label: "Mã SKU (ghi nội bộ, không hiện trên web)", type: string }
           - { name: anh, label: "Ảnh riêng của dung tích này (PNG/WebP nền trong suốt; trống = dùng ảnh chính)", type: image }
+      - name: mui_huong
+        label: "Mùi hương — hàng lựa chọn thứ hai (dùng khi sản phẩm có cả nhiều quy cách lẫn nhiều mùi)"
+        type: object
+        list: true
+        fields:
+          - { name: ten, label: Tên mùi, type: string }
+          - { name: mo_ta, label: "Mô tả ngắn 7–8 chữ", type: string }
+          - { name: mau, label: "Màu chấm tròn (mã màu, vd #8E44AD; trống = không chấm)", type: string }
       - name: thong_so
         label: Thông tin sản phẩm
         type: object

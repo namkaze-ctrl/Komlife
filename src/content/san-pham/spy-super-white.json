@@ -16,11 +16,23 @@
   "khong_phong_to": false,
   "mo_ta": "Nước giặt xả đậm đặc có hoạt chất Tinopal cho quần áo trắng sáng. Giặt và xả trong một bước.",
   "nhan_phien_ban": "Chọn quy cách",
+  "mui_huong": [
+    {
+      "ten": "Passion",
+      "mo_ta": "Hương Passion, nhãn túi màu đỏ",
+      "mau": "#D23B4A"
+    },
+    {
+      "ten": "Luxor",
+      "mo_ta": "Hương sang trọng, quyến rũ, nhãn tím",
+      "mau": "#7B5CC4"
+    }
+  ],
   "phien_ban": [
     {
       "ten": "Túi 3,6kg",
       "ma_gia": "",
-      "ghi_chu": "Có hai mùi Passion và Luxor để chọn",
+      "ghi_chu": "Túi lớn, dùng lâu cho cả nhà",
       "sku": "SSW-T-01-P (Passion) · SSW-T-01-L (Luxor)",
       "anh": ""
     },
