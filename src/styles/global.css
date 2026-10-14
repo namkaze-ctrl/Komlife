@@ -607,7 +607,8 @@ body.co-bar .stpanel{bottom:134px}
 .mocs__img img{width:100%;aspect-ratio:45/28;object-fit:cover;display:block}
 .mocs__img figcaption{padding:11px 15px;font-size:.8rem;color:var(--faint);line-height:1.55;background:var(--panel)}
 .nguoi{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1.38fr);
-  gap:clamp(26px,5vw,58px);align-items:center}
+  gap:clamp(22px,3.2vw,40px);align-items:center}
+.sec.sec--nguoi{padding-block:clamp(28px,2.8vw,40px)}   /* 14/10: anh Nam thấy khối này thừa khoảng trống -> gọn hơn .sec chung */
 @media(max-width:820px){.nguoi{grid-template-columns:1fr}}
 .nguoi__img{border-radius:16px;overflow:hidden;border:1px solid var(--deep-line)}
 .nguoi__img img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
