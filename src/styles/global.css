@@ -821,30 +821,29 @@ body.co-bar .stpanel{bottom:134px}
 
 /* ── KHỐI 4: hợp tác cùng Komlife ─────────────────────── */
 .pp-cta{position:relative;overflow:hidden;background:var(--pp-dark)}
-.pp-cta>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center}
+.pp-cta>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right top}   /* top: không chặt đầu người trong ảnh */
 .pp-cta__veil{position:absolute;inset:0;
-  background:linear-gradient(90deg,#131510 0%,rgba(19,21,16,.96) 40%,rgba(19,21,16,.55) 72%,rgba(19,21,16,.2) 100%)}
-.pp-cta__in{position:relative;display:grid;
-  grid-template-columns:minmax(0,1fr) calc(470*var(--u));
-  align-items:center;column-gap:calc(40*var(--u));
+  background:linear-gradient(90deg,#131510 0%,rgba(19,21,16,.96) 36%,rgba(19,21,16,.62) 49%,rgba(19,21,16,0) 62%)}   /* nửa phải (hai người) không phủ */
+.pp-cta__in{position:relative;
   padding:calc(46*var(--u)) calc(63*var(--u)) calc(50*var(--u)) calc(95*var(--u))}
-.pp-cta__r{display:flex;flex-direction:column;align-items:center;gap:calc(22*var(--u))}
-.pp-cta__l{display:flex;flex-direction:column;gap:calc(12*var(--u))}
+.pp-cta__r{display:flex;flex-wrap:wrap;align-items:center;gap:calc(20*var(--u)) calc(30*var(--u));margin-top:calc(16*var(--u))}
+.pp-cta__l{display:flex;flex-direction:column;gap:calc(12*var(--u));max-width:calc(690*var(--u))}
 .pp-cta .pp-eb{color:var(--pp-gold-lt);font-size:calc(12*var(--u))}
 .pp-cta h2{margin:0;font-family:var(--fd);font-weight:700;color:#fff;font-variation-settings:'wdth' 88;
   font-size:calc(30*var(--u));line-height:calc(38*var(--u))}
 .pp-cta__d{font-family:var(--fb);color:rgba(238,238,236,.82);font-size:calc(14*var(--u));
   line-height:calc(21*var(--u));max-width:calc(430*var(--u))}
-.pp-feat{display:grid;grid-template-columns:repeat(4,1fr)}
+.pp-feat{display:grid;grid-template-columns:repeat(4,auto)}
 .pp-feat div{display:flex;flex-direction:column;align-items:center;gap:calc(9*var(--u));
-  text-align:center;padding:0 calc(10*var(--u));position:relative}
+  text-align:center;padding:0 calc(14*var(--u));position:relative}
+.pp-feat div:first-child{padding-left:0}
 .pp-feat div+div::before{content:'';position:absolute;left:0;top:calc(4*var(--u));
-  bottom:calc(4*var(--u));width:1px;background:rgba(255,255,255,.18)}
-.pp-feat svg{width:calc(26*var(--u));height:calc(26*var(--u));stroke:var(--pp-gold-lt);
-  stroke-width:1.15;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.pp-feat span{font-family:var(--fb);color:rgba(240,238,232,.9);font-size:calc(12*var(--u));
+  bottom:calc(4*var(--u));width:1px;background:rgba(255,255,255,.26)}
+.pp-feat svg{width:calc(30*var(--u));height:calc(30*var(--u));stroke:var(--pp-gold-lt);
+  stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.pp-feat span{font-family:var(--fb);color:#fff;font-weight:500;font-size:calc(12*var(--u));
   line-height:calc(15*var(--u))}
-.pp-cta__btn{align-self:center;display:inline-flex;align-items:center;gap:calc(12*var(--u));
+.pp-cta__btn{align-self:center;flex:none;display:inline-flex;align-items:center;gap:calc(12*var(--u));
   background:var(--pp-gold);color:#fff;text-decoration:none;border-radius:999px;
   padding:calc(13*var(--u)) calc(26*var(--u));font-family:var(--fb);font-weight:600;
   font-size:calc(15*var(--u));transition:background .25s var(--e),transform .25s var(--e)}
@@ -869,8 +868,9 @@ body.co-bar .stpanel{bottom:134px}
   .pp-stat+.pp-stat{padding-left:20px}
   .pp-stat:nth-child(3)::before{display:none}
   .pp-quote{position:static;width:auto;height:auto;margin:14px clamp(20px,5vw,40px) 22px}
-  .pp-cta__in{grid-template-columns:1fr;row-gap:26px;padding:46px clamp(20px,5vw,40px)}
-  .pp-cta__r{align-items:flex-start}
+  .pp-cta__in{padding:46px clamp(20px,5vw,40px)}
+  .pp-cta__l{max-width:none}
+  .pp-cta__r{flex-direction:column;flex-wrap:nowrap;align-items:flex-start;gap:26px;margin-top:14px}
   .pp-qc__t{white-space:normal}
   .pp-cta__veil{background:linear-gradient(180deg,rgba(19,21,16,.94),rgba(19,21,16,.86))}
 }
@@ -1269,7 +1269,7 @@ a.tin{text-decoration:none;color:inherit}
   /* khối Đồng hành: 4 điểm mạnh nằm một hàng, trải hết bề ngang */
   .pp-cta__r{align-items:stretch}
   .pp-feat{grid-template-columns:repeat(4,minmax(0,1fr));gap:0;width:100%}
-  .pp-feat div{padding-inline:4px;gap:8px}
+  .pp-feat div,.pp-feat div:first-child{padding-inline:4px;gap:8px}
   .pp-feat div:nth-child(3)::before{display:block}
   .pp-feat svg{width:24px;height:24px}
   .pp-feat span{font-size:11.5px;line-height:1.3;text-align:center}

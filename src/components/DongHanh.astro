@@ -9,17 +9,18 @@ const d = khoiChung.dong_hanh;
 <section class="pp pp-cta">
   <Anh src={d.anh} alt="Komlife vinh danh đối tác đồng hành" sizes="100vw" />
   <div class="pp-cta__veil"></div>
+  {/* Chữ + 4 điểm mạnh + nút nằm hết bên trái (vùng nền tối); bên phải để trống cho ảnh hai người, không bị gì che */}
   <div class="pp-cta__in">
     <div class="pp-cta__l">
       <div class="pp-eb">{d.nhan}</div>
       <h2 set:html={dong(d.tieu_de)} />
       <p class="pp-cta__d" set:html={dong(d.mo_ta)} />
-    </div>
-    <div class="pp-cta__r">
-      <div class="pp-feat">
-        {d.diem_manh.map((f) => <div><Fragment set:html={bieuTuong(f.bieu_tuong)} /><span set:html={dong(f.chu)} /></div>)}
+      <div class="pp-cta__r">
+        <div class="pp-feat">
+          {d.diem_manh.map((f) => <div><Fragment set:html={bieuTuong(f.bieu_tuong)} /><span set:html={dong(f.chu)} /></div>)}
+        </div>
+        <a class="pp-cta__btn" href="/hop-tac-dai-ly">{d.nut}</a>
       </div>
-      <a class="pp-cta__btn" href="/hop-tac-dai-ly">{d.nut}</a>
     </div>
   </div>
 </section>
