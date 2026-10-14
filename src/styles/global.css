@@ -716,6 +716,7 @@ body.co-bar .stpanel{bottom:134px}
 /* các khối để hở cho ảnh nền lộ ra — khối ảnh và khối tối vẫn đục */
 .sec{background:transparent}
 .sec.sec--deep{background:var(--deep)}   /* khối tối phải ĐỤC, không để lộ nền */
+.sec.sec--banle{background:var(--panel)}   /* 14/10: dải logo hệ thống bán lẻ nền TRẮNG đục (anh Nam) */
 .sec--warm{background:color-mix(in srgb,var(--cream-2) 72%,transparent)}
 .phead{background:color-mix(in srgb,var(--cream-2) 70%,transparent)}
 .pp-eco{background:color-mix(in srgb,var(--pp-cream1) 74%,transparent)}
