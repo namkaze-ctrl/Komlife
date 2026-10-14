@@ -47,6 +47,28 @@
       "anh": ""
     }
   ],
+  "anh_lua_chon": [
+    {
+      "phien_ban": "",
+      "mui": "Đào Nhật",
+      "anh": "../../assets/anh/san-pham/spy/sua-rua-tay-dao.webp"
+    },
+    {
+      "phien_ban": "",
+      "mui": "Táo xanh",
+      "anh": "../../assets/anh/san-pham/spy/sua-rua-tay-tao-xanh.webp"
+    },
+    {
+      "phien_ban": "",
+      "mui": "Dâu tây",
+      "anh": "../../assets/anh/san-pham/spy/sua-rua-tay-dau.webp"
+    },
+    {
+      "phien_ban": "",
+      "mui": "Sữa gạo",
+      "anh": "../../assets/anh/san-pham/spy/sua-rua-tay-sua-gao.webp"
+    }
+  ],
   "thong_so": [
     {
       "ten": "Dòng sản phẩm",

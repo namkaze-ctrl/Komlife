@@ -32,7 +32,21 @@ const anhLon = async (duong: string) => {
   return { url: (await getImage({ src: g, width: Math.min(g.width, 2000), quality: 86 })).src, tile: g.width / g.height };
 };
 const lonChinh = await anhLon(p.anh[0] || '');
-const phienBan = await Promise.all(p.phien_ban.map(async (v) => ({ ...v, gia: layGia(v.ma_gia), lon: await anhLon(v.anh) })));
+// Ảnh theo lựa chọn (quy cách × mùi): đúng cả hai -> chỉ quy cách -> chỉ mùi -> ảnh chính
+const dsAnh: string[] = [];
+const khoaAnh = (d = '') => { if (!d) return 'chinh'; let i = dsAnh.indexOf(d); if (i < 0) i = dsAnh.push(d) - 1; return `a${i}`; };
+const timAnhChon = (pb: string, mui: string) => p.anh_lua_chon.find((x) => x.phien_ban === pb && x.mui === mui)?.anh;
+const phienBan = p.phien_ban.map((v) => {
+  const anhCua = (mui?: string) => (mui && timAnhChon(v.ten, mui)) || timAnhChon(v.ten, '') || v.anh || (mui && timAnhChon('', mui)) || '';
+  const chonMui = p.mui_huong.length > 0 && !v.khong_mui;
+  const muiCo = chonMui && v.mui_co.length ? p.mui_huong.map((m, i) => (v.mui_co.includes(m.ten) ? i : -1)).filter((i) => i >= 0) : null;
+  return { ...v, gia: layGia(v.ma_gia), chonMui, muiCo, anhSo: chonMui ? p.mui_huong.map((m) => khoaAnh(anhCua(m.ten))) : [khoaAnh(anhCua())] };
+});
+const anhChon = await Promise.all(dsAnh.map(async (d, i) => ({ khoa: `a${i}`, duong: d, lon: await anhLon(d) })));
+// Lựa chọn lúc mới mở trang: quy cách đầu tiên + mùi đầu tiên mà quy cách đó có
+const pb0 = phienBan[0];
+const mui0 = pb0?.muiCo ? pb0.muiCo[0] ?? 0 : 0;
+const anh0 = pb0 ? pb0.anhSo[pb0.chonMui ? mui0 : 0] : 'chinh';
 const chienDich = `${p.nhan}-${p.ma}`;
 // Link mua: link riêng của sản phẩm -> gian hàng riêng của nhãn -> gian hàng Komlife
 const shopee = themUtm(p.shopee || nhan?.shopee || caiDat.shopee, chienDich);
@@ -56,10 +70,10 @@ const mau = mauSanPham(p.mau, p.mau_nhat);
           <div class="spct-anhkhoi">
             <div class={`spct-anh ${p.anh_co_nen ? 'spct-anh--kin' : ''}`} data-zoom-khung data-khong-zoom={p.anh_co_nen || p.khong_phong_to ? '1' : undefined}>
               <span class="spct-anh__nen" aria-hidden="true"></span>
-              {/* Ảnh theo dung tích đang chọn; dung tích không có ảnh riêng thì hiện ảnh chính */}
-              <div data-anh="chinh" data-zoom={lonChinh.url} data-tile={lonChinh.tile} hidden={!!phienBan[0]?.anh}>{p.anh[0] && <Anh src={p.anh[0]} alt={`${p.ten} — ${p.ten_dong}`} class="spct-anh__img" sizes="(max-width:940px) 80vw, 520px" loading="eager" />}</div>
-              {phienBan.map((v, i) => v.anh && (
-                <div data-anh={String(i)} data-zoom={v.lon.url} data-tile={v.lon.tile} hidden={i !== 0}><Anh src={v.anh} alt={`${p.ten} — ${v.ten}`} class="spct-anh__img" sizes="(max-width:940px) 80vw, 520px" loading={i === 0 ? 'eager' : 'lazy'} fetchpriority={i === 0 ? 'high' : undefined} /></div>
+              {/* Ảnh theo quy cách + mùi đang chọn; lựa chọn không có ảnh riêng thì hiện ảnh chính */}
+              <div data-anh="chinh" data-zoom={lonChinh.url} data-tile={lonChinh.tile} hidden={anh0 !== 'chinh'}>{p.anh[0] && <Anh src={p.anh[0]} alt={`${p.ten} — ${p.ten_dong}`} class="spct-anh__img" sizes="(max-width:940px) 80vw, 520px" loading="eager" />}</div>
+              {anhChon.map((a) => (
+                <div data-anh={a.khoa} data-zoom={a.lon.url} data-tile={a.lon.tile} hidden={a.khoa !== anh0}><Anh src={a.duong} alt={`${p.ten} — ${p.ten_dong}`} class="spct-anh__img" sizes="(max-width:940px) 80vw, 520px" loading={a.khoa === anh0 ? 'eager' : 'lazy'} fetchpriority={a.khoa === anh0 ? 'high' : undefined} /></div>
               ))}
               <span class="spct-kinh" aria-hidden="true"></span>
             </div>
@@ -78,7 +92,8 @@ const mau = mauSanPham(p.mau, p.mau_nhat);
                 <span class="spct-nhan">{p.nhan_phien_ban}</span>
                 <div class="spct-pb" role="radiogroup" aria-label={p.nhan_phien_ban}>
                   {phienBan.map((v, i) => (
-                    <button type="button" class="spct-pb__i" role="radio" aria-checked={i === 0 ? 'true' : 'false'} data-anh-so={v.anh ? String(i) : 'chinh'}
+                    <button type="button" class="spct-pb__i" role="radio" aria-checked={i === 0 ? 'true' : 'false'} data-anh-so={JSON.stringify(v.anhSo)}
+                      data-mui-co={v.muiCo ? JSON.stringify(v.muiCo) : undefined} data-khong-mui={v.chonMui ? undefined : '1'}
                       data-gia={v.gia?.gia_ban ? dongTien(v.gia.gia_ban) : ''} data-goc={v.gia?.gia_goc ? dongTien(v.gia.gia_goc) : ''} data-ghichu={v.ghi_chu}>
                       {v.ten}
                     </button>
@@ -86,17 +101,17 @@ const mau = mauSanPham(p.mau, p.mau_nhat);
                 </div>
                 <span class="spct-ghichu" data-ghichu-hien>{phienBan[0].ghi_chu}</span>
                 {p.mui_huong.length > 0 && (
-                  <>
+                  <div class="stack g12" data-mui-khoi hidden={!pb0.chonMui}>
                     <span class="spct-nhan spct-nhan--2">Chọn mùi hương</span>
                     <div class="spct-mui" role="radiogroup" aria-label="Mùi hương">
                       {p.mui_huong.map((m, i) => (
-                        <button type="button" class="spct-pb__i spct-mui__i" role="radio" aria-checked={i === 0 ? 'true' : 'false'} data-mota={m.mo_ta}>
+                        <button type="button" class="spct-pb__i spct-mui__i" role="radio" aria-checked={i === mui0 ? 'true' : 'false'} data-mota={m.mo_ta} hidden={!!pb0.muiCo && !pb0.muiCo.includes(i)}>
                           {m.mau && <i style={`background:${m.mau}`} aria-hidden="true"></i>}{m.ten}
                         </button>
                       ))}
                     </div>
-                    <span class="spct-ghichu" data-mui-hien>{p.mui_huong[0].mo_ta}</span>
-                  </>
+                    <span class="spct-ghichu" data-mui-hien>{p.mui_huong[mui0].mo_ta}</span>
+                  </div>
                 )}
                 <div class="spct-gia">
                   <span class="spct-gia__so" data-gia-hien>{phienBan[0].gia?.gia_ban ? dongTien(phienBan[0].gia.gia_ban) : ''}</span>
@@ -206,30 +221,38 @@ const mau = mauSanPham(p.mau, p.mau_nhat);
       khung.addEventListener('mouseleave', an);
     })();
 
-    // Chọn mùi hương (hàng lựa chọn thứ hai) -> đổi dòng mô tả mùi
-    document.querySelectorAll<HTMLElement>('.spct-mui').forEach((nhom) => {
-      nhom.addEventListener('click', (e) => {
-        const b = (e.target as HTMLElement).closest<HTMLButtonElement>('.spct-mui__i');
-        if (!b) return;
-        nhom.querySelectorAll('.spct-mui__i').forEach((x) => x.setAttribute('aria-checked', String(x === b)));
-        const d = nhom.parentElement!.querySelector('[data-mui-hien]'); if (d) d.textContent = b.dataset.mota || '';
-      });
-    });
-
-    // Chọn dung tích -> đổi giá + ghi chú
+    // Chọn quy cách + mùi hương -> đổi giá, ghi chú, danh sách mùi mà quy cách đó có, và ảnh đúng với lựa chọn
     document.querySelectorAll<HTMLElement>('.spct-pb').forEach((nhom) => {
       const goc = nhom.closest('.stack')!;
-      nhom.addEventListener('click', (e) => {
-        const b = (e.target as HTMLElement).closest<HTMLButtonElement>('.spct-pb__i');
-        if (!b || b.classList.contains('spct-mui__i')) return;
-        nhom.querySelectorAll('.spct-pb__i').forEach((x) => x.setAttribute('aria-checked', String(x === b)));
+      const khoiMui = goc.querySelector<HTMLElement>('[data-mui-khoi]');
+      const dsMui = [...goc.querySelectorAll<HTMLButtonElement>('.spct-mui__i')];
+      const capNhat = () => {
+        const b = nhom.querySelector<HTMLButtonElement>('.spct-pb__i[aria-checked="true"]')!;
         const gia = b.dataset.gia || '';
         goc.querySelector('[data-gia-hien]')!.textContent = gia;
         goc.querySelector('[data-goc-hien]')!.textContent = b.dataset.goc || '';
         (goc.querySelector('[data-cho-gia]') as HTMLElement).hidden = !!gia;
         goc.querySelector('[data-ghichu-hien]')!.textContent = b.dataset.ghichu || '';
-        const so = b.dataset.anhSo || 'chinh';
-        document.querySelectorAll<HTMLElement>('.spct-anh [data-anh]').forEach((x) => { x.hidden = x.dataset.anh !== so; });
+        const khongMui = !!b.dataset.khongMui || !dsMui.length;
+        const co: number[] | null = b.dataset.muiCo ? JSON.parse(b.dataset.muiCo) : null;
+        if (khoiMui) khoiMui.hidden = khongMui;
+        let so = 0;
+        if (!khongMui) {
+          dsMui.forEach((m, i) => { m.hidden = !!co && !co.includes(i); });
+          so = dsMui.findIndex((m) => m.getAttribute('aria-checked') === 'true' && !m.hidden);
+          if (so < 0) so = dsMui.findIndex((m) => !m.hidden);          // mùi đang chọn không có ở quy cách này -> lấy mùi đầu tiên có
+          dsMui.forEach((m, i) => m.setAttribute('aria-checked', String(i === so)));
+          const d = goc.querySelector('[data-mui-hien]'); if (d) d.textContent = dsMui[so]?.dataset.mota || '';
+        }
+        const anh: string[] = JSON.parse(b.dataset.anhSo || '["chinh"]');
+        const khoa = anh[khongMui ? 0 : so] || 'chinh';
+        document.querySelectorAll<HTMLElement>('.spct-anh [data-anh]').forEach((x) => { x.hidden = x.dataset.anh !== khoa; });
+      };
+      goc.addEventListener('click', (e) => {
+        const b = (e.target as HTMLElement).closest<HTMLButtonElement>('.spct-pb__i');
+        if (!b) return;
+        b.parentElement!.querySelectorAll('.spct-pb__i').forEach((x) => x.setAttribute('aria-checked', String(x === b)));
+        capNhat();
       });
     });
   </script>

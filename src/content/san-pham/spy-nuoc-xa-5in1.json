@@ -20,17 +20,17 @@
     {
       "ten": "Quyến Rũ",
       "mo_ta": "Hương hoa sang trọng, ngọt ngào",
-      "mau": ""
+      "mau": "#C4232B"
     },
     {
       "ten": "Đắm Say",
       "mo_ta": "Hương thanh khiết, tươi mát",
-      "mau": ""
+      "mau": "#1E1E22"
     },
     {
       "ten": "Ruby Isabelle",
       "mo_ta": "Hương dịu nhẹ, thư giãn",
-      "mau": ""
+      "mau": "#B79AD6"
     }
   ],
   "phien_ban": [
@@ -40,6 +40,23 @@
       "ghi_chu": "Can ba lít, dùng lâu cho cả nhà",
       "sku": "SXV-C-01-QR · SXV-C-01-DS · SXV-C-01-RI",
       "anh": ""
+    }
+  ],
+  "anh_lua_chon": [
+    {
+      "phien_ban": "",
+      "mui": "Quyến Rũ",
+      "anh": "../../assets/anh/san-pham/spy/nuoc-xa-5in1-can-quyen-ru.webp"
+    },
+    {
+      "phien_ban": "",
+      "mui": "Đắm Say",
+      "anh": "../../assets/anh/san-pham/spy/nuoc-xa-5in1-can-dam-say.webp"
+    },
+    {
+      "phien_ban": "",
+      "mui": "Ruby Isabelle",
+      "anh": "../../assets/anh/san-pham/spy/nuoc-xa-5in1-can-ruby-isabelle.webp"
     }
   ],
   "thong_so": [

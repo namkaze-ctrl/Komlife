@@ -28,9 +28,19 @@
       "mau": "#C2C83A"
     },
     {
-      "ten": "Dịu nhẹ",
-      "mo_ta": "Hương dịu nhẹ, dùng hằng ngày",
+      "ten": "Không mùi",
+      "mo_ta": "Loại không mùi, dịu nhẹ",
       "mau": "#5FB6E5"
+    },
+    {
+      "ten": "Bạc hà",
+      "mo_ta": "Tinh chất bạc hà, hương mát",
+      "mau": "#4FB3D9"
+    },
+    {
+      "ten": "Muối hồng Himalaya",
+      "mo_ta": "Muối hồng Himalaya, chai hồng",
+      "mau": "#EE8C9A"
     }
   ],
   "phien_ban": [
@@ -39,35 +49,116 @@
       "ma_gia": "",
       "ghi_chu": "Chai nhỏ, hợp với bếp ít người",
       "sku": "SNRC-C-01",
-      "anh": ""
+      "anh": "",
+      "mui_co": [
+        "Quế",
+        "Gừng & Sả",
+        "Không mùi"
+      ]
     },
     {
       "ten": "760ml",
       "ma_gia": "",
       "ghi_chu": "Chai vừa, dùng hằng ngày cho gia đình",
       "sku": "SNRC-C-02",
-      "anh": ""
+      "anh": "",
+      "mui_co": [
+        "Quế",
+        "Gừng & Sả",
+        "Không mùi"
+      ]
     },
     {
       "ten": "1 lít",
       "ma_gia": "",
       "ghi_chu": "Chai một lít, dùng lâu hơn cỡ nhỏ",
       "sku": "",
-      "anh": ""
+      "anh": "",
+      "mui_co": [
+        "Bạc hà",
+        "Muối hồng Himalaya"
+      ]
     },
     {
       "ten": "2 lít",
       "ma_gia": "",
       "ghi_chu": "Can hai lít cho gia đình đông người",
       "sku": "SNRC-C-03",
-      "anh": ""
+      "anh": "",
+      "mui_co": [
+        "Quế",
+        "Gừng & Sả",
+        "Không mùi"
+      ]
     },
     {
       "ten": "3,6 lít",
       "ma_gia": "",
       "ghi_chu": "Can lớn, tiết kiệm khi dùng nhiều",
       "sku": "SNRC-C-04",
-      "anh": ""
+      "anh": "",
+      "mui_co": [
+        "Quế",
+        "Gừng & Sả",
+        "Không mùi"
+      ]
+    }
+  ],
+  "anh_lua_chon": [
+    {
+      "phien_ban": "",
+      "mui": "Quế",
+      "anh": "../../assets/anh/san-pham/spy/nuoc-rua-chen-chai-que.webp"
+    },
+    {
+      "phien_ban": "",
+      "mui": "Gừng & Sả",
+      "anh": "../../assets/anh/san-pham/spy/nuoc-rua-chen-chai-gung-sa.webp"
+    },
+    {
+      "phien_ban": "",
+      "mui": "Không mùi",
+      "anh": "../../assets/anh/san-pham/spy/nuoc-rua-chen-chai-khong-mui.webp"
+    },
+    {
+      "phien_ban": "",
+      "mui": "Bạc hà",
+      "anh": "../../assets/anh/san-pham/spy/nuoc-rua-chen-1l-bac-ha.webp"
+    },
+    {
+      "phien_ban": "",
+      "mui": "Muối hồng Himalaya",
+      "anh": "../../assets/anh/san-pham/spy/nuoc-rua-chen-1l-muoi-hong.webp"
+    },
+    {
+      "phien_ban": "2 lít",
+      "mui": "Quế",
+      "anh": "../../assets/anh/san-pham/spy/nuoc-rua-chen-can-que.webp"
+    },
+    {
+      "phien_ban": "2 lít",
+      "mui": "Gừng & Sả",
+      "anh": "../../assets/anh/san-pham/spy/nuoc-rua-chen-can-gung-sa.webp"
+    },
+    {
+      "phien_ban": "2 lít",
+      "mui": "Không mùi",
+      "anh": "../../assets/anh/san-pham/spy/nuoc-rua-chen-can-khong-mui.webp"
+    },
+    {
+      "phien_ban": "3,6 lít",
+      "mui": "Quế",
+      "anh": "../../assets/anh/san-pham/spy/nuoc-rua-chen-can-que.webp"
+    },
+    {
+      "phien_ban": "3,6 lít",
+      "mui": "Gừng & Sả",
+      "anh": "../../assets/anh/san-pham/spy/nuoc-rua-chen-can-gung-sa.webp"
+    },
+    {
+      "phien_ban": "3,6 lít",
+      "mui": "Không mùi",
+      "anh": "../../assets/anh/san-pham/spy/nuoc-rua-chen-can-khong-mui.webp"
     }
   ],
   "thong_so": [
@@ -77,7 +168,7 @@
     },
     {
       "ten": "Mùi hương",
-      "gia_tri": "Quế · Gừng & Sả · Dịu nhẹ (một số cỡ có Trà xanh, Cam & Muối)"
+      "gia_tri": "Quế · Gừng & Sả · Không mùi · chai 1 lít có Bạc hà, Muối hồng Himalaya"
     },
     {
       "ten": "Dùng cho",

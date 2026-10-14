@@ -18,7 +18,7 @@
   "nhan_phien_ban": "Chọn quy cách",
   "mui_huong": [
     {
-      "ten": "Golden Blossom",
+      "ten": "Golden Rose",
       "mo_ta": "Hương hiện đại, thanh lịch, hoa vàng",
       "mau": "#E0A526"
     },
@@ -41,7 +41,27 @@
       "ma_gia": "",
       "ghi_chu": "Túi tiết kiệm, đổ thêm vào can cũ",
       "sku": "SDCP-T-02-V",
-      "anh": ""
+      "anh": "",
+      "mui_co": [
+        "Golden Rose"
+      ]
+    }
+  ],
+  "anh_lua_chon": [
+    {
+      "phien_ban": "",
+      "mui": "Golden Rose",
+      "anh": "../../assets/anh/san-pham/spy/deep-clean-plus-can-golden.webp"
+    },
+    {
+      "phien_ban": "",
+      "mui": "Blossom",
+      "anh": "../../assets/anh/san-pham/spy/deep-clean-plus-can-blossom.webp"
+    },
+    {
+      "phien_ban": "Túi 2,6kg",
+      "mui": "",
+      "anh": "../../assets/anh/san-pham/spy/deep-clean-plus-tui-2kg6-golden.webp"
     }
   ],
   "thong_so": [
@@ -51,7 +71,7 @@
     },
     {
       "ten": "Mùi hương",
-      "gia_tri": "Blossom: nồng nàn · Golden Blossom: hiện đại, thanh lịch"
+      "gia_tri": "Blossom: nồng nàn · Golden Rose: hiện đại, thanh lịch"
     },
     {
       "ten": "Dùng cho",

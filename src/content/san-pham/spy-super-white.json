@@ -44,6 +44,28 @@
       "anh": ""
     }
   ],
+  "anh_lua_chon": [
+    {
+      "phien_ban": "",
+      "mui": "Passion",
+      "anh": "../../assets/anh/san-pham/spy/super-white-tui-passion.webp"
+    },
+    {
+      "phien_ban": "",
+      "mui": "Luxor",
+      "anh": "../../assets/anh/san-pham/spy/super-white-tui-luxor.webp"
+    },
+    {
+      "phien_ban": "Can 5,2kg",
+      "mui": "Passion",
+      "anh": "../../assets/anh/san-pham/spy/super-white-can-5kg2-passion.webp"
+    },
+    {
+      "phien_ban": "Can 5,2kg",
+      "mui": "Luxor",
+      "anh": "../../assets/anh/san-pham/spy/super-white-can-5kg2-luxor.webp"
+    }
+  ],
   "thong_so": [
     {
       "ten": "Dòng sản phẩm",

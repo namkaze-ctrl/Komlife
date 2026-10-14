@@ -184,7 +184,11 @@ const sanPhamCt = defineCollection({
     nhan_phien_ban: z.string().optional().default('Chọn dung tích'),
     // Hàng lựa chọn THỨ HAI: mùi hương (dùng khi sản phẩm vừa có nhiều quy cách vừa có nhiều mùi). Trống = không hiện
     mui_huong: z.array(z.object({ ten: z.string(), mo_ta: z.string().optional().default(''), mau: z.string().optional().default('') })).optional().default([]),
-    phien_ban: z.array(z.object({ ten: z.string(), ma_gia: z.string().optional().default(''), ghi_chu: z.string().optional().default(''), sku: z.string().optional().default(''), anh: z.string().optional().default('') })).optional().default([]),
+    // mui_co: quy cách này chỉ có các mùi nêu tên (trống = có đủ mọi mùi) · khong_mui: quy cách không chọn mùi (vd combo đủ mùi)
+    phien_ban: z.array(z.object({ ten: z.string(), ma_gia: z.string().optional().default(''), ghi_chu: z.string().optional().default(''), sku: z.string().optional().default(''), anh: z.string().optional().default(''),
+      mui_co: z.array(z.string()).optional().default([]), khong_mui: z.boolean().optional().default(false) })).optional().default([]),
+    // Ảnh theo lựa chọn. Thứ tự tìm: đúng cả quy cách + mùi -> chỉ quy cách (ô mùi trống) -> chỉ mùi (ô quy cách trống) -> ảnh chính
+    anh_lua_chon: z.array(z.object({ phien_ban: z.string().optional().default(''), mui: z.string().optional().default(''), anh: z.string() })).optional().default([]),
     thong_so: z.array(z.object({ ten: z.string(), gia_tri: z.string().optional().default('') })).optional().default([]),
     cong_dung: z.array(muc).optional().default([]),
     dung_luc_nao: z.array(muc).optional().default([]),

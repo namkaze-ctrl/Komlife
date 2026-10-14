@@ -46,7 +46,30 @@
       "ma_gia": "",
       "ghi_chu": "Đủ ba mùi, mỗi chai 100ml",
       "sku": "",
-      "anh": ""
+      "anh": "",
+      "khong_mui": true
+    }
+  ],
+  "anh_lua_chon": [
+    {
+      "phien_ban": "",
+      "mui": "Dream Violet",
+      "anh": "../../assets/anh/san-pham/spy/xit-thom-vai-dream-violet.webp"
+    },
+    {
+      "phien_ban": "",
+      "mui": "Pink Whisper",
+      "anh": "../../assets/anh/san-pham/spy/xit-thom-vai-pink-whisper.webp"
+    },
+    {
+      "phien_ban": "",
+      "mui": "Pure White",
+      "anh": "../../assets/anh/san-pham/spy/xit-thom-vai-pure-white.webp"
+    },
+    {
+      "phien_ban": "Combo 3 chai",
+      "mui": "",
+      "anh": "../../assets/anh/san-pham/spy/xit-thom-vai-combo-3.webp"
     }
   ],
   "thong_so": [

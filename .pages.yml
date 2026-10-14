@@ -870,6 +870,8 @@ content:
           - { name: ghi_chu, label: "Mô tả ngắn 7–8 chữ (hiện dưới hàng lựa chọn; KHÔNG ghi mã SKU ở đây)", type: string }
           - { name: sku, label: "Mã SKU (ghi nội bộ, không hiện trên web)", type: string }
           - { name: anh, label: "Ảnh riêng của dung tích này (PNG/WebP nền trong suốt; trống = dùng ảnh chính)", type: image }
+          - { name: mui_co, label: "Quy cách này CHỈ có các mùi (gõ đúng tên mùi; để trống = có đủ mọi mùi)", type: string, list: true }
+          - { name: khong_mui, label: "Quy cách không chọn mùi (vd combo đủ mùi) — tick để ẩn hàng chọn mùi", type: boolean }
       - name: mui_huong
         label: "Mùi hương — hàng lựa chọn thứ hai (dùng khi sản phẩm có cả nhiều quy cách lẫn nhiều mùi)"
         type: object
@@ -878,6 +880,14 @@ content:
           - { name: ten, label: Tên mùi, type: string }
           - { name: mo_ta, label: "Mô tả ngắn 7–8 chữ", type: string }
           - { name: mau, label: "Màu chấm tròn (mã màu, vd #8E44AD; trống = không chấm)", type: string }
+      - name: anh_lua_chon
+        label: "Ảnh theo lựa chọn (quy cách × mùi). Máy tìm: đúng cả quy cách + mùi → chỉ quy cách → chỉ mùi → ảnh chính"
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.phien_ban} · {fields.mui}" } }
+        fields:
+          - { name: phien_ban, label: "Quy cách (gõ đúng tên, vd Can 5,2kg; trống = mọi quy cách)", type: string }
+          - { name: mui, label: "Mùi (gõ đúng tên; trống = mọi mùi)", type: string }
+          - { name: anh, label: "Ảnh (PNG/WebP nền trong suốt, cắt sát sản phẩm, cao tới 2600px)", type: image }
       - name: thong_so
         label: Thông tin sản phẩm
         type: object

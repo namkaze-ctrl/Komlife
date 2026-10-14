@@ -59,6 +59,38 @@
       "anh": ""
     }
   ],
+  "anh_lua_chon": [
+    {
+      "phien_ban": "",
+      "mui": "Blossom Relax",
+      "anh": "../../assets/anh/san-pham/spy/nuoc-lau-san-chai-blossom.webp"
+    },
+    {
+      "phien_ban": "",
+      "mui": "Pink Relax",
+      "anh": "../../assets/anh/san-pham/spy/nuoc-lau-san-chai-pink.webp"
+    },
+    {
+      "phien_ban": "",
+      "mui": "Green Relax",
+      "anh": "../../assets/anh/san-pham/spy/nuoc-lau-san-chai-green.webp"
+    },
+    {
+      "phien_ban": "",
+      "mui": "Quế",
+      "anh": "../../assets/anh/san-pham/spy/nuoc-lau-san-chai-que.webp"
+    },
+    {
+      "phien_ban": "",
+      "mui": "Gừng & Sả",
+      "anh": "../../assets/anh/san-pham/spy/nuoc-lau-san-chai-gung-sa.webp"
+    },
+    {
+      "phien_ban": "Can 3,6L",
+      "mui": "",
+      "anh": "../../assets/anh/san-pham/spy/nuoc-lau-san-can-5-mui.webp"
+    }
+  ],
   "thong_so": [
     {
       "ten": "Dòng sản phẩm",

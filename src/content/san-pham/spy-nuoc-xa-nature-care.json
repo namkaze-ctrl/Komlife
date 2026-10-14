@@ -42,6 +42,23 @@
       "anh": ""
     }
   ],
+  "anh_lua_chon": [
+    {
+      "phien_ban": "",
+      "mui": "Kyoto Spring",
+      "anh": "../../assets/anh/san-pham/spy/nuoc-xa-nature-care-tui-kyoto.webp"
+    },
+    {
+      "phien_ban": "",
+      "mui": "Jeju Garden",
+      "anh": "../../assets/anh/san-pham/spy/nuoc-xa-nature-care-tui-jeju.webp"
+    },
+    {
+      "phien_ban": "",
+      "mui": "Bali Dream",
+      "anh": "../../assets/anh/san-pham/spy/nuoc-xa-nature-care-tui-bali.webp"
+    }
+  ],
   "thong_so": [
     {
       "ten": "Dòng sản phẩm",

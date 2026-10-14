@@ -1075,6 +1075,7 @@ a.tin{text-decoration:none;color:inherit}
 .spct-nhan--2{margin-top:8px}
 .spct-mui{display:flex;flex-wrap:wrap;gap:10px}
 .spct-mui__i{display:inline-flex;align-items:center;gap:8px}
+.spct-mui__i[hidden]{display:none}
 .spct-mui__i i{width:13px;height:13px;border-radius:50%;flex:none;box-shadow:0 0 0 1px rgba(0,0,0,.12) inset}
 .spct-gia{margin-top:6px}
 .spct-gia__d{flex-basis:100%;font-size:.86rem;color:var(--faint)}

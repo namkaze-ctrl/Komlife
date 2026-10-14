@@ -48,14 +48,20 @@
       "ma_gia": "",
       "ghi_chu": "Túi tiết kiệm, đổ thêm vào can cũ",
       "sku": "SUCP-T-02-V",
-      "anh": ""
+      "anh": "",
+      "mui_co": [
+        "Golden Blossom"
+      ]
     },
     {
       "ten": "Túi 1,5kg",
       "ma_gia": "",
       "ghi_chu": "Túi nhỏ gọn, hợp để dùng thử",
       "sku": "SUCP-T-01-V",
-      "anh": ""
+      "anh": "",
+      "mui_co": [
+        "Golden Blossom"
+      ]
     },
     {
       "ten": "Can 5,2kg",
@@ -63,6 +69,38 @@
       "ghi_chu": "Can lớn cho gia đình đông người",
       "sku": "",
       "anh": ""
+    }
+  ],
+  "anh_lua_chon": [
+    {
+      "phien_ban": "",
+      "mui": "Golden Blossom",
+      "anh": "../../assets/anh/san-pham/spy/ultra-clean-plus-can-golden.webp"
+    },
+    {
+      "phien_ban": "",
+      "mui": "Blossom",
+      "anh": "../../assets/anh/san-pham/spy/ultra-clean-plus-can-blossom.webp"
+    },
+    {
+      "phien_ban": "Túi 3kg",
+      "mui": "",
+      "anh": "../../assets/anh/san-pham/spy/ultra-clean-plus-tui-3kg-golden.webp"
+    },
+    {
+      "phien_ban": "Túi 1,5kg",
+      "mui": "",
+      "anh": "../../assets/anh/san-pham/spy/ultra-clean-plus-tui-3kg-golden.webp"
+    },
+    {
+      "phien_ban": "Can 5,2kg",
+      "mui": "Golden Blossom",
+      "anh": "../../assets/anh/san-pham/spy/ultra-clean-plus-can-5kg2-golden.webp"
+    },
+    {
+      "phien_ban": "Can 5,2kg",
+      "mui": "Blossom",
+      "anh": "../../assets/anh/san-pham/spy/ultra-clean-plus-can-5kg2-blossom.webp"
     }
   ],
   "thong_so": [
