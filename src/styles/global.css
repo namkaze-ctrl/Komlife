@@ -269,6 +269,45 @@ a.card:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:var(
   padding:22px 0;border-top:1px solid var(--line)}
 @media(max-width:620px){.tl__i{grid-template-columns:1fr;gap:5px}}
 .tl__y{font-family:var(--fd);font-size:1.22rem;color:var(--gold);font-variant-numeric:tabular-nums}
+/* Hành trình & tầm nhìn (trang Về Komlife): quá khứ nhạt, Hôm nay sáng, Chặng tiếp theo nổi bật trên nền xanh đậm */
+.ht__dau{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:clamp(20px,4vw,56px);align-items:end}
+@media(max-width:940px){.ht__dau{grid-template-columns:1fr}}
+.ht__duong{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;position:relative}
+.ht__duong::before{content:'';position:absolute;left:0;right:-2%;top:7px;height:2px;
+  background:linear-gradient(90deg,var(--line) 0%,var(--line) 70%,var(--mag) 100%)}
+.ht__moc{position:relative;padding-top:28px;display:flex;flex-direction:column;gap:4px}
+.ht__moc::before{content:'';position:absolute;left:0;top:1px;width:14px;height:14px;border-radius:50%;
+  background:var(--panel);border:2px solid color-mix(in srgb,var(--gold) 45%,var(--line))}
+.ht__y{font-family:var(--fd);font-size:1.25rem;line-height:1;color:color-mix(in srgb,var(--gold) 70%,var(--faint));font-variant-numeric:tabular-nums}
+.ht__t{font-size:.86rem;color:var(--faint);line-height:1.45}
+.ht__moc--nay::before{background:var(--mag);border-color:var(--mag);box-shadow:0 0 0 6px color-mix(in srgb,var(--mag) 22%,transparent)}
+.ht__moc--nay .ht__y{color:var(--gold);font-size:1.5rem}
+.ht__moc--nay .ht__t{color:var(--ink)}
+.ht__moc--nay .ht__t b{font-weight:700}
+.ht__tiep{background:var(--deep);color:var(--on-deep);border-radius:22px;padding:clamp(24px,3.4vw,40px);
+  background-image:radial-gradient(circle at 100% 0%,color-mix(in srgb,var(--mag) 30%,transparent) 0%,transparent 45%)}
+.ht__nhan{font-family:var(--fb);font-weight:600;font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mag);margin-bottom:22px}
+.ht__nhan i{font-style:normal;letter-spacing:0}
+.ht__luoi{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,2vw,24px)}
+.ht__the{display:flex;flex-direction:column;gap:10px;padding:20px;border-radius:16px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+.ht__ic{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--mag) 18%,transparent)}
+.ht__ic svg{width:24px;height:24px;stroke:var(--mag);stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.ht__the h4{margin:4px 0 0;color:#fff;font-family:var(--fd);font-size:1.12rem;line-height:1.25}
+.ht__the p{margin:0;color:var(--on-deep-muted);font-size:.9rem;line-height:1.6}
+@media(max-width:940px){.ht__luoi{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){
+  .ht__duong{grid-template-columns:1fr;gap:0;padding-left:30px}
+  .ht__duong::before{left:6px;right:auto;top:6px;bottom:6px;width:2px;height:auto;
+    background:linear-gradient(180deg,var(--line) 0%,var(--line) 70%,var(--mag) 100%)}
+  .ht__moc{padding:0 0 16px;flex-direction:row;align-items:baseline;gap:12px}
+  .ht__moc::before{left:-30px;top:2px}
+  .ht__y{flex:none;width:52px}
+  .ht__luoi{grid-template-columns:1fr}
+  .ht__the{flex-direction:row;flex-wrap:wrap;align-items:center;column-gap:14px;padding:16px}
+  .ht__the h4{margin:0;flex:1}
+  .ht__the p{flex-basis:100%}
+}
 
 details{border-top:1px solid var(--line);padding:17px 0}
 details summary{cursor:pointer;font-family:var(--fd);font-size:1.1rem;color:var(--ink);

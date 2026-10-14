@@ -7,18 +7,29 @@ import DongHanh from '../components/DongHanh.astro';
 import vk from '../content/trang/ve-komlife.json';
 import { khoiChung } from '../lib/noi-dung';
 import { tieuDe, dong } from '../lib/chu';
+import { bieuTuong } from '../lib/bieu-tuong';
 ---
 <Base tieuDe={vk.seo_tieu_de} moTa={vk.seo_mo_ta}>
   <DauTrangCon nhan={vk.dau_trang.nhan} tieuDe={vk.dau_trang.tieu_de} moTa={vk.dau_trang.mo_ta} />
 
-  <section class="sec">
-    <div class="wrap split">
-      <div class="stack g16"><div class="eb">{vk.lich_su.nhan}</div><h2 set:html={tieuDe(vk.lich_su.tieu_de)} /></div>
-      <div class="tl">
-        {khoiChung.dau_moc.map((m) => (
-          <div class="tl__i rv"><div class="tl__y">{m.nam}</div><div><h4>{m.tieu_de}</h4>
-            <p class="card__b">{m.mo_ta}</p></div></div>
-        ))}
+  {/* HÀNH TRÌNH & TẦM NHÌN: các mốc cũ thu gọn thành đường "nền móng", điểm Hôm nay, rồi nổi bật Chặng tiếp theo */}
+  <section class="sec ht">
+    <div class="wrap stack g40">
+      <div class="ht__dau">
+        <div class="stack g16"><div class="eb">{vk.lich_su.nhan}</div><h2 set:html={tieuDe(vk.lich_su.tieu_de)} /></div>
+        <p class="lead" set:html={dong(vk.lich_su.mo_ta)} />
+      </div>
+      <ol class="ht__duong rv">
+        {khoiChung.dau_moc.map((m) => <li class="ht__moc"><span class="ht__y">{m.nam}</span><span class="ht__t">{m.tieu_de}</span></li>)}
+        <li class="ht__moc ht__moc--nay"><span class="ht__y">{vk.lich_su.hom_nay.nam}</span><span class="ht__t"><b>{vk.lich_su.hom_nay.tieu_de}</b> · {vk.lich_su.hom_nay.mo_ta}</span></li>
+      </ol>
+      <div class="ht__tiep rv">
+        <div class="ht__nhan">{vk.lich_su.nhan_tiep_theo} <i aria-hidden="true">→</i></div>
+        <div class="ht__luoi">
+          {vk.lich_su.huong_di.map((h) => (
+            <div class="ht__the"><span class="ht__ic" set:html={bieuTuong(h.bieu_tuong)} /><h4>{h.ten}</h4><p>{h.mo_ta}</p></div>
+          ))}
+        </div>
       </div>
     </div>
   </section>

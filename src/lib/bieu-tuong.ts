@@ -1,6 +1,10 @@
 // Biểu tượng nét mảnh dùng trong dải số liệu, khối quy trình, khối đồng hành.
 // Trang quản trị chọn biểu tượng theo tên (ô "Biểu tượng").
 export const BIEU_TUONG: Record<string, string> = {
+  la: '<svg viewBox="0 0 24 24"><path d="M5 19c0-8 5.5-13.6 14.6-14.6C18.8 13.5 13 19 5 19z"/><path d="M5 19 13.5 10.5"/></svg>',
+  doimoi: '<svg viewBox="0 0 24 24"><path d="M9.2 17.6h5.6M10 21h4"/><path d="M12 2.8a6.4 6.4 0 0 0-3.6 11.7c.5.4.8 1 .8 1.6v1.5h5.6v-1.5c0-.6.3-1.2.8-1.6A6.4 6.4 0 0 0 12 2.8z"/></svg>',
+  giadinh: '<svg viewBox="0 0 24 24"><path d="M3.4 11.2 12 4l8.6 7.2"/><path d="M5.6 9.4v11h12.8v-11"/><path d="M12 17.6s-3-1.9-3-4a1.6 1.6 0 0 1 3-.8 1.6 1.6 0 0 1 3 .8c0 2.1-3 4-3 4z"/></svg>',
+  quocte: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2"/><path d="M2.8 12h18.4M12 2.8c2.6 2.6 3.8 5.6 3.8 9.2s-1.2 6.6-3.8 9.2c-2.6-2.6-3.8-5.6-3.8-9.2S9.4 5.4 12 2.8z"/></svg>',
   khien: '<svg viewBox="0 0 24 24"><path d="M12 2.4 4.4 5.5v6c0 4.6 3.2 8.6 7.6 10 4.4-1.4 7.6-5.4 7.6-10v-6z"/><path d="m8.7 11.8 2.4 2.4 4.2-4.7"/></svg>',
   nhamay: '<svg viewBox="0 0 24 24"><path d="M2.4 20.6h19.2"/><path d="M4.3 20.6V9.7l5 3v-3l5 3V6.1h5.4v14.5"/><path d="M16.8 11.2h1.6M16.8 15h1.6"/></svg>',
   sanpham: '<svg viewBox="0 0 24 24"><rect x="3.2" y="9.4" width="17.6" height="11.2" rx="1.5"/><path d="M3.2 13.7h17.6"/><path d="M8.4 9.4V6.8a1.6 1.6 0 0 1 1.6-1.6h4a1.6 1.6 0 0 1 1.6 1.6v2.6"/><path d="M8.8 17.3h2M13.2 17.3h2"/></svg>',
