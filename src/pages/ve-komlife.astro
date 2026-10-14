@@ -25,9 +25,10 @@ import { bieuTuong } from '../lib/bieu-tuong';
       </ol>
       <div class="ht__tiep rv">
         <div class="ht__nhan">{vk.lich_su.nhan_tiep_theo} <i aria-hidden="true">→</i></div>
-        <div class="ht__luoi">
-          {vk.lich_su.huong_di.map((h) => (
-            <div class="ht__the"><span class="ht__ic" set:html={bieuTuong(h.bieu_tuong)} /><h4>{h.ten}</h4><p>{h.mo_ta}</p></div>
+        <div class="ht__bar">
+          {vk.lich_su.huong_di.map((h, i) => (
+            <div class="ht__muc"><Fragment set:html={bieuTuong(h.bieu_tuong)} />
+              <div><div class="ht__so">{String(i + 1).padStart(2, '0')}</div><div class="ht__k">{h.ten}</div><div class="ht__d">{h.mo_ta}</div></div></div>
           ))}
         </div>
       </div>
