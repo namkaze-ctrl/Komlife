@@ -164,9 +164,17 @@ const mau = mauSanPham(p.mau, p.mau_nhat);
 
     {cungNhan.length > 0 && (
       <section class="sec spct-khac">
-        <div class="wrap stack g28">
-          <h2 set:html={td('sp_khac')} />
-          <div class="tsp-luoi tsp-luoi--nho">{cungNhan.map((x) => <TheSanPham p={x} />)}</div>
+        {/* Một hàng cuộn ngang (anh Nam 15/10): kéo/vuốt hoặc bấm mũi tên; muốn xem hết thì sang danh mục nhãn */}
+        <div class="wrap stack g20">
+          <div class="spk__dau">
+            <h2 set:html={td('sp_khac')} />
+            <div class="spk__nut" data-spk-nut>
+              <a class="spk__all" href={`/nhan-hang/${p.nhan}#san-pham`}>Xem tất cả sản phẩm {tenNhan} →</a>
+              <button type="button" class="db__mt" data-spk="-1" aria-label="Sản phẩm trước">←</button>
+              <button type="button" class="db__mt" data-spk="1" aria-label="Sản phẩm sau">→</button>
+            </div>
+          </div>
+          <div class="spk" data-spk-hang>{cungNhan.map((x) => <TheSanPham p={x} />)}</div>
         </div>
       </section>
     )}
@@ -220,6 +228,19 @@ const mau = mauSanPham(p.mau, p.mau_nhat);
       });
       khung.addEventListener('mouseleave', an);
     })();
+
+    // Hàng "Các sản phẩm khác": mũi tên cuộn đúng 1 thẻ; ẩn mũi tên khi đủ chỗ hiện hết
+    document.querySelectorAll<HTMLElement>('[data-spk-hang]').forEach((hang) => {
+      const nut = hang.parentElement!.querySelectorAll<HTMLButtonElement>('[data-spk]');
+      const buoc = () => (hang.firstElementChild as HTMLElement)?.getBoundingClientRect().width + 18 || 280;
+      nut.forEach((b) => b.addEventListener('click', () => hang.scrollBy({ left: Number(b.dataset.spk) * buoc(), behavior: 'smooth' })));
+      const capNhat = () => {
+        const du = hang.scrollWidth <= hang.clientWidth + 2;
+        nut.forEach((b) => { b.hidden = du; });
+        if (!du) { nut[0].disabled = hang.scrollLeft < 4; nut[1].disabled = hang.scrollLeft + hang.clientWidth >= hang.scrollWidth - 4; }
+      };
+      hang.addEventListener('scroll', capNhat, { passive: true }); addEventListener('resize', capNhat); capNhat();
+    });
 
     // Chọn quy cách + mùi hương -> đổi giá, ghi chú, danh sách mùi mà quy cách đó có, và ảnh đúng với lựa chọn
     document.querySelectorAll<HTMLElement>('.spct-pb').forEach((nhom) => {

@@ -1218,6 +1218,23 @@ a.tin{text-decoration:none;color:inherit}
 .spct-ts h3{font-size:1.15rem;margin-bottom:12px}
 .spct-ts .lp-ts dt{color:var(--sp-chu)}
 .spct-khac{background:var(--cream)!important}
+/* 15/10: "Các sản phẩm khác" = MỘT hàng cuộn ngang (trước là lưới 2 cột kéo dài xuống) */
+.spk__dau{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.spk__nut{display:flex;align-items:center;gap:8px}
+.spk__all{margin-right:8px;font-weight:600;font-size:.9rem;color:var(--sp-chu,var(--gold));text-decoration:none;white-space:nowrap}
+.spk__all:hover{text-decoration:underline}
+.spk__nut .db__mt:disabled{opacity:.35;cursor:default}
+.spk__nut .db__mt[hidden]{display:none}
+.spk{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 2px 14px;margin:0 -2px}
+.spk::-webkit-scrollbar{display:none}
+.spk>.tsp{flex:0 0 clamp(220px,23%,272px);scroll-snap-align:start;opacity:1!important;transform:none!important}
+.spk .tsp__ten{font-size:1.25rem}
+@media(max-width:560px){
+  .spk__all{order:-1;margin:0;width:100%}
+  .spk>.tsp{flex-basis:62vw;display:flex;flex-direction:column}
+  .spk .tsp__anh{aspect-ratio:4/5;height:auto;min-height:0}
+  .spk .tsp__nen{inset:auto 0 0 0;width:auto;height:5px}
+}
 .spct .lp-bar .lp-btn{background:var(--sp);border-color:var(--sp);color:var(--sp-tren)}
 .spct .lp-bar .lp-btn--phu{background:#fff;color:var(--sp-chu)}
 
