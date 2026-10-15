@@ -6,11 +6,13 @@ import DauTrangCon from '../../components/DauTrangCon.astro';
 import DongHanh from '../../components/DongHanh.astro';
 import nh from '../../content/trang/nhan-hang.json';
 import { layNhanHang } from '../../lib/noi-dung';
+import { tieuDe } from '../../lib/chu';
 const ds = await layNhanHang();
 ---
 <Base tieuDe={nh.seo_tieu_de} moTa={nh.seo_mo_ta}>
   <DauTrangCon nhan={nh.dau_trang.nhan} tieuDe={nh.dau_trang.tieu_de} moTa={nh.dau_trang.mo_ta} />
   <section class="sec sec--tight">
+    {nh.tieu_de_danh_sach && <div class="wrap" style="margin-bottom:24px"><h2 style="font-size:clamp(1.4rem,2.4vw,1.9rem)" set:html={tieuDe(nh.tieu_de_danh_sach)} /></div>}
     <div class="wrap cards cards--3 spot">
       {ds.map((b) => (
         <a class="card rv fx-glow" href={`/nhan-hang/${b.ma}`} style="padding:0;overflow:hidden">

@@ -1,7 +1,7 @@
 ---
 tieu_de: "SPY và hành trình 15 năm đồng hành cùng triệu gia đình"
 chuyen_muc: tin-thi-truong
-ngay: 2025-10-20
+ngay: 2026-02-20
 anh_dai_dien: "../../assets/anh/tin-tuc/noi-bat-3-ke-sieu-thi.jpg"
 tom_tat: "Điểm lại những dấu ấn nổi bật của dòng sản phẩm giặt xả chủ lực SPY trên chặng đường phục vụ người tiêu dùng."
 noi_bat: true
