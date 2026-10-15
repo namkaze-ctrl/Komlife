@@ -1,7 +1,7 @@
 ---
 tieu_de: "15 năm khát vọng vươn tầm"
 chuyen_muc: tin-doanh-nghiep
-ngay: 2025-11-11
+ngay: 2026-03-11
 anh_dai_dien: "../../assets/anh/tin-tuc/noi-bat-2-pccc.jpg"
 tom_tat: "Hành trình 15 năm vượt qua thử thách, xây dựng nhà máy 20.000m² tại Hưng Yên để làm chủ chất lượng sản phẩm."
 noi_bat: true

@@ -461,6 +461,7 @@ content:
               - { name: nhan, label: Nhãn nhỏ, type: string }
               - { name: tieu_de, label: Tiêu đề, type: text }
               - { name: mo_ta, label: Đoạn mô tả, type: text }
+          - { name: tieu_de_danh_sach, label: "Tiêu đề trên danh sách 5 nhãn (*...* = chữ tô màu; trống = ẩn)", type: string }
           - name: mua_o_dau
             label: Khối "Mua ở đâu" (cuối trang từng nhãn)
             type: object
