@@ -8,6 +8,8 @@ import { dong } from '../lib/chu';
 interface Props { suMenh?: boolean }
 const { suMenh = false } = Astro.props;
 const ng = tc.nguoi_dung_dau;
+// bỏ ngoặc kép người nhập lỡ gõ sẵn, trang chủ tự thêm “ ” cùng font
+const cauTrich = ng.trich_dan.replace(/^["'“”]+|["'“”]+$/g, '');
 ---
 {ng.hien_thi && (
   <section class={`sec sec--deep sec--nguoi${suMenh ? ' nguoi--tc' : ''}`}>
@@ -17,7 +19,7 @@ const ng = tc.nguoi_dung_dau;
       </figure>
       <div class="stack g16 rv">
         <div class="eb">{ng.nhan}</div>
-        <p class="nguoi__q">{ng.trich_dan}</p>
+        <p class="nguoi__q">{suMenh ? <><span class="nguoi__ng">“</span>{cauTrich}<span class="nguoi__ng">”</span></> : ng.trich_dan}</p>
         <div class="nguoi__ky">
           <div class="nguoi__n">{ng.ten}</div>
           <div class="nguoi__r">{ng.chuc_vu}</div>
