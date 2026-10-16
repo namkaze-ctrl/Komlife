@@ -38,6 +38,8 @@ const nhanHang = defineCollection({
       nen: z.string().optional().default(''),
     }).optional().default({}),
     anh_linh_vat: z.string().optional().default(''),
+    // Ảnh nền cả màn đầu trang nhãn (banner 16:9, chữ đặt bên trái nên bên trái ảnh phải trống). Có ảnh này thì ẩn cụm 3 thẻ chai + linh vật
+    anh_man_dau: z.string().optional().default(''),
     diem_nhan: z.array(z.string()).optional().default([]),
     shopee: z.string().optional().default(''),
     tiktok_shop: z.string().optional().default(''),

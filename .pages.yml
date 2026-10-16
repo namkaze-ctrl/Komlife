@@ -306,6 +306,7 @@ content:
           - { name: nhan, label: Màu chữ nhấn, type: string }
           - { name: nen, label: Màu nền nhạt, type: string }
       - { name: anh_linh_vat, label: Ảnh linh vật (PNG nền trong suốt), type: image }
+      - { name: anh_man_dau, label: "Ảnh nền màn đầu trang nhãn (banner 1920×1080, để trống nửa trái cho chữ; có ảnh thì ẩn 3 thẻ chai)", type: image }
       - { name: diem_nhan, label: "Điểm nổi bật dưới danh sách sản phẩm (*chữ* = in đậm)", type: string, list: true }
       - name: video
         label: "Khối video minh chứng (TikTok) — không có video đã duyệt = ẩn khối"

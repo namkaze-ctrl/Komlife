@@ -19,8 +19,9 @@ const chai = (nhom.length >= 3 ? nhom.map((g) => g.ds.find((p) => p.anh[0])).fil
 const linkMua = themUtm(shopee, `${b.ma}-trang-nhan`);
 ---
 <div class="lp nhm" style={bien}>
-  <section class="ab-hero nhm-hero">
-    <svg class="ab-hero__blob" viewBox="0 0 600 600" aria-hidden="true"><path d="M421 63c77 41 141 118 146 203 6 85-47 177-121 239-74 61-169 92-252 63S42 448 25 361C8 274 49 176 118 109 187 42 344 22 421 63z"/></svg>
+  <section class={`ab-hero nhm-hero${b.anh_man_dau ? ' nhm-hero--anh' : ''}`}>
+    {b.anh_man_dau && <Anh src={b.anh_man_dau} alt={`${b.ten} — ${b.cau_dinh_vi || b.nganh}`} class="nhm-hero__anh" sizes="(max-width:700px) 100vw, 1100px" widths={[800, 1200, 1920]} loading="eager" fetchpriority="high" />}
+    {!b.anh_man_dau && <svg class="ab-hero__blob" viewBox="0 0 600 600" aria-hidden="true"><path d="M421 63c77 41 141 118 146 203 6 85-47 177-121 239-74 61-169 92-252 63S42 448 25 361C8 274 49 176 118 109 187 42 344 22 421 63z"/></svg>}
     <div class="wrap ab-hero__in">
       <div class="stack g16 ab-hero__chu">
         <span class="lp-tag">{b.nganh}</span>
@@ -41,10 +42,10 @@ const linkMua = themUtm(shopee, `${b.ma}-trang-nhan`);
           </p>
         )}
       </div>
-      <div class="ab-hero__sp" aria-hidden="true">
+      {!b.anh_man_dau && <div class="ab-hero__sp" aria-hidden="true">
         {chai.map((p, i) => <a href={`/nhan-hang/${p.nhan}/${p.ma}`} class={`ab-chai ab-chai--${i} ${p.anh_co_nen ? 'ab-chai--kin' : ''}`} style={`--sp-nhat:${p.mau_nhat}`} tabindex="-1"><Anh src={p.anh[0]} alt="" sizes="220px" loading="eager" /></a>)}
         {b.anh_linh_vat && <Anh src={b.anh_linh_vat} alt="" class="ab-tho" sizes="170px" loading="eager" />}
-      </div>
+      </div>}
     </div>
   </section>
 
