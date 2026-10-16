@@ -46,6 +46,8 @@ const linkMua = themUtm(shopee, `${b.ma}-trang-nhan`);
       {!b.anh_man_dau && <div class="ab-hero__sp" aria-hidden="true">
         {chai.map((p, i) => <a href={`/nhan-hang/${p.nhan}/${p.ma}`} class={`ab-chai ab-chai--${i} ${p.anh_co_nen ? 'ab-chai--kin' : ''}`} style={`--sp-nhat:${p.mau_nhat}`} tabindex="-1"><Anh src={p.anh[0]} alt="" sizes="220px" loading="eager" /></a>)}
         {b.anh_linh_vat && <Anh src={b.anh_linh_vat} alt="" class="ab-tho" sizes="170px" loading="eager" />}
+        {b.linh_vat_2 && <Anh src={b.linh_vat_2} alt="" class="ab-tho ab-tho--2" sizes="150px" loading="eager" />}
+        {b.chu_man_dau && <Anh src={b.chu_man_dau} alt="" class="ab-chu-tt" sizes="300px" loading="eager" />}
       </div>}
     </div>
   </section>
