@@ -1246,14 +1246,19 @@ a.tin{text-decoration:none;color:inherit}
    chỉ hiện phần có sản phẩm (bên phải ảnh), viền mờ dần vào màu nền lấy từ mép ảnh */
 /* 16/10 (sau): giữ NỀN CŨ của màn đầu (dải hồng + mảng tròn theo màu nhãn), banner nền trong suốt đặt lên trên */
 .nhm-hero__khung{position:relative;z-index:1}
-.nhm-hero__khung{display:flex;align-items:center;justify-content:center}
-.nhm-hero__anh{display:block;width:100%;max-width:620px;aspect-ratio:1.12/1;object-fit:cover;object-position:92% 50%;
-  -webkit-mask-image:radial-gradient(ellipse 72% 70% at 50% 50%,#000 62%,transparent 100%);mask-image:radial-gradient(ellipse 72% 70% at 50% 50%,#000 62%,transparent 100%)}
+.nhm-hero__khung{display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+/* 16/10 (lần 3): banner dạng cắt sẵn nền trong suốt (1280x~1080) -> hiện trọn, không cắt, không mask.
+   Nền màn đầu giữ dải hồng; mảng tròn sau ảnh đổi sang hồng-lavender nhạt + vòng sáng trắng cho sản phẩm nổi */
+.nhm-hero__anh{display:block;width:100%;max-width:560px;height:auto;filter:drop-shadow(0 24px 30px rgba(120,60,110,.12))}
+.nhm-hero--anh .ab-hero__blob{fill:color-mix(in srgb,var(--lp-nhan) 16%,#fff);opacity:1}
+.nhm-hero__khung::before{content:'';position:absolute;inset:6% 4%;border-radius:50%;z-index:-1;
+  background:radial-gradient(circle at 50% 55%,rgba(255,255,255,.95) 0%,rgba(255,255,255,.55) 45%,rgba(255,255,255,0) 70%)}
 .nhm-hero--anh .ab-hero__in{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
+@media(min-width:701px){.nhm-hero--anh{padding-bottom:clamp(20px,2.4vw,36px)!important}}
 @media(max-width:700px){
-  .nhm-hero--anh{padding-bottom:12px!important}
+  .nhm-hero--anh{padding-bottom:16px!important}
   .nhm-hero--anh .ab-hero__in{grid-template-columns:1fr}
-  .nhm-hero__anh{max-width:none;aspect-ratio:1.12/1;object-position:96% 50%}   /* lệch hẳn phải: không lộ vòng tròn trang trí bên trái banner */
+  .nhm-hero__anh{max-width:340px;margin:0 auto}
 }
 .ab-hero__blob{position:absolute;right:-6%;top:6%;width:min(58vw,720px);height:auto;fill:color-mix(in srgb,var(--lp-chinh) 50%,#fff);opacity:.55}
 @media(max-width:900px){.ab-hero__blob{right:-30%;top:auto;bottom:-10%;width:110vw}}
