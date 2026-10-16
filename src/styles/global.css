@@ -1244,7 +1244,8 @@ a.tin{text-decoration:none;color:inherit}
 .lp-nhap+.ab-hero{padding-top:clamp(36px,5vw,60px)}
 /* 16/10: màn đầu trang nhãn dùng BANNER (ô anh_man_dau): ảnh nằm ngay sau cột chữ, căn giữa cột phải;
    chỉ hiện phần có sản phẩm (bên phải ảnh), viền mờ dần vào màu nền lấy từ mép ảnh */
-.nhm-hero--anh{background:#EEF2FC}
+/* 16/10 (sau): giữ NỀN CŨ của màn đầu (dải hồng + mảng tròn theo màu nhãn), banner nền trong suốt đặt lên trên */
+.nhm-hero__khung{position:relative;z-index:1}
 .nhm-hero__khung{display:flex;align-items:center;justify-content:center}
 .nhm-hero__anh{display:block;width:100%;max-width:620px;aspect-ratio:1.12/1;object-fit:cover;object-position:92% 50%;
   -webkit-mask-image:radial-gradient(ellipse 72% 70% at 50% 50%,#000 62%,transparent 100%);mask-image:radial-gradient(ellipse 72% 70% at 50% 50%,#000 62%,transparent 100%)}
