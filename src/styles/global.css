@@ -1252,7 +1252,7 @@ a.tin{text-decoration:none;color:inherit}
 @media(max-width:700px){
   .nhm-hero--anh{padding-bottom:12px!important}
   .nhm-hero--anh .ab-hero__in{grid-template-columns:1fr}
-  .nhm-hero__anh{max-width:none;aspect-ratio:4/3;object-position:88% 50%}
+  .nhm-hero__anh{max-width:none;aspect-ratio:1.12/1;object-position:96% 50%}   /* lệch hẳn phải: không lộ vòng tròn trang trí bên trái banner */
 }
 .ab-hero__blob{position:absolute;right:-6%;top:6%;width:min(58vw,720px);height:auto;fill:color-mix(in srgb,var(--lp-chinh) 50%,#fff);opacity:.55}
 @media(max-width:900px){.ab-hero__blob{right:-30%;top:auto;bottom:-10%;width:110vw}}
