@@ -1242,18 +1242,17 @@ a.tin{text-decoration:none;color:inherit}
 .ab-hero{position:relative;overflow:hidden;background:linear-gradient(160deg,color-mix(in srgb,var(--lp-nhan) 22%,#fff) 0%,color-mix(in srgb,var(--lp-nhan) 10%,#fff) 55%,var(--lp-nen) 100%);
   padding-block:clamp(100px,12vh,116px) clamp(40px,4.6vw,64px)}
 .lp-nhap+.ab-hero{padding-top:clamp(36px,5vw,60px)}
-/* 16/10: màn đầu trang nhãn dùng BANNER (ô anh_man_dau): ảnh cao bằng khối, neo phải, mép trái hoà vào màu nền lấy từ mép ảnh */
+/* 16/10: màn đầu trang nhãn dùng BANNER (ô anh_man_dau): ảnh nằm ngay sau cột chữ, căn giữa cột phải;
+   chỉ hiện phần có sản phẩm (bên phải ảnh), viền mờ dần vào màu nền lấy từ mép ảnh */
 .nhm-hero--anh{background:#EEF2FC}
-.nhm-hero__anh{position:absolute;top:68px;right:0;height:calc(100% - 68px);width:auto;max-width:none;aspect-ratio:16/9;object-fit:cover;
-  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 14%);mask-image:linear-gradient(90deg,transparent 0,#000 14%)}
-.nhm-hero--anh .ab-hero__in{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-.nhm-hero--anh .ab-hero__chu{position:relative;z-index:1}
-@media(min-width:701px){.nhm-hero--anh{min-height:clamp(480px,38vw,600px);display:flex;align-items:center}.nhm-hero--anh .ab-hero__in{width:100%}}
+.nhm-hero__khung{display:flex;align-items:center;justify-content:center}
+.nhm-hero__anh{display:block;width:100%;max-width:620px;aspect-ratio:1.12/1;object-fit:cover;object-position:92% 50%;
+  -webkit-mask-image:radial-gradient(ellipse 72% 70% at 50% 50%,#000 62%,transparent 100%);mask-image:radial-gradient(ellipse 72% 70% at 50% 50%,#000 62%,transparent 100%)}
+.nhm-hero--anh .ab-hero__in{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
 @media(max-width:700px){
-  .nhm-hero--anh{display:flex;flex-direction:column;padding-bottom:0!important}
-  .nhm-hero--anh .ab-hero__in{order:1;grid-template-columns:1fr}
-  .nhm-hero__anh{order:2;position:relative;top:auto;height:auto;width:100%;margin-top:14px;aspect-ratio:4/3;object-position:88% 50%;
-    -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 12%);mask-image:linear-gradient(180deg,transparent 0,#000 12%)}
+  .nhm-hero--anh{padding-bottom:12px!important}
+  .nhm-hero--anh .ab-hero__in{grid-template-columns:1fr}
+  .nhm-hero__anh{max-width:none;aspect-ratio:4/3;object-position:88% 50%}
 }
 .ab-hero__blob{position:absolute;right:-6%;top:6%;width:min(58vw,720px);height:auto;fill:color-mix(in srgb,var(--lp-chinh) 50%,#fff);opacity:.55}
 @media(max-width:900px){.ab-hero__blob{right:-30%;top:auto;bottom:-10%;width:110vw}}
