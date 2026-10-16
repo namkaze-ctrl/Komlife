@@ -1,0 +1,132 @@
+{
+  "nhan": "ura",
+  "ma": "nuoc-rua-chen",
+  "thu_tu": 4,
+  "nhom": "Nước rửa chén",
+  "trang_thai": "Đang bán",
+  "ten": "URA Nước rửa chén",
+  "ten_dong": "Nước rửa chén tinh chất",
+  "cau_ngan": "Sạch dầu mỡ, dịu với da tay",
+  "mau": "#B07A2E",
+  "mau_nhat": "#F6F0E8",
+  "anh": [
+    "../../assets/anh/san-pham/ura/nuoc-rua-chen.webp"
+  ],
+  "anh_co_nen": false,
+  "khong_phong_to": false,
+  "mo_ta": "Làm sạch nhanh dầu mỡ, khử mùi tanh trên chén đĩa, công thức dịu nhẹ với da tay. Hai hương Chanh & Sả tươi mát và Quế Java ấm áp.",
+  "nhan_phien_ban": "Chọn quy cách",
+  "mui_huong": [
+    {
+      "ten": "Chanh & Sả",
+      "mo_ta": "Tươi mát, sạch thoáng sau mỗi lần rửa",
+      "mau": "#E3C631"
+    },
+    {
+      "ten": "Quế Java",
+      "mo_ta": "Ấm áp, dễ chịu, nhẹ nhàng",
+      "mau": "#A8582E"
+    }
+  ],
+  "phien_ban": [
+    {
+      "ten": "Túi 3L",
+      "ma_gia": "",
+      "ghi_chu": "Túi lớn có vòi rót, đổ thêm vào chai dùng dần",
+      "sku": "",
+      "anh": "",
+      "mui_co": [],
+      "khong_mui": false
+    },
+    {
+      "ten": "Chai 1L",
+      "ma_gia": "",
+      "ghi_chu": "Chai có vòi bấm, đặt cạnh bồn rửa",
+      "sku": "",
+      "anh": "",
+      "mui_co": [],
+      "khong_mui": false
+    }
+  ],
+  "anh_lua_chon": [
+    {
+      "phien_ban": "Túi 3L",
+      "mui": "Chanh & Sả",
+      "anh": "../../assets/anh/san-pham/ura/nuoc-rua-chen-tui-chanh-sa.webp"
+    },
+    {
+      "phien_ban": "Túi 3L",
+      "mui": "Quế Java",
+      "anh": "../../assets/anh/san-pham/ura/nuoc-rua-chen-tui-que-java.webp"
+    },
+    {
+      "phien_ban": "Chai 1L",
+      "mui": "Chanh & Sả",
+      "anh": "../../assets/anh/san-pham/ura/nuoc-rua-chen-chai-chanh-sa.webp"
+    },
+    {
+      "phien_ban": "Chai 1L",
+      "mui": "Quế Java",
+      "anh": "../../assets/anh/san-pham/ura/nuoc-rua-chen-chai-que-java.webp"
+    }
+  ],
+  "thong_so": [
+    {
+      "ten": "Dòng sản phẩm",
+      "gia_tri": "Nước rửa chén URA tinh chất"
+    },
+    {
+      "ten": "Mùi hương",
+      "gia_tri": "Chanh & Sả · Quế Java"
+    },
+    {
+      "ten": "Quy cách",
+      "gia_tri": "Túi 3L · chai 1L"
+    },
+    {
+      "ten": "Dùng cho",
+      "gia_tri": "Chén đĩa sành, sứ, thủy tinh và đồ dùng nhà bếp"
+    },
+    {
+      "ten": "Bảo quản",
+      "gia_tri": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp"
+    },
+    {
+      "ten": "Sản xuất",
+      "gia_tri": "Công ty TNHH Komlife Việt Nam, nhà máy Hưng Yên"
+    }
+  ],
+  "cong_dung": [
+    {
+      "ten": "Sạch nhanh dầu mỡ",
+      "mo_ta": "Làm sạch vết dầu mỡ trên chén đĩa, xoong nồi."
+    },
+    {
+      "ten": "Khử mùi tanh",
+      "mo_ta": "Chén đĩa sạch, không ám mùi sau khi rửa."
+    },
+    {
+      "ten": "Dịu nhẹ với da tay",
+      "mo_ta": "Công thức dịu nhẹ, dùng hằng ngày."
+    }
+  ],
+  "dung_luc_nao": [
+    {
+      "ten": "Chén bát hằng ngày",
+      "mo_ta": "Bữa cơm gia đình, đồ ăn sáng."
+    },
+    {
+      "ten": "Xoong nồi nhiều dầu mỡ",
+      "mo_ta": "Chảo rán, nồi kho, khay nướng."
+    }
+  ],
+  "cach_dung": "Cho một lượng vừa đủ vào miếng rửa chén hoặc pha loãng với nước, bóp nhẹ tạo bọt, rửa rồi tráng lại bằng nước sạch.\nLưu ý: để xa tầm tay trẻ em, không dùng để tắm gội.",
+  "tieu_de": {
+    "cong_dung": "*{so} điểm chính* của sản phẩm",
+    "dung_luc_nao": "Dùng *lúc nào*",
+    "cach_dung": "",
+    "sp_khac": ""
+  },
+  "shopee": "",
+  "tiktok_shop": ""
+}

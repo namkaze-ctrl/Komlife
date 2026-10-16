@@ -4,9 +4,14 @@
   "nganh": "Nước giặt xả cao cấp",
   "cau_ngan": "Sạch sâu, mềm mượt,\nhương hoa tinh tế",
   "cau_dinh_vi": "Sạch sâu, mềm mượt, hương hoa tinh tế",
+  "mau": {
+    "chinh": "#3E7A3C",
+    "nhan": "#E33F8C",
+    "nen": "#F5FAF2"
+  },
   "mo_ta": "Lấy cảm hứng từ phong cách chăm sóc Nhật Bản, URA mang đến dòng giặt xả cao cấp với công thức 6 in 1, cùng những tầng hương hoa thanh lịch và lưu hương bền lâu.",
-  "cau_chuyen": "URA được xây dựng cho những gia đình giặt nhiều, giặt thường xuyên và cần một sản phẩm vừa sạch vừa giữ được form vải. Sản xuất trên cùng dây chuyền đạt ISO của Komlife, dùng hoạt chất từ BASF và hương liệu từ Givaudan.",
-  "danh_cho": "Gia đình có con nhỏ, người giặt máy hằng ngày.",
+  "cau_chuyen": "URA là nhãn giặt xả của Komlife dành cho người trẻ bận rộn: muốn quần áo sạch gọn trong một lần giặt, thơm rõ mà không gắt. Ba mùi hương hoa Mẫu Đơn & Lê, Hoa Trà & Lan Tiên, Hoa Hồng & Đào Tươi cho ba cá tính khác nhau. Bên cạnh nước giặt xả có thêm nước rửa chén URA hai hương Chanh & Sả, Quế Java. Tất cả được sản xuất tại nhà máy Komlife ở Hưng Yên.",
+  "danh_cho": "Người trẻ 25–35: dân văn phòng, người sống một mình hoặc gia đình nhỏ, giặt đồ hằng ngày.",
   "anh_the_doc": "../../assets/anh/nhan-hang/ura-the-doc.jpg",
   "anh_bia": "../../assets/anh/nhan-hang/ura-bia.jpg",
   "anh_the": "../../assets/anh/nhan-hang/the/ura.jpg",

@@ -1,0 +1,99 @@
+{
+  "nhan": "ura",
+  "ma": "hoa-hong-dao-tuoi",
+  "thu_tu": 3,
+  "nhom": "Nước giặt xả",
+  "trang_thai": "Đang bán",
+  "ten": "URA Hoa Hồng & Đào Tươi",
+  "ten_dong": "Nước giặt xả 6 in 1",
+  "cau_ngan": "Ngọt ngào, tươi mới",
+  "mau": "#E0568F",
+  "mau_nhat": "#FCECF3",
+  "anh": [
+    "../../assets/anh/san-pham/ura/hoa-hong-dao-tuoi.webp"
+  ],
+  "anh_co_nen": false,
+  "khong_phong_to": false,
+  "mo_ta": "Hoa hồng và đào tươi cho mùi ngọt, tươi, dễ chịu suốt ngày dài. Giặt và xả trong một lần, quần áo sạch, mềm, thơm rõ mà không gắt.",
+  "nhan_phien_ban": "Chọn quy cách",
+  "mui_huong": [],
+  "phien_ban": [
+    {
+      "ten": "Túi 3L",
+      "ma_gia": "",
+      "ghi_chu": "Túi có vòi rót, thể tích thực 3 lít",
+      "sku": "",
+      "anh": "../../assets/anh/san-pham/ura/hoa-hong-dao-tuoi-tui-3l.webp",
+      "mui_co": [],
+      "khong_mui": false
+    }
+  ],
+  "anh_lua_chon": [],
+  "thong_so": [
+    {
+      "ten": "Dòng sản phẩm",
+      "gia_tri": "Nước giặt xả URA 6 in 1"
+    },
+    {
+      "ten": "Mùi hương",
+      "gia_tri": "Hoa Hồng & Đào Tươi: ngọt ngào, tươi mới (Rose & Peach)"
+    },
+    {
+      "ten": "Quy cách",
+      "gia_tri": "Túi 3L"
+    },
+    {
+      "ten": "Dùng cho",
+      "gia_tri": "Giặt tay, máy giặt cửa trên và cửa ngang"
+    },
+    {
+      "ten": "Bảo quản",
+      "gia_tri": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp"
+    },
+    {
+      "ten": "Sản xuất",
+      "gia_tri": "Công ty TNHH Komlife Việt Nam, nhà máy Hưng Yên"
+    }
+  ],
+  "cong_dung": [
+    {
+      "ten": "Sạch sâu đa tầng",
+      "mo_ta": "Tách vết bẩn khỏi sợi vải, đánh bật bụi bẩn, dầu mỡ, mồ hôi và hạn chế bám ngược trở lại."
+    },
+    {
+      "ten": "Mềm vải, giữ form",
+      "mo_ta": "Quần áo ít xơ rối, giữ form tốt hơn, hạn chế phai màu sau nhiều lần giặt."
+    },
+    {
+      "ten": "Hương hoa thơm rõ mà không gắt",
+      "mo_ta": "Hương Hoa Hồng & Đào Tươi thơm dễ chịu trên quần áo suốt ngày dài."
+    }
+  ],
+  "dung_luc_nao": [
+    {
+      "ten": "Đồ đi làm",
+      "mo_ta": "Sơ mi, quần âu, váy công sở mặc cả ngày."
+    },
+    {
+      "ten": "Đồ tập, đồ thể thao",
+      "mo_ta": "Áo thun, đồ gym thấm mồ hôi."
+    },
+    {
+      "ten": "Chăn ga, rèm",
+      "mo_ta": "Đồ vải lớn giặt định kỳ trong nhà."
+    },
+    {
+      "ten": "Giặt tay đồ mỏng",
+      "mo_ta": "Công thức dịu nhẹ, giặt tay hằng ngày."
+    }
+  ],
+  "cach_dung": "Cho lượng nước giặt xả phù hợp với lượng quần áo và mức độ bẩn, theo hướng dẫn in trên túi. Giặt và xả trong một lần, không cần dùng thêm nước xả vải. Dùng được cho giặt tay và máy giặt cửa trên, cửa ngang.\nLưu ý: đọc kỹ hướng dẫn trên bao bì trước khi sử dụng, để xa tầm tay trẻ em, vặn kín nắp sau khi dùng.",
+  "tieu_de": {
+    "cong_dung": "*{so} điểm chính* của URA",
+    "dung_luc_nao": "Hợp để giặt *những gì*",
+    "cach_dung": "",
+    "sp_khac": ""
+  },
+  "shopee": "",
+  "tiktok_shop": ""
+}
