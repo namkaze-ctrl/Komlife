@@ -9,7 +9,7 @@ import { themUtm } from '../lib/landing';
 interface Props { b: any; sanPham: any[]; tdDanhMuc: string; shopee: string; uuDai?: { href: string; ten: string } | null }
 const { b, sanPham, tdDanhMuc, shopee, uuDai } = Astro.props;
 const m = b.mau ?? {};
-const bien = `--lp-chinh:${m.chinh || '#212b7e'};--lp-nhan:${m.nhan || '#3fc2cf'};--lp-nen:${m.nen || '#F1F2F9'};--lp-nut:${m.chinh || '#212b7e'};--lp-nut-re:${m.nhan || '#3fc2cf'}`;
+const bien = `--lp-chinh:${m.chinh || '#212b7e'};--lp-nhan:${m.nhan || '#3fc2cf'};--lp-nen:${m.nen || '#F1F2F9'};--lp-nut:${m.chinh || '#212b7e'};--lp-nut-re:${m.nhan || '#3fc2cf'}${m.nen_dau ? `;--lp-nen-dau:${m.nen_dau}` : ''}${m.mang_tron ? `;--lp-tron:${m.mang_tron}` : ''}`;
 // Chia nhóm danh mục theo ô "nhom" của sản phẩm (giữ thứ tự xuất hiện). Không sản phẩm nào có nhóm -> một lưới duy nhất.
 const tenNhom: string[] = [...new Set(sanPham.map((p) => p.nhom).filter(Boolean))];
 const nhom = tenNhom.length > 1 ? tenNhom.map((t) => ({ ten: t, ds: sanPham.filter((p) => p.nhom === t) })) : [];

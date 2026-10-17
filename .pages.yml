@@ -305,6 +305,8 @@ content:
           - { name: chinh, label: "Màu chính (tiêu đề, nút; vd #0151A7)", type: string }
           - { name: nhan, label: Màu chữ nhấn, type: string }
           - { name: nen, label: Màu nền nhạt, type: string }
+          - { name: nen_dau, label: "Màu loang nền màn đầu (trống = theo màu nhấn)", type: string }
+          - { name: mang_tron, label: "Màu mảng tròn sau ảnh màn đầu (trống = theo màu chính)", type: string }
       - { name: anh_linh_vat, label: Ảnh linh vật (PNG nền trong suốt), type: image }
       - { name: chu_man_dau, label: "Chữ trang trí màn đầu (PNG/WebP nền trong suốt, nằm trên cụm 3 thẻ chai)", type: image }
       - { name: linh_vat_2, label: "Linh vật thứ hai (PNG nền trong suốt, đứng bên phải cụm chai)", type: image }

@@ -36,6 +36,9 @@ const nhanHang = defineCollection({
       chinh: z.string().optional().default(''),
       nhan: z.string().optional().default(''),
       nen: z.string().optional().default(''),
+      // tuỳ chọn: màu loang nền màn đầu (trống = theo màu nhấn) và màu mảng tròn sau ảnh (trống = theo màu chính)
+      nen_dau: z.string().optional().default(''),
+      mang_tron: z.string().optional().default(''),
     }).optional().default({}),
     anh_linh_vat: z.string().optional().default(''),
     // Ảnh nền cả màn đầu trang nhãn (banner 16:9, chữ đặt bên trái nên bên trái ảnh phải trống). Có ảnh này thì ẩn cụm 3 thẻ chai + linh vật

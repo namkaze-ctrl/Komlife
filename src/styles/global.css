@@ -1239,7 +1239,7 @@ a.tin{text-decoration:none;color:inherit}
 .spct .lp-bar .lp-btn--phu{background:#fff;color:var(--sp-chu)}
 
 /* ─── landing bố cục "Danh mục sản phẩm" (phong cách nhãn) ─── */
-.ab-hero{position:relative;overflow:hidden;background:linear-gradient(160deg,color-mix(in srgb,var(--lp-nhan) 22%,#fff) 0%,color-mix(in srgb,var(--lp-nhan) 10%,#fff) 55%,var(--lp-nen) 100%);
+.ab-hero{position:relative;overflow:hidden;background:linear-gradient(160deg,color-mix(in srgb,var(--lp-nen-dau,var(--lp-nhan)) 22%,#fff) 0%,color-mix(in srgb,var(--lp-nen-dau,var(--lp-nhan)) 10%,#fff) 55%,var(--lp-nen) 100%);
   padding-block:clamp(100px,12vh,116px) clamp(40px,4.6vw,64px)}
 .lp-nhap+.ab-hero{padding-top:clamp(36px,5vw,60px)}
 /* 16/10: màn đầu trang nhãn dùng BANNER (ô anh_man_dau): ảnh nằm ngay sau cột chữ, căn giữa cột phải;
@@ -1268,7 +1268,7 @@ a.tin{text-decoration:none;color:inherit}
   .ab-chu-tt{top:-50px;right:auto;left:50%;translate:-50% 0;width:170px}
   .nhm-hero .ab-tho.ab-tho--2{left:auto;right:-3%;bottom:-7%;width:60px}
 }
-.ab-hero__blob{position:absolute;right:-6%;top:6%;width:min(58vw,720px);height:auto;fill:color-mix(in srgb,var(--lp-chinh) 50%,#fff);opacity:.55}
+.ab-hero__blob{position:absolute;right:-6%;top:6%;width:min(58vw,720px);height:auto;fill:color-mix(in srgb,var(--lp-tron,var(--lp-chinh)) 50%,#fff);opacity:.55}
 @media(max-width:900px){.ab-hero__blob{right:-30%;top:auto;bottom:-10%;width:110vw}}
 .ab-hero__in{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
 @media(max-width:900px){.ab-hero__in{grid-template-columns:1fr}}
