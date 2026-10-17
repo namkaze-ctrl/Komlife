@@ -6,7 +6,9 @@ import tc from '../content/trang/trang-chu.json';
 import { tieuDe, dong } from '../lib/chu';
 interface Props { gon?: boolean }
 const { gon = false } = Astro.props;
-const tt = tc.tap_the;
+import { noiDung } from '../lib/ngon-ngu';
+const { tc: tcN, ui, E } = noiDung(Astro.url);
+const tt = tcN.tap_the;
 const anh = gon ? tt.anh.slice(0, 3) : tt.anh;
 ---
 <section class={`sec${gon ? ' sec--nmgon' : ''}`} id={gon ? undefined : 'nha-may'}>
@@ -17,7 +19,7 @@ const anh = gon ? tt.anh.slice(0, 3) : tt.anh;
         <h2 set:html={tieuDe(tt.tieu_de)} />
       </div>
       {gon
-        ? <a class="btn btn--ghost" href="/ve-komlife#nha-may">Xem thêm ảnh và video nhà máy</a>
+        ? <a class="btn btn--ghost" href="/ve-komlife#nha-may">{E ? ui.nha_may_them : 'Xem thêm ảnh và video nhà máy'}</a>
         : <p class="lead" set:html={dong(tt.mo_ta)} />}
     </div>
     <div class="nmg">

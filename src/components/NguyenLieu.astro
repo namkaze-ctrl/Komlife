@@ -4,7 +4,9 @@ import Anh from './Anh.astro';
 import tc from '../content/trang/trang-chu.json';
 import { khoiChung } from '../lib/noi-dung';
 import { tieuDe, dong } from '../lib/chu';
-const nl = tc.nguyen_lieu;
+import { noiDung } from '../lib/ngon-ngu';
+const { tc: tcN, kc } = noiDung(Astro.url);
+const nl = tcN.nguyen_lieu;
 ---
 <section class="sec">
   <div class="wrap ngl">
@@ -20,7 +22,7 @@ const nl = tc.nguyen_lieu;
       )}
     </div>
     <div class="ngl__r rv">
-      {khoiChung.doi_tac_nguyen_lieu.map((n) => (
+      {kc.doi_tac_nguyen_lieu.map((n) => (
         <div class="ncc">
           <div class="ncc__n">{n.ten}</div>
           <div class="ncc__m"><span class="ncc__q">{n.quoc_gia}</span><span class="ncc__v">{n.nhom}</span></div>

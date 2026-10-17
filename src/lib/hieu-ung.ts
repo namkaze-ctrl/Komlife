@@ -132,7 +132,7 @@ function demSo(el: HTMLElement) {
   el.textContent = '0';
   requestAnimationFrame(function buoc(t) {
     const k = Math.min(1, (t - t0) / dai), m = 1 - Math.pow(1 - k, 3);
-    el.textContent = Math.round(dich * m).toLocaleString('vi-VN');
+    el.textContent = Math.round(dich * m).toLocaleString(document.documentElement.lang === 'en' ? 'en-US' : 'vi-VN');
     if (k < 1) requestAnimationFrame(buoc); else el.textContent = goc;
   });
 }

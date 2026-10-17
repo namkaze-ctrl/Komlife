@@ -7,7 +7,9 @@ import vk from '../content/trang/ve-komlife.json';
 import { dong } from '../lib/chu';
 interface Props { suMenh?: boolean }
 const { suMenh = false } = Astro.props;
-const ng = tc.nguoi_dung_dau;
+import { noiDung } from '../lib/ngon-ngu';
+const { tc: tcN, vk: vkN, ui, E } = noiDung(Astro.url);
+const ng = tcN.nguoi_dung_dau;
 // bỏ ngoặc kép người nhập lỡ gõ sẵn, trang chủ tự thêm “ ” cùng font
 const cauTrich = ng.trich_dan.replace(/^["'“”]+|["'“”]+$/g, '');
 ---
@@ -26,12 +28,12 @@ const cauTrich = ng.trich_dan.replace(/^["'“”]+|["'“”]+$/g, '');
         </div>
         {suMenh && (
           <div class="nguoi__sm">
-            <div class="nguoi__smk">Sứ mệnh</div>
-            <p set:html={dong(vk.su_menh)} />
+            <div class="nguoi__smk">{E ? ui.su_menh : 'Sứ mệnh'}</div>
+            <p set:html={dong(vkN.su_menh)} />
           </div>
         )}
         {suMenh && (
-          <a class="nguoi__nut" href="/ve-komlife">Tìm hiểu về Komlife <i aria-hidden="true">→</i></a>
+          <a class="nguoi__nut" href="/ve-komlife">{E ? ui.tim_hieu : 'Tìm hiểu về Komlife'} <i aria-hidden="true">→</i></a>
         )}
       </div>
     </div>

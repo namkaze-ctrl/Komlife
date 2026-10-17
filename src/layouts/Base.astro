@@ -6,6 +6,7 @@ import Anh from '../components/Anh.astro';
 import { caiDat, layNhanHang } from '../lib/noi-dung';
 import { timAnh } from '../lib/anh';
 import { chuTron, soGoi } from '../lib/chu';
+import { noiDung } from '../lib/ngon-ngu';
 
 interface Props {
   tieuDe: string;
@@ -16,13 +17,16 @@ interface Props {
   /** Landing theo đợt: không cho Google tìm (tránh trùng trang nhãn), ẩn thanh đăng ký đại lý. */
   khongIndex?: boolean;
   anThanhDaiLy?: boolean;
+  /** Trang này có bản ngôn ngữ kia (đường dẫn), để nút VI | EN và hreflang trỏ đúng */
+  banKia?: string;
 }
-const { tieuDe, moTa, anhChiaSe, coHero = false, loai = 'website', khongIndex = false, anThanhDaiLy = false } = Astro.props;
+const { tieuDe, moTa, anhChiaSe, coHero = false, loai = 'website', khongIndex = false, anThanhDaiLy = false, banKia } = Astro.props;
+const { E, cd, ui } = noiDung(Astro.url);
 
 const site = Astro.site ?? new URL('https://komlife.com.vn');
 const duong = Astro.url.pathname.replace(/\/$/, '') || '/';
 const canonical = new URL(duong, site).href;
-const moTaTrang = chuTron(moTa || caiDat.seo_mo_ta_mac_dinh);
+const moTaTrang = chuTron(moTa || cd.seo_mo_ta_mac_dinh);
 const tieuDeTrang = chuTron(tieuDe);
 
 const anhOg = timAnh(anhChiaSe || caiDat.anh_chia_se);
@@ -42,7 +46,10 @@ const MENU = [
   ['/chat-luong-tieu-chuan', 'Chất lượng & Tiêu chuẩn'],
   ['/tin-tuc', 'Tin tức'],
   ['/lien-he', 'Liên hệ'],
-];
+].map(([h, t], i) => [h, E ? ui.menu[i] : t]);
+// Nút đổi ngôn ngữ: trang có bản kia thì sang đúng trang đó, không thì về trang chủ của ngôn ngữ kia
+const sangVi = E ? (banKia || '/') : null, sangEn = E ? null : (banKia || '/en');
+const nhaHref = E ? '/en' : '/';
 const dangO = (h: string) => duong === h || duong.startsWith(h + '/');
 const oTrangDaiLy = duong === '/hop-tac-dai-ly';
 
@@ -61,7 +68,7 @@ const toChuc = {
 };
 ---
 <!doctype html>
-<html lang="vi">
+<html lang={E ? 'en' : 'vi'}>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -82,7 +89,9 @@ const toChuc = {
   <meta property="og:title" content={tieuDeTrang}>
   <meta property="og:description" content={moTaTrang}>
   <meta property="og:url" content={canonical}>
-  <meta property="og:locale" content="vi_VN">
+  <meta property="og:locale" content={E ? 'en_US' : 'vi_VN'}>
+  {banKia && <link rel="alternate" hreflang={E ? 'vi' : 'en'} href={new URL(banKia, site).href}>}
+  {banKia && <link rel="alternate" hreflang={E ? 'en' : 'vi'} href={canonical}>}
   <meta property="og:site_name" content={caiDat.ten_ngan}>
   {ogUrl && <meta property="og:image" content={ogUrl}>}
   <meta name="twitter:card" content="summary_large_image">
@@ -104,14 +113,15 @@ const toChuc = {
 
   <header class="nav" id="nav">
     <div class="wrap nav__in">
-      <a class="mark" href="/" aria-label={`${caiDat.ten_ngan} — về trang chủ`}>
+      <a class="mark" href={nhaHref} aria-label={`${caiDat.ten_ngan} — về trang chủ`}>
         <Anh class="mark__s" src="../../assets/anh/chung/logo-xanh.png" alt="Komlife" widths={[323, 646]} sizes="160px" loading="eager" />
         <Anh class="mark__t" src="../../assets/anh/chung/logo-trang.png" alt="" widths={[323, 646]} sizes="160px" loading="eager" />
       </a>
       <button class="nav__btn" id="navbtn" aria-expanded="false" aria-controls="navlinks">Menu</button>
       <nav class="nav__links" id="navlinks">
         {MENU.map(([h, t]) => <a href={h} aria-current={dangO(h) ? 'page' : undefined}>{t}</a>)}
-        <a href="/hop-tac-dai-ly" class="nav__cta" aria-current={oTrangDaiLy ? 'page' : undefined}>Đăng ký làm đại lý</a>
+        <a href="/hop-tac-dai-ly" class="nav__cta" aria-current={oTrangDaiLy ? 'page' : undefined}>{E ? ui.nut_dai_ly : 'Đăng ký làm đại lý'}</a>
+        <span class="nav__nn" aria-label="Ngôn ngữ / Language">{E ? <><a href={sangVi} hreflang="vi" lang="vi">VI</a><b aria-current="true">EN</b></> : <><b aria-current="true">VI</b><a href={sangEn} hreflang="en" lang="en">EN</a></>}</span>
       </nav>
     </div>
   </header>
@@ -123,39 +133,39 @@ const toChuc = {
       <div class="foot__cols">
         <div>
           <div class="mark mark--foot"><Anh src="../../assets/anh/chung/logo-trang.png" alt={caiDat.ten_ngan} widths={[323, 646]} sizes="160px" /></div>
-          <p class="foot__l" style="margin-top:16px;max-width:34ch">{caiDat.gioi_thieu_chan_trang}</p>
+          <p class="foot__l" style="margin-top:16px;max-width:34ch">{cd.gioi_thieu_chan_trang}</p>
         </div>
         <div>
-          <div class="foot__h">Nhãn hàng</div>
+          <div class="foot__h">{E ? ui.chan_trang.nhan_hang : 'Nhãn hàng'}</div>
           <div class="foot__l">{nhan.map((b) => <a href={`/nhan-hang/${b.ma}`}>{b.ten}</a>)}</div>
         </div>
         <div>
-          <div class="foot__h">Công ty</div>
+          <div class="foot__h">{E ? ui.chan_trang.cong_ty : 'Công ty'}</div>
           <div class="foot__l">
-            <a href="/ve-komlife">Về Komlife</a><a href="/chat-luong-tieu-chuan">Chất lượng &amp; Tiêu chuẩn</a>
-            <a href="/hop-tac-dai-ly">Hợp tác đại lý</a><a href="/tin-tuc">Tin tức</a><a href="/lien-he">Liên hệ</a>
+            {[['/ve-komlife', 'Về Komlife'], ['/chat-luong-tieu-chuan', 'Chất lượng & Tiêu chuẩn'], ['/hop-tac-dai-ly', 'Hợp tác đại lý'], ['/tin-tuc', 'Tin tức'], ['/lien-he', 'Liên hệ']]
+              .map(([h, t], i) => <a href={h}>{E ? ui.chan_trang.lien_ket[i] : t}</a>)}
           </div>
         </div>
         <div>
-          <div class="foot__h">Liên hệ</div>
+          <div class="foot__h">{E ? ui.chan_trang.lien_he : 'Liên hệ'}</div>
           <div class="foot__l">
             <a href={`tel:${tel}`}>{caiDat.hotline}</a>
             <a href={`mailto:${caiDat.email}`}>{caiDat.email}</a>
-            <span>Trụ sở chính: {caiDat.tru_so}</span>
-            <span>Nhà máy: {caiDat.nha_may}</span>
+            <span>{E ? ui.chan_trang.tru_so : 'Trụ sở chính'}: {cd.tru_so}</span>
+            <span>{E ? ui.chan_trang.nha_may : 'Nhà máy'}: {cd.nha_may}</span>
           </div>
         </div>
       </div>
       <div class="foot__bar">
-        <span>© {new Date().getFullYear()} {caiDat.ten_cong_ty}</span>
-        <span class="foot__pl"><a href="/chinh-sach-bao-mat">Chính sách bảo mật</a> · <a href="/chinh-sach-doi-tra">Chính sách đổi trả</a> · <a href="/dieu-khoan-dich-vu">Điều khoản sử dụng</a></span>
+        <span>© {new Date().getFullYear()} {cd.ten_cong_ty}</span>
+        <span class="foot__pl"><a href="/chinh-sach-bao-mat">{E ? ui.chan_trang.phap_ly[0] : 'Chính sách bảo mật'}</a> · <a href="/chinh-sach-doi-tra">{E ? ui.chan_trang.phap_ly[1] : 'Chính sách đổi trả'}</a> · <a href="/dieu-khoan-dich-vu">{E ? ui.chan_trang.phap_ly[2] : 'Điều khoản sử dụng'}</a></span>
       </div>
     </div>
   </footer>
 
   {!oTrangDaiLy && !anThanhDaiLy && (
     <div id="dlbar" aria-hidden="true">
-      <a class="b1" href="/hop-tac-dai-ly">{(() => { const [dau, ...sau] = caiDat.nut_day_trang.split(/\s+[—–-]\s+/); return <><span>{dau}</span>{sau.length > 0 && <span class="b1__them"> — {sau.join(' — ')}</span>}</>; })()}</a>
+      <a class="b1" href="/hop-tac-dai-ly">{(() => { const [dau, ...sau] = cd.nut_day_trang.split(/\s+[—–-]\s+/); return <><span>{dau}</span>{sau.length > 0 && <span class="b1__them"> — {sau.join(' — ')}</span>}</>; })()}</a>
       <a class="b2" href={`tel:${tel}`} aria-label={`Gọi ${caiDat.hotline}`}>
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.3-.3.75-.4 1.14-.27 1.25.41 2.6.63 3.95.63.62 0 1.12.5 1.12 1.12v3.49c0 .62-.5 1.12-1.12 1.12C10.83 21.77 2.23 13.17 2.23 2.5c0-.62.5-1.12 1.12-1.12h3.5c.62 0 1.12.5 1.12 1.12 0 1.36.22 2.7.63 3.95.12.39.03.83-.28 1.14l-2.2 2.2z"/></svg>
       </a>

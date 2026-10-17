@@ -4,10 +4,11 @@ import Anh from './Anh.astro';
 import { khoiChung } from '../lib/noi-dung';
 import { bieuTuong, BIEU_TUONG } from '../lib/bieu-tuong';
 import { dong, thoat } from '../lib/chu';
-const k = khoiChung;
+import { noiDung } from '../lib/ngon-ngu';
+const { kc: k, t } = noiDung(Astro.url);
 ---
 <section class="pp pp-band">
-  <Anh src={k.anh_dai_so_lieu} alt="Nhà máy Komlife tại Hưng Yên" sizes="(max-width:1099px) 173vw, 100vw" />
+  <Anh src={k.anh_dai_so_lieu} alt={t('Nhà máy Komlife tại Hưng Yên', 'Komlife factory in Hung Yen')} sizes="(max-width:1099px) 173vw, 100vw" />
   <div class="pp-band__in">
     <div class="pp-stats">
       {k.so_lieu.map((s) => (

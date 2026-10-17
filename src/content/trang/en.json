@@ -1,0 +1,214 @@
+{
+  "ghi_chu": "BẢN TIẾNG ANH (thử nghiệm). Chỉ ghi phần chữ cần dịch, cùng cấu trúc với file tiếng Việt; ô nào không có ở đây thì lấy bản tiếng Việt (ảnh, số, link giữ nguyên).",
+  "giao_dien": {
+    "menu": [
+      "About Komlife",
+      "Brands",
+      "Quality & Standards",
+      "News",
+      "Contact"
+    ],
+    "nut_dai_ly": "Become a distributor",
+    "chan_trang": {
+      "nhan_hang": "Brands",
+      "cong_ty": "Company",
+      "lien_he": "Contact",
+      "lien_ket": [
+        "About Komlife",
+        "Quality & Standards",
+        "Distributor partnership",
+        "News",
+        "Contact"
+      ],
+      "tru_so": "Head office",
+      "nha_may": "Factory",
+      "phap_ly": [
+        "Privacy policy",
+        "Return policy",
+        "Terms of use"
+      ]
+    },
+    "nha_may_them": "More factory photos and videos",
+    "su_menh": "Mission",
+    "tim_hieu": "Learn about Komlife",
+    "npp_nut": "Information for distributors",
+    "giay": {
+      "ma_so": "Code",
+      "ngay_cap": "Issued",
+      "noi_cap": "Issued by",
+      "phong_to": "Enlarge",
+      "alt": "Komlife certificate"
+    }
+  },
+  "cai_dat": {
+    "ten_cong_ty": "Komlife Vietnam Co., Ltd.",
+    "gioi_thieu_chan_trang": "Komlife Vietnam Co., Ltd. — manufacturer of home and personal care products, with a 20,000 m² factory in Hung Yen, Vietnam.",
+    "tru_so": "B5-BT8 Ha Dinh Urban Area, Thanh Liet Ward, Hanoi, Vietnam",
+    "nha_may": "Tu Ho Village, Viet Yen Commune, Hung Yen Province, Vietnam",
+    "nut_day_trang": "Become a distributor — we call back within 24 hours"
+  },
+  "trang_chu": {
+    "seo_tieu_de": "Komlife Vietnam — Elevating life, every day",
+    "seo_mo_ta": "Komlife Vietnam Co., Ltd. manufactures home and personal care products at its own 20,000 m² factory in Hung Yen, Vietnam. Five brands: SPY, URA, Abby, Givebe, Eddy.",
+    "dau_trang": {
+      "nhan": "Komlife Vietnam",
+      "tieu_de": "Elevating life,\n*every day*",
+      "mo_ta": "Komlife Vietnam Co., Ltd. manufactures home and personal care products at its own modern 20,000 m² factory in Hung Yen, Vietnam.",
+      "nut_1": "Explore our brands",
+      "nut_2": "About Komlife"
+    },
+    "tap_the": {
+      "nhan": "Factory & people",
+      "tieu_de": "Real production spaces *at our Hung Yen factory*",
+      "anh": [
+        {
+          "chu_thich": "Administration building at the Hung Yen factory"
+        },
+        {
+          "chu_thich": "Mixing area — 6 m³ stainless steel tanks"
+        },
+        {
+          "chu_thich": "Finished goods warehouse before dispatch"
+        }
+      ]
+    },
+    "nguyen_lieu": {
+      "nhan": "Raw material standards",
+      "tieu_de": "International-grade raw materials *from global suppliers*",
+      "mo_ta": "Product quality does not happen by chance. Komlife Vietnam sources raw materials directly from major international suppliers, building a solid foundation for every product.",
+      "chu_thich_anh": "Komlife receives a partnership certificate from MANE — the French fragrance group founded in 1871."
+    },
+    "nguoi_dung_dau": {
+      "nhan": "Leadership",
+      "trich_dan": "We don't just manufacture — we build trust and a better quality of life for millions of Vietnamese families.",
+      "ten": "Ms. Tran Thi Huyen",
+      "chuc_vu": "Director · Komlife Vietnam Co., Ltd."
+    },
+    "he_sinh_thai": {
+      "nhan": "Our brand portfolio",
+      "tieu_de": "A portfolio of*5 brands*",
+      "mo_ta": "Made in the same factory under one set of quality control procedures, Komlife Vietnam's five brands offer specialised care for the varied needs of every Vietnamese family.",
+      "nut": "Explore our brands"
+    },
+    "ban_le": {
+      "nhan": "Where to buy",
+      "tieu_de": "Komlife products are on the shelves *of trusted retail chains*"
+    },
+    "nha_phan_phoi": {
+      "cac_o": [
+        {
+          "tieu_de": "Transparent pricing",
+          "mo_ta": "Price lists standardised by volume and applied consistently across the system, fair for every distributor."
+        },
+        {
+          "tieu_de": "Reliable supply",
+          "mo_ta": "Full control of supply from our 20,000 m² factory secures capacity for distributors and a sustainable supply chain."
+        },
+        {
+          "tieu_de": "Clear traceability",
+          "mo_ta": "Genuine products straight from the factory, with invoices and verifiable batch numbers — no worries about counterfeits."
+        }
+      ]
+    }
+  },
+  "ve_komlife": {
+    "su_menh": "To bring quality, safe, effective and environmentally friendly products, helping improve the quality of life of millions of Vietnamese families."
+  },
+  "khoi_chung": {
+    "so_lieu": [
+      {
+        "so": "15",
+        "ten": "Years in operation",
+        "mo_ta": "serving Vietnamese families"
+      },
+      {
+        "so": "20,000",
+        "ten": "Modern factory",
+        "mo_ta": "built to international standards"
+      },
+      {
+        "so": "6,000,000",
+        "ten": "Products / year",
+        "mo_ta": "Production capacity"
+      },
+      {
+        "so": "63",
+        "ten": "Provinces",
+        "mo_ta": "Distribution network"
+      }
+    ],
+    "cau_trich": "Together with Komlife Vietnam,\nelevating life\nfor every Vietnamese family.",
+    "dong_hanh": {
+      "nhan": "Long-term partnership",
+      "tieu_de": "Direct from the factory,\nbetter terms for partners",
+      "mo_ta": "Transparent nationwide pricing and full control of supply from a large factory keep your business on schedule — backed by a dedicated regional team ready to support you quickly.",
+      "nut": "Become a distributor →",
+      "diem_manh": [
+        {
+          "chu": "Quality\nproducts"
+        },
+        {
+          "chu": "Attractive\npolicies"
+        },
+        {
+          "chu": "Full\nsupport"
+        },
+        {
+          "chu": "Long-term\npartnership"
+        }
+      ]
+    },
+    "doi_tac_nguyen_lieu": [
+      {
+        "quoc_gia": "France",
+        "nhom": "Fragrance",
+        "mo_ta": "Long experience in fragrance, developing ingredients for consumer goods worldwide."
+      },
+      {
+        "quoc_gia": "Switzerland",
+        "nhom": "Fragrance",
+        "mo_ta": "Deep fragrance expertise, helping Komlife create scent experiences suited to each product line."
+      },
+      {
+        "quoc_gia": "Germany",
+        "nhom": "Active ingredients",
+        "mo_ta": "Raw materials from a global chemical group, meeting requirements for quality and stability in production."
+      },
+      {
+        "quoc_gia": "Japan",
+        "nhom": "Active ingredients",
+        "mo_ta": "Long experience in household care and consumer chemicals, supplying ingredients for Komlife formulas."
+      }
+    ],
+    "phap_ly": {
+      "nhan": "Legal information",
+      "tieu_de": "Transparent *certification*",
+      "mo_ta": "Komlife Vietnam provides full documentation and certificates with verifiable details, so partners can check everything for themselves.",
+      "giay": [
+        {
+          "pham_vi": "Production and trading of cosmetic and household chemical products"
+        },
+        {
+          "pham_vi": "Environmental management system"
+        }
+      ]
+    }
+  },
+  "nhan_hang": {
+    "spy": {
+      "cau_ngan": "Clean, fresh scent\nevery day"
+    },
+    "ura": {
+      "cau_ngan": "Deep clean, soft fabric,\nrefined floral scent"
+    },
+    "abby": {
+      "cau_ngan": "Gentle as\na mother's hug"
+    },
+    "givebe": {
+      "cau_ngan": "Gentle care\nfor your skin"
+    },
+    "eddy": {
+      "cau_ngan": "Solutions for\ntough household chores"
+    }
+  }
+}

@@ -4,10 +4,12 @@ import Anh from './Anh.astro';
 import { khoiChung } from '../lib/noi-dung';
 import { bieuTuong } from '../lib/bieu-tuong';
 import { dong } from '../lib/chu';
-const d = khoiChung.dong_hanh;
+import { noiDung } from '../lib/ngon-ngu';
+const { kc, t } = noiDung(Astro.url);
+const d = kc.dong_hanh;
 ---
 <section class="pp pp-cta">
-  <Anh src={d.anh} alt="Komlife vinh danh đối tác đồng hành" sizes="100vw" />
+  <Anh src={d.anh} alt={t('Komlife vinh danh đối tác đồng hành', 'Komlife honours its long-term partners')} sizes="100vw" />
   <div class="pp-cta__veil"></div>
   {/* Chữ + 4 điểm mạnh + nút nằm hết bên trái (vùng nền tối); bên phải để trống cho ảnh hai người, không bị gì che */}
   <div class="pp-cta__in">

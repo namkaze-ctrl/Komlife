@@ -6,7 +6,9 @@ import { tieuDe } from '../lib/chu';
 import tc from '../content/trang/trang-chu.json';
 interface Props { nhan: string; tieuDe: string; phanPhoi?: boolean } // trang chủ: thêm 3 ô "Thông tin dành cho nhà phân phối"
 const { nhan, tieuDe: td, phanPhoi = false } = Astro.props;
-const npp = tc.nha_phan_phoi;
+import { noiDung } from '../lib/ngon-ngu';
+const { tc: tcN, ui, E } = noiDung(Astro.url);
+const npp = tcN.nha_phan_phoi;
 const ds = khoiChung.he_thong_ban_le;
 ---
 <section class="sec sec--tight sec--panel sec--banle">
@@ -27,7 +29,7 @@ const ds = khoiChung.he_thong_ban_le;
         {npp.cac_o.slice(0, 3).map((x) => (
           <div class="ppo__i rv"><div class="ppo__q">{x.tieu_de}</div><div class="ppo__a">{x.mo_ta}</div></div>
         ))}
-        <a class="btn btn--ghost ppo__nut" href="/hop-tac-dai-ly">Thông tin dành cho nhà phân phối</a>
+        <a class="btn btn--ghost ppo__nut" href="/hop-tac-dai-ly">{E ? ui.npp_nut : 'Thông tin dành cho nhà phân phối'}</a>
       </div>
     )}
   </div>

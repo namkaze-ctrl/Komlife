@@ -1,0 +1,93 @@
+---
+// TRANG CHỦ TIẾNG ANH (thử nghiệm) — chữ ở src/content/trang/en.json, ảnh/số/link lấy từ bản tiếng Việt. Không có khối tin tức (tin chỉ tiếng Việt).
+import Base from '../../layouts/Base.astro';
+import Anh from '../../components/Anh.astro';
+import BanLe from '../../components/BanLe.astro';
+import DaiSoLieu from '../../components/DaiSoLieu.astro';
+import ChungNhan from '../../components/ChungNhan.astro';
+import NhaMay from '../../components/NhaMay.astro';
+import NguoiDungDau from '../../components/NguoiDungDau.astro';
+import NguyenLieu from '../../components/NguyenLieu.astro';
+import DongHanh from '../../components/DongHanh.astro';
+import { noiDung } from '../../lib/ngon-ngu';
+import { layNhanHang, layTinTrangChu, duongDanTin } from '../../lib/noi-dung';
+import { tieuDe, dong, chuTron, ngayThang } from '../../lib/chu';
+
+const { tc, nhanEn } = noiDung(Astro.url);
+const nhan = await layNhanHang();
+const tin: any[] = [];
+const tenMuc = { 'tin-doanh-nghiep': 'Tin doanh nghiệp', 'tin-thi-truong': 'Tin thị trường' } as Record<string, string>;
+const { dau_trang: h, he_sinh_thai: hst, ban_tin: bt } = tc;
+// Thứ tự theo góp ý anh Cường 14/10: nhà máy → người đứng đầu & sứ mệnh → nhãn hàng → kiểm chứng
+// (chứng nhận) → điểm bán & phân phối (3 ô) → tin. Các khối ảnh nhà máy đầy đủ, 2.000 sinh kế,
+// mốc lịch sử chuyển sang Về Komlife; quy trình 4 khâu + đối tác nguyên liệu chi tiết ở Chất lượng.
+---
+<Base tieuDe={tc.seo_tieu_de} moTa={tc.seo_mo_ta} anhChiaSe={h.anh} coHero banKia="/">
+  <section class="hero">
+    <div class="hero__img"><Anh src={h.anh} alt="Aerial view of the Komlife factory in Hung Yen" sizes="100vw" loading="eager" fetchpriority="high" /></div>
+    <div class="hero__veil"></div>
+    {h.ghi_chu_tren_anh && <div class="hero__note" set:html={dong(h.ghi_chu_tren_anh)} />}
+    <div class="wrap hero__in">
+      <div class="hero__txt stack g20">
+        <div class="hv"><div class="eb">{h.nhan}</div></div>
+        <h1 class="hv" set:html={tieuDe(h.tieu_de)} />
+        <p class="hero__sub hv" set:html={dong(h.mo_ta)} />
+        <div class="btnrow hv">
+          <a class="btn btn--light tu" href="/nhan-hang">{h.nut_1}</a>
+          <a class="btn btn--outline-light tu" href="/ve-komlife">{h.nut_2}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <NhaMay gon />
+
+  <DaiSoLieu />
+
+  <NguyenLieu />
+
+  <NguoiDungDau suMenh />
+
+  <section class="pp pp-eco">
+    <div class="pp-eco__l">
+      <div class="pp-eb">{hst.nhan}</div>
+      <h2 class="pp-h" set:html={tieuDe(hst.tieu_de, 'i')} />
+      <p class="pp-body" set:html={dong(hst.mo_ta)} />
+      <a class="pp-btn" href="/nhan-hang">{hst.nut} <i>→</i></a>
+    </div>
+    <div class="pp-cards">
+      {nhan.map((b) => (
+        <a class="pp-card" href={`/nhan-hang/${b.ma}`}>
+          <Anh src={b.anh_the_doc} alt={`${b.ten} products`} sizes="(max-width:640px) 47vw, (max-width:1099px) 31vw, (max-width:1536px) 11vw, 166px" widths={[340, 700]} />
+          <div class="pp-card__t"><div class="pp-card__n">{b.ten}</div><div class="pp-card__s" set:html={dong(nhanEn[b.ma]?.cau_ngan || b.cau_ngan)} /></div>
+          <span class="pp-card__a">→</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <ChungNhan />
+
+  <BanLe nhan={tc.ban_le.nhan} tieuDe={tc.ban_le.tieu_de} phanPhoi />
+
+  {tin.length > 0 && (
+    <section class="sec sec--tin">
+      <div class="wrap">
+        <div class="tin-dau">
+          <div class="stack g12"><div class="eb">{bt.nhan}</div><h2 set:html={tieuDe(bt.tieu_de)} /></div>
+          <a class="btn btn--ghost" href="/tin-tuc">Xem tất cả tin tức</a>
+        </div>
+        <div class="tin-gon">
+          {tin.map((t) => (
+            <a class="tg rv" href={duongDanTin(t)}>
+              <Anh src={t.data.anh_dai_dien} alt={chuTron(t.data.tieu_de)} sizes="140px" widths={[280]} />
+              <div><div class="tg__m">{tenMuc[t.data.chuyen_muc]} · {ngayThang(t.data.ngay)}</div><h3 class="tg__t">{t.data.tieu_de}</h3></div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <DongHanh />
+</Base>
