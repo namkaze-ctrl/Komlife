@@ -4,9 +4,14 @@
   "nganh": "Mỹ phẩm thiên nhiên",
   "cau_ngan": "Chạm vào làn da\nbằng sự dịu lành",
   "cau_dinh_vi": "Chạm vào làn da bằng sự dịu lành",
-  "mo_ta": "Givebe mang tinh thần chăm sóc từ thiên nhiên với hai dòng sữa tắm: Thiên Nhiên cấp ẩm với AHA và Luxury với chiết xuất yến mạch lên men AVENOFERM HF.",
-  "cau_chuyen": "Givebe đi theo hướng tối giản: ít thành phần, mỗi thành phần đều có lý do có mặt. Sản xuất tại nhà máy đạt ISO 14001:2015 — sạch từ quy trình chứ không chỉ ở nhãn chai.",
-  "danh_cho": "Người dùng quan tâm đến thành phần và nguồn gốc tự nhiên.",
+  "mau": {
+    "chinh": "#13615A",
+    "nhan": "#B8862E",
+    "nen": "#F2F7F4"
+  },
+  "mo_ta": "Givebe mang tinh thần \"beauty from nature\" với hai dòng sữa tắm hương nước hoa: Nước Hoa Ý và Luxury Parfum, mỗi dòng ba mùi hương riêng.",
+  "cau_chuyen": "Givebe là nhãn sữa tắm của Komlife theo tinh thần \"beauty from nature\" — vẻ đẹp từ thiên nhiên. Hai dòng sản phẩm: sữa tắm hương Nước Hoa Ý với ba mùi Red Poppy, Sansuyu, Sweet Cosmos, và Luxury Parfum với ba mùi Louis Dream, Freesia Fields, Coco Dance. Givebe được sản xuất tại nhà máy Komlife ở Hưng Yên.",
+  "danh_cho": "Người thích sữa tắm có mùi hương rõ nét, lưu hương lâu.",
   "anh_the_doc": "../../assets/anh/nhan-hang/givebe-the-doc.jpg",
   "anh_bia": "../../assets/anh/nhan-hang/givebe-bia.jpg",
   "anh_the": "../../assets/anh/nhan-hang/the/givebe.jpg",

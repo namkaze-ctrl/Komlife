@@ -4,9 +4,14 @@
   "nganh": "Chất tẩy rửa",
   "cau_ngan": "Giải pháp cho những\nviệc nhà khó xử lý",
   "cau_dinh_vi": "Giải pháp cho những việc nhà khó xử lý",
-  "mo_ta": "Eddy tập trung vào những sản phẩm tẩy rửa chuyên dụng, giúp xử lý các vấn đề làm sạch thường gặp trong gia đình.",
-  "cau_chuyen": "Eddy làm phần việc mà không ai muốn làm: dầu mỡ bám bếp, cặn xà phòng trong nhà tắm, vết ố lâu ngày. Công thức mạnh nhưng vẫn kiểm soát độ an toàn khi tiếp xúc tay.",
-  "danh_cho": "Hộ gia đình, quán ăn, cửa hàng nhỏ.",
+  "mau": {
+    "chinh": "#1F5FAF",
+    "nhan": "#2E9BD6",
+    "nen": "#EEF6FC"
+  },
+  "mo_ta": "Eddy tập trung vào những sản phẩm tẩy rửa chuyên dụng, giúp xử lý các việc làm sạch thường gặp trong gia đình. Sản phẩm chủ lực: nước lau kính Eddy hương Lavender.",
+  "cau_chuyen": "Eddy là nhãn tẩy rửa của Komlife cho những việc nhà cần làm sạch chuyên biệt. Sản phẩm đang bán là nước lau kính Eddy hương Lavender, có chai xịt 650ml dùng ngay và can 3,8L để rót thêm, dùng cho cửa kính, kính ô tô, gương và màn hình. Eddy được sản xuất tại nhà máy Komlife ở Hưng Yên.",
+  "danh_cho": "Hộ gia đình, văn phòng, cửa hàng, chủ xe.",
   "anh_the_doc": "../../assets/anh/nhan-hang/eddy-the-doc.jpg",
   "anh_bia": "../../assets/anh/nhan-hang/eddy-bia.jpg",
   "anh_the": "../../assets/anh/nhan-hang/the/eddy.jpg",

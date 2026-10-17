@@ -1,0 +1,119 @@
+{
+  "trang_thai": "Đang bán",
+  "anh_co_nen": false,
+  "khong_phong_to": true,
+  "nhan_phien_ban": "Chọn quy cách",
+  "anh_lua_chon": [
+    {
+      "phien_ban": "",
+      "mui": "Red Poppy",
+      "anh": "../../assets/anh/san-pham/givebe/nuoc-hoa-y-red-poppy.webp"
+    },
+    {
+      "phien_ban": "",
+      "mui": "Sansuyu",
+      "anh": "../../assets/anh/san-pham/givebe/nuoc-hoa-y-sansuyu.webp"
+    },
+    {
+      "phien_ban": "",
+      "mui": "Sweet Cosmos",
+      "anh": "../../assets/anh/san-pham/givebe/nuoc-hoa-y-sweet-cosmos.webp"
+    }
+  ],
+  "shopee": "",
+  "tiktok_shop": "",
+  "nhan": "givebe",
+  "ma": "nuoc-hoa-y",
+  "thu_tu": 1,
+  "nhom": "",
+  "ten": "Givebe Sữa tắm hương Nước Hoa Ý",
+  "ten_dong": "Perfume Shower Gel",
+  "cau_ngan": "Lưu hương suốt ngày dài",
+  "mau": "#B0283A",
+  "mau_nhat": "#F6E7E9",
+  "anh": [
+    "../../assets/anh/san-pham/givebe/nuoc-hoa-y.webp"
+  ],
+  "mo_ta": "Sữa tắm hương nước hoa với ba mùi Red Poppy, Sansuyu và Sweet Cosmos, mỗi mùi một tầng hương riêng. Bọt mịn, làm sạch nhẹ nhàng và để lại mùi thơm trên da suốt ngày dài.",
+  "mui_huong": [
+    {
+      "ten": "Red Poppy",
+      "mo_ta": "Hoa hồng đỏ, lily, ngọc lan tây",
+      "mau": "#B0283A"
+    },
+    {
+      "ten": "Sansuyu",
+      "mo_ta": "Quả mọng, cam bergamot, vani, gỗ đàn hương",
+      "mau": "#D9A520"
+    },
+    {
+      "ten": "Sweet Cosmos",
+      "mo_ta": "Hoa linh lan, táo, gỗ hổ phách",
+      "mau": "#B8622B"
+    }
+  ],
+  "phien_ban": [
+    {
+      "ten": "Chai 700ml",
+      "ma_gia": "",
+      "ghi_chu": "Chai có vòi bấm, dùng cho cả nhà",
+      "sku": "",
+      "anh": "",
+      "mui_co": [],
+      "khong_mui": false
+    }
+  ],
+  "thong_so": [
+    {
+      "ten": "Dòng sản phẩm",
+      "gia_tri": "Sữa tắm hương Nước Hoa Ý (Perfume Shower Gel)"
+    },
+    {
+      "ten": "Mùi hương",
+      "gia_tri": "Red Poppy · Sansuyu · Sweet Cosmos"
+    },
+    {
+      "ten": "Quy cách",
+      "gia_tri": "Chai 700ml"
+    },
+    {
+      "ten": "Bảo quản",
+      "gia_tri": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp"
+    },
+    {
+      "ten": "Sản xuất",
+      "gia_tri": "Công ty TNHH Komlife Việt Nam, nhà máy Hưng Yên"
+    }
+  ],
+  "cong_dung": [
+    {
+      "ten": "Hương nước hoa nhiều tầng",
+      "mo_ta": "Ba mùi hương, mỗi mùi có nốt hoa, quả và gỗ riêng."
+    },
+    {
+      "ten": "Lưu hương suốt ngày dài",
+      "mo_ta": "Mùi thơm còn lại trên da sau khi tắm."
+    },
+    {
+      "ten": "Bọt mịn, làm sạch nhẹ nhàng",
+      "mo_ta": "Dùng hằng ngày cho cả nhà."
+    }
+  ],
+  "dung_luc_nao": [
+    {
+      "ten": "Tắm buổi sáng",
+      "mo_ta": "Thơm tươi trước khi đi làm, đi học."
+    },
+    {
+      "ten": "Sau khi tập luyện",
+      "mo_ta": "Sạch mồ hôi, thơm trở lại."
+    }
+  ],
+  "cach_dung": "Làm ướt cơ thể, lấy một lượng sữa tắm vừa đủ ra tay hoặc bông tắm, tạo bọt và massage nhẹ nhàng, sau đó tắm lại bằng nước sạch.\nLưu ý: tránh tiếp xúc với mắt; nếu dính vào mắt, rửa ngay bằng nước sạch. Để xa tầm tay trẻ em.",
+  "tieu_de": {
+    "cong_dung": "*{so} điểm chính* của sản phẩm",
+    "dung_luc_nao": "Dùng *lúc nào*",
+    "cach_dung": "",
+    "sp_khac": ""
+  }
+}

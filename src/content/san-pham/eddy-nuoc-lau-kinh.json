@@ -1,0 +1,112 @@
+{
+  "trang_thai": "Đang bán",
+  "anh_co_nen": true,
+  "khong_phong_to": true,
+  "nhan_phien_ban": "Chọn quy cách",
+  "anh_lua_chon": [],
+  "shopee": "",
+  "tiktok_shop": "",
+  "nhan": "eddy",
+  "ma": "nuoc-lau-kinh",
+  "thu_tu": 1,
+  "nhom": "",
+  "ten": "Eddy Nước lau kính Lavender",
+  "ten_dong": "Nước lau kính",
+  "cau_ngan": "Bóng sạch, trong suốt, chống bám bụi",
+  "mau": "#1F5FAF",
+  "mau_nhat": "#E6EDF6",
+  "anh": [
+    "../../assets/anh/san-pham/eddy/nuoc-lau-kinh.webp"
+  ],
+  "mo_ta": "Nước lau kính hương Lavender: xịt trực tiếp lên kính rồi lau bằng khăn khô, kính sạch bóng, trong suốt và hạn chế bụi bám lại. Có chai xịt 650ml và can 3,8L để rót thêm.",
+  "mui_huong": [],
+  "phien_ban": [
+    {
+      "ten": "Chai 650ml (xịt)",
+      "ma_gia": "",
+      "ghi_chu": "Chai có vòi xịt, dùng ngay",
+      "sku": "",
+      "anh": "../../assets/anh/san-pham/eddy/nuoc-lau-kinh-chai-650ml.webp",
+      "mui_co": [],
+      "khong_mui": false
+    },
+    {
+      "ten": "Can 3,8L",
+      "ma_gia": "",
+      "ghi_chu": "Can lớn, rót thêm vào chai xịt",
+      "sku": "",
+      "anh": "../../assets/anh/san-pham/eddy/nuoc-lau-kinh-can-3l8.webp",
+      "mui_co": [],
+      "khong_mui": false
+    }
+  ],
+  "thong_so": [
+    {
+      "ten": "Dòng sản phẩm",
+      "gia_tri": "Nước lau kính Eddy Lavender"
+    },
+    {
+      "ten": "Mùi hương",
+      "gia_tri": "Lavender (oải hương)"
+    },
+    {
+      "ten": "Quy cách",
+      "gia_tri": "Chai xịt 650ml · can 3,8L"
+    },
+    {
+      "ten": "Dùng cho",
+      "gia_tri": "Cửa kính, cửa sổ, kính ô tô, màn hình thiết bị, gương"
+    },
+    {
+      "ten": "Thành phần chính",
+      "gia_tri": "Chất hoạt động bề mặt, hương liệu, nước"
+    },
+    {
+      "ten": "Hạn sử dụng",
+      "gia_tri": "3 năm kể từ ngày sản xuất (xem trên bao bì)"
+    },
+    {
+      "ten": "Bảo quản",
+      "gia_tri": "Đậy nắp kỹ sau khi dùng, tránh ánh nắng trực tiếp"
+    },
+    {
+      "ten": "Sản xuất",
+      "gia_tri": "Công ty TNHH Komlife Việt Nam, nhà máy Hưng Yên"
+    }
+  ],
+  "cong_dung": [
+    {
+      "ten": "Bóng sạch",
+      "mo_ta": "Làm sạch vết bẩn, dấu tay trên mặt kính."
+    },
+    {
+      "ten": "Trong suốt",
+      "mo_ta": "Lau xong kính trong, không để vệt."
+    },
+    {
+      "ten": "Chống bám bụi",
+      "mo_ta": "Hạn chế bụi bám trở lại."
+    }
+  ],
+  "dung_luc_nao": [
+    {
+      "ten": "Cửa kính, cửa sổ",
+      "mo_ta": "Kính trong nhà, vách kính, cửa sổ."
+    },
+    {
+      "ten": "Kính ô tô",
+      "mo_ta": "Kính lái, kính cửa xe."
+    },
+    {
+      "ten": "Màn hình, gương",
+      "mo_ta": "Màn hình thiết bị, gương nhà tắm."
+    }
+  ],
+  "cach_dung": "Phun trực tiếp nước lau kính Eddy lên bề mặt, sau đó dùng khăn lau sạch để lau khô. Chú ý không dùng giấy để lau và không sử dụng chung với các loại dung dịch khác.\nLưu ý: để xa tầm tay trẻ em.",
+  "tieu_de": {
+    "cong_dung": "*{so} điểm chính* của sản phẩm",
+    "dung_luc_nao": "Dùng *cho đâu*",
+    "cach_dung": "",
+    "sp_khac": ""
+  }
+}

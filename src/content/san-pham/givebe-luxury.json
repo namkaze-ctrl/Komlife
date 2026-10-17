@@ -1,0 +1,103 @@
+{
+  "trang_thai": "Đang bán",
+  "anh_co_nen": false,
+  "khong_phong_to": true,
+  "nhan_phien_ban": "Chọn quy cách",
+  "anh_lua_chon": [],
+  "shopee": "",
+  "tiktok_shop": "",
+  "nhan": "givebe",
+  "ma": "luxury",
+  "thu_tu": 2,
+  "nhom": "",
+  "ten": "Givebe Luxury Parfum",
+  "ten_dong": "Luxury Parfum Shower Gel",
+  "cau_ngan": "Hương nước hoa sang trọng",
+  "mau": "#13615A",
+  "mau_nhat": "#E5EEED",
+  "anh": [
+    "../../assets/anh/san-pham/givebe/luxury.webp"
+  ],
+  "mo_ta": "Dòng sữa tắm cao cấp của Givebe với ba mùi Louis Dream, Freesia Fields và Coco Dance. Công nghệ lên men (Hyperfermentation), phức hợp post-biotic và hương nước hoa cao cấp.",
+  "mui_huong": [
+    {
+      "ten": "Louis Dream",
+      "mo_ta": "Hoa đỏ, nồng nàn",
+      "mau": "#B0283A"
+    },
+    {
+      "ten": "Freesia Fields",
+      "mo_ta": "Hoa lan Nam Phi, thanh khiết",
+      "mau": "#D8D2C2"
+    },
+    {
+      "ten": "Coco Dance",
+      "mo_ta": "Hoa vàng, tươi vui",
+      "mau": "#E8C21F"
+    }
+  ],
+  "phien_ban": [
+    {
+      "ten": "1 chai",
+      "ma_gia": "",
+      "ghi_chu": "Dung tích xem tại gian hàng chính hãng",
+      "sku": "",
+      "anh": "",
+      "mui_co": [],
+      "khong_mui": false
+    }
+  ],
+  "thong_so": [
+    {
+      "ten": "Dòng sản phẩm",
+      "gia_tri": "Luxury Parfum Shower Gel"
+    },
+    {
+      "ten": "Mùi hương",
+      "gia_tri": "Louis Dream · Freesia Fields · Coco Dance"
+    },
+    {
+      "ten": "Công nghệ",
+      "gia_tri": "Hyperfermentation, phức hợp post-biotic, hương nước hoa"
+    },
+    {
+      "ten": "Bảo quản",
+      "gia_tri": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp"
+    },
+    {
+      "ten": "Sản xuất",
+      "gia_tri": "Công ty TNHH Komlife Việt Nam, nhà máy Hưng Yên"
+    }
+  ],
+  "cong_dung": [
+    {
+      "ten": "Công nghệ lên men",
+      "mo_ta": "Hyperfermentation Technology, phức hợp post-biotic."
+    },
+    {
+      "ten": "Hương nước hoa cao cấp",
+      "mo_ta": "Ba mùi Louis Dream, Freesia Fields, Coco Dance."
+    },
+    {
+      "ten": "Làm sạch dịu nhẹ",
+      "mo_ta": "Dùng hằng ngày."
+    }
+  ],
+  "dung_luc_nao": [
+    {
+      "ten": "Tắm buổi tối",
+      "mo_ta": "Thư giãn sau một ngày dài."
+    },
+    {
+      "ten": "Trước khi ra ngoài",
+      "mo_ta": "Thơm sang trọng khi đi gặp gỡ."
+    }
+  ],
+  "cach_dung": "Làm ướt cơ thể, lấy một lượng sữa tắm vừa đủ, tạo bọt và massage nhẹ nhàng, sau đó tắm lại bằng nước sạch.\nLưu ý: tránh tiếp xúc với mắt. Để xa tầm tay trẻ em.",
+  "tieu_de": {
+    "cong_dung": "*{so} điểm chính* của sản phẩm",
+    "dung_luc_nao": "Dùng *lúc nào*",
+    "cach_dung": "",
+    "sp_khac": ""
+  }
+}
